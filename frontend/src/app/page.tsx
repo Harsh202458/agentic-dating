@@ -72,7 +72,7 @@ export default function HomePage() {
 
           {/* Magnetic CTAs (pointer-events-auto) */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto">
-            <Link href="/date/1/3" onClick={() => sounds.playClick()}>
+            <Link href="/date/1/14" onClick={() => sounds.playClick()}>
               <MagneticButton
                 strength={8}
                 className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] hover:opacity-95 text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-xl shadow-[var(--violet)]/25 cursor-pointer"
@@ -252,7 +252,7 @@ export default function HomePage() {
                   RANKINGS →
                 </Link>
                 <Link
-                  href={`/date/${person.id}/3`}
+                  href={`/date/${person.id}/${(person as any).gender === 'female' ? 1 : 14}`}
                   onClick={() => sounds.playClick()}
                   className="text-[var(--magenta)] hover:opacity-80 font-bold"
                 >

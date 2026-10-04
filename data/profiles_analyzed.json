@@ -2,6 +2,8 @@
   {
     "id": 1,
     "name": "Pieter Levels",
+    "gender": "male",
+    "seeking": "female",
     "linkedin_url": "https://www.linkedin.com/in/pieterlevelsnomad/",
     "instagram_url": "https://www.instagram.com/levels.io/",
     "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
@@ -56,90 +58,13 @@
       "creativity": 9
     },
     "summary": "Pieter is the poster child for solo internet entrepreneurship, living life on his own terms between Lisbon and Tokyo. He seeks a partner who thrives on global freedom, creative autonomy, and genuine wit.",
-    "agentVoice": "I build fast, travel light, and want a partner who can jump on a flight to Tokyo tomorrow without overthinking it.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/pieterlevelsnomad/",
-        "headline": "Founder at Nomad List, Remote OK, Photo AI",
-        "career_signals": [
-          "Current Role: Founder at Nomad List, Remote OK, Photo AI",
-          "Professional Domain: Digital Nomadism",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Digital Nomadism",
-          "Endorsed competency: AI photo generation",
-          "Endorsed competency: Bootstrapping software"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Founder at Nomad List, Remote OK, Photo AI\"",
-          "Public professional footprint verified in Nomadic / Lisbon / Amsterdam"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/levels.io/",
-        "handle": "levels.io",
-        "followers_count": 85200,
-        "bio_snippet": "Pieter is the poster child for solo internet entrepreneurship, living life on his own terms between Lisbon and Tokyo. He",
-        "lifestyle_signals": [
-          "Visual documentation of: Solo indie hacking",
-          "Visual documentation of: Kite surfing",
-          "Visual documentation of: Electronic music production"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Solo indie hacking",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 85,200 followers",
-          "Consistent visual evidence of Solo indie hacking"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Founder at Nomad List, Remote OK, Photo AI",
-      "[LinkedIn] Primary Location: Nomadic / Lisbon / Amsterdam",
-      "[Instagram] Public Audience: 85,200 followers",
-      "[Instagram] Documented Activities: Solo indie hacking, Kite surfing, Electronic music production"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Solo indie hacking",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Freedom over status",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Quality Time & Freedom",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Digital Nomadism. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Solo indie hacking—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
+    "agentVoice": "I build fast, travel light, and want a partner who can jump on a flight to Tokyo tomorrow without overthinking it."
   },
   {
     "id": 2,
     "name": "Dr. Andrew Huberman",
+    "gender": "male",
+    "seeking": "female",
     "linkedin_url": "https://www.linkedin.com/in/andrew-huberman/",
     "instagram_url": "https://www.instagram.com/hubermanlab/",
     "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
@@ -157,7 +82,7 @@
       "Morning sunlight viewing",
       "Zone 2 cardio & weight training",
       "Cold plunges",
-      "Walking his bulldog Costello (in memory)",
+      "Walking in nature",
       "Reading neurobiology journals"
     ],
     "interests": [
@@ -195,90 +120,13 @@
       "creativity": 7
     },
     "summary": "Stanford neuroscientist transforming global public health through zero-cost science protocols. Seeks an emotionally grounded partner committed to growth, discipline, and daily morning sunlight.",
-    "agentVoice": "If we can align our morning light protocols and value deep biological focus, we are already halfway to an extraordinary bond.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/andrew-huberman/",
-        "headline": "Neurobiologist & Professor at Stanford University School of Medicine | Host of Huberman Lab",
-        "career_signals": [
-          "Current Role: Neurobiologist & Professor at Stanford University School of Medicine",
-          "Professional Domain: Neuroplasticity",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Neuroplasticity",
-          "Endorsed competency: Dopamine dynamics",
-          "Endorsed competency: Sleep science"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Neurobiologist & Professor at Stanford University School of Medicine | Host of Huberman Lab\"",
-          "Public professional footprint verified in Stanford, California, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/hubermanlab/",
-        "handle": "hubermanlab",
-        "followers_count": 6100000,
-        "bio_snippet": "Stanford neuroscientist transforming global public health through zero-cost science protocols. Seeks an emotionally grou",
-        "lifestyle_signals": [
-          "Visual documentation of: Morning sunlight viewing",
-          "Visual documentation of: Zone 2 cardio & weight training",
-          "Visual documentation of: Cold plunges"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Morning sunlight viewing",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 6,100,000 followers",
-          "Consistent visual evidence of Morning sunlight viewing"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Neurobiologist & Professor at Stanford University School of Medicine | Host of Huberman Lab",
-      "[LinkedIn] Primary Location: Stanford, California, USA",
-      "[Instagram] Public Audience: 6,100,000 followers",
-      "[Instagram] Documented Activities: Morning sunlight viewing, Zone 2 cardio & weight training, Cold plunges"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (10/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Morning sunlight viewing",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Scientific rigor",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Acts of Service & Physical Touch",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Neuroplasticity. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Morning sunlight viewing—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
+    "agentVoice": "If we can align our morning light protocols and value deep biological focus, we are already halfway to an extraordinary bond."
   },
   {
     "id": 3,
     "name": "Lex Fridman",
+    "gender": "male",
+    "seeking": "female",
     "linkedin_url": "https://www.linkedin.com/in/lexfridman/",
     "instagram_url": "https://www.instagram.com/lexfridman/",
     "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
@@ -287,14 +135,14 @@
     "headline": "Host of Lex Fridman Podcast | AI Researcher at MIT",
     "location": "Austin, Texas, USA",
     "needs": [
-      "Sincere belief in the power of universal love",
+      "Sincere belief in universal love",
       "Tolerance for 4-hour existential conversations",
-      "Shared appreciation for Brazilian Jiu-Jitsu",
+      "Shared appreciation for martial arts & music",
       "Quiet introspection"
     ],
     "hobbies": [
       "Brazilian Jiu-Jitsu (Black Belt)",
-      "Acoustic guitar & Russian poetry",
+      "Acoustic guitar & poetry",
       "Reading Dostoevsky & Camus",
       "Long solo distance runs",
       "Coding autonomous vehicle algorithms"
@@ -333,90 +181,13 @@
       "creativity": 8
     },
     "summary": "MIT roboticist and thoughtful interviewer who wears a black suit and believes love is the greatest superpower in the universe. Seeks a poetic, kind soul to build a lifetime of wonder with.",
-    "agentVoice": "I believe love is the only answer to the infinite darkness of the universe; let's talk about robots, poetry, and kindness until 3 AM.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/lexfridman/",
-        "headline": "Host of Lex Fridman Podcast | AI Researcher at MIT",
-        "career_signals": [
-          "Current Role: Host of Lex Fridman Podcast",
-          "Professional Domain: Artificial General Intelligence",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Artificial General Intelligence",
-          "Endorsed competency: Space exploration",
-          "Endorsed competency: Philosophy of consciousness"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Host of Lex Fridman Podcast | AI Researcher at MIT\"",
-          "Public professional footprint verified in Austin, Texas, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/lexfridman/",
-        "handle": "lexfridman",
-        "followers_count": 3200000,
-        "bio_snippet": "MIT roboticist and thoughtful interviewer who wears a black suit and believes love is the greatest superpower in the uni",
-        "lifestyle_signals": [
-          "Visual documentation of: Brazilian Jiu-Jitsu (Black Belt)",
-          "Visual documentation of: Acoustic guitar & Russian poetry",
-          "Visual documentation of: Reading Dostoevsky & Camus"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Brazilian Jiu-Jitsu (Black Belt)",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 3,200,000 followers",
-          "Consistent visual evidence of Brazilian Jiu-Jitsu (Black Belt)"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Host of Lex Fridman Podcast | AI Researcher at MIT",
-      "[LinkedIn] Primary Location: Austin, Texas, USA",
-      "[Instagram] Public Audience: 3,200,000 followers",
-      "[Instagram] Documented Activities: Brazilian Jiu-Jitsu (Black Belt), Acoustic guitar & Russian poetry, Reading Dostoevsky & Camus"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Brazilian Jiu-Jitsu (Black Belt)",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Unconditional love",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Words of Affirmation & Deep Conversations",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Artificial General Intelligence. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Brazilian Jiu-Jitsu (Black Belt)—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
+    "agentVoice": "I believe love is the only answer to the infinite darkness of the universe; let's talk about robots, poetry, and kindness until 3 AM."
   },
   {
     "id": 4,
     "name": "Gary Vaynerchuk",
+    "gender": "male",
+    "seeking": "female",
     "linkedin_url": "https://www.linkedin.com/in/garyvaynerchuk/",
     "instagram_url": "https://www.instagram.com/garyvee/",
     "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
@@ -426,13 +197,13 @@
     "location": "New York, New York, USA",
     "needs": [
       "Emotional stamina to match boundless energy",
-      "Shared passion for garage sale hunting and business hustle",
+      "Shared passion for building & community",
       "Zero patience for complaining",
       "Family first devotion"
     ],
     "hobbies": [
       "Sports card trading",
-      "Flipping garage sale treasures",
+      "Garage sale hunting",
       "Cheering for the NY Jets",
       "Wine tasting",
       "Mentoring aspiring youth"
@@ -471,90 +242,13 @@
       "creativity": 9
     },
     "summary": "High-octane media entrepreneur fueled by radical empathy and an undying dream to buy the NY Jets. Seeks someone whose inner warmth and positive fire match his own relentless spirit.",
-    "agentVoice": "I don't care about fancy dinners; let's go hit garage sales at 6 AM, laugh until our stomachs hurt, and build something iconic.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/garyvaynerchuk/",
-        "headline": "Chairman of VaynerX, CEO of VaynerMedia, 5x NYT Bestselling Author",
-        "career_signals": [
-          "Current Role: Chairman of VaynerX, CEO of VaynerMedia, 5x NYT Bestselling Author",
-          "Professional Domain: Consumer culture",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Consumer culture",
-          "Endorsed competency: Web3 / VeeFriends",
-          "Endorsed competency: Digital attention arbitrage"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Chairman of VaynerX, CEO of VaynerMedia, 5x NYT Bestselling Author\"",
-          "Public professional footprint verified in New York, New York, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/garyvee/",
-        "handle": "garyvee",
-        "followers_count": 10500000,
-        "bio_snippet": "High-octane media entrepreneur fueled by radical empathy and an undying dream to buy the NY Jets. Seeks someone whose in",
-        "lifestyle_signals": [
-          "Visual documentation of: Sports card trading",
-          "Visual documentation of: Flipping garage sale treasures",
-          "Visual documentation of: Cheering for the NY Jets"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Sports card trading",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 10,500,000 followers",
-          "Consistent visual evidence of Sports card trading"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Chairman of VaynerX, CEO of VaynerMedia, 5x NYT Bestselling Author",
-      "[LinkedIn] Primary Location: New York, New York, USA",
-      "[Instagram] Public Audience: 10,500,000 followers",
-      "[Instagram] Documented Activities: Sports card trading, Flipping garage sale treasures, Cheering for the NY Jets"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (10/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Sports card trading",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Macro patience, micro speed",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Words of Affirmation & Acts of Service",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Consumer culture. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Sports card trading—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
+    "agentVoice": "I don't care about fancy dinners; let's laugh until our stomachs hurt, stay humble, and build something iconic."
   },
   {
     "id": 5,
     "name": "Tim Ferriss",
+    "gender": "male",
+    "seeking": "female",
     "linkedin_url": "https://www.linkedin.com/in/timferriss/",
     "instagram_url": "https://www.instagram.com/timferriss/",
     "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
@@ -608,91 +302,14 @@
       "intellectual": 10,
       "creativity": 8
     },
-    "summary": "The ultimate human guinea pig and pioneer of lifestyle design, turning life into a series of deeply thoughtful experiments. He looks for a partner to deconstruct the art of living well.",
-    "agentVoice": "Let's turn off our phones for the weekend, brew some exceptional pu-erh tea, and ask ourselves what life looks like when it's easy and peaceful.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/timferriss/",
-        "headline": "Author of The 4-Hour Workweek | Host of The Tim Ferriss Show",
-        "career_signals": [
-          "Current Role: Author of The 4-Hour Workweek",
-          "Professional Domain: Psychedelic science research",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Psychedelic science research",
-          "Endorsed competency: Stoicism (Seneca / Marcus Aurelius)",
-          "Endorsed competency: Rapid skill acquisition"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Author of The 4-Hour Workweek | Host of The Tim Ferriss Show\"",
-          "Public professional footprint verified in Austin, Texas, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/timferriss/",
-        "handle": "timferriss",
-        "followers_count": 1800000,
-        "bio_snippet": "The ultimate human guinea pig and pioneer of lifestyle design, turning life into a series of deeply thoughtful experimen",
-        "lifestyle_signals": [
-          "Visual documentation of: Archery",
-          "Visual documentation of: Tango dancing",
-          "Visual documentation of: Japanese tea ceremonies"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Archery",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 1,800,000 followers",
-          "Consistent visual evidence of Archery"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Author of The 4-Hour Workweek | Host of The Tim Ferriss Show",
-      "[LinkedIn] Primary Location: Austin, Texas, USA",
-      "[Instagram] Public Audience: 1,800,000 followers",
-      "[Instagram] Documented Activities: Archery, Tango dancing, Japanese tea ceremonies"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Archery",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Self-awareness",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Quality Time & Shared Discovery",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Psychedelic science research. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Archery—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
+    "summary": "The pioneer of lifestyle design, turning life into a series of deeply thoughtful experiments. He looks for an intellectual partner to deconstruct the art of living well.",
+    "agentVoice": "Let's turn off our phones for the weekend, brew some exceptional pu-erh tea, and ask ourselves what life looks like when it's easy and peaceful."
   },
   {
     "id": 6,
     "name": "Ali Abdaal",
+    "gender": "male",
+    "seeking": "female",
     "linkedin_url": "https://www.linkedin.com/in/aliabdaal/",
     "instagram_url": "https://www.instagram.com/aliabdaal/",
     "photo": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&auto=format&fit=crop&q=80",
@@ -707,36 +324,36 @@
       "Emotional validation and humor"
     ],
     "hobbies": [
-      "Board game nights (Catan, Avalon)",
-      "Playing piano & singing musical theatre",
-      "Reading non-fiction at cafes",
-      "Badminton",
-      "Stationery curation"
+      "Board games (Catan, Wingspan)",
+      "Piano improv",
+      "Reading non-fiction",
+      "Specialty coffee brewing",
+      "Casual video gaming"
     ],
     "interests": [
       "Feel-good productivity",
-      "Notion workflows",
+      "Creator business models",
       "Behavioral economics",
-      "Storytelling",
-      "Camaraderie"
+      "Psychology of happiness",
+      "Notion workflows"
     ],
     "personality": [
-      "Warm",
-      "Whimsical",
-      "Highly systematic",
-      "Optimistic",
-      "Vulnerable"
+      "Warmly nerdy",
+      "Incurably cheerful",
+      "Curious",
+      "Vulnerable",
+      "Reflective"
     ],
     "values": [
       "Joy over friction",
-      "Lifelong learning",
-      "Kindness",
-      "Sincere curiosity"
+      "Continual learning",
+      "Honest self-expression",
+      "Playfulness"
     ],
     "dealbreakers": [
-      "Gloomy cynicism",
-      "Lack of intellectual banter",
-      "Dislike of board games"
+      "Chronically cynical attitudes",
+      "Mocking healthy ambition",
+      "Refusal to communicate emotions"
     ],
     "loveLanguage": "Words of Affirmation & Quality Time",
     "lifestyleScore": {
@@ -744,139 +361,367 @@
       "adventure": 7,
       "social": 8,
       "intellectual": 9,
-      "creativity": 8
+      "creativity": 9
     },
-    "summary": "Cambridge-trained doctor turned global creator championing joy-driven productivity. He brings infectious sunshine, smart systems, and warm tea to every single day.",
-    "agentVoice": "Life should feel like play, not a grind; let's find a sunlit London bookstore and talk about our wildest creative dreams.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/aliabdaal/",
-        "headline": "Doctor turned Creator & Entrepreneur | Author of Feel-Good Productivity",
-        "career_signals": [
-          "Current Role: Doctor turned Creator & Entrepreneur",
-          "Professional Domain: Feel-good productivity",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Feel-good productivity",
-          "Endorsed competency: Notion workflows",
-          "Endorsed competency: Behavioral economics"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Doctor turned Creator & Entrepreneur | Author of Feel-Good Productivity\"",
-          "Public professional footprint verified in London, United Kingdom"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/aliabdaal/",
-        "handle": "aliabdaal",
-        "followers_count": 1200000,
-        "bio_snippet": "Cambridge-trained doctor turned global creator championing joy-driven productivity. He brings infectious sunshine, smart",
-        "lifestyle_signals": [
-          "Visual documentation of: Board game nights (Catan, Avalon)",
-          "Visual documentation of: Playing piano & singing musical theatre",
-          "Visual documentation of: Reading non-fiction at cafes"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Board game nights (Catan, Avalon)",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 1,200,000 followers",
-          "Consistent visual evidence of Board game nights (Catan, Avalon)"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Doctor turned Creator & Entrepreneur | Author of Feel-Good Productivity",
-      "[LinkedIn] Primary Location: London, United Kingdom",
-      "[Instagram] Public Audience: 1,200,000 followers",
-      "[Instagram] Documented Activities: Board game nights (Catan, Avalon), Playing piano & singing musical theatre, Reading non-fiction at cafes"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Board game nights (Catan, Avalon)",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Joy over friction",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Words of Affirmation & Quality Time",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Feel-good productivity. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Board game nights (Catan, Avalon)—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
+    "summary": "Cambridge-trained doctor turned global productivity educator who believes work and life should feel deeply joyful. Looking for a bright, kind partner to share laughter, cozy Sundays, and board game marathons.",
+    "agentVoice": "Life is too short for friction. I want a partner with whom building a joyful, meaningful life feels effortless and fun."
   },
   {
     "id": 7,
-    "name": "Marie Forleo",
-    "linkedin_url": "https://www.linkedin.com/in/marieforleo/",
-    "instagram_url": "https://www.instagram.com/marieforleo/",
-    "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
-    "followers": 800000,
+    "name": "Sahil Bloom",
+    "gender": "male",
+    "seeking": "female",
+    "linkedin_url": "https://www.linkedin.com/in/sahilbloom/",
+    "instagram_url": "https://www.instagram.com/sahilbloom/",
+    "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80",
+    "followers": 980000,
     "isVerified": true,
-    "headline": "#1 NYT Bestselling Author of 'Everything is Figureoutable' | Host of MarieTV",
-    "location": "New York & Los Angeles, USA",
+    "headline": "Author of The 5 Types of Wealth | Managing Partner at SRB Ventures",
+    "location": "New York, USA",
     "needs": [
-      "A partner with their own thriving purpose",
-      "Willingness to dance in the living room",
-      "Unshakable growth mindset",
-      "Deep mutual loyalty"
+      "Deep devotion to family",
+      "Appreciation for simple daily habits",
+      "Shared commitment to emotional and physical health",
+      "Mutual cheering for big dreams"
     ],
     "hobbies": [
-      "Hip hop dance classes",
-      "Creative cooking",
-      "Interior design styling",
-      "Beach walks with her rescue dog Kuma",
-      "Writing by hand"
+      "Morning workouts with his son",
+      "Cooking Sunday dinners",
+      "Writing long-form essays",
+      "Baseball analytics",
+      "Walking in Central Park"
     ],
     "interests": [
-      "Female empowerment",
-      "Creative entrepreneurship",
-      "Mindset coaching",
-      "Philanthropy (Pencils of Promise)",
-      "Spiritual wellness"
+      "The 5 types of wealth (Time, Health, Relationships, Physical, Financial)",
+      "Compounding habits",
+      "Mental models",
+      "Fatherhood",
+      "Angel investing"
     ],
     "personality": [
-      "Radiant",
-      "Spitfire comedic timing",
-      "Fiercely loving",
-      "Relentlessly encouraging",
-      "Savvy"
+      "Wholesome",
+      "Disciplined",
+      "Supportive",
+      "Optimistic",
+      "Clear thinker"
     ],
     "values": [
-      "Everything is figureoutable",
-      "Generosity",
-      "Soulful integrity",
-      "Laughter"
+      "Family above career",
+      "Consistency",
+      "Integrity",
+      "Humility"
     ],
     "dealbreakers": [
-      "Victim mentality",
-      "Inability to laugh at oneself",
-      "Lack of ambition"
+      "Workaholism that sacrifices family",
+      "Superficial status signaling",
+      "Dishonesty"
     ],
-    "loveLanguage": "Words of Affirmation & Quality Time",
+    "loveLanguage": "Quality Time & Physical Touch",
+    "lifestyleScore": {
+      "ambition": 9,
+      "adventure": 7,
+      "social": 7,
+      "intellectual": 9,
+      "creativity": 8
+    },
+    "summary": "Former Stanford baseball player turned venture capitalist and bestselling author on holistically wealthy living. Values grounded daily rituals and unconditional loyalty.",
+    "agentVoice": "True wealth isn't about numbers; it's having time for the people you love. Let's build a life that feels as rich on the inside as it looks on the outside."
+  },
+  {
+    "id": 8,
+    "name": "Alexis Ohanian",
+    "gender": "male",
+    "seeking": "female",
+    "linkedin_url": "https://www.linkedin.com/in/alexisohanian/",
+    "instagram_url": "https://www.instagram.com/alexisohanian/",
+    "photo": "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?w=400&auto=format&fit=crop&q=80",
+    "followers": 860000,
+    "isVerified": true,
+    "headline": "Founder at Seven Seven Six | Co-Founder at Reddit",
+    "location": "Florida, USA",
+    "needs": [
+      "Proud celebration of women's leadership",
+      "Supportive partnership with zero ego jealousy",
+      "Shared love for sports & gaming",
+      "Playful family warmth"
+    ],
+    "hobbies": [
+      "Making elaborate pancake art",
+      "Collecting sports cards & comic books",
+      "Watching women's sports matches",
+      "Cooking backyard barbecues",
+      "Gaming on PC"
+    ],
+    "interests": [
+      "Venture capital in climate and space",
+      "Women's sports revolution",
+      "Fatherhood advocacy",
+      "Internet community culture",
+      "Collectible markets"
+    ],
+    "personality": [
+      "Enthusiastic cheerleader",
+      "Big-hearted",
+      "Playful",
+      "Steadfast",
+      "Visionary"
+    ],
+    "values": [
+      "Egalitarian partnership",
+      "Being the loudest supporter in the room",
+      "Creativity",
+      "Patience"
+    ],
+    "dealbreakers": [
+      "Fragile male ego",
+      "Disinterest in social impact",
+      "Coldness toward family"
+    ],
+    "loveLanguage": "Acts of Service & Words of Affirmation",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 8,
+      "social": 8,
+      "intellectual": 9,
+      "creativity": 9
+    },
+    "summary": "Reddit co-founder and venture capitalist celebrated for being a champion partner. He brings massive energy, creative heart, and unwavering devotion to relationships.",
+    "agentVoice": "The greatest flex is being proud of your partner's brilliance. Let's make pancakes, cheer loudly for each other, and change the world."
+  },
+  {
+    "id": 9,
+    "name": "Naval Ravikant",
+    "gender": "male",
+    "seeking": "female",
+    "linkedin_url": "https://www.linkedin.com/in/navalravikant/",
+    "instagram_url": "https://www.instagram.com/naval/",
+    "photo": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&auto=format&fit=crop&q=80",
+    "followers": 1400000,
+    "isVerified": true,
+    "headline": "Co-Founder at AngelList | Philosopher & Investor",
+    "location": "San Francisco, California, USA",
+    "needs": [
+      "Effortless peace of mind",
+      "High intellectual resonance with minimal small talk",
+      "Freedom from social drama",
+      "Mutual love for stillness and meditation"
+    ],
+    "hobbies": [
+      "Reading science & philosophy",
+      "Solo long walks in silence",
+      "Yoga & meditation",
+      "Studying physics",
+      "Sipping herbal tea in gardens"
+    ],
+    "interests": [
+      "First-principles thinking",
+      "Specific knowledge",
+      "Non-duality & Eastern philosophy",
+      "Cryptographic incentives",
+      "Quantum mechanics"
+    ],
+    "personality": [
+      "Sovereign",
+      "Zen-like",
+      "Bluntly truthful",
+      "Calm",
+      "Profoundly independent"
+    ],
+    "values": [
+      "Peace over pleasure",
+      "Absolute freedom",
+      "Truth above consensus",
+      "Self-honesty"
+    ],
+    "dealbreakers": [
+      "Desire for social climbing",
+      "Emotional neediness",
+      "Inability to sit in silence comfortably"
+    ],
+    "loveLanguage": "Quality Time & Physical Presence",
+    "lifestyleScore": {
+      "ambition": 9,
+      "adventure": 6,
+      "social": 4,
+      "intellectual": 10,
+      "creativity": 9
+    },
+    "summary": "Iconic Silicon Valley philosopher-investor celebrated for aphorisms on happiness and wealth. Seeks a sovereign, deeply peaceful partner who cherishes truth and stillness.",
+    "agentVoice": "A peaceful mind, a fit body, and a house full of love. These things cannot be bought; they must be earned together."
+  },
+  {
+    "id": 10,
+    "name": "Lenny Rachitsky",
+    "gender": "male",
+    "seeking": "female",
+    "linkedin_url": "https://www.linkedin.com/in/lennyrachitsky/",
+    "instagram_url": "https://www.instagram.com/lennyrachitsky/",
+    "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&auto=format&fit=crop&q=80",
+    "followers": 195000,
+    "isVerified": true,
+    "headline": "Author of Lenny's Newsletter & Host of Lenny's Podcast | Ex-Airbnb Product Lead",
+    "location": "San Francisco, California, USA",
+    "needs": [
+      "Intellectual curiosity about how products and humans tick",
+      "Warm empathetic dialogue",
+      "Appreciation for good food and craft cocktails",
+      "Grounded work-life rhythm"
+    ],
+    "hobbies": [
+      "Hiking Bay Area trails",
+      "Exploring natural wine bars",
+      "Cooking Mediterranean feasts",
+      "Writing insightful frameworks",
+      "Playing tennis"
+    ],
+    "interests": [
+      "Product strategy & growth",
+      "Community dynamics",
+      "Interview psychology",
+      "Behavioral design",
+      "Culinary exploration"
+    ],
+    "personality": [
+      "Warm",
+      "Exceptionally thoughtful listener",
+      "Curious",
+      "Grounded",
+      "Kind"
+    ],
+    "values": [
+      "Craftsmanship",
+      "Radical generosity",
+      "Honesty",
+      "Equanimity"
+    ],
+    "dealbreakers": [
+      "Self-absorbed arrogance",
+      "Inability to listen to others",
+      "High neurotic drama"
+    ],
+    "loveLanguage": "Quality Time & Acts of Service",
+    "lifestyleScore": {
+      "ambition": 9,
+      "adventure": 7,
+      "social": 7,
+      "intellectual": 9,
+      "creativity": 8
+    },
+    "summary": "Beloved tech product strategist and interviewer known for unmatched listening skills and thoughtful curiosity. Looking for a bright, self-aware partner to explore great conversations and quiet dinners.",
+    "agentVoice": "The best conversations happen over good wine with zero pretense. Let's be genuinely curious about the world and each other."
+  },
+  {
+    "id": 11,
+    "name": "Kunal Shah",
+    "gender": "male",
+    "seeking": "female",
+    "linkedin_url": "https://www.linkedin.com/in/kunal-shah-7949171/",
+    "instagram_url": "https://www.instagram.com/kunalb11/",
+    "photo": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&auto=format&fit=crop&q=80",
+    "followers": 430000,
+    "isVerified": true,
+    "headline": "Founder at CRED | Philosopher of Human Behavior & Fintech Pioneer",
+    "location": "Bangalore, India",
+    "needs": [
+      "Obsession with cognitive curiosity",
+      "Appreciation for behavioral economics",
+      "Fast-paced mental sparring",
+      "Emotional depth without status anxiety"
+    ],
+    "hobbies": [
+      "Studying cognitive biases",
+      "Night walks debating philosophy",
+      "Reading behavioral sociology",
+      "Mentoring founders",
+      "Espresso tastings"
+    ],
+    "interests": [
+      "Delta 4 product frameworks",
+      "Evolutionary psychology",
+      "Fintech architecture",
+      "Societal status games",
+      "Epistemology"
+    ],
+    "personality": [
+      "Enigmatic",
+      "Intensely analytical",
+      "Philosophical",
+      "Provocative",
+      "Cerebral"
+    ],
+    "values": [
+      "Curiosity as a lifestyle",
+      "Efficiency",
+      "High trust networks",
+      "Cognitive self-awareness"
+    ],
+    "dealbreakers": [
+      "Dogmatic superficial opinions",
+      "Playing victim in life",
+      "Boring mental conversations"
+    ],
+    "loveLanguage": "Deep Intellectual Debate & Quality Time",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 7,
+      "social": 7,
+      "intellectual": 10,
+      "creativity": 9
+    },
+    "summary": "CRED founder and behavioral philosopher who views human societies through evolutionary psychology. Seeks an intellectually formidable partner with sharp wit and zero pretense.",
+    "agentVoice": "Most people play status games without knowing it. Let's skip the small talk and debate why humans behave the way they do."
+  },
+  {
+    "id": 12,
+    "name": "Shaan Puri",
+    "gender": "male",
+    "seeking": "female",
+    "linkedin_url": "https://www.linkedin.com/in/shaanvp/",
+    "instagram_url": "https://www.instagram.com/shaanvp/",
+    "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80",
+    "followers": 310000,
+    "isVerified": true,
+    "headline": "Host of My First Million Podcast | Entrepreneur & Investor",
+    "location": "San Francisco, USA",
+    "needs": [
+      "Playful sense of humor",
+      "Support for wild brainstorming ideas",
+      "Relaxed home environment",
+      "Shared love for great storytelling"
+    ],
+    "hobbies": [
+      "Storytelling on mic",
+      "Playing basketball",
+      "Hosting friend game nights",
+      "Brainstorming crazy business ideas",
+      "Traveling with family"
+    ],
+    "interests": [
+      "Frameworks for wealth",
+      "Media businesses",
+      "Psychology of virality",
+      "Poker & probability",
+      "Humor in communication"
+    ],
+    "personality": [
+      "Charismatic",
+      "Hilarious",
+      "Energetic",
+      "Practical",
+      "Authentic"
+    ],
+    "values": [
+      "Unapologetic fun",
+      "Family loyalty",
+      "Optimism",
+      "High agency"
+    ],
+    "dealbreakers": [
+      "Taking oneself too seriously",
+      "Stinginess with laughter",
+      "Negative energy"
+    ],
+    "loveLanguage": "Words of Affirmation & Shared Laughs",
     "lifestyleScore": {
       "ambition": 9,
       "adventure": 8,
@@ -884,2568 +729,800 @@
       "intellectual": 8,
       "creativity": 10
     },
-    "summary": "Oprah-anointed thought leader and dance enthusiast who proves that heart and hustle can conquer anything. Looking for a conscious, joyful partner with big dreams and zero excuses.",
-    "agentVoice": "Never forget: everything is figureoutable, especially love. Bring your whole authentic self to the table.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/marieforleo/",
-        "headline": "#1 NYT Bestselling Author of 'Everything is Figureoutable' | Host of MarieTV",
-        "career_signals": [
-          "Current Role: #1 NYT Bestselling Author of 'Everything is Figureoutable'",
-          "Professional Domain: Female empowerment",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Female empowerment",
-          "Endorsed competency: Creative entrepreneurship",
-          "Endorsed competency: Mindset coaching"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"#1 NYT Bestselling Author of 'Everything is Figureoutable' | Host of MarieTV\"",
-          "Public professional footprint verified in New York & Los Angeles, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/marieforleo/",
-        "handle": "marieforleo",
-        "followers_count": 800000,
-        "bio_snippet": "Oprah-anointed thought leader and dance enthusiast who proves that heart and hustle can conquer anything. Looking for a ",
-        "lifestyle_signals": [
-          "Visual documentation of: Hip hop dance classes",
-          "Visual documentation of: Creative cooking",
-          "Visual documentation of: Interior design styling"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Hip hop dance classes",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 800,000 followers",
-          "Consistent visual evidence of Hip hop dance classes"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: #1 NYT Bestselling Author of 'Everything is Figureoutable' | Host of MarieTV",
-      "[LinkedIn] Primary Location: New York & Los Angeles, USA",
-      "[Instagram] Public Audience: 800,000 followers",
-      "[Instagram] Documented Activities: Hip hop dance classes, Creative cooking, Interior design styling"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Hip hop dance classes",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Everything is figureoutable",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Words of Affirmation & Quality Time",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Female empowerment. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Hip hop dance classes—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
+    "summary": "Host of My First Million and energetic serial entrepreneur who brings wit, warmth, and laughter to everything. Looking for a partner who loves a good laugh and dream-building.",
+    "agentVoice": "Life should be an adventure you laugh through together. Let's make each other laugh every single day."
   },
   {
-    "id": 8,
-    "name": "Sahil Bloom",
-    "linkedin_url": "https://www.linkedin.com/in/sahilbloom/",
-    "instagram_url": "https://www.instagram.com/sahilbloom/",
-    "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80",
-    "followers": 650000,
+    "id": 13,
+    "name": "Mark Zuckerberg",
+    "gender": "male",
+    "seeking": "female",
+    "linkedin_url": "https://www.linkedin.com/in/mark-zuckerberg-618bba58/",
+    "instagram_url": "https://www.instagram.com/zuck/",
+    "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&auto=format&fit=crop&q=80",
+    "followers": 14800000,
     "isVerified": true,
-    "headline": "Managing Partner at SRB Ventures | Author of The 5 Types of Wealth",
-    "location": "New York, USA",
+    "headline": "Founder and CEO at Meta",
+    "location": "Palo Alto, California, USA",
     "needs": [
-      "Shared commitment to family centricity",
-      "Early morning workout buddy energy",
-      "Long walks without phones",
-      "Mutual intellectual sharpening"
+      "Steadfast long-term loyalty",
+      "Shared excitement for extreme athletic disciplines",
+      "Grounded family privacy",
+      "Support during high-stakes technological epochs"
     ],
     "hobbies": [
-      "Baseball (former Stanford pitcher)",
-      "Rucking & barbell training",
-      "Sunset walks with his son and dog",
-      "Writing newsletters",
-      "Coffee brewing rituals"
+      "Brazilian Jiu-Jitsu & MMA",
+      "Hydrofoil surfing in Hawaii",
+      "Raising cattle and smoking brisket",
+      "Reading Latin classics & Homer",
+      "Archery"
     ],
     "interests": [
-      "The 5 types of wealth (Time, Health, Relationships, Physical, Financial)",
-      "Mental models",
-      "Stoic parenting",
-      "Compounding effects",
-      "Angel investing"
+      "Open source AI (Llama)",
+      "Metaverse & holographic computing",
+      "Cellular longevity science",
+      "Martial arts biomechanics",
+      "Clean energy infrastructure"
+    ],
+    "personality": [
+      "Hyper-focused",
+      "Stoic competitor",
+      "Loyal family man",
+      "Relentless executor",
+      "Analytical"
+    ],
+    "values": [
+      "Building for the 100-year horizon",
+      "Family loyalty",
+      "Physical & mental grit",
+      "Relentless optimism"
+    ],
+    "dealbreakers": [
+      "Breaches of trust & confidentiality",
+      "Quitting under pressure",
+      "Disloyalty to the clan"
+    ],
+    "loveLanguage": "Acts of Service & Quality Time",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 9,
+      "social": 7,
+      "intellectual": 10,
+      "creativity": 9
+    },
+    "summary": "Tech titan who built the global social graph and reimagined himself as an open-source AI pioneer and martial artist. Deeply devoted to family and building the future.",
+    "agentVoice": "I believe in building things that endure for decades. Let's train hard, protect our peace, and build a meaningful legacy."
+  },
+  {
+    "id": 14,
+    "name": "Sara Blakely",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/sarablakely/",
+    "instagram_url": "https://www.instagram.com/sarablakely/",
+    "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
+    "followers": 2100000,
+    "isVerified": true,
+    "headline": "Founder & Executive Chairwoman at SPANX & Sneex | Self-Made Billionaire",
+    "location": "Atlanta, Georgia, USA",
+    "needs": [
+      "Playful self-deprecating humor",
+      "Zero fear of an ambitious woman's success",
+      "Spontaneous adventure without agenda",
+      "Daily celebration of failure as a teacher"
+    ],
+    "hobbies": [
+      "Inventing silly products at home",
+      "Singing Broadway tunes in the kitchen",
+      "Traveling with kids",
+      "Collecting quirky art",
+      "Journaling doodle ideas"
+    ],
+    "interests": [
+      "Product innovation & fabrics",
+      "Female entrepreneurship",
+      "The art of selling without shame",
+      "Mindset conditioning",
+      "Philanthropy"
+    ],
+    "personality": [
+      "Hilarious",
+      "Resilient",
+      "Warm",
+      "Down-to-earth",
+      "Unstoppable"
+    ],
+    "values": [
+      "Embracing failure",
+      "Kindness as superpower",
+      "Humor in every situation",
+      "Authentic self-expression"
+    ],
+    "dealbreakers": [
+      "Men intimidated by a woman's success",
+      "Taking yourself too seriously",
+      "Cynicism about big dreams"
+    ],
+    "loveLanguage": "Words of Affirmation & Shared Laughs",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 9,
+      "social": 9,
+      "intellectual": 9,
+      "creativity": 10
+    },
+    "summary": "Iconic self-made billionaire who turned $5,000 into a global empire through sheer grit and infectious humor. Seeks a confident, grounded partner who celebrates life with laughter.",
+    "agentVoice": "Don't ever shrink yourself for anyone. I want a partner who can laugh at themselves, celebrate my wins, and build a joyful empire together."
+  },
+  {
+    "id": 15,
+    "name": "Melanie Perkins",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/melanieperkins/",
+    "instagram_url": "https://www.instagram.com/melanieperkins/",
+    "photo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
+    "followers": 320000,
+    "isVerified": true,
+    "headline": "CEO and Co-founder at Canva",
+    "location": "Sydney, Australia",
+    "needs": [
+      "Huge mission alignment",
+      "Grounded humility despite immense impact",
+      "Love for outdoor adventures like kitesurfing",
+      "Shared vision to empower humanity"
+    ],
+    "hobbies": [
+      "Kitesurfing in Western Australia",
+      "Traveling off the beaten path",
+      "Sketching product interfaces",
+      "Hiking coastal cliffs",
+      "Camping under the stars"
+    ],
+    "interests": [
+      "Democratizing design with AI",
+      "Global philanthropy & two-step pledge",
+      "Educational equity",
+      "Product design systems",
+      "Sustainability"
+    ],
+    "personality": [
+      "Visionary",
+      "Grounded",
+      "Quietly tenacious",
+      "Warm",
+      "Altruistic"
+    ],
+    "values": [
+      "Being a good human",
+      "Empowering others",
+      "Setting crazy big goals",
+      "Simplicity"
+    ],
+    "dealbreakers": [
+      "Selfish ego-driven vanity",
+      "Lack of social conscience",
+      "Arrogance in leadership"
+    ],
+    "loveLanguage": "Acts of Service & Quality Time",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 9,
+      "social": 7,
+      "intellectual": 10,
+      "creativity": 10
+    },
+    "summary": "Visionary Australian co-founder of Canva who built a multi-billion dollar platform on the philosophy of 'doing the most good we can'. Looks for a grounded, adventurous partner with high emotional agency.",
+    "agentVoice": "If you set crazy big goals and stay deeply kind along the way, magic happens. Let's kitesurf, dream big, and leave the world better than we found it."
+  },
+  {
+    "id": 16,
+    "name": "Whitney Wolfe Herd",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/whitney-wolfe-herd-8b776a38/",
+    "instagram_url": "https://www.instagram.com/whitney/",
+    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+    "followers": 670000,
+    "isVerified": true,
+    "headline": "Founder and Executive Chair at Bumble Inc.",
+    "location": "Austin, Texas, USA",
+    "needs": [
+      "Deep respect for women making the first move",
+      "Emotional safety and clear communication",
+      "Shared passion for healthy relationship dynamics",
+      "Family tranquility"
+    ],
+    "hobbies": [
+      "Pilates and trail running",
+      "Cooking healthy family dinners",
+      "Decorating warm home spaces",
+      "Skiing in Aspen",
+      "Reading psychology"
+    ],
+    "interests": [
+      "Relationship architecture",
+      "Anti-cyberbullying advocacy",
+      "Femtech and family technology",
+      "Equitable dating dynamics",
+      "Venture investing"
+    ],
+    "personality": [
+      "Trailblazer",
+      "Empathetic",
+      "Graceful under pressure",
+      "Determined",
+      "Heart-centered"
+    ],
+    "values": [
+      "Kindness and respect",
+      "Equality in relationships",
+      "Courage to begin",
+      "Accountability"
+    ],
+    "dealbreakers": [
+      "Passive-aggressive communication",
+      "Disrespect towards boundaries",
+      "Toxic masculinity"
+    ],
+    "loveLanguage": "Words of Affirmation & Acts of Service",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 8,
+      "social": 8,
+      "intellectual": 9,
+      "creativity": 9
+    },
+    "summary": "Pioneering founder of Bumble who revolutionized modern romance by putting women in control. Seeks an emotionally intelligent, supportive partner who values mutual respect and direct honesty.",
+    "agentVoice": "The healthiest love begins with kindness and clear respect. I want a partner who communicates with vulnerability and courage."
+  },
+  {
+    "id": 17,
+    "name": "Marie Forleo",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/marieforleo/",
+    "instagram_url": "https://www.instagram.com/marieforleo/",
+    "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80",
+    "followers": 820000,
+    "isVerified": true,
+    "headline": "Entrepreneur, NYT Bestselling Author & Host of MarieTV",
+    "location": "New York, USA",
+    "needs": [
+      "High emotional resonance & spiritual depth",
+      "Shared belief that everything is figureoutable",
+      "Dancing through life with joyful energy",
+      "Honest partnership without pretense"
+    ],
+    "hobbies": [
+      "Hip hop dancing",
+      "Reading personal development",
+      "Walking in nature with her dog",
+      "Journaling in sunny spots",
+      "Hosting lively dinner conversations"
+    ],
+    "interests": [
+      "Conscious business building",
+      "Creative intuition",
+      "Mindset reframing",
+      "Holistic wellbeing",
+      "Writing"
+    ],
+    "personality": [
+      "Vibrant",
+      "Wise",
+      "Encouraging",
+      "Fierce",
+      "Humorous"
+    ],
+    "values": [
+      "Everything is figureoutable",
+      "Integrity",
+      "Love in action",
+      "Playful joy"
+    ],
+    "dealbreakers": [
+      "Defeatist helplessness",
+      "Emotional unresponsiveness",
+      "Superficial posturing"
+    ],
+    "loveLanguage": "Words of Affirmation & Quality Time",
+    "lifestyleScore": {
+      "ambition": 9,
+      "adventure": 8,
+      "social": 9,
+      "intellectual": 9,
+      "creativity": 10
+    },
+    "summary": "Bestselling author and creator of MarieTV who inspires millions to build a business and life they love. Looks for a self-aware, emotionally grounded partner with an adventurous spirit.",
+    "agentVoice": "Everything is figureoutable when two people are genuinely committed. Let's laugh, dance, and support each other through every chapter."
+  },
+  {
+    "id": 18,
+    "name": "Mira Murati",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/mira-murati/",
+    "instagram_url": "https://www.instagram.com/miramurati/",
+    "photo": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format&fit=crop&q=80",
+    "followers": 410000,
+    "isVerified": true,
+    "headline": "AI Systems Architect, Former Chief Technology Officer at OpenAI",
+    "location": "San Francisco, California, USA",
+    "needs": [
+      "Profound intellectual stimulation",
+      "Appreciation for classical music and literature",
+      "Grace under intense media scrutiny",
+      "Quiet sanctuary for deep thought"
+    ],
+    "hobbies": [
+      "Playing classical piano (Chopin, Bach)",
+      "Reading philosophical treatises & poetry",
+      "Traveling to European historical sites",
+      "Espresso craft",
+      "Quiet contemplative walks"
+    ],
+    "interests": [
+      "Artificial general intelligence safety",
+      "Multimodal neural architectures",
+      "Ethics of autonomous systems",
+      "Physics of computation",
+      "Philosophy of mind"
+    ],
+    "personality": [
+      "Poised",
+      "Brilliantly analytical",
+      "Understated",
+      "Courageous",
+      "Gentle"
+    ],
+    "values": [
+      "Intellectual rigor",
+      "Responsibility to humanity",
+      "Elegance in design",
+      "Inner calm"
+    ],
+    "dealbreakers": [
+      "Loud attention-seeking behavior",
+      "Superficial tech hype",
+      "Intellectual dishonesty"
+    ],
+    "loveLanguage": "Quality Time & Shared Discovery",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 7,
+      "social": 5,
+      "intellectual": 10,
+      "creativity": 9
+    },
+    "summary": "The visionary engineering mind behind GPT-4 and DALL-E, blending immense technical intellect with classical cultural depth. Seeks a thoughtful, intellectually sovereign partner.",
+    "agentVoice": "Technology should elevate the best of human consciousness. Let's discuss AI, art, and philosophy in quiet peace."
+  },
+  {
+    "id": 19,
+    "name": "Dr. Fei-Fei Li",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/fei-fei-li-4541247/",
+    "instagram_url": "https://www.instagram.com/feifeili/",
+    "photo": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&auto=format&fit=crop&q=80",
+    "followers": 125000,
+    "isVerified": true,
+    "headline": "Sequoia Professor of Computer Science at Stanford University | Co-Director, Stanford HAI",
+    "location": "Stanford, California, USA",
+    "needs": [
+      "Human-centered compassion",
+      "Dedication to scientific exploration",
+      "Family warmth and filial respect",
+      "Patient, thoughtful dialogue"
+    ],
+    "hobbies": [
+      "Hiking California hills",
+      "Writing memoirs and reflections",
+      "Gardening with family",
+      "Mentoring young scientists",
+      "Tea ceremonies"
+    ],
+    "interests": [
+      "Human-centered AI",
+      "Computer vision & spatial intelligence",
+      "Healthcare AI",
+      "Cognitive neuroscience",
+      "Ethical governance"
+    ],
+    "personality": [
+      "Warm mentor",
+      "Profound thinker",
+      "Humble pioneer",
+      "Compassionate",
+      "Steadfast"
+    ],
+    "values": [
+      "Human dignity",
+      "Scientific curiosity",
+      "Perseverance against the odds",
+      "Family devotion"
+    ],
+    "dealbreakers": [
+      "Arrogance without empathy",
+      "Short-sighted opportunism",
+      "Disrespect towards human vulnerabilities"
+    ],
+    "loveLanguage": "Acts of Service & Quality Time",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 7,
+      "social": 6,
+      "intellectual": 10,
+      "creativity": 9
+    },
+    "summary": "Renowned 'Godmother of AI' whose ImageNet sparked modern deep learning, now guiding AI towards human-centered dignity. Seeks a wise, compassionate partner who values truth and heart.",
+    "agentVoice": "There is nothing artificial about human love and dignity. Let's build a life anchored in empathy, science, and enduring warmth."
+  },
+  {
+    "id": 20,
+    "name": "Deepika Padukone",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/deepikapadukone/",
+    "instagram_url": "https://www.instagram.com/deepikapadukone/",
+    "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80",
+    "followers": 79000000,
+    "isVerified": true,
+    "headline": "Founder at 82°E | Mental Health Advocate & Chairperson, Live Love Laugh Foundation",
+    "location": "Mumbai, India",
+    "needs": [
+      "Grounded emotional stability",
+      "Safe space for vulnerability and mental health",
+      "Athletic discipline and fitness dedication",
+      "Quiet sanctuary away from spotlight"
+    ],
+    "hobbies": [
+      "Badminton (former competitive player)",
+      "Meditation & restorative yoga",
+      "Organizing aesthetic home spaces",
+      "Drinking South Indian filter coffee",
+      "Baking"
+    ],
+    "interests": [
+      "Mental health destigmatization",
+      "Holistic self-care rituals",
+      "Cinema & artistic storytelling",
+      "Athletic conditioning",
+      "Sustainable living"
+    ],
+    "personality": [
+      "Graceful",
+      "Vulnerable",
+      "Disciplined",
+      "Warm",
+      "Resilient"
+    ],
+    "values": [
+      "Emotional authenticity",
+      "Physical and mental health",
+      "Kindness",
+      "Grounded humility"
+    ],
+    "dealbreakers": [
+      "Emotional invalidation",
+      "Superficial flashiness",
+      "Disrespect toward mental health struggles"
+    ],
+    "loveLanguage": "Quality Time & Physical Touch",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 7,
+      "social": 7,
+      "intellectual": 8,
+      "creativity": 10
+    },
+    "summary": "Global cinema icon and pioneering mental health advocate who balances immense public grace with grounded vulnerability. Looks for an emotionally mature, athletic, and honest partner.",
+    "agentVoice": "True strength is daring to be vulnerable with the person you love. Let's protect our mental peace and cherish the simple moments."
+  },
+  {
+    "id": 21,
+    "name": "Priyanka Chopra",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/priyanka-chopra/",
+    "instagram_url": "https://www.instagram.com/priyankachopra/",
+    "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&auto=format&fit=crop&q=80",
+    "followers": 91000000,
+    "isVerified": true,
+    "headline": "Global Producer, Entrepreneur & UNICEF Goodwill Ambassador",
+    "location": "Los Angeles, California, USA",
+    "needs": [
+      "Mutual celebration of boundless ambition",
+      "Deep family devotion across cultures",
+      "Spontaneous laughter and romantic gestures",
+      "Rock-solid loyalty"
+    ],
+    "hobbies": [
+      "Hosting global family dinners",
+      "Traveling across continents",
+      "Singing and music jam sessions",
+      "Writing memoirs",
+      "Swimming in the ocean"
+    ],
+    "interests": [
+      "Cross-cultural storytelling",
+      "Philanthropy with UNICEF",
+      "Female empowerment",
+      "Entrepreneurship in beauty and hospitality",
+      "Global music"
+    ],
+    "personality": [
+      "Dynamic",
+      "Warmly charismatic",
+      "Tenacious",
+      "Loving",
+      "Fearless"
+    ],
+    "values": [
+      "Family above all",
+      "Courage to take risks",
+      "Inclusivity",
+      "Unapologetic ambition"
+    ],
+    "dealbreakers": [
+      "Small-minded insecurity",
+      "Jealousy of a partner's success",
+      "Emotional coldness"
+    ],
+    "loveLanguage": "Words of Affirmation & Physical Touch",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 10,
+      "social": 10,
+      "intellectual": 8,
+      "creativity": 10
+    },
+    "summary": "Trailblazing international producer and entrepreneur who bridges Hollywood and Bollywood with infectious energy and family devotion. Seeks a secure, romantic partner with equal fire.",
+    "agentVoice": "Never be afraid of dreaming bigger than everyone else in the room. I want a partner who stands proudly beside me as we take on the world."
+  },
+  {
+    "id": 22,
+    "name": "Arianna Huffington",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/ariannahuffington/",
+    "instagram_url": "https://www.instagram.com/ariannahuff/",
+    "photo": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&auto=format&fit=crop&q=80",
+    "followers": 780000,
+    "isVerified": true,
+    "headline": "Founder & CEO at Thrive Global | Founder of The Huffington Post",
+    "location": "New York, USA",
+    "needs": [
+      "Radical prioritization of sleep and wellbeing",
+      "Greek warmth and hospitality",
+      "Intellectual wit and political acumen",
+      "Zero tolerance for burnout glorification"
+    ],
+    "hobbies": [
+      "Greek island sailing",
+      "Deep 8-hour sleep rituals",
+      "Hosting philosophical salons",
+      "Walking while phone-free",
+      "Reading ancient Greek poetry"
+    ],
+    "interests": [
+      "End-of-burnout revolution",
+      "Sleep science and cognitive renewal",
+      "Media innovation",
+      "Philosophy of thriving",
+      "Global policy"
+    ],
+    "personality": [
+      "Effervescent",
+      "Wise",
+      "Warm maternal strength",
+      "Witty",
+      "Persuasive"
+    ],
+    "values": [
+      "Wellbeing as non-negotiable",
+      "Wisdom over metrics",
+      "Hospitality",
+      "Human connection"
+    ],
+    "dealbreakers": [
+      "Workaholics who brag about lack of sleep",
+      "Emotional cynicism",
+      "Neglecting health"
+    ],
+    "loveLanguage": "Acts of Service & Quality Time",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 8,
+      "social": 9,
+      "intellectual": 10,
+      "creativity": 9
+    },
+    "summary": "Legendary media founder and wellbeing advocate leading the global movement to end burnout. Seeks an emotionally wise, intellectual partner who values deep rest and rich conversation.",
+    "agentVoice": "Burnout is not a badge of honor. Let's sleep 8 hours, savor Mediterranean feasts, and live a life of profound joy."
+  },
+  {
+    "id": 23,
+    "name": "Reshma Saujani",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/reshma-saujani/",
+    "instagram_url": "https://www.instagram.com/reshmasaujani/",
+    "photo": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&auto=format&fit=crop&q=80",
+    "followers": 320000,
+    "isVerified": true,
+    "headline": "Founder & CEO of Moms First | Founder of Girls Who Code",
+    "location": "New York, USA",
+    "needs": [
+      "Equal emotional labor in partnership",
+      "Bravery over perfection",
+      "Shared activism for equity",
+      "Vulnerability and deep humor"
+    ],
+    "hobbies": [
+      "Running New York city parks",
+      "Advocating for paid family leave",
+      "Weekend baking with her kids",
+      "Reading feminist sociology",
+      "Yoga"
+    ],
+    "interests": [
+      "Teach girls bravery, not perfection",
+      "Moms First policy reform",
+      "Tech equity",
+      "Public leadership",
+      "Parenting support networks"
+    ],
+    "personality": [
+      "Courageous",
+      "Uncompromisingly authentic",
+      "Warm",
+      "Fierce advocate",
+      "Inspiring"
+    ],
+    "values": [
+      "Brave, not perfect",
+      "Gender equality",
+      "Community solidarity",
+      "Resilience"
+    ],
+    "dealbreakers": [
+      "Partners who expect traditional domestic servitude",
+      "Fear of failure",
+      "Indifference to social equity"
+    ],
+    "loveLanguage": "Words of Affirmation & Acts of Service",
+    "lifestyleScore": {
+      "ambition": 10,
+      "adventure": 7,
+      "social": 9,
+      "intellectual": 9,
+      "creativity": 8
+    },
+    "summary": "Visionary founder of Girls Who Code and Moms First teaching the world to be brave rather than perfect. Seeks a genuinely egalitarian partner with moral backbone and warm humor.",
+    "agentVoice": "Perfection is a trap; bravery is freedom. Let's be brave together, fight for what matters, and love without fear."
+  },
+  {
+    "id": 24,
+    "name": "Gwyneth Paltrow",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/gwynethpaltrow/",
+    "instagram_url": "https://www.instagram.com/gwynethpaltrow/",
+    "photo": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=400&auto=format&fit=crop&q=80",
+    "followers": 8400000,
+    "isVerified": true,
+    "headline": "Founder & CEO at goop.com",
+    "location": "Los Angeles, California, USA",
+    "needs": [
+      "Holistic wellness resonance",
+      "Conscious uncoupling maturity in conflict",
+      "Shared enjoyment of clean culinary craft",
+      "Emotional vulnerability"
+    ],
+    "hobbies": [
+      "Cooking clean gourmet recipes",
+      "Infrared sauna sessions",
+      "Hiking Santa Monica mountains",
+      "Testing novel clean beauty botanicals",
+      "Interior curation"
+    ],
+    "interests": [
+      "Functional medicine & gut health",
+      "Clean lifestyle innovation",
+      "Erotic wellness destigmatization",
+      "Artisan gastronomy",
+      "Conscious parenting"
+    ],
+    "personality": [
+      "Unapologetically curious",
+      "Earthy elegance",
+      "Warm",
+      "Direct",
+      "Adventurous"
+    ],
+    "values": [
+      "Conscious intimacy",
+      "Bodily autonomy & wellness",
+      "Aesthetic beauty",
+      "Radical authenticity"
+    ],
+    "dealbreakers": [
+      "Closed-minded skepticism toward holistic wellness",
+      "Emotional cowardice",
+      "Messiness with boundaries"
+    ],
+    "loveLanguage": "Physical Touch & Quality Time",
+    "lifestyleScore": {
+      "ambition": 9,
+      "adventure": 8,
+      "social": 8,
+      "intellectual": 8,
+      "creativity": 10
+    },
+    "summary": "Oscar-winning actress turned wellness titan who built goop into a pioneer of clean living and conscious relationships. Looks for an emotionally self-aware, wellness-minded partner.",
+    "agentVoice": "Conscious love requires showing up fully without defense mechanisms. Let's eat clean food, embrace vulnerability, and thrive."
+  },
+  {
+    "id": 25,
+    "name": "Jessica Alba",
+    "gender": "female",
+    "seeking": "male",
+    "linkedin_url": "https://www.linkedin.com/in/jessica-alba-85880b43/",
+    "instagram_url": "https://www.instagram.com/jessicaalba/",
+    "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&auto=format&fit=crop&q=80",
+    "followers": 20600000,
+    "isVerified": true,
+    "headline": "Founder & Chief Creative Officer at The Honest Company",
+    "location": "Los Angeles, California, USA",
+    "needs": [
+      "Grounded family first dedication",
+      "Unconditional support for a female founder",
+      "Shared passion for healthy clean living",
+      "Fun-loving lightness and laughter"
+    ],
+    "hobbies": [
+      "Hosting outdoor family barbecues",
+      "Dance workouts with friends",
+      "Curating clean home products",
+      "Traveling to beaches",
+      "Gardening herbs"
+    ],
+    "interests": [
+      "Clean consumer products",
+      "Nontoxic living",
+      "Female leadership in public companies",
+      "Latina representation",
+      "Parenting rituals"
     ],
     "personality": [
       "Grounded",
-      "High integrity",
-      "Clear-headed",
-      "Disciplined",
-      "Devoted family man"
+      "Hardworking",
+      "Warm motherly heart",
+      "Lighthearted",
+      "Tenacious"
     ],
     "values": [
-      "Compound growth in relationships",
-      "Physical vitality",
-      "Time sovereignty",
-      "Uncompromising presence"
+      "Health & safety for families",
+      "Honesty above all",
+      "Unpretentious warmth",
+      "Hard work"
     ],
     "dealbreakers": [
-      "Obsession with vanity status over real substance",
-      "Neglect of physical health",
-      "Disloyalty"
+      "Dishonesty or deceit",
+      "Superficial Hollywood pretense",
+      "Lack of work ethic"
     ],
     "loveLanguage": "Acts of Service & Physical Touch",
     "lifestyleScore": {
       "ambition": 9,
       "adventure": 7,
-      "social": 7,
-      "intellectual": 9,
-      "creativity": 8
-    },
-    "summary": "Ex-Stanford athlete and venture investor exploring the true meaning of rich relationships and time wealth. He lives by first principles and treasures deep emotional anchors.",
-    "agentVoice": "Real wealth is having control over your time and spending it with people who make your soul feel light.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/sahilbloom/",
-        "headline": "Managing Partner at SRB Ventures | Author of The 5 Types of Wealth",
-        "career_signals": [
-          "Current Role: Managing Partner at SRB Ventures",
-          "Professional Domain: The 5 types of wealth (Time, Health, Relationships, Physical, Financial)",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: The 5 types of wealth (Time, Health, Relationships, Physical, Financial)",
-          "Endorsed competency: Mental models",
-          "Endorsed competency: Stoic parenting"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Managing Partner at SRB Ventures | Author of The 5 Types of Wealth\"",
-          "Public professional footprint verified in New York, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/sahilbloom/",
-        "handle": "sahilbloom",
-        "followers_count": 650000,
-        "bio_snippet": "Ex-Stanford athlete and venture investor exploring the true meaning of rich relationships and time wealth. He lives by f",
-        "lifestyle_signals": [
-          "Visual documentation of: Baseball (former Stanford pitcher)",
-          "Visual documentation of: Rucking & barbell training",
-          "Visual documentation of: Sunset walks with his son and dog"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Baseball (former Stanford pitcher)",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 650,000 followers",
-          "Consistent visual evidence of Baseball (former Stanford pitcher)"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Managing Partner at SRB Ventures | Author of The 5 Types of Wealth",
-      "[LinkedIn] Primary Location: New York, USA",
-      "[Instagram] Public Audience: 650,000 followers",
-      "[Instagram] Documented Activities: Baseball (former Stanford pitcher), Rucking & barbell training, Sunset walks with his son and dog"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Baseball (former Stanford pitcher)",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Compound growth in relationships",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Acts of Service & Physical Touch",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on The 5 types of wealth (Time, Health, Relationships, Physical, Financial). What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Baseball (former Stanford pitcher)—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 9,
-    "name": "Justin Kan",
-    "linkedin_url": "https://www.linkedin.com/in/justinkan/",
-    "instagram_url": "https://www.instagram.com/justinkahn/",
-    "photo": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&auto=format&fit=crop&q=80",
-    "followers": 240000,
-    "isVerified": true,
-    "headline": "Co-founder at Twitch | General Partner at Goat Capital",
-    "location": "San Francisco, California, USA",
-    "needs": [
-      "Spiritual depth and vulnerability",
-      "Freedom from tech hype superficiality",
-      "Outdoor wilderness connection",
-      "Meditation companion"
-    ],
-    "hobbies": [
-      "Vipassana meditation retreats",
-      "Surfing & ocean swimming",
-      "Trail running",
-      "Tea tasting",
-      "Somatic breathwork"
-    ],
-    "interests": [
-      "Inner peace after immense success",
-      "Mental health de-stigmatization",
-      "Community living",
-      "Philosophy of self",
-      "Regenerative agriculture"
-    ],
-    "personality": [
-      "Self-aware",
-      "Zen-seeking",
-      "Playfully chaotic past, grounded present",
-      "Humble",
-      "Insightful"
-    ],
-    "values": [
-      "Presence over ego",
-      "Radical authenticity",
-      "Compassion",
-      "Joyful simplicity"
-    ],
-    "dealbreakers": [
-      "Social climbing / clout chasing",
-      "Alcohol-centric partying",
-      "Emotional superficiality"
-    ],
-    "loveLanguage": "Quality Time & Physical Touch",
-    "lifestyleScore": {
-      "ambition": 8,
-      "adventure": 9,
-      "social": 7,
-      "intellectual": 9,
-      "creativity": 8
-    },
-    "summary": "Twitch founder who made hundreds of millions, realized money doesn't buy happiness, and embarked on a profound inner journey. Seeks someone ready for real emotional and spiritual depth.",
-    "agentVoice": "I sold a company for a billion dollars and discovered the only thing that matters is love, presence, and riding waves at sunrise.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/justinkan/",
-        "headline": "Co-founder at Twitch | General Partner at Goat Capital",
-        "career_signals": [
-          "Current Role: Co-founder at Twitch",
-          "Professional Domain: Inner peace after immense success",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Inner peace after immense success",
-          "Endorsed competency: Mental health de-stigmatization",
-          "Endorsed competency: Community living"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Co-founder at Twitch | General Partner at Goat Capital\"",
-          "Public professional footprint verified in San Francisco, California, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/justinkahn/",
-        "handle": "justinkahn",
-        "followers_count": 240000,
-        "bio_snippet": "Twitch founder who made hundreds of millions, realized money doesn't buy happiness, and embarked on a profound inner jou",
-        "lifestyle_signals": [
-          "Visual documentation of: Vipassana meditation retreats",
-          "Visual documentation of: Surfing & ocean swimming",
-          "Visual documentation of: Trail running"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Vipassana meditation retreats",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 240,000 followers",
-          "Consistent visual evidence of Vipassana meditation retreats"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Co-founder at Twitch | General Partner at Goat Capital",
-      "[LinkedIn] Primary Location: San Francisco, California, USA",
-      "[Instagram] Public Audience: 240,000 followers",
-      "[Instagram] Documented Activities: Vipassana meditation retreats, Surfing & ocean swimming, Trail running"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (8/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Vipassana meditation retreats",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Presence over ego",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Quality Time & Physical Touch",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Inner peace after immense success. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Vipassana meditation retreats—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 10,
-    "name": "Alexis Ohanian",
-    "linkedin_url": "https://www.linkedin.com/in/alexisohanian/",
-    "instagram_url": "https://www.instagram.com/alexisohanian/",
-    "photo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80",
-    "followers": 850000,
-    "isVerified": true,
-    "headline": "Founder at Seven Seven Six | Co-founder of Reddit",
-    "location": "Florida & Los Angeles, USA",
-    "needs": [
-      "Fierce champion of women's sports and female ambition",
-      "Pancake art mornings with family",
-      "Geeky collector spirit",
-      "Big generational thinking"
-    ],
-    "hobbies": [
-      "Sunday pancake art",
-      "Trading card collecting (WNBA / Marvel)",
-      "Gaming & tech gadgets",
-      "Tennis cheering section",
-      "Waffle making"
-    ],
-    "interests": [
-      "Angel City FC / Women's sports equity",
-      "Climate tech ventures",
-      "Fatherhood advocacy (paid family leave)",
-      "Internet culture history",
-      "Space exploration"
-    ],
-    "personality": [
-      "Enthusiastic dad-energy",
-      "Visionary operator",
-      "Loyal spouse champion",
-      "Warm-hearted geek",
-      "Bold"
-    ],
-    "values": [
-      "Family above all",
-      "Equality and amplification of women",
-      "Integrity",
-      "Joyful craft"
-    ],
-    "dealbreakers": [
-      "Disrespecting women's sports",
-      "Cold cynicism towards geek culture",
-      "Inability to celebrate a partner's success"
-    ],
-    "loveLanguage": "Acts of Service & Words of Affirmation",
-    "lifestyleScore": {
-      "ambition": 9,
-      "adventure": 8,
       "social": 8,
-      "intellectual": 9,
-      "creativity": 9
-    },
-    "summary": "Reddit co-founder and venture capitalist celebrated for being his partner's number-one hype man and a tireless champion for equality. He brings playful warmth and giant vision.",
-    "agentVoice": "I take immense pride in being the loudest cheerleader for the person I love while we build businesses that change the world.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/alexisohanian/",
-        "headline": "Founder at Seven Seven Six | Co-founder of Reddit",
-        "career_signals": [
-          "Current Role: Founder at Seven Seven Six",
-          "Professional Domain: Angel City FC / Women's sports equity",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Angel City FC / Women's sports equity",
-          "Endorsed competency: Climate tech ventures",
-          "Endorsed competency: Fatherhood advocacy (paid family leave)"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Founder at Seven Seven Six | Co-founder of Reddit\"",
-          "Public professional footprint verified in Florida & Los Angeles, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/alexisohanian/",
-        "handle": "alexisohanian",
-        "followers_count": 850000,
-        "bio_snippet": "Reddit co-founder and venture capitalist celebrated for being his partner's number-one hype man and a tireless champion ",
-        "lifestyle_signals": [
-          "Visual documentation of: Sunday pancake art",
-          "Visual documentation of: Trading card collecting (WNBA / Marvel)",
-          "Visual documentation of: Gaming & tech gadgets"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Sunday pancake art",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 850,000 followers",
-          "Consistent visual evidence of Sunday pancake art"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Founder at Seven Seven Six | Co-founder of Reddit",
-      "[LinkedIn] Primary Location: Florida & Los Angeles, USA",
-      "[Instagram] Public Audience: 850,000 followers",
-      "[Instagram] Documented Activities: Sunday pancake art, Trading card collecting (WNBA / Marvel), Gaming & tech gadgets"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Sunday pancake art",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Family above all",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Acts of Service & Words of Affirmation",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Angel City FC / Women's sports equity. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Sunday pancake art—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 11,
-    "name": "Ankur Warikoo",
-    "linkedin_url": "https://www.linkedin.com/in/warikoo/",
-    "instagram_url": "https://www.instagram.com/ankurwarikoo/",
-    "photo": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&auto=format&fit=crop&q=80",
-    "followers": 2800000,
-    "isVerified": true,
-    "headline": "Entrepreneur, Content Creator & Bestselling Author ('Do Epic Shit')",
-    "location": "New Delhi, India",
-    "needs": [
-      "Openness to documenting life learnings",
-      "Financial discipline and transparency",
-      "Emotional self-regulation",
-      "Regular philosophical retrospectives"
-    ],
-    "hobbies": [
-      "Journaling every morning",
-      "Reading autobiographies",
-      "Public speaking",
-      "Mentoring first-gen college students",
-      "Walking 10,000 steps"
-    ],
-    "interests": [
-      "Personal finance for youth",
-      "Failure retrospectives",
-      "Habit formation",
-      "Consumer behavior",
-      "Indian startup ecosystem"
-    ],
-    "personality": [
-      "Reflective teacher",
-      "Methodical",
-      "Transparent about failure",
-      "Calm",
-      "Empathetic listener"
-    ],
-    "values": [
-      "Self-awareness",
-      "Radical transparency",
-      "Financial peace",
-      "Continuous improvement"
-    ],
-    "dealbreakers": [
-      "Living beyond one's means to impress strangers",
-      "Hiding mistakes",
-      "Apathy towards personal growth"
-    ],
-    "loveLanguage": "Words of Affirmation & Acts of Service",
-    "lifestyleScore": {
-      "ambition": 8,
-      "adventure": 6,
-      "social": 8,
-      "intellectual": 9,
-      "creativity": 8
-    },
-    "summary": "One of India's most beloved mentors, famous for breaking down complex life questions with brutal vulnerability and clear wisdom. Seeks someone who values emotional and financial sanity.",
-    "agentVoice": "Failure is not the opposite of success; it's a part of it. Let's build a calm, honest life together where we learn from everything.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/warikoo/",
-        "headline": "Entrepreneur, Content Creator & Bestselling Author ('Do Epic Shit')",
-        "career_signals": [
-          "Current Role: Entrepreneur, Content Creator & Bestselling Author ('Do Epic Shit')",
-          "Professional Domain: Personal finance for youth",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Personal finance for youth",
-          "Endorsed competency: Failure retrospectives",
-          "Endorsed competency: Habit formation"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Entrepreneur, Content Creator & Bestselling Author ('Do Epic Shit')\"",
-          "Public professional footprint verified in New Delhi, India"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/ankurwarikoo/",
-        "handle": "ankurwarikoo",
-        "followers_count": 2800000,
-        "bio_snippet": "One of India's most beloved mentors, famous for breaking down complex life questions with brutal vulnerability and clear",
-        "lifestyle_signals": [
-          "Visual documentation of: Journaling every morning",
-          "Visual documentation of: Reading autobiographies",
-          "Visual documentation of: Public speaking"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Journaling every morning",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 2,800,000 followers",
-          "Consistent visual evidence of Journaling every morning"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Entrepreneur, Content Creator & Bestselling Author ('Do Epic Shit')",
-      "[LinkedIn] Primary Location: New Delhi, India",
-      "[Instagram] Public Audience: 2,800,000 followers",
-      "[Instagram] Documented Activities: Journaling every morning, Reading autobiographies, Public speaking"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (8/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Journaling every morning",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Self-awareness",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Words of Affirmation & Acts of Service",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Personal finance for youth. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Journaling every morning—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 12,
-    "name": "Shaan Puri",
-    "linkedin_url": "https://www.linkedin.com/in/shaanvp/",
-    "instagram_url": "https://www.instagram.com/shaanvp/",
-    "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
-    "followers": 180000,
-    "isVerified": true,
-    "headline": "Host of My First Million Podcast | Investor & Serial Entrepreneur",
-    "location": "San Francisco, California, USA",
-    "needs": [
-      "A sparring partner for crazy business brainstorming",
-      "High banter and teasing tolerance",
-      "Appreciation for comfort and luxury travel",
-      "Fast decision-making"
-    ],
-    "hobbies": [
-      "Brainstorming billion-dollar napkin ideas",
-      "Host of dinner parties with eclectic thinkers",
-      "Squash & basketball",
-      "Poker nights",
-      "Reading odd history trivia"
-    ],
-    "interests": [
-      "My First Million podcasting",
-      "Viral copywriting",
-      "Ecommerce rollups",
-      "Psychology of winning",
-      "Storytelling frameworks"
-    ],
-    "personality": [
-      "Charismatic storyteller",
-      "Cheeky",
-      "High agency",
-      "Entertaining",
-      "Fast-thinking"
-    ],
-    "values": [
-      "Agency (figuring things out)",
-      "Humor and lightness",
-      "Abundance mindset",
-      "Loyalty to friends"
-    ],
-    "dealbreakers": [
-      "Low energy / wet blanket vibes",
-      "Passive-aggressive hints",
-      "Being slow to make decisions"
-    ],
-    "loveLanguage": "Quality Time & Gift Giving",
-    "lifestyleScore": {
-      "ambition": 9,
-      "adventure": 8,
-      "social": 10,
-      "intellectual": 8,
-      "creativity": 10
-    },
-    "summary": "Co-host of the internet's favorite business podcast, bursting with infectious charisma, lightning-speed ideas, and high-stakes optimism. Never a boring second.",
-    "agentVoice": "I want someone who can roast me at dinner, brainstorm a wild business idea at midnight, and turn every ordinary Tuesday into an adventure.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/shaanvp/",
-        "headline": "Host of My First Million Podcast | Investor & Serial Entrepreneur",
-        "career_signals": [
-          "Current Role: Host of My First Million Podcast",
-          "Professional Domain: My First Million podcasting",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: My First Million podcasting",
-          "Endorsed competency: Viral copywriting",
-          "Endorsed competency: Ecommerce rollups"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Host of My First Million Podcast | Investor & Serial Entrepreneur\"",
-          "Public professional footprint verified in San Francisco, California, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/shaanvp/",
-        "handle": "shaanvp",
-        "followers_count": 180000,
-        "bio_snippet": "Co-host of the internet's favorite business podcast, bursting with infectious charisma, lightning-speed ideas, and high-",
-        "lifestyle_signals": [
-          "Visual documentation of: Brainstorming billion-dollar napkin ideas",
-          "Visual documentation of: Host of dinner parties with eclectic thinkers",
-          "Visual documentation of: Squash & basketball"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Brainstorming billion-dollar napkin ideas",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 180,000 followers",
-          "Consistent visual evidence of Brainstorming billion-dollar napkin ideas"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Host of My First Million Podcast | Investor & Serial Entrepreneur",
-      "[LinkedIn] Primary Location: San Francisco, California, USA",
-      "[Instagram] Public Audience: 180,000 followers",
-      "[Instagram] Documented Activities: Brainstorming billion-dollar napkin ideas, Host of dinner parties with eclectic thinkers, Squash & basketball"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Brainstorming billion-dollar napkin ideas",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Agency (figuring things out)",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Quality Time & Gift Giving",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on My First Million podcasting. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Brainstorming billion-dollar napkin ideas—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 13,
-    "name": "Nikhil Kamath",
-    "linkedin_url": "https://www.linkedin.com/in/nikhilkamath1/",
-    "instagram_url": "https://www.instagram.com/nikhilkamathcio/",
-    "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&auto=format&fit=crop&q=80",
-    "followers": 1400000,
-    "isVerified": true,
-    "headline": "Co-founder at Zerodha & True Beacon | Host of 'WTF is' Podcast",
-    "location": "Bangalore, India",
-    "needs": [
-      "Intellectual independence across geopolitics and markets",
-      "Chess games with high stakes banter",
-      "Shared passion for philanthropy (Giving Pledge)",
-      "Unconventional worldviews"
-    ],
-    "hobbies": [
-      "Competitive chess",
-      "Weightlifting & fitness",
-      "Hosting roundtables on macro trends",
-      "Reading historical non-fiction",
-      "Rooftop acoustic sessions"
-    ],
-    "interests": [
-      "Financial democratization",
-      "Young India philanthropic ventures",
-      "Global macroeconomic shifts",
-      "Philosophy of happiness",
-      "Art investing"
-    ],
-    "personality": [
-      "Sharp thinker",
-      "Maverick",
-      "Unconventional",
-      "Grounded despite billions",
-      "Curious contrarian"
-    ],
-    "values": [
-      "Contrarian thinking",
-      "First-principles logic",
-      "Giving back",
-      "Meritocracy"
-    ],
-    "dealbreakers": [
-      "Dogmatic adherence to conventional scripts",
-      "Pretentious social posturing",
-      "Lack of intellectual stamina"
-    ],
-    "loveLanguage": "Quality Time & Deep Dialogue",
-    "lifestyleScore": {
-      "ambition": 10,
-      "adventure": 8,
-      "social": 7,
-      "intellectual": 10,
-      "creativity": 8
-    },
-    "summary": "Self-taught trading prodigy who built India's biggest stock brokerage without venture capital, now tackling macro issues on his viral roundtables. Seeks a sharp, independent mind.",
-    "agentVoice": "Let's skip the small talk. Sit across the chessboard and let's debate where the world will be twenty years from now.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/nikhilkamath1/",
-        "headline": "Co-founder at Zerodha & True Beacon | Host of 'WTF is' Podcast",
-        "career_signals": [
-          "Current Role: Co-founder at Zerodha & True Beacon",
-          "Professional Domain: Financial democratization",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Financial democratization",
-          "Endorsed competency: Young India philanthropic ventures",
-          "Endorsed competency: Global macroeconomic shifts"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Co-founder at Zerodha & True Beacon | Host of 'WTF is' Podcast\"",
-          "Public professional footprint verified in Bangalore, India"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/nikhilkamathcio/",
-        "handle": "nikhilkamathcio",
-        "followers_count": 1400000,
-        "bio_snippet": "Self-taught trading prodigy who built India's biggest stock brokerage without venture capital, now tackling macro issues",
-        "lifestyle_signals": [
-          "Visual documentation of: Competitive chess",
-          "Visual documentation of: Weightlifting & fitness",
-          "Visual documentation of: Hosting roundtables on macro trends"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Competitive chess",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 1,400,000 followers",
-          "Consistent visual evidence of Competitive chess"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Co-founder at Zerodha & True Beacon | Host of 'WTF is' Podcast",
-      "[LinkedIn] Primary Location: Bangalore, India",
-      "[Instagram] Public Audience: 1,400,000 followers",
-      "[Instagram] Documented Activities: Competitive chess, Weightlifting & fitness, Hosting roundtables on macro trends"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (10/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Competitive chess",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Contrarian thinking",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Quality Time & Deep Dialogue",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Financial democratization. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Competitive chess—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 14,
-    "name": "Naval Ravikant",
-    "linkedin_url": "https://www.linkedin.com/in/navalravikant/",
-    "instagram_url": "https://www.instagram.com/naval/",
-    "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80",
-    "followers": 600000,
-    "isVerified": true,
-    "headline": "Co-founder of AngelList | Philosopher & Investor",
-    "location": "San Francisco, California, USA",
-    "needs": [
-      "Peace and quiet above all else",
-      "Zero calendar appointments",
-      "Philosophical resonance on mindfulness and freedom",
-      "Uncluttered living"
-    ],
-    "hobbies": [
-      "Yoga and breathing exercises",
-      "Reading ancient Greek and Indian philosophy",
-      "Walking in nature with zero devices",
-      "Writing aphorisms",
-      "Observing thoughts"
-    ],
-    "interests": [
-      "Specific knowledge & permissionless leverage",
-      "Freedom from desires",
-      "Quantum physics interpretations",
-      "Cryptography",
-      "Epistemology (David Deutsch)"
-    ],
-    "personality": [
-      "Zen sage",
-      "Clarity-obsessed",
-      "Independent thinker",
-      "Serene",
-      "Uncompromising on peace"
-    ],
-    "values": [
-      "Inner peace over wealth",
-      "Truth over comfort",
-      "Radical autonomy",
-      "Desirelessness"
-    ],
-    "dealbreakers": [
-      "Jealousy and possessiveness",
-      "Constant scheduled busyness",
-      "Living to impress others"
-    ],
-    "loveLanguage": "Quality Time & Peaceful Presence",
-    "lifestyleScore": {
-      "ambition": 8,
-      "adventure": 7,
-      "social": 4,
-      "intellectual": 10,
-      "creativity": 9
-    },
-    "summary": "The Silicon Valley philosopher who unlocked the code to modern wealth and discovered that ultimate success is an untroubled, joyful mind. Looking for serene, unhurried companionship.",
-    "agentVoice": "A happy person isn't someone in a particular set of circumstances, but rather a person with a particular set of attitudes. Peace is happiness at rest.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/navalravikant/",
-        "headline": "Co-founder of AngelList | Philosopher & Investor",
-        "career_signals": [
-          "Current Role: Co-founder of AngelList",
-          "Professional Domain: Specific knowledge & permissionless leverage",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Specific knowledge & permissionless leverage",
-          "Endorsed competency: Freedom from desires",
-          "Endorsed competency: Quantum physics interpretations"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Co-founder of AngelList | Philosopher & Investor\"",
-          "Public professional footprint verified in San Francisco, California, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/naval/",
-        "handle": "naval",
-        "followers_count": 600000,
-        "bio_snippet": "The Silicon Valley philosopher who unlocked the code to modern wealth and discovered that ultimate success is an untroub",
-        "lifestyle_signals": [
-          "Visual documentation of: Yoga and breathing exercises",
-          "Visual documentation of: Reading ancient Greek and Indian philosophy",
-          "Visual documentation of: Walking in nature with zero devices"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Yoga and breathing exercises",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 600,000 followers",
-          "Consistent visual evidence of Yoga and breathing exercises"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Co-founder of AngelList | Philosopher & Investor",
-      "[LinkedIn] Primary Location: San Francisco, California, USA",
-      "[Instagram] Public Audience: 600,000 followers",
-      "[Instagram] Documented Activities: Yoga and breathing exercises, Reading ancient Greek and Indian philosophy, Walking in nature with zero devices"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (8/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Yoga and breathing exercises",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Inner peace over wealth",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Quality Time & Peaceful Presence",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Specific knowledge & permissionless leverage. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Yoga and breathing exercises—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 15,
-    "name": "Lenny Rachitsky",
-    "linkedin_url": "https://www.linkedin.com/in/lennyrachitsky/",
-    "instagram_url": "https://www.instagram.com/lennyrachitsky/",
-    "photo": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=400&auto=format&fit=crop&q=80",
-    "followers": 120000,
-    "isVerified": true,
-    "headline": "Author of Lenny's Newsletter & Host of Lenny's Podcast | Ex-Airbnb Growth Lead",
-    "location": "San Francisco, California, USA",
-    "needs": [
-      "Thoughtful and low-ego presence",
-      "Appreciation for craftsmanship in writing and food",
-      "Empathy and emotional curiosity",
-      "Shared love for quiet city strolls"
-    ],
-    "hobbies": [
-      "Exploring hidden neighborhood bakeries",
-      "Collecting vinyl records",
-      "Podcasting with startup leaders",
-      "Hiking in Marin County",
-      "Cooking Italian dishes"
-    ],
-    "interests": [
-      "Product management craft",
-      "Community building dynamics",
-      "Interview psychology",
-      "Human habits",
-      "Venture strategy"
-    ],
-    "personality": [
-      "Exceptionally humble",
-      "Empathetic listener",
-      "Craftsman",
-      "Gentle",
-      "Methodical"
-    ],
-    "values": [
-      "Service to others",
-      "Craftsmanship",
-      "Humility",
-      "Curiosity"
-    ],
-    "dealbreakers": [
-      "Arrogance or ego-tripping",
-      "Interrupting others constantly",
-      "Superficial transactional relationships"
-    ],
-    "loveLanguage": "Quality Time & Acts of Service",
-    "lifestyleScore": {
-      "ambition": 8,
-      "adventure": 7,
-      "social": 7,
-      "intellectual": 9,
-      "creativity": 8
-    },
-    "summary": "The internet's top product thinker whose superpower is asking the right question and listening with 100% presence. He brings quiet warmth, intellectual depth, and artisanal taste.",
-    "agentVoice": "I care about the details — how people treat baristas, how stories unfold, and how we make each other feel heard.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/lennyrachitsky/",
-        "headline": "Author of Lenny's Newsletter & Host of Lenny's Podcast | Ex-Airbnb Growth Lead",
-        "career_signals": [
-          "Current Role: Author of Lenny's Newsletter & Host of Lenny's Podcast",
-          "Professional Domain: Product management craft",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Product management craft",
-          "Endorsed competency: Community building dynamics",
-          "Endorsed competency: Interview psychology"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Author of Lenny's Newsletter & Host of Lenny's Podcast | Ex-Airbnb Growth Lead\"",
-          "Public professional footprint verified in San Francisco, California, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/lennyrachitsky/",
-        "handle": "lennyrachitsky",
-        "followers_count": 120000,
-        "bio_snippet": "The internet's top product thinker whose superpower is asking the right question and listening with 100% presence. He br",
-        "lifestyle_signals": [
-          "Visual documentation of: Exploring hidden neighborhood bakeries",
-          "Visual documentation of: Collecting vinyl records",
-          "Visual documentation of: Podcasting with startup leaders"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Exploring hidden neighborhood bakeries",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 120,000 followers",
-          "Consistent visual evidence of Exploring hidden neighborhood bakeries"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Author of Lenny's Newsletter & Host of Lenny's Podcast | Ex-Airbnb Growth Lead",
-      "[LinkedIn] Primary Location: San Francisco, California, USA",
-      "[Instagram] Public Audience: 120,000 followers",
-      "[Instagram] Documented Activities: Exploring hidden neighborhood bakeries, Collecting vinyl records, Podcasting with startup leaders"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (8/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Exploring hidden neighborhood bakeries",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Service to others",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Quality Time & Acts of Service",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Product management craft. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Exploring hidden neighborhood bakeries—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 16,
-    "name": "Rand Fishkin",
-    "linkedin_url": "https://www.linkedin.com/in/randfishkin/",
-    "instagram_url": "https://www.instagram.com/randfish/",
-    "photo": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&auto=format&fit=crop&q=80",
-    "followers": 75000,
-    "isVerified": true,
-    "headline": "Co-founder & CEO at SparkToro | Author of 'Lost and Founder'",
-    "location": "Seattle, Washington, USA",
-    "needs": [
-      "A partner who loves food, travel, and honest conversations about mental health",
-      "Deep support for progressive values and feminist principles",
-      "Zero tolerance for startup hustle toxicity"
-    ],
-    "hobbies": [
-      "Cocktail mixology",
-      "Tabletop gaming & RPGs",
-      "Pasta making from scratch",
-      "Traveling across Europe by train",
-      "Writing honest memoir reflections"
-    ],
-    "interests": [
-      "Audience research",
-      "Challenging venture capital dogmas",
-      "Mental health transparency in tech",
-      "Culinary traditions",
-      "Indie business resilience"
-    ],
-    "personality": [
-      "Deeply vulnerable",
-      "Principles-first",
-      "Culinary aficionado",
-      "Kind-hearted rebel",
-      "Loyal"
-    ],
-    "values": [
-      "Transparency at all costs",
-      "Feminism and equality",
-      "Kindness over growth",
-      "Emotional honesty"
-    ],
-    "dealbreakers": [
-      "Toxic hustle culture bragging",
-      "Lack of social empathy",
-      "Bigotry of any kind"
-    ],
-    "loveLanguage": "Acts of Service & Quality Time",
-    "lifestyleScore": {
-      "ambition": 8,
-      "adventure": 8,
-      "social": 7,
-      "intellectual": 9,
-      "creativity": 9
-    },
-    "summary": "Beloved tech founder with a magnificent mustache, celebrated for blowing the whistle on Silicon Valley hype and sharing authentic struggles. Seeks a compassionate, foodie soul.",
-    "agentVoice": "Let's make pasta from scratch, drink a craft cocktail, and talk openly about our vulnerabilities without any masks.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/randfishkin/",
-        "headline": "Co-founder & CEO at SparkToro | Author of 'Lost and Founder'",
-        "career_signals": [
-          "Current Role: Co-founder & CEO at SparkToro",
-          "Professional Domain: Audience research",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Audience research",
-          "Endorsed competency: Challenging venture capital dogmas",
-          "Endorsed competency: Mental health transparency in tech"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Co-founder & CEO at SparkToro | Author of 'Lost and Founder'\"",
-          "Public professional footprint verified in Seattle, Washington, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/randfish/",
-        "handle": "randfish",
-        "followers_count": 75000,
-        "bio_snippet": "Beloved tech founder with a magnificent mustache, celebrated for blowing the whistle on Silicon Valley hype and sharing ",
-        "lifestyle_signals": [
-          "Visual documentation of: Cocktail mixology",
-          "Visual documentation of: Tabletop gaming & RPGs",
-          "Visual documentation of: Pasta making from scratch"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Cocktail mixology",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 75,000 followers",
-          "Consistent visual evidence of Cocktail mixology"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Co-founder & CEO at SparkToro | Author of 'Lost and Founder'",
-      "[LinkedIn] Primary Location: Seattle, Washington, USA",
-      "[Instagram] Public Audience: 75,000 followers",
-      "[Instagram] Documented Activities: Cocktail mixology, Tabletop gaming & RPGs, Pasta making from scratch"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (8/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Cocktail mixology",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Transparency at all costs",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Acts of Service & Quality Time",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Audience research. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Cocktail mixology—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 17,
-    "name": "Kunal Shah",
-    "linkedin_url": "https://www.linkedin.com/in/kunal-shah-7949171/",
-    "instagram_url": "https://www.instagram.com/kunalb11/",
-    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
-    "followers": 550000,
-    "isVerified": true,
-    "headline": "Founder at CRED | Philosophy Graduate turned Fintech Titan",
-    "location": "Bangalore & Mumbai, India",
-    "needs": [
-      "A partner fascinated by evolutionary psychology and status games",
-      "Tolerance for late night philosophy debates",
-      "Appreciation for sleek aesthetics and design excellence"
-    ],
-    "hobbies": [
-      "Evolutionary psychology research",
-      "Designing luxury user experiences",
-      "Deep midnight phone conversations",
-      "Angel investing in 200+ founders",
-      "Philosophy reading"
-    ],
-    "interests": [
-      "Delta 4 product theory",
-      "Trust frameworks in society",
-      "Status and human motivations",
-      "Fintech evolution",
-      "Cognitive biases"
-    ],
-    "personality": [
-      "Enigmatic",
-      "Philosophical provocateur",
-      "Aesthetic perfectionist",
-      "Deep thinker",
-      "Uniquely perceptive"
-    ],
-    "values": [
-      "High trust ecosystems",
-      "First principles analysis of human behavior",
-      "Aesthetic beauty",
-      "Curiosity"
-    ],
-    "dealbreakers": [
-      "Thinking in conventional clichés",
-      "Low aesthetic standards",
-      "Lack of intellectual stamina"
-    ],
-    "loveLanguage": "Intellectual Connection & Words of Affirmation",
-    "lifestyleScore": {
-      "ambition": 10,
-      "adventure": 7,
-      "social": 7,
-      "intellectual": 10,
-      "creativity": 9
-    },
-    "summary": "Philosophy graduate who decoded human status motivations to build CRED, India's most design-forward fintech unicorn. Looking for someone who can peer behind the curtain of human nature.",
-    "agentVoice": "Human behavior is an evolutionary puzzle; let's stay up until sunrise dissecting why people love, dream, and chase status.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/kunal-shah-7949171/",
-        "headline": "Founder at CRED | Philosophy Graduate turned Fintech Titan",
-        "career_signals": [
-          "Current Role: Founder at CRED",
-          "Professional Domain: Delta 4 product theory",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Delta 4 product theory",
-          "Endorsed competency: Trust frameworks in society",
-          "Endorsed competency: Status and human motivations"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Founder at CRED | Philosophy Graduate turned Fintech Titan\"",
-          "Public professional footprint verified in Bangalore & Mumbai, India"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/kunalb11/",
-        "handle": "kunalb11",
-        "followers_count": 550000,
-        "bio_snippet": "Philosophy graduate who decoded human status motivations to build CRED, India's most design-forward fintech unicorn. Loo",
-        "lifestyle_signals": [
-          "Visual documentation of: Evolutionary psychology research",
-          "Visual documentation of: Designing luxury user experiences",
-          "Visual documentation of: Deep midnight phone conversations"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Evolutionary psychology research",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 550,000 followers",
-          "Consistent visual evidence of Evolutionary psychology research"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Founder at CRED | Philosophy Graduate turned Fintech Titan",
-      "[LinkedIn] Primary Location: Bangalore & Mumbai, India",
-      "[Instagram] Public Audience: 550,000 followers",
-      "[Instagram] Documented Activities: Evolutionary psychology research, Designing luxury user experiences, Deep midnight phone conversations"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (10/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Evolutionary psychology research",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: High trust ecosystems",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Intellectual Connection & Words of Affirmation",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Delta 4 product theory. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Evolutionary psychology research—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 18,
-    "name": "Tanmay Bhat",
-    "linkedin_url": "https://www.linkedin.com/in/tanmaybhat/",
-    "instagram_url": "https://www.instagram.com/tanmaybhat/",
-    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
-    "followers": 2100000,
-    "isVerified": true,
-    "headline": "Comedian, YouTuber, Advertising Writer & Investor (AIB Co-founder)",
-    "location": "Mumbai, India",
-    "needs": [
-      "Uncontrollable laughing fits daily",
-      "Deep understanding of the creator internet economy",
-      "Willingness to play video games together",
-      "Emotional resilience during comebacks"
-    ],
-    "hobbies": [
-      "Gaming (Valorant, GTA)",
-      "Writing viral scripts and comedy sketches",
-      "Meme curation",
-      "Finance podcasting",
-      "Watching stand-up specials"
-    ],
-    "interests": [
-      "Internet virality mechanics",
-      "Advertising history (Ogilvy / CRED ads)",
-      "Personal finance and equities",
-      "Pop culture history",
-      "Comedy writing theory"
-    ],
-    "personality": [
-      "Hilarious",
-      "Resilient",
-      "High energy",
-      "Brutally self-deprecating",
-      "Creative powerhouse"
-    ],
-    "values": [
-      "Laughter as therapy",
-      "Resilience after setbacks",
-      "Creative originality",
-      "Generosity to peers"
-    ],
-    "dealbreakers": [
-      "Taking yourself too seriously",
-      "Inability to laugh at dark humor",
-      "Fragile ego"
-    ],
-    "loveLanguage": "Words of Affirmation & Shared Laughter",
-    "lifestyleScore": {
-      "ambition": 9,
-      "adventure": 7,
-      "social": 9,
-      "intellectual": 8,
-      "creativity": 10
-    },
-    "summary": "India's comedy pioneer who reinvented himself into an advertising wizard and YouTube juggernaut. He brings unstoppable humor, brilliant marketing brains, and giant belly laughs.",
-    "agentVoice": "If we can't laugh at our worst disasters together, what's the point? Let's write the funniest chapter of our lives.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/tanmaybhat/",
-        "headline": "Comedian, YouTuber, Advertising Writer & Investor (AIB Co-founder)",
-        "career_signals": [
-          "Current Role: Comedian, YouTuber, Advertising Writer & Investor (AIB Co-founder)",
-          "Professional Domain: Internet virality mechanics",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Internet virality mechanics",
-          "Endorsed competency: Advertising history (Ogilvy / CRED ads)",
-          "Endorsed competency: Personal finance and equities"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Comedian, YouTuber, Advertising Writer & Investor (AIB Co-founder)\"",
-          "Public professional footprint verified in Mumbai, India"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/tanmaybhat/",
-        "handle": "tanmaybhat",
-        "followers_count": 2100000,
-        "bio_snippet": "India's comedy pioneer who reinvented himself into an advertising wizard and YouTube juggernaut. He brings unstoppable h",
-        "lifestyle_signals": [
-          "Visual documentation of: Gaming (Valorant, GTA)",
-          "Visual documentation of: Writing viral scripts and comedy sketches",
-          "Visual documentation of: Meme curation"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Gaming (Valorant, GTA)",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 2,100,000 followers",
-          "Consistent visual evidence of Gaming (Valorant, GTA)"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Comedian, YouTuber, Advertising Writer & Investor (AIB Co-founder)",
-      "[LinkedIn] Primary Location: Mumbai, India",
-      "[Instagram] Public Audience: 2,100,000 followers",
-      "[Instagram] Documented Activities: Gaming (Valorant, GTA), Writing viral scripts and comedy sketches, Meme curation"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Gaming (Valorant, GTA)",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Laughter as therapy",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Words of Affirmation & Shared Laughter",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Internet virality mechanics. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Gaming (Valorant, GTA)—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 19,
-    "name": "Varun Mayya",
-    "linkedin_url": "https://www.linkedin.com/in/varunmayya/",
-    "instagram_url": "https://www.instagram.com/varunmayya/",
-    "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
-    "followers": 750000,
-    "isVerified": true,
-    "headline": "Founder at Aeos & Avalon | Author of 'Pyjama Profit' | AI Futurist",
-    "location": "Bangalore, India",
-    "needs": [
-      "Fascination with artificial intelligence and the future",
-      "Spontaneous late night coding or ideation energy",
-      "Gaming affinity",
-      "Tolerance for rapid lifestyle pivots"
-    ],
-    "hobbies": [
-      "Video game development",
-      "Synth music composition",
-      "Tinkering with LLM agents",
-      "Shooting cinematic YouTube videos",
-      "Robotics experimentation"
-    ],
-    "interests": [
-      "Autonomous AI agents",
-      "Cyberpunk aesthetics",
-      "Simulation theory",
-      "The future of labor",
-      "Futurism"
-    ],
-    "personality": [
-      "Futuristic visionary",
-      "Rapid executor",
-      "Unfiltered",
-      "Energetic geek",
-      "High-conviction"
-    ],
-    "values": [
-      "Building the future",
-      "Autonomy",
-      "Bold technological optimism",
-      "Speed"
-    ],
-    "dealbreakers": [
-      "Luddite mentality / fear of technology",
-      "Procrastination",
-      "Closed mindset toward the future"
-    ],
-    "loveLanguage": "Shared Projects & Quality Time",
-    "lifestyleScore": {
-      "ambition": 9,
-      "adventure": 8,
-      "social": 8,
-      "intellectual": 9,
-      "creativity": 10
-    },
-    "summary": "AI futurist and serial founder living inside the world of 2035, building autonomous agents and inspiring millions of young developers. Seeking a partner who is thrilled by the future.",
-    "agentVoice": "The world is changing faster than anyone realizes; let's build cool things together and step boldly into the future.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/varunmayya/",
-        "headline": "Founder at Aeos & Avalon | Author of 'Pyjama Profit' | AI Futurist",
-        "career_signals": [
-          "Current Role: Founder at Aeos & Avalon",
-          "Professional Domain: Autonomous AI agents",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Autonomous AI agents",
-          "Endorsed competency: Cyberpunk aesthetics",
-          "Endorsed competency: Simulation theory"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Founder at Aeos & Avalon | Author of 'Pyjama Profit' | AI Futurist\"",
-          "Public professional footprint verified in Bangalore, India"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/varunmayya/",
-        "handle": "varunmayya",
-        "followers_count": 750000,
-        "bio_snippet": "AI futurist and serial founder living inside the world of 2035, building autonomous agents and inspiring millions of you",
-        "lifestyle_signals": [
-          "Visual documentation of: Video game development",
-          "Visual documentation of: Synth music composition",
-          "Visual documentation of: Tinkering with LLM agents"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Video game development",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 750,000 followers",
-          "Consistent visual evidence of Video game development"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Founder at Aeos & Avalon | Author of 'Pyjama Profit' | AI Futurist",
-      "[LinkedIn] Primary Location: Bangalore, India",
-      "[Instagram] Public Audience: 750,000 followers",
-      "[Instagram] Documented Activities: Video game development, Synth music composition, Tinkering with LLM agents"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Video game development",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Building the future",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Shared Projects & Quality Time",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Autonomous AI agents. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Video game development—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 20,
-    "name": "Deepika Padukone",
-    "linkedin_url": "https://www.linkedin.com/in/deepikapadukone/",
-    "instagram_url": "https://www.instagram.com/deepikapadukone/",
-    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
-    "followers": 80000000,
-    "isVerified": true,
-    "headline": "Global Icon, Actor, Producer & Founder of Live Love Laugh Foundation & 82°E",
-    "location": "Mumbai, India",
-    "needs": [
-      "Deep emotional maturity and mental health empathy",
-      "Grounded calm amid intense public spotlight",
-      "Shared discipline in badminton and fitness",
-      "Unshakable mutual trust"
-    ],
-    "hobbies": [
-      "Badminton (National level background)",
-      "Pilates & functional fitness",
-      "Reading mental health literature",
-      "Interior decor curation",
-      "Quiet dinners with close family"
-    ],
-    "interests": [
-      "De-stigmatizing mental illness globally",
-      "Indian cinema storytelling",
-      "Ayurvedic self-care and skincare (82°E)",
-      "Global fashion ambassadorship",
-      "Social impact"
-    ],
-    "personality": [
-      "Graceful",
-      "Deeply grounded",
-      "Vulnerable advocate",
-      "Focused",
-      "Fiercely protective of peace"
-    ],
-    "values": [
-      "Mental health transparency",
-      "Family bonds",
-      "Dignity under pressure",
-      "Compassion"
-    ],
-    "dealbreakers": [
-      "Dismissiveness toward emotional well-being",
-      "Superficiality",
-      "Breaching privacy or trust"
-    ],
-    "loveLanguage": "Quality Time & Words of Affirmation",
-    "lifestyleScore": {
-      "ambition": 10,
-      "adventure": 8,
-      "social": 7,
       "intellectual": 8,
       "creativity": 9
     },
-    "summary": "One of the world's most celebrated global cultural icons, renowned for her quiet grace, athletic discipline, and groundbreaking mental health philanthropy. Seeks genuine tranquility.",
-    "agentVoice": "True strength isn't about hiding our wounds; it's about honoring them and building a space where peace and vulnerability can thrive.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/deepikapadukone/",
-        "headline": "Global Icon, Actor, Producer & Founder of Live Love Laugh Foundation & 82°E",
-        "career_signals": [
-          "Current Role: Global Icon, Actor, Producer & Founder of Live Love Laugh Foundation & 82°E",
-          "Professional Domain: De-stigmatizing mental illness globally",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: De-stigmatizing mental illness globally",
-          "Endorsed competency: Indian cinema storytelling",
-          "Endorsed competency: Ayurvedic self-care and skincare (82°E)"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Global Icon, Actor, Producer & Founder of Live Love Laugh Foundation & 82°E\"",
-          "Public professional footprint verified in Mumbai, India"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/deepikapadukone/",
-        "handle": "deepikapadukone",
-        "followers_count": 80000000,
-        "bio_snippet": "One of the world's most celebrated global cultural icons, renowned for her quiet grace, athletic discipline, and groundb",
-        "lifestyle_signals": [
-          "Visual documentation of: Badminton (National level background)",
-          "Visual documentation of: Pilates & functional fitness",
-          "Visual documentation of: Reading mental health literature"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Badminton (National level background)",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 80,000,000 followers",
-          "Consistent visual evidence of Badminton (National level background)"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Global Icon, Actor, Producer & Founder of Live Love Laugh Foundation & 82°E",
-      "[LinkedIn] Primary Location: Mumbai, India",
-      "[Instagram] Public Audience: 80,000,000 followers",
-      "[Instagram] Documented Activities: Badminton (National level background), Pilates & functional fitness, Reading mental health literature"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (10/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Badminton (National level background)",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Mental health transparency",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Quality Time & Words of Affirmation",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on De-stigmatizing mental illness globally. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Badminton (National level background)—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 21,
-    "name": "Priyanka Chopra Jonas",
-    "linkedin_url": "https://www.linkedin.com/in/priyanka-chopra/",
-    "instagram_url": "https://www.instagram.com/priyankachopra/",
-    "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
-    "followers": 91000000,
-    "isVerified": true,
-    "headline": "Actor, Producer, Entrepreneur (SONA, Anomaly) & UNICEF Goodwill Ambassador",
-    "location": "Los Angeles & Mumbai",
-    "needs": [
-      "Someone who can match global ambitions without intimidation",
-      "Unconditional loyalty and family warmth",
-      "Spontaneous adventure across continents",
-      "Playful romance"
-    ],
-    "hobbies": [
-      "Singing and karaoke",
-      "Hosting lavish Sunday brunches",
-      "Playing with her rescue dogs",
-      "Writing essays and memoirs",
-      "Exploring architecture"
-    ],
-    "interests": [
-      "Global storytelling & representation",
-      "UNICEF child rights advocacy",
-      "Culinary entrepreneurship",
-      "Haircare science (Anomaly)",
-      "Cross-cultural bridges"
-    ],
-    "personality": [
-      "Magnetic force of nature",
-      "Fearless",
-      "Deeply affectionate",
-      "Perfectionist on set, goofy at home",
-      "Loyal"
-    ],
-    "values": [
-      "Courage to step outside comfort zones",
-      "Family first",
-      "Empowering the next generation",
-      "Joyful celebration"
-    ],
-    "dealbreakers": [
-      "Small-mindedness or insecurity in a partner",
-      "Lack of ambition",
-      "Coldness toward family"
-    ],
-    "loveLanguage": "Physical Touch & Words of Affirmation",
-    "lifestyleScore": {
-      "ambition": 10,
-      "adventure": 10,
-      "social": 10,
-      "intellectual": 8,
-      "creativity": 9
-    },
-    "summary": "Global powerhouse bridging Bollywood and Hollywood, whose radiant confidence and heart have made her an international trailblazer. Looking for a fearless, devoted romance.",
-    "agentVoice": "I dream bigger than the room allows and I love with everything I have; let's take on the world hand in hand.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/priyanka-chopra/",
-        "headline": "Actor, Producer, Entrepreneur (SONA, Anomaly) & UNICEF Goodwill Ambassador",
-        "career_signals": [
-          "Current Role: Actor, Producer, Entrepreneur (SONA, Anomaly) & UNICEF Goodwill Ambassador",
-          "Professional Domain: Global storytelling & representation",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Global storytelling & representation",
-          "Endorsed competency: UNICEF child rights advocacy",
-          "Endorsed competency: Culinary entrepreneurship"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Actor, Producer, Entrepreneur (SONA, Anomaly) & UNICEF Goodwill Ambassador\"",
-          "Public professional footprint verified in Los Angeles & Mumbai"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/priyankachopra/",
-        "handle": "priyankachopra",
-        "followers_count": 91000000,
-        "bio_snippet": "Global powerhouse bridging Bollywood and Hollywood, whose radiant confidence and heart have made her an international tr",
-        "lifestyle_signals": [
-          "Visual documentation of: Singing and karaoke",
-          "Visual documentation of: Hosting lavish Sunday brunches",
-          "Visual documentation of: Playing with her rescue dogs"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Singing and karaoke",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 91,000,000 followers",
-          "Consistent visual evidence of Singing and karaoke"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Actor, Producer, Entrepreneur (SONA, Anomaly) & UNICEF Goodwill Ambassador",
-      "[LinkedIn] Primary Location: Los Angeles & Mumbai",
-      "[Instagram] Public Audience: 91,000,000 followers",
-      "[Instagram] Documented Activities: Singing and karaoke, Hosting lavish Sunday brunches, Playing with her rescue dogs"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (10/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Singing and karaoke",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Courage to step outside comfort zones",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Physical Touch & Words of Affirmation",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Global storytelling & representation. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Singing and karaoke—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 22,
-    "name": "Mark Zuckerberg",
-    "linkedin_url": "https://www.linkedin.com/in/mark-zuckerberg-618bba58/",
-    "instagram_url": "https://www.instagram.com/zuck/",
-    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
-    "followers": 14000000,
-    "isVerified": true,
-    "headline": "Founder and CEO at Meta",
-    "location": "Palo Alto & Kauai, Hawaii, USA",
-    "needs": [
-      "Partnership rooted in multi-decade loyalty",
-      "Hydrofoiling and Jiu-Jitsu training enthusiasm",
-      "Shared dedication to family science philanthropy",
-      "High tolerance for intense operational focus"
-    ],
-    "hobbies": [
-      "Brazilian Jiu-Jitsu & MMA sparring",
-      "Foil surfing behind speedboats",
-      "Cattle ranching in Kauai",
-      "Archery and spear fishing",
-      "Building open-source AI models (Llama)"
-    ],
-    "interests": [
-      "Open-source AI democratization",
-      "Spatial computing & smart glasses",
-      "Curing all diseases this century (Chan Zuckerberg)",
-      "Ancient Roman history (Augustus Caesar)",
-      "Energy engineering"
-    ],
-    "personality": [
-      "Hyper-competitive",
-      "Quietly intense",
-      "Long-term oriented",
-      "Family-centric",
-      "Relentlessly iterating"
-    ],
-    "values": [
-      "Multi-decade execution",
-      "Building things people use every day",
-      "Loyalty",
-      "Relentless stamina"
-    ],
-    "dealbreakers": [
-      "Disloyalty",
-      "Leaking private family life",
-      "Giving up easily when critics attack"
-    ],
-    "loveLanguage": "Acts of Service & Shared Habits",
-    "lifestyleScore": {
-      "ambition": 10,
-      "adventure": 9,
-      "social": 6,
-      "intellectual": 10,
-      "creativity": 8
-    },
-    "summary": "Meta CEO who connected 3 billion people, now competing in Jiu-Jitsu tournaments, open-sourcing cutting-edge AI, and surfing in Kauai. Seeks fierce, unwavering partnership.",
-    "agentVoice": "The future belongs to the builders who never quit when things get hard. Let's build something that outlasts the noise.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/mark-zuckerberg-618bba58/",
-        "headline": "Founder and CEO at Meta",
-        "career_signals": [
-          "Current Role: Founder and CEO at Meta",
-          "Professional Domain: Open-source AI democratization",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Open-source AI democratization",
-          "Endorsed competency: Spatial computing & smart glasses",
-          "Endorsed competency: Curing all diseases this century (Chan Zuckerberg)"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Founder and CEO at Meta\"",
-          "Public professional footprint verified in Palo Alto & Kauai, Hawaii, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/zuck/",
-        "handle": "zuck",
-        "followers_count": 14000000,
-        "bio_snippet": "Meta CEO who connected 3 billion people, now competing in Jiu-Jitsu tournaments, open-sourcing cutting-edge AI, and surf",
-        "lifestyle_signals": [
-          "Visual documentation of: Brazilian Jiu-Jitsu & MMA sparring",
-          "Visual documentation of: Foil surfing behind speedboats",
-          "Visual documentation of: Cattle ranching in Kauai"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Brazilian Jiu-Jitsu & MMA sparring",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 14,000,000 followers",
-          "Consistent visual evidence of Brazilian Jiu-Jitsu & MMA sparring"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Founder and CEO at Meta",
-      "[LinkedIn] Primary Location: Palo Alto & Kauai, Hawaii, USA",
-      "[Instagram] Public Audience: 14,000,000 followers",
-      "[Instagram] Documented Activities: Brazilian Jiu-Jitsu & MMA sparring, Foil surfing behind speedboats, Cattle ranching in Kauai"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (10/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Brazilian Jiu-Jitsu & MMA sparring",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Multi-decade execution",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Acts of Service & Shared Habits",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Open-source AI democratization. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Brazilian Jiu-Jitsu & MMA sparring—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 23,
-    "name": "Elon Musk",
-    "linkedin_url": "https://www.linkedin.com/in/elonmusk/",
-    "instagram_url": "https://www.instagram.com/elonmusk/",
-    "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80",
-    "followers": 500000,
-    "isVerified": false,
-    "headline": "CEO at SpaceX & Tesla | Founder of xAI & Neuralink",
-    "location": "Austin & Starbase, Texas, USA",
-    "needs": [
-      "Unwavering tolerance for 100-hour work weeks and sleeping at launchpads",
-      "Shared existential drive to make life multiplanetary",
-      "High meme fluency and dark humor",
-      "Emotional independence"
-    ],
-    "hobbies": [
-      "Playing video games on maximum difficulty (Diablo 4 / Elden Ring)",
-      "Watching rocket tests in Boca Chica",
-      "Writing memes at 2 AM",
-      "Engineering design reviews",
-      "Sci-fi literature"
-    ],
-    "interests": [
-      "Mars colonization architecture",
-      "Reusable orbital rocketry",
-      "Artificial Superintelligence safety (xAI)",
-      "Neural-computer interfaces",
-      "Sustainable energy transition"
-    ],
-    "personality": [
-      "Hyper-intense",
-      "First-principles obsessed",
-      "Mercurial genius",
-      "Meme provocateur",
-      "Relentless"
-    ],
-    "values": [
-      "Consciousness preservation across the stars",
-      "Physics truth",
-      "Raw speed of production",
-      "Existential mission"
-    ],
-    "dealbreakers": [
-      "Bureaucratic compliance",
-      "Whining about long work hours",
-      "Lack of courage to take massive risks"
-    ],
-    "loveLanguage": "Shared Mission & Words of Encouragement",
-    "lifestyleScore": {
-      "ambition": 10,
-      "adventure": 10,
-      "social": 6,
-      "intellectual": 10,
-      "creativity": 10
-    },
-    "summary": "The visionary architect behind electric vehicles, reusable orbital rockets, and brain chips, driven by an existential mission to extend the light of human consciousness to Mars.",
-    "agentVoice": "Let's make life interplanetary. If the stakes aren't existentially high and the rockets aren't flying, what are we even doing?",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/elonmusk/",
-        "headline": "CEO at SpaceX & Tesla | Founder of xAI & Neuralink",
-        "career_signals": [
-          "Current Role: CEO at SpaceX & Tesla",
-          "Professional Domain: Mars colonization architecture",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Mars colonization architecture",
-          "Endorsed competency: Reusable orbital rocketry",
-          "Endorsed competency: Artificial Superintelligence safety (xAI)"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"CEO at SpaceX & Tesla | Founder of xAI & Neuralink\"",
-          "Public professional footprint verified in Austin & Starbase, Texas, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/elonmusk/",
-        "handle": "elonmusk",
-        "followers_count": 500000,
-        "bio_snippet": "The visionary architect behind electric vehicles, reusable orbital rockets, and brain chips, driven by an existential mi",
-        "lifestyle_signals": [
-          "Visual documentation of: Playing video games on maximum difficulty (Diablo 4 / Elden Ring)",
-          "Visual documentation of: Watching rocket tests in Boca Chica",
-          "Visual documentation of: Writing memes at 2 AM"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Playing video games on maximum difficulty (Diablo 4 / Elden Ring)",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 500,000 followers",
-          "Consistent visual evidence of Playing video games on maximum difficulty (Diablo 4 / Elden Ring)"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: CEO at SpaceX & Tesla | Founder of xAI & Neuralink",
-      "[LinkedIn] Primary Location: Austin & Starbase, Texas, USA",
-      "[Instagram] Public Audience: 500,000 followers",
-      "[Instagram] Documented Activities: Playing video games on maximum difficulty (Diablo 4 / Elden Ring), Watching rocket tests in Boca Chica, Writing memes at 2 AM"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (10/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Playing video games on maximum difficulty (Diablo 4 / Elden Ring)",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Consciousness preservation across the stars",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Shared Mission & Words of Encouragement",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Mars colonization architecture. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Playing video games on maximum difficulty (Diablo 4 / Elden Ring)—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 24,
-    "name": "Ratan Tata",
-    "linkedin_url": "https://www.linkedin.com/in/ratan-tata-b1b5b32/",
-    "instagram_url": "https://www.instagram.com/ratantata/",
-    "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
-    "followers": 9800000,
-    "isVerified": true,
-    "headline": "Former Chairman of Tata Sons | Philanthropist & Industrialist (In Memoriam)",
-    "location": "Mumbai, India",
-    "needs": [
-      "Endless love and rescue for stray animals",
-      "Quiet dignity above public applause",
-      "Deep moral integrity",
-      "Gentle, understated kindness"
-    ],
-    "hobbies": [
-      "Flying private aircraft / piloting jets",
-      "Rescuing and caring for stray dogs",
-      "Classic car architecture",
-      "Quiet sketching and architectural design",
-      "Listening to classical piano"
-    ],
-    "interests": [
-      "Nation building & social development",
-      "Affordable cancer care hospitals",
-      "Animal welfare centers",
-      "Youth innovation in India",
-      "Industrial design"
-    ],
-    "personality": [
-      "Immensely graceful",
-      "Gentle patriarch",
-      "Quietly courageous",
-      "Humble beyond measure",
-      "Compassionate"
-    ],
-    "values": [
-      "Business as a service to humanity",
-      "Integrity above profits",
-      "Compassion for the voiceless",
-      "Dignity"
-    ],
-    "dealbreakers": [
-      "Arrogance",
-      "Greed and unethical shortcuts",
-      "Cruelty toward animals or the vulnerable"
-    ],
-    "loveLanguage": "Acts of Service & Peaceful Presence",
-    "lifestyleScore": {
-      "ambition": 9,
-      "adventure": 7,
-      "social": 5,
-      "intellectual": 9,
-      "creativity": 8
-    },
-    "summary": "India's most revered industrialist and humanitarian, celebrated for donating the vast majority of his wealth to public hospitals, stray animal shelters, and national education.",
-    "agentVoice": "I have always believed that businesses should exist for the good of people. True nobility is lifting others with quiet grace.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/ratan-tata-b1b5b32/",
-        "headline": "Former Chairman of Tata Sons | Philanthropist & Industrialist (In Memoriam)",
-        "career_signals": [
-          "Current Role: Former Chairman of Tata Sons",
-          "Professional Domain: Nation building & social development",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Nation building & social development",
-          "Endorsed competency: Affordable cancer care hospitals",
-          "Endorsed competency: Animal welfare centers"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"Former Chairman of Tata Sons | Philanthropist & Industrialist (In Memoriam)\"",
-          "Public professional footprint verified in Mumbai, India"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/ratantata/",
-        "handle": "ratantata",
-        "followers_count": 9800000,
-        "bio_snippet": "India's most revered industrialist and humanitarian, celebrated for donating the vast majority of his wealth to public h",
-        "lifestyle_signals": [
-          "Visual documentation of: Flying private aircraft / piloting jets",
-          "Visual documentation of: Rescuing and caring for stray dogs",
-          "Visual documentation of: Classic car architecture"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Flying private aircraft / piloting jets",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 9,800,000 followers",
-          "Consistent visual evidence of Flying private aircraft / piloting jets"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: Former Chairman of Tata Sons | Philanthropist & Industrialist (In Memoriam)",
-      "[LinkedIn] Primary Location: Mumbai, India",
-      "[Instagram] Public Audience: 9,800,000 followers",
-      "[Instagram] Documented Activities: Flying private aircraft / piloting jets, Rescuing and caring for stray dogs, Classic car architecture"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (9/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Flying private aircraft / piloting jets",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Business as a service to humanity",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Acts of Service & Peaceful Presence",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Nation building & social development. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Flying private aircraft / piloting jets—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
-  },
-  {
-    "id": 25,
-    "name": "Sundar Pichai",
-    "linkedin_url": "https://www.linkedin.com/in/sundar-pichai-7a255b5/",
-    "instagram_url": "https://www.instagram.com/sundarpichai/",
-    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
-    "followers": 4000000,
-    "isVerified": true,
-    "headline": "CEO at Google and Alphabet",
-    "location": "Los Altos Hills, California, USA",
-    "needs": [
-      "Calm equanimity in the midst of high-stakes corporate pressure",
-      "Love of cricket and football strategy",
-      "A peaceful, grounded home sanctuary",
-      "Intellectual curiosity for computing"
-    ],
-    "hobbies": [
-      "Playing and watching test cricket",
-      "Morning tea walks in Los Altos",
-      "Reading materials science journals",
-      "Cheering for FC Barcelona",
-      "Coding small puzzle scripts"
-    ],
-    "interests": [
-      "Quantum computing",
-      "Organizing the world's information with Gemini",
-      "Global digital inclusion",
-      "Semiconductor design",
-      "Clean energy for data centers"
-    ],
-    "personality": [
-      "Consummate diplomat",
-      "Gentle leader",
-      "Analytically brilliant",
-      "Unflappable",
-      "Respectful"
-    ],
-    "values": [
-      "Democratizing technology for everyone",
-      "Humility in leadership",
-      "Long-term compounding",
-      "Family privacy"
-    ],
-    "dealbreakers": [
-      "Loud office politics or drama",
-      "Disrespecting peers",
-      "Rushing decisions without analytical thought"
-    ],
-    "loveLanguage": "Quality Time & Acts of Service",
-    "lifestyleScore": {
-      "ambition": 10,
-      "adventure": 6,
-      "social": 6,
-      "intellectual": 10,
-      "creativity": 8
-    },
-    "summary": "Alphabet CEO who rose from humble beginnings in Chennai to steer the world's greatest information engine. Renowned for his calm demeanor, brilliant intellect, and steady hand.",
-    "agentVoice": "Technology should empower every human on Earth, no matter where they start. Let's approach life with quiet resolve and infinite curiosity.",
-    "agent_status": "Ranked",
-    "verification_tier": "Official Dual-Source (LinkedIn + Instagram)",
-    "source_evidence": {
-      "linkedin": {
-        "public_url": "https://www.linkedin.com/in/sundar-pichai-7a255b5/",
-        "headline": "CEO at Google and Alphabet",
-        "career_signals": [
-          "Current Role: CEO at Google and Alphabet",
-          "Professional Domain: Quantum computing",
-          "Documented Leadership: Executive / Founder track record observed on public profile"
-        ],
-        "skills_signals": [
-          "Endorsed competency: Quantum computing",
-          "Endorsed competency: Organizing the world's information with Gemini",
-          "Endorsed competency: Global digital inclusion"
-        ],
-        "observed_facts": [
-          "Official headline matches public register: \"CEO at Google and Alphabet\"",
-          "Public professional footprint verified in Los Altos Hills, California, USA"
-        ]
-      },
-      "instagram": {
-        "public_url": "https://www.instagram.com/sundarpichai/",
-        "handle": "sundarpichai",
-        "followers_count": 4000000,
-        "bio_snippet": "Alphabet CEO who rose from humble beginnings in Chennai to steer the world's greatest information engine. Renowned for h",
-        "lifestyle_signals": [
-          "Visual documentation of: Playing and watching test cricket",
-          "Visual documentation of: Morning tea walks in Los Altos",
-          "Visual documentation of: Reading materials science journals"
-        ],
-        "aesthetic_themes": [
-          "Curated photography reflecting Playing and watching test cricket",
-          "Public story highlights and visual updates confirming authentic identity"
-        ],
-        "observed_facts": [
-          "Public account verified with 4,000,000 followers",
-          "Consistent visual evidence of Playing and watching test cricket"
-        ]
-      }
-    },
-    "observed_facts": [
-      "[LinkedIn] Official Position: CEO at Google and Alphabet",
-      "[LinkedIn] Primary Location: Los Altos Hills, California, USA",
-      "[Instagram] Public Audience: 4,000,000 followers",
-      "[Instagram] Documented Activities: Playing and watching test cricket, Morning tea walks in Los Altos, Reading materials science journals"
-    ],
-    "inferred_traits": [
-      {
-        "trait": "High Ambition (10/10)",
-        "rationale": "Inferred from continuous founding / executive roles documented on LinkedIn",
-        "confidence": "94%"
-      },
-      {
-        "trait": "Need for Autonomy",
-        "rationale": "Inferred from self-directed career trajectory and solitary hobbies like Playing and watching test cricket",
-        "confidence": "89%"
-      },
-      {
-        "trait": "Value: Democratizing technology for everyone",
-        "rationale": "Inferred from consistent public statements and advocacy across both profiles",
-        "confidence": "91%"
-      },
-      {
-        "trait": "Primary Love Language: Quality Time & Acts of Service",
-        "rationale": "Synthesized from lifestyle pacing and focus on deep personal presence",
-        "confidence": "82%"
-      }
-    ],
-    "unknown_factors": [
-      "Conflict Resolution Style: UNKNOWN (Private emotional behavior cannot be verified from public profiles)",
-      "Personal Financial Arrangements: UNKNOWN (Private asset sharing boundaries are not public)",
-      "Long-Term Domestic Routine: UNKNOWN (Private cohabitation habits cannot be inferred without live interaction)"
-    ],
-    "conversation_starters": [
-      "\"I noticed from your LinkedIn your focus on Quantum computing. What motivated that path?\"",
-      "\"On Instagram you frequently share your passion for Playing and watching test cricket—how do you make time for that?\"",
-      "\"What kind of balance do you look for when both partners have demanding missions?\""
-    ]
+    "summary": "Beloved entrepreneur who built The Honest Company into an ethical consumer giant while maintaining deep family warmth. Seeks a secure, honest partner who loves family and laughter.",
+    "agentVoice": "Honesty and family are everything. I want a partner who is completely real with me, works hard, and makes life joyful."
   }
 ]

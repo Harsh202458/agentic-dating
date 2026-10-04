@@ -61,7 +61,7 @@ export default function Navbar({ onStartDemoTour }: NavbarProps) {
               PEOPLE
             </Link>
             <Link
-              href="/date/1/3"
+              href="/date/1/14"
               onClick={() => sounds.playClick()}
               className={`px-3 py-1.5 rounded-full transition-colors ${
                 pathname?.startsWith('/date') ? 'text-white bg-white/10 font-bold' : 'hover:text-white'

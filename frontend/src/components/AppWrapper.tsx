@@ -41,7 +41,7 @@ export default function AppWrapper({ children }: { children: React.ReactNode }) 
     // Step 2: after 4s, navigate to date arena
     setTimeout(() => {
       setSelectedPerson(null);
-      router.push('/date/1/3/');
+      router.push('/date/1/14/');
     }, 4500);
 
     // Step 3: after 12s, navigate to rankings

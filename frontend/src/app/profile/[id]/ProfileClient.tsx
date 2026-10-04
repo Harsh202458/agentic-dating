@@ -55,7 +55,10 @@ export default function ProfileClient({ id }: { id: string }) {
     );
   }
 
-  const samplePartner = allPeople.find((p) => p.id !== person.id) || allPeople[0];
+  const targetGender = (person as any).gender === 'male' ? 'female' : 'male';
+  const samplePartner = allPeople.find((p) => p.id !== person.id && (p as any).gender === targetGender)
+    || allPeople.find((p) => p.id !== person.id)
+    || allPeople[0];
 
   const handleSignalClick = (name: string, type: string) => {
     sounds.playClick();
