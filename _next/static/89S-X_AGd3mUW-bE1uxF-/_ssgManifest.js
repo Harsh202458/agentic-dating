@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fdate\u002F[id1]\u002F[id2]","\u002Fprofile\u002F[id]","\u002Frankings\u002F[id]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
