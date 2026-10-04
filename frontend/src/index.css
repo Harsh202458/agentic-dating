@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0f0a14;
+  --bg-card: #1a1025;
+  --accent: #f43f5e;
+  --accent2: #c026d3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg-primary);
+  color: #f1f1f1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #f43f5e, #c026d3, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(26, 16, 37, 0.85);
+  border: 1px solid rgba(244, 63, 94, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+}
+
+/* Pulse glow on hover */
+.glow-hover:hover {
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.3);
+  border-color: rgba(244, 63, 94, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+.heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+
+/* Chat bubble */
+.bubble-a {
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.2), rgba(244, 63, 94, 0.1));
+  border: 1px solid rgba(244, 63, 94, 0.4);
+  border-radius: 0 1rem 1rem 1rem;
+}
+.bubble-b {
+  background: linear-gradient(135deg, rgba(192, 38, 211, 0.2), rgba(192, 38, 211, 0.1));
+  border: 1px solid rgba(192, 38, 211, 0.4);
+  border-radius: 1rem 0 1rem 1rem;
+}
+
+/* Score bar */
+.score-bar {
+  background: linear-gradient(90deg, #f43f5e, #c026d3, #7c3aed);
+  border-radius: 999px;
+  height: 8px;
+  transition: width 1s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(244, 63, 94, 0.4); border-radius: 999px; }

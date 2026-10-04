@@ -1,0 +1,3752 @@
+{
+  "1": {
+    "id": 1,
+    "name": "Pieter Levels",
+    "ranked": [
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 89,
+        "reason": "Pieter Levels and Alexis Ohanian share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 89,
+        "reason": "Pieter Levels and Varun Mayya share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 85,
+        "reason": "Pieter Levels and Justin Kan share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 83,
+        "reason": "Pieter Levels and Lex Fridman share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 83,
+        "reason": "Pieter Levels and Tanmay Bhat share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 82,
+        "reason": "Pieter Levels and Dr. Andrew Huberman share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 82,
+        "reason": "Pieter Levels and Shaan Puri share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 82,
+        "reason": "Pieter Levels and Deepika Padukone share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 82,
+        "reason": "Pieter Levels and Priyanka Chopra Jonas share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 81,
+        "reason": "Pieter Levels and Ankur Warikoo share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 78,
+        "reason": "Pieter Levels and Sahil Bloom share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 75,
+        "reason": "Pieter Levels and Gary Vaynerchuk share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 75,
+        "reason": "Pieter Levels and Tim Ferriss share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 74,
+        "reason": "Pieter Levels and Kunal Shah share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 74,
+        "reason": "Pieter Levels and Mark Zuckerberg share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 73,
+        "reason": "Pieter Levels and Marie Forleo share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 73,
+        "reason": "Pieter Levels and Nikhil Kamath share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 73,
+        "reason": "Pieter Levels and Rand Fishkin share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 73,
+        "reason": "Pieter Levels and Elon Musk share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 72,
+        "reason": "Pieter Levels and Ratan Tata share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 71,
+        "reason": "Pieter Levels and Ali Abdaal share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 68,
+        "reason": "Pieter Levels and Lenny Rachitsky share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 68,
+        "reason": "Pieter Levels and Sundar Pichai share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 67,
+        "reason": "Pieter Levels and Naval Ravikant share an exceptional alignment around Freedom over status and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "2": {
+    "id": 2,
+    "name": "Dr. Andrew Huberman",
+    "ranked": [
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 89,
+        "reason": "Dr. Andrew Huberman and Kunal Shah share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 86,
+        "reason": "Dr. Andrew Huberman and Alexis Ohanian share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 86,
+        "reason": "Dr. Andrew Huberman and Varun Mayya share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 85,
+        "reason": "Dr. Andrew Huberman and Tanmay Bhat share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 83,
+        "reason": "Dr. Andrew Huberman and Sahil Bloom share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 83,
+        "reason": "Dr. Andrew Huberman and Deepika Padukone share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 83,
+        "reason": "Dr. Andrew Huberman and Sundar Pichai share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 82,
+        "reason": "Dr. Andrew Huberman and Pieter Levels share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 81,
+        "reason": "Dr. Andrew Huberman and Lex Fridman share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 80,
+        "reason": "Dr. Andrew Huberman and Justin Kan share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 80,
+        "reason": "Dr. Andrew Huberman and Ankur Warikoo share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 77,
+        "reason": "Dr. Andrew Huberman and Nikhil Kamath share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 76,
+        "reason": "Dr. Andrew Huberman and Shaan Puri share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 75,
+        "reason": "Dr. Andrew Huberman and Gary Vaynerchuk share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 75,
+        "reason": "Dr. Andrew Huberman and Mark Zuckerberg share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 74,
+        "reason": "Dr. Andrew Huberman and Ratan Tata share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 73,
+        "reason": "Dr. Andrew Huberman and Ali Abdaal share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 73,
+        "reason": "Dr. Andrew Huberman and Marie Forleo share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 73,
+        "reason": "Dr. Andrew Huberman and Rand Fishkin share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 73,
+        "reason": "Dr. Andrew Huberman and Priyanka Chopra Jonas share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 71,
+        "reason": "Dr. Andrew Huberman and Naval Ravikant share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 71,
+        "reason": "Dr. Andrew Huberman and Lenny Rachitsky share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 71,
+        "reason": "Dr. Andrew Huberman and Elon Musk share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 70,
+        "reason": "Dr. Andrew Huberman and Tim Ferriss share an exceptional alignment around Scientific rigor and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "3": {
+    "id": 3,
+    "name": "Lex Fridman",
+    "ranked": [
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 90,
+        "reason": "Lex Fridman and Alexis Ohanian share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 89,
+        "reason": "Lex Fridman and Varun Mayya share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 87,
+        "reason": "Lex Fridman and Tanmay Bhat share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 86,
+        "reason": "Lex Fridman and Pieter Levels share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 86,
+        "reason": "Lex Fridman and Sahil Bloom share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 86,
+        "reason": "Lex Fridman and Justin Kan share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 86,
+        "reason": "Lex Fridman and Kunal Shah share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 83,
+        "reason": "Lex Fridman and Dr. Andrew Huberman share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 82,
+        "reason": "Lex Fridman and Rand Fishkin share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 81,
+        "reason": "Lex Fridman and Marie Forleo share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 81,
+        "reason": "Lex Fridman and Sundar Pichai share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 79,
+        "reason": "Lex Fridman and Deepika Padukone share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 78,
+        "reason": "Lex Fridman and Ankur Warikoo share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 78,
+        "reason": "Lex Fridman and Ratan Tata share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 77,
+        "reason": "Lex Fridman and Shaan Puri share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 76,
+        "reason": "Lex Fridman and Ali Abdaal share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 75,
+        "reason": "Lex Fridman and Tim Ferriss share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 75,
+        "reason": "Lex Fridman and Nikhil Kamath share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 74,
+        "reason": "Lex Fridman and Lenny Rachitsky share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 72,
+        "reason": "Lex Fridman and Naval Ravikant share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 72,
+        "reason": "Lex Fridman and Mark Zuckerberg share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 71,
+        "reason": "Lex Fridman and Gary Vaynerchuk share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 71,
+        "reason": "Lex Fridman and Elon Musk share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 69,
+        "reason": "Lex Fridman and Priyanka Chopra Jonas share an exceptional alignment around Unconditional love and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "4": {
+    "id": 4,
+    "name": "Gary Vaynerchuk",
+    "ranked": [
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 87,
+        "reason": "Gary Vaynerchuk and Kunal Shah share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 87,
+        "reason": "Gary Vaynerchuk and Tanmay Bhat share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 86,
+        "reason": "Gary Vaynerchuk and Marie Forleo share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 85,
+        "reason": "Gary Vaynerchuk and Sahil Bloom share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 84,
+        "reason": "Gary Vaynerchuk and Alexis Ohanian share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 83,
+        "reason": "Gary Vaynerchuk and Justin Kan share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 83,
+        "reason": "Gary Vaynerchuk and Varun Mayya share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 83,
+        "reason": "Gary Vaynerchuk and Sundar Pichai share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 82,
+        "reason": "Gary Vaynerchuk and Rand Fishkin share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 82,
+        "reason": "Gary Vaynerchuk and Deepika Padukone share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 81,
+        "reason": "Gary Vaynerchuk and Pieter Levels share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 79,
+        "reason": "Gary Vaynerchuk and Dr. Andrew Huberman share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 79,
+        "reason": "Gary Vaynerchuk and Ratan Tata share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 76,
+        "reason": "Gary Vaynerchuk and Ali Abdaal share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 76,
+        "reason": "Gary Vaynerchuk and Shaan Puri share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 74,
+        "reason": "Gary Vaynerchuk and Lenny Rachitsky share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 74,
+        "reason": "Gary Vaynerchuk and Priyanka Chopra Jonas share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 73,
+        "reason": "Gary Vaynerchuk and Lex Fridman share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 73,
+        "reason": "Gary Vaynerchuk and Nikhil Kamath share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 72,
+        "reason": "Gary Vaynerchuk and Elon Musk share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 71,
+        "reason": "Gary Vaynerchuk and Ankur Warikoo share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 71,
+        "reason": "Gary Vaynerchuk and Mark Zuckerberg share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 69,
+        "reason": "Gary Vaynerchuk and Tim Ferriss share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 67,
+        "reason": "Gary Vaynerchuk and Naval Ravikant share an exceptional alignment around Macro patience, micro speed and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "5": {
+    "id": 5,
+    "name": "Tim Ferriss",
+    "ranked": [
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 87,
+        "reason": "Tim Ferriss and Sahil Bloom share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 86,
+        "reason": "Tim Ferriss and Justin Kan share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 86,
+        "reason": "Tim Ferriss and Kunal Shah share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 85,
+        "reason": "Tim Ferriss and Marie Forleo share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 85,
+        "reason": "Tim Ferriss and Rand Fishkin share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 84,
+        "reason": "Tim Ferriss and Sundar Pichai share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 83,
+        "reason": "Tim Ferriss and Pieter Levels share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 83,
+        "reason": "Tim Ferriss and Ratan Tata share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 82,
+        "reason": "Tim Ferriss and Alexis Ohanian share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 82,
+        "reason": "Tim Ferriss and Tanmay Bhat share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 80,
+        "reason": "Tim Ferriss and Ali Abdaal share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 80,
+        "reason": "Tim Ferriss and Varun Mayya share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 79,
+        "reason": "Tim Ferriss and Ankur Warikoo share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 79,
+        "reason": "Tim Ferriss and Lenny Rachitsky share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 78,
+        "reason": "Tim Ferriss and Elon Musk share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 76,
+        "reason": "Tim Ferriss and Lex Fridman share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 76,
+        "reason": "Tim Ferriss and Mark Zuckerberg share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 75,
+        "reason": "Tim Ferriss and Naval Ravikant share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 74,
+        "reason": "Tim Ferriss and Dr. Andrew Huberman share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 73,
+        "reason": "Tim Ferriss and Nikhil Kamath share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 71,
+        "reason": "Tim Ferriss and Shaan Puri share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 70,
+        "reason": "Tim Ferriss and Deepika Padukone share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 68,
+        "reason": "Tim Ferriss and Gary Vaynerchuk share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 68,
+        "reason": "Tim Ferriss and Priyanka Chopra Jonas share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "6": {
+    "id": 6,
+    "name": "Ali Abdaal",
+    "ranked": [
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 92,
+        "reason": "Ali Abdaal and Sahil Bloom share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 92,
+        "reason": "Ali Abdaal and Ratan Tata share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 89,
+        "reason": "Ali Abdaal and Marie Forleo share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 88,
+        "reason": "Ali Abdaal and Lenny Rachitsky share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 88,
+        "reason": "Ali Abdaal and Rand Fishkin share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 86,
+        "reason": "Ali Abdaal and Kunal Shah share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 86,
+        "reason": "Ali Abdaal and Sundar Pichai share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 85,
+        "reason": "Ali Abdaal and Tanmay Bhat share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 81,
+        "reason": "Ali Abdaal and Justin Kan share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 81,
+        "reason": "Ali Abdaal and Naval Ravikant share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 80,
+        "reason": "Ali Abdaal and Alexis Ohanian share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 79,
+        "reason": "Ali Abdaal and Varun Mayya share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 78,
+        "reason": "Ali Abdaal and Pieter Levels share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 78,
+        "reason": "Ali Abdaal and Tim Ferriss share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 76,
+        "reason": "Ali Abdaal and Elon Musk share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 74,
+        "reason": "Ali Abdaal and Dr. Andrew Huberman share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 73,
+        "reason": "Ali Abdaal and Lex Fridman share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 73,
+        "reason": "Ali Abdaal and Ankur Warikoo share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 73,
+        "reason": "Ali Abdaal and Shaan Puri share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 73,
+        "reason": "Ali Abdaal and Nikhil Kamath share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 72,
+        "reason": "Ali Abdaal and Gary Vaynerchuk share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 72,
+        "reason": "Ali Abdaal and Mark Zuckerberg share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 70,
+        "reason": "Ali Abdaal and Deepika Padukone share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 67,
+        "reason": "Ali Abdaal and Priyanka Chopra Jonas share an exceptional alignment around Joy over friction and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "7": {
+    "id": 7,
+    "name": "Marie Forleo",
+    "ranked": [
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 89,
+        "reason": "Marie Forleo and Ratan Tata share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 88,
+        "reason": "Marie Forleo and Ali Abdaal share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 87,
+        "reason": "Marie Forleo and Rand Fishkin share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 86,
+        "reason": "Marie Forleo and Sahil Bloom share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 86,
+        "reason": "Marie Forleo and Lenny Rachitsky share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 82,
+        "reason": "Marie Forleo and Tim Ferriss share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 81,
+        "reason": "Marie Forleo and Tanmay Bhat share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 81,
+        "reason": "Marie Forleo and Sundar Pichai share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 80,
+        "reason": "Marie Forleo and Naval Ravikant share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 80,
+        "reason": "Marie Forleo and Kunal Shah share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 79,
+        "reason": "Marie Forleo and Gary Vaynerchuk share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 79,
+        "reason": "Marie Forleo and Shaan Puri share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 79,
+        "reason": "Marie Forleo and Elon Musk share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 78,
+        "reason": "Marie Forleo and Justin Kan share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 77,
+        "reason": "Marie Forleo and Alexis Ohanian share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 77,
+        "reason": "Marie Forleo and Varun Mayya share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 76,
+        "reason": "Marie Forleo and Nikhil Kamath share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 76,
+        "reason": "Marie Forleo and Mark Zuckerberg share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 74,
+        "reason": "Marie Forleo and Pieter Levels share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 74,
+        "reason": "Marie Forleo and Lex Fridman share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 74,
+        "reason": "Marie Forleo and Deepika Padukone share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 72,
+        "reason": "Marie Forleo and Priyanka Chopra Jonas share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 68,
+        "reason": "Marie Forleo and Dr. Andrew Huberman share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 68,
+        "reason": "Marie Forleo and Ankur Warikoo share an exceptional alignment around Everything is figureoutable and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "8": {
+    "id": 8,
+    "name": "Sahil Bloom",
+    "ranked": [
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 93,
+        "reason": "Sahil Bloom and Ali Abdaal share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 93,
+        "reason": "Sahil Bloom and Ratan Tata share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 90,
+        "reason": "Sahil Bloom and Lenny Rachitsky share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 87,
+        "reason": "Sahil Bloom and Marie Forleo share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 86,
+        "reason": "Sahil Bloom and Naval Ravikant share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 86,
+        "reason": "Sahil Bloom and Rand Fishkin share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 85,
+        "reason": "Sahil Bloom and Tim Ferriss share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 83,
+        "reason": "Sahil Bloom and Sundar Pichai share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 81,
+        "reason": "Sahil Bloom and Elon Musk share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 80,
+        "reason": "Sahil Bloom and Nikhil Kamath share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 80,
+        "reason": "Sahil Bloom and Kunal Shah share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 79,
+        "reason": "Sahil Bloom and Mark Zuckerberg share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 78,
+        "reason": "Sahil Bloom and Gary Vaynerchuk share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 78,
+        "reason": "Sahil Bloom and Tanmay Bhat share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 77,
+        "reason": "Sahil Bloom and Shaan Puri share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 76,
+        "reason": "Sahil Bloom and Lex Fridman share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 76,
+        "reason": "Sahil Bloom and Alexis Ohanian share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 75,
+        "reason": "Sahil Bloom and Varun Mayya share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 74,
+        "reason": "Sahil Bloom and Justin Kan share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 73,
+        "reason": "Sahil Bloom and Ankur Warikoo share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 72,
+        "reason": "Sahil Bloom and Pieter Levels share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 72,
+        "reason": "Sahil Bloom and Dr. Andrew Huberman share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 71,
+        "reason": "Sahil Bloom and Deepika Padukone share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 71,
+        "reason": "Sahil Bloom and Priyanka Chopra Jonas share an exceptional alignment around Compound growth in relationships and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "9": {
+    "id": 9,
+    "name": "Justin Kan",
+    "ranked": [
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 88,
+        "reason": "Justin Kan and Lenny Rachitsky share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 87,
+        "reason": "Justin Kan and Tim Ferriss share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 87,
+        "reason": "Justin Kan and Naval Ravikant share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 86,
+        "reason": "Justin Kan and Ali Abdaal share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 86,
+        "reason": "Justin Kan and Rand Fishkin share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 84,
+        "reason": "Justin Kan and Ratan Tata share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 83,
+        "reason": "Justin Kan and Mark Zuckerberg share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 83,
+        "reason": "Justin Kan and Elon Musk share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 82,
+        "reason": "Justin Kan and Marie Forleo share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 80,
+        "reason": "Justin Kan and Nikhil Kamath share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 80,
+        "reason": "Justin Kan and Deepika Padukone share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 79,
+        "reason": "Justin Kan and Gary Vaynerchuk share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 78,
+        "reason": "Justin Kan and Shaan Puri share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 76,
+        "reason": "Justin Kan and Lex Fridman share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 76,
+        "reason": "Justin Kan and Sahil Bloom share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 76,
+        "reason": "Justin Kan and Priyanka Chopra Jonas share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 73,
+        "reason": "Justin Kan and Ankur Warikoo share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 72,
+        "reason": "Justin Kan and Pieter Levels share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 72,
+        "reason": "Justin Kan and Alexis Ohanian share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 72,
+        "reason": "Justin Kan and Varun Mayya share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 72,
+        "reason": "Justin Kan and Sundar Pichai share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 70,
+        "reason": "Justin Kan and Kunal Shah share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 69,
+        "reason": "Justin Kan and Tanmay Bhat share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 67,
+        "reason": "Justin Kan and Dr. Andrew Huberman share an exceptional alignment around Presence over ego and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "10": {
+    "id": 10,
+    "name": "Alexis Ohanian",
+    "ranked": [
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 89,
+        "reason": "Alexis Ohanian and Tim Ferriss share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 89,
+        "reason": "Alexis Ohanian and Ali Abdaal share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 87,
+        "reason": "Alexis Ohanian and Nikhil Kamath share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 86,
+        "reason": "Alexis Ohanian and Gary Vaynerchuk share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 86,
+        "reason": "Alexis Ohanian and Shaan Puri share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 86,
+        "reason": "Alexis Ohanian and Naval Ravikant share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 86,
+        "reason": "Alexis Ohanian and Mark Zuckerberg share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 86,
+        "reason": "Alexis Ohanian and Ratan Tata share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 85,
+        "reason": "Alexis Ohanian and Lex Fridman share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 85,
+        "reason": "Alexis Ohanian and Lenny Rachitsky share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 84,
+        "reason": "Alexis Ohanian and Marie Forleo share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 83,
+        "reason": "Alexis Ohanian and Elon Musk share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 81,
+        "reason": "Alexis Ohanian and Rand Fishkin share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 80,
+        "reason": "Alexis Ohanian and Priyanka Chopra Jonas share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 79,
+        "reason": "Alexis Ohanian and Varun Mayya share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 79,
+        "reason": "Alexis Ohanian and Deepika Padukone share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 78,
+        "reason": "Alexis Ohanian and Sahil Bloom share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 75,
+        "reason": "Alexis Ohanian and Ankur Warikoo share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 74,
+        "reason": "Alexis Ohanian and Dr. Andrew Huberman share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 74,
+        "reason": "Alexis Ohanian and Sundar Pichai share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 73,
+        "reason": "Alexis Ohanian and Pieter Levels share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 73,
+        "reason": "Alexis Ohanian and Tanmay Bhat share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 72,
+        "reason": "Alexis Ohanian and Justin Kan share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 72,
+        "reason": "Alexis Ohanian and Kunal Shah share an exceptional alignment around Family above all and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "11": {
+    "id": 11,
+    "name": "Ankur Warikoo",
+    "ranked": [
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 91,
+        "reason": "Ankur Warikoo and Tim Ferriss share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 87,
+        "reason": "Ankur Warikoo and Naval Ravikant share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 84,
+        "reason": "Ankur Warikoo and Lenny Rachitsky share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 83,
+        "reason": "Ankur Warikoo and Ali Abdaal share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 82,
+        "reason": "Ankur Warikoo and Shaan Puri share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 81,
+        "reason": "Ankur Warikoo and Lex Fridman share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 81,
+        "reason": "Ankur Warikoo and Gary Vaynerchuk share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 81,
+        "reason": "Ankur Warikoo and Nikhil Kamath share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 80,
+        "reason": "Ankur Warikoo and Ratan Tata share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 79,
+        "reason": "Ankur Warikoo and Mark Zuckerberg share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 77,
+        "reason": "Ankur Warikoo and Rand Fishkin share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 76,
+        "reason": "Ankur Warikoo and Priyanka Chopra Jonas share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 75,
+        "reason": "Ankur Warikoo and Deepika Padukone share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 74,
+        "reason": "Ankur Warikoo and Dr. Andrew Huberman share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 74,
+        "reason": "Ankur Warikoo and Varun Mayya share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 74,
+        "reason": "Ankur Warikoo and Elon Musk share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 73,
+        "reason": "Ankur Warikoo and Marie Forleo share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 73,
+        "reason": "Ankur Warikoo and Sahil Bloom share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 73,
+        "reason": "Ankur Warikoo and Alexis Ohanian share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 72,
+        "reason": "Ankur Warikoo and Sundar Pichai share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 71,
+        "reason": "Ankur Warikoo and Justin Kan share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 71,
+        "reason": "Ankur Warikoo and Tanmay Bhat share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 68,
+        "reason": "Ankur Warikoo and Pieter Levels share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 67,
+        "reason": "Ankur Warikoo and Kunal Shah share an exceptional alignment around Self-awareness and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "12": {
+    "id": 12,
+    "name": "Shaan Puri",
+    "ranked": [
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 90,
+        "reason": "Shaan Puri and Gary Vaynerchuk share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 88,
+        "reason": "Shaan Puri and Lex Fridman share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 87,
+        "reason": "Shaan Puri and Deepika Padukone share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 86,
+        "reason": "Shaan Puri and Priyanka Chopra Jonas share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 85,
+        "reason": "Shaan Puri and Nikhil Kamath share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 84,
+        "reason": "Shaan Puri and Tim Ferriss share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 83,
+        "reason": "Shaan Puri and Varun Mayya share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 83,
+        "reason": "Shaan Puri and Mark Zuckerberg share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 81,
+        "reason": "Shaan Puri and Alexis Ohanian share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 80,
+        "reason": "Shaan Puri and Ali Abdaal share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 80,
+        "reason": "Shaan Puri and Ankur Warikoo share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 80,
+        "reason": "Shaan Puri and Naval Ravikant share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 79,
+        "reason": "Shaan Puri and Dr. Andrew Huberman share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 79,
+        "reason": "Shaan Puri and Marie Forleo share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 78,
+        "reason": "Shaan Puri and Tanmay Bhat share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 78,
+        "reason": "Shaan Puri and Ratan Tata share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 76,
+        "reason": "Shaan Puri and Pieter Levels share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 76,
+        "reason": "Shaan Puri and Lenny Rachitsky share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 76,
+        "reason": "Shaan Puri and Elon Musk share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 73,
+        "reason": "Shaan Puri and Sahil Bloom share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 73,
+        "reason": "Shaan Puri and Rand Fishkin share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 72,
+        "reason": "Shaan Puri and Justin Kan share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 68,
+        "reason": "Shaan Puri and Kunal Shah share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 67,
+        "reason": "Shaan Puri and Sundar Pichai share an exceptional alignment around Agency (figuring things out) and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "13": {
+    "id": 13,
+    "name": "Nikhil Kamath",
+    "ranked": [
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 90,
+        "reason": "Nikhil Kamath and Lex Fridman share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 89,
+        "reason": "Nikhil Kamath and Dr. Andrew Huberman share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 88,
+        "reason": "Nikhil Kamath and Deepika Padukone share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 87,
+        "reason": "Nikhil Kamath and Gary Vaynerchuk share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 87,
+        "reason": "Nikhil Kamath and Mark Zuckerberg share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 86,
+        "reason": "Nikhil Kamath and Shaan Puri share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 85,
+        "reason": "Nikhil Kamath and Priyanka Chopra Jonas share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 83,
+        "reason": "Nikhil Kamath and Varun Mayya share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 82,
+        "reason": "Nikhil Kamath and Tim Ferriss share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 82,
+        "reason": "Nikhil Kamath and Alexis Ohanian share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 80,
+        "reason": "Nikhil Kamath and Ankur Warikoo share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 80,
+        "reason": "Nikhil Kamath and Elon Musk share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 77,
+        "reason": "Nikhil Kamath and Pieter Levels share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 77,
+        "reason": "Nikhil Kamath and Naval Ravikant share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 76,
+        "reason": "Nikhil Kamath and Kunal Shah share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 74,
+        "reason": "Nikhil Kamath and Ali Abdaal share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 74,
+        "reason": "Nikhil Kamath and Tanmay Bhat share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 73,
+        "reason": "Nikhil Kamath and Sundar Pichai share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 72,
+        "reason": "Nikhil Kamath and Ratan Tata share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 71,
+        "reason": "Nikhil Kamath and Sahil Bloom share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 71,
+        "reason": "Nikhil Kamath and Justin Kan share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 70,
+        "reason": "Nikhil Kamath and Marie Forleo share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 70,
+        "reason": "Nikhil Kamath and Lenny Rachitsky share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 69,
+        "reason": "Nikhil Kamath and Rand Fishkin share an exceptional alignment around Contrarian thinking and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "14": {
+    "id": 14,
+    "name": "Naval Ravikant",
+    "ranked": [
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 89,
+        "reason": "Naval Ravikant and Ankur Warikoo share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 87,
+        "reason": "Naval Ravikant and Dr. Andrew Huberman share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 87,
+        "reason": "Naval Ravikant and Lex Fridman share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 84,
+        "reason": "Naval Ravikant and Varun Mayya share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 83,
+        "reason": "Naval Ravikant and Alexis Ohanian share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 83,
+        "reason": "Naval Ravikant and Shaan Puri share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 81,
+        "reason": "Naval Ravikant and Deepika Padukone share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 80,
+        "reason": "Naval Ravikant and Nikhil Kamath share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 79,
+        "reason": "Naval Ravikant and Justin Kan share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 79,
+        "reason": "Naval Ravikant and Tanmay Bhat share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 78,
+        "reason": "Naval Ravikant and Pieter Levels share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 77,
+        "reason": "Naval Ravikant and Gary Vaynerchuk share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 76,
+        "reason": "Naval Ravikant and Tim Ferriss share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 76,
+        "reason": "Naval Ravikant and Lenny Rachitsky share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 76,
+        "reason": "Naval Ravikant and Mark Zuckerberg share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 75,
+        "reason": "Naval Ravikant and Kunal Shah share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 75,
+        "reason": "Naval Ravikant and Priyanka Chopra Jonas share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 74,
+        "reason": "Naval Ravikant and Ali Abdaal share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 74,
+        "reason": "Naval Ravikant and Sahil Bloom share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 73,
+        "reason": "Naval Ravikant and Rand Fishkin share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 72,
+        "reason": "Naval Ravikant and Ratan Tata share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 70,
+        "reason": "Naval Ravikant and Sundar Pichai share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 69,
+        "reason": "Naval Ravikant and Elon Musk share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 68,
+        "reason": "Naval Ravikant and Marie Forleo share an exceptional alignment around Inner peace over wealth and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "15": {
+    "id": 15,
+    "name": "Lenny Rachitsky",
+    "ranked": [
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 91,
+        "reason": "Lenny Rachitsky and Ankur Warikoo share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 88,
+        "reason": "Lenny Rachitsky and Varun Mayya share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 87,
+        "reason": "Lenny Rachitsky and Alexis Ohanian share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 86,
+        "reason": "Lenny Rachitsky and Kunal Shah share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 85,
+        "reason": "Lenny Rachitsky and Dr. Andrew Huberman share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 84,
+        "reason": "Lenny Rachitsky and Lex Fridman share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 84,
+        "reason": "Lenny Rachitsky and Justin Kan share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 84,
+        "reason": "Lenny Rachitsky and Tanmay Bhat share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 83,
+        "reason": "Lenny Rachitsky and Shaan Puri share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 82,
+        "reason": "Lenny Rachitsky and Pieter Levels share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 82,
+        "reason": "Lenny Rachitsky and Deepika Padukone share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 79,
+        "reason": "Lenny Rachitsky and Sahil Bloom share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 77,
+        "reason": "Lenny Rachitsky and Naval Ravikant share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 77,
+        "reason": "Lenny Rachitsky and Rand Fishkin share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 75,
+        "reason": "Lenny Rachitsky and Gary Vaynerchuk share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 74,
+        "reason": "Lenny Rachitsky and Ali Abdaal share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 74,
+        "reason": "Lenny Rachitsky and Nikhil Kamath share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 74,
+        "reason": "Lenny Rachitsky and Priyanka Chopra Jonas share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 74,
+        "reason": "Lenny Rachitsky and Ratan Tata share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 71,
+        "reason": "Lenny Rachitsky and Tim Ferriss share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 71,
+        "reason": "Lenny Rachitsky and Marie Forleo share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 71,
+        "reason": "Lenny Rachitsky and Mark Zuckerberg share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 70,
+        "reason": "Lenny Rachitsky and Sundar Pichai share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 64,
+        "reason": "Lenny Rachitsky and Elon Musk share an exceptional alignment around Service to others and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "16": {
+    "id": 16,
+    "name": "Rand Fishkin",
+    "ranked": [
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 90,
+        "reason": "Rand Fishkin and Alexis Ohanian share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 90,
+        "reason": "Rand Fishkin and Varun Mayya share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 89,
+        "reason": "Rand Fishkin and Justin Kan share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 87,
+        "reason": "Rand Fishkin and Ankur Warikoo share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 86,
+        "reason": "Rand Fishkin and Pieter Levels share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 85,
+        "reason": "Rand Fishkin and Tanmay Bhat share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 83,
+        "reason": "Rand Fishkin and Lex Fridman share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 82,
+        "reason": "Rand Fishkin and Dr. Andrew Huberman share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 82,
+        "reason": "Rand Fishkin and Deepika Padukone share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 81,
+        "reason": "Rand Fishkin and Sahil Bloom share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 81,
+        "reason": "Rand Fishkin and Shaan Puri share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 77,
+        "reason": "Rand Fishkin and Kunal Shah share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 76,
+        "reason": "Rand Fishkin and Lenny Rachitsky share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 75,
+        "reason": "Rand Fishkin and Marie Forleo share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 74,
+        "reason": "Rand Fishkin and Gary Vaynerchuk share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 73,
+        "reason": "Rand Fishkin and Nikhil Kamath share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 73,
+        "reason": "Rand Fishkin and Naval Ravikant share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 73,
+        "reason": "Rand Fishkin and Priyanka Chopra Jonas share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 73,
+        "reason": "Rand Fishkin and Ratan Tata share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 72,
+        "reason": "Rand Fishkin and Ali Abdaal share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 71,
+        "reason": "Rand Fishkin and Tim Ferriss share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 71,
+        "reason": "Rand Fishkin and Sundar Pichai share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 70,
+        "reason": "Rand Fishkin and Mark Zuckerberg share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 65,
+        "reason": "Rand Fishkin and Elon Musk share an exceptional alignment around Transparency at all costs and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "17": {
+    "id": 17,
+    "name": "Kunal Shah",
+    "ranked": [
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 90,
+        "reason": "Kunal Shah and Dr. Andrew Huberman share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 86,
+        "reason": "Kunal Shah and Tanmay Bhat share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 85,
+        "reason": "Kunal Shah and Alexis Ohanian share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 85,
+        "reason": "Kunal Shah and Varun Mayya share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 84,
+        "reason": "Kunal Shah and Sahil Bloom share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 84,
+        "reason": "Kunal Shah and Sundar Pichai share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 82,
+        "reason": "Kunal Shah and Pieter Levels share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 82,
+        "reason": "Kunal Shah and Lenny Rachitsky share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 81,
+        "reason": "Kunal Shah and Justin Kan share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 81,
+        "reason": "Kunal Shah and Deepika Padukone share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 79,
+        "reason": "Kunal Shah and Lex Fridman share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 78,
+        "reason": "Kunal Shah and Ankur Warikoo share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 76,
+        "reason": "Kunal Shah and Nikhil Kamath share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 76,
+        "reason": "Kunal Shah and Ratan Tata share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 75,
+        "reason": "Kunal Shah and Marie Forleo share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 75,
+        "reason": "Kunal Shah and Rand Fishkin share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 74,
+        "reason": "Kunal Shah and Ali Abdaal share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 74,
+        "reason": "Kunal Shah and Shaan Puri share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 74,
+        "reason": "Kunal Shah and Mark Zuckerberg share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 73,
+        "reason": "Kunal Shah and Gary Vaynerchuk share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 72,
+        "reason": "Kunal Shah and Priyanka Chopra Jonas share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 71,
+        "reason": "Kunal Shah and Naval Ravikant share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 71,
+        "reason": "Kunal Shah and Elon Musk share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 70,
+        "reason": "Kunal Shah and Tim Ferriss share an exceptional alignment around High trust ecosystems and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "18": {
+    "id": 18,
+    "name": "Tanmay Bhat",
+    "ranked": [
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 90,
+        "reason": "Tanmay Bhat and Sahil Bloom share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 86,
+        "reason": "Tanmay Bhat and Alexis Ohanian share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 85,
+        "reason": "Tanmay Bhat and Marie Forleo share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 85,
+        "reason": "Tanmay Bhat and Kunal Shah share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 85,
+        "reason": "Tanmay Bhat and Varun Mayya share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 84,
+        "reason": "Tanmay Bhat and Justin Kan share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 83,
+        "reason": "Tanmay Bhat and Pieter Levels share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 82,
+        "reason": "Tanmay Bhat and Ratan Tata share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 81,
+        "reason": "Tanmay Bhat and Rand Fishkin share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 80,
+        "reason": "Tanmay Bhat and Sundar Pichai share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 79,
+        "reason": "Tanmay Bhat and Dr. Andrew Huberman share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 79,
+        "reason": "Tanmay Bhat and Ali Abdaal share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 79,
+        "reason": "Tanmay Bhat and Deepika Padukone share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 78,
+        "reason": "Tanmay Bhat and Ankur Warikoo share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 78,
+        "reason": "Tanmay Bhat and Shaan Puri share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 78,
+        "reason": "Tanmay Bhat and Lenny Rachitsky share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 75,
+        "reason": "Tanmay Bhat and Lex Fridman share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 72,
+        "reason": "Tanmay Bhat and Gary Vaynerchuk share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 71,
+        "reason": "Tanmay Bhat and Naval Ravikant share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 70,
+        "reason": "Tanmay Bhat and Tim Ferriss share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 70,
+        "reason": "Tanmay Bhat and Priyanka Chopra Jonas share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 68,
+        "reason": "Tanmay Bhat and Nikhil Kamath share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 66,
+        "reason": "Tanmay Bhat and Mark Zuckerberg share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 66,
+        "reason": "Tanmay Bhat and Elon Musk share an exceptional alignment around Laughter as therapy and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "19": {
+    "id": 19,
+    "name": "Varun Mayya",
+    "ranked": [
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 91,
+        "reason": "Varun Mayya and Sahil Bloom share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 88,
+        "reason": "Varun Mayya and Marie Forleo share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 88,
+        "reason": "Varun Mayya and Rand Fishkin share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 87,
+        "reason": "Varun Mayya and Justin Kan share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 87,
+        "reason": "Varun Mayya and Alexis Ohanian share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 87,
+        "reason": "Varun Mayya and Tanmay Bhat share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 86,
+        "reason": "Varun Mayya and Kunal Shah share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 85,
+        "reason": "Varun Mayya and Pieter Levels share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 85,
+        "reason": "Varun Mayya and Ratan Tata share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 83,
+        "reason": "Varun Mayya and Ali Abdaal share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 83,
+        "reason": "Varun Mayya and Sundar Pichai share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 81,
+        "reason": "Varun Mayya and Lenny Rachitsky share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 76,
+        "reason": "Varun Mayya and Dr. Andrew Huberman share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 76,
+        "reason": "Varun Mayya and Lex Fridman share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 76,
+        "reason": "Varun Mayya and Tim Ferriss share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 76,
+        "reason": "Varun Mayya and Shaan Puri share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 76,
+        "reason": "Varun Mayya and Deepika Padukone share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 75,
+        "reason": "Varun Mayya and Ankur Warikoo share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 74,
+        "reason": "Varun Mayya and Naval Ravikant share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 73,
+        "reason": "Varun Mayya and Elon Musk share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 72,
+        "reason": "Varun Mayya and Gary Vaynerchuk share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 72,
+        "reason": "Varun Mayya and Nikhil Kamath share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 71,
+        "reason": "Varun Mayya and Mark Zuckerberg share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 68,
+        "reason": "Varun Mayya and Priyanka Chopra Jonas share an exceptional alignment around Building the future and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "20": {
+    "id": 20,
+    "name": "Deepika Padukone",
+    "ranked": [
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 89,
+        "reason": "Deepika Padukone and Marie Forleo share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 89,
+        "reason": "Deepika Padukone and Justin Kan share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 86,
+        "reason": "Deepika Padukone and Sahil Bloom share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 86,
+        "reason": "Deepika Padukone and Kunal Shah share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 85,
+        "reason": "Deepika Padukone and Rand Fishkin share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 85,
+        "reason": "Deepika Padukone and Sundar Pichai share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 83,
+        "reason": "Deepika Padukone and Tanmay Bhat share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 83,
+        "reason": "Deepika Padukone and Ratan Tata share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 81,
+        "reason": "Deepika Padukone and Ali Abdaal share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 79,
+        "reason": "Deepika Padukone and Alexis Ohanian share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 79,
+        "reason": "Deepika Padukone and Lenny Rachitsky share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 78,
+        "reason": "Deepika Padukone and Gary Vaynerchuk share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 78,
+        "reason": "Deepika Padukone and Varun Mayya share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 77,
+        "reason": "Deepika Padukone and Elon Musk share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 76,
+        "reason": "Deepika Padukone and Pieter Levels share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 75,
+        "reason": "Deepika Padukone and Nikhil Kamath share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 74,
+        "reason": "Deepika Padukone and Dr. Andrew Huberman share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 74,
+        "reason": "Deepika Padukone and Tim Ferriss share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 74,
+        "reason": "Deepika Padukone and Shaan Puri share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 74,
+        "reason": "Deepika Padukone and Mark Zuckerberg share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 73,
+        "reason": "Deepika Padukone and Priyanka Chopra Jonas share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 72,
+        "reason": "Deepika Padukone and Naval Ravikant share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 70,
+        "reason": "Deepika Padukone and Lex Fridman share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 67,
+        "reason": "Deepika Padukone and Ankur Warikoo share an exceptional alignment around Mental health transparency and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "21": {
+    "id": 21,
+    "name": "Priyanka Chopra Jonas",
+    "ranked": [
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 86,
+        "reason": "Priyanka Chopra Jonas and Marie Forleo share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 85,
+        "reason": "Priyanka Chopra Jonas and Elon Musk share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 81,
+        "reason": "Priyanka Chopra Jonas and Rand Fishkin share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 81,
+        "reason": "Priyanka Chopra Jonas and Ratan Tata share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 81,
+        "reason": "Priyanka Chopra Jonas and Sundar Pichai share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 80,
+        "reason": "Priyanka Chopra Jonas and Ali Abdaal share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 80,
+        "reason": "Priyanka Chopra Jonas and Sahil Bloom share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 80,
+        "reason": "Priyanka Chopra Jonas and Kunal Shah share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 78,
+        "reason": "Priyanka Chopra Jonas and Lenny Rachitsky share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 77,
+        "reason": "Priyanka Chopra Jonas and Pieter Levels share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 77,
+        "reason": "Priyanka Chopra Jonas and Gary Vaynerchuk share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 77,
+        "reason": "Priyanka Chopra Jonas and Tim Ferriss share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 77,
+        "reason": "Priyanka Chopra Jonas and Mark Zuckerberg share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 76,
+        "reason": "Priyanka Chopra Jonas and Justin Kan share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 76,
+        "reason": "Priyanka Chopra Jonas and Tanmay Bhat share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 74,
+        "reason": "Priyanka Chopra Jonas and Nikhil Kamath share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 73,
+        "reason": "Priyanka Chopra Jonas and Deepika Padukone share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 72,
+        "reason": "Priyanka Chopra Jonas and Alexis Ohanian share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 71,
+        "reason": "Priyanka Chopra Jonas and Shaan Puri share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 71,
+        "reason": "Priyanka Chopra Jonas and Naval Ravikant share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 71,
+        "reason": "Priyanka Chopra Jonas and Varun Mayya share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 68,
+        "reason": "Priyanka Chopra Jonas and Dr. Andrew Huberman share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 66,
+        "reason": "Priyanka Chopra Jonas and Lex Fridman share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 61,
+        "reason": "Priyanka Chopra Jonas and Ankur Warikoo share an exceptional alignment around Courage to step outside comfort zones and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "22": {
+    "id": 22,
+    "name": "Mark Zuckerberg",
+    "ranked": [
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 89,
+        "reason": "Mark Zuckerberg and Elon Musk share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 86,
+        "reason": "Mark Zuckerberg and Tim Ferriss share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 85,
+        "reason": "Mark Zuckerberg and Sundar Pichai share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 84,
+        "reason": "Mark Zuckerberg and Ali Abdaal share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 84,
+        "reason": "Mark Zuckerberg and Ratan Tata share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 83,
+        "reason": "Mark Zuckerberg and Marie Forleo share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 83,
+        "reason": "Mark Zuckerberg and Nikhil Kamath share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 83,
+        "reason": "Mark Zuckerberg and Kunal Shah share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 82,
+        "reason": "Mark Zuckerberg and Rand Fishkin share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 81,
+        "reason": "Mark Zuckerberg and Lenny Rachitsky share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 80,
+        "reason": "Mark Zuckerberg and Naval Ravikant share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 79,
+        "reason": "Mark Zuckerberg and Sahil Bloom share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 78,
+        "reason": "Mark Zuckerberg and Gary Vaynerchuk share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 75,
+        "reason": "Mark Zuckerberg and Justin Kan share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 75,
+        "reason": "Mark Zuckerberg and Priyanka Chopra Jonas share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 74,
+        "reason": "Mark Zuckerberg and Lex Fridman share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 73,
+        "reason": "Mark Zuckerberg and Dr. Andrew Huberman share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 72,
+        "reason": "Mark Zuckerberg and Pieter Levels share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 71,
+        "reason": "Mark Zuckerberg and Alexis Ohanian share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 71,
+        "reason": "Mark Zuckerberg and Shaan Puri share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 71,
+        "reason": "Mark Zuckerberg and Tanmay Bhat share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 71,
+        "reason": "Mark Zuckerberg and Varun Mayya share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 71,
+        "reason": "Mark Zuckerberg and Deepika Padukone share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 63,
+        "reason": "Mark Zuckerberg and Ankur Warikoo share an exceptional alignment around Multi-decade execution and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "23": {
+    "id": 23,
+    "name": "Elon Musk",
+    "ranked": [
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 88,
+        "reason": "Elon Musk and Mark Zuckerberg share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 87,
+        "reason": "Elon Musk and Tim Ferriss share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 84,
+        "reason": "Elon Musk and Nikhil Kamath share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 82,
+        "reason": "Elon Musk and Ali Abdaal share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 81,
+        "reason": "Elon Musk and Ratan Tata share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 80,
+        "reason": "Elon Musk and Naval Ravikant share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 80,
+        "reason": "Elon Musk and Priyanka Chopra Jonas share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 80,
+        "reason": "Elon Musk and Sundar Pichai share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 79,
+        "reason": "Elon Musk and Gary Vaynerchuk share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 79,
+        "reason": "Elon Musk and Marie Forleo share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 79,
+        "reason": "Elon Musk and Lenny Rachitsky share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 78,
+        "reason": "Elon Musk and Kunal Shah share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 77,
+        "reason": "Elon Musk and Rand Fishkin share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 75,
+        "reason": "Elon Musk and Lex Fridman share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 74,
+        "reason": "Elon Musk and Sahil Bloom share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 72,
+        "reason": "Elon Musk and Pieter Levels share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 72,
+        "reason": "Elon Musk and Dr. Andrew Huberman share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 72,
+        "reason": "Elon Musk and Shaan Puri share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 71,
+        "reason": "Elon Musk and Deepika Padukone share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 70,
+        "reason": "Elon Musk and Justin Kan share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 68,
+        "reason": "Elon Musk and Alexis Ohanian share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 68,
+        "reason": "Elon Musk and Varun Mayya share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 66,
+        "reason": "Elon Musk and Tanmay Bhat share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 62,
+        "reason": "Elon Musk and Ankur Warikoo share an exceptional alignment around Consciousness preservation across the stars and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "24": {
+    "id": 24,
+    "name": "Ratan Tata",
+    "ranked": [
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 92,
+        "reason": "Ratan Tata and Ali Abdaal share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 88,
+        "reason": "Ratan Tata and Naval Ravikant share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 88,
+        "reason": "Ratan Tata and Lenny Rachitsky share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 87,
+        "reason": "Ratan Tata and Tim Ferriss share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 84,
+        "reason": "Ratan Tata and Nikhil Kamath share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 83,
+        "reason": "Ratan Tata and Gary Vaynerchuk share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 83,
+        "reason": "Ratan Tata and Marie Forleo share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 83,
+        "reason": "Ratan Tata and Mark Zuckerberg share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 82,
+        "reason": "Ratan Tata and Sahil Bloom share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 82,
+        "reason": "Ratan Tata and Shaan Puri share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 82,
+        "reason": "Ratan Tata and Elon Musk share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 81,
+        "reason": "Ratan Tata and Lex Fridman share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 81,
+        "reason": "Ratan Tata and Rand Fishkin share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 25,
+        "name": "Sundar Pichai",
+        "score": 78,
+        "reason": "Ratan Tata and Sundar Pichai share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 77,
+        "reason": "Ratan Tata and Priyanka Chopra Jonas share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 76,
+        "reason": "Ratan Tata and Ankur Warikoo share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 76,
+        "reason": "Ratan Tata and Varun Mayya share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 75,
+        "reason": "Ratan Tata and Dr. Andrew Huberman share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 75,
+        "reason": "Ratan Tata and Alexis Ohanian share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 75,
+        "reason": "Ratan Tata and Kunal Shah share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 75,
+        "reason": "Ratan Tata and Tanmay Bhat share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 75,
+        "reason": "Ratan Tata and Deepika Padukone share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 71,
+        "reason": "Ratan Tata and Pieter Levels share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 71,
+        "reason": "Ratan Tata and Justin Kan share an exceptional alignment around Business as a service to humanity and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  },
+  "25": {
+    "id": 25,
+    "name": "Sundar Pichai",
+    "ranked": [
+      {
+        "id": 13,
+        "name": "Nikhil Kamath",
+        "score": 89,
+        "reason": "Sundar Pichai and Nikhil Kamath share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 22,
+        "name": "Mark Zuckerberg",
+        "score": 87,
+        "reason": "Sundar Pichai and Mark Zuckerberg share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 4,
+        "name": "Gary Vaynerchuk",
+        "score": 84,
+        "reason": "Sundar Pichai and Gary Vaynerchuk share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 5,
+        "name": "Tim Ferriss",
+        "score": 84,
+        "reason": "Sundar Pichai and Tim Ferriss share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 14,
+        "name": "Naval Ravikant",
+        "score": 84,
+        "reason": "Sundar Pichai and Naval Ravikant share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 23,
+        "name": "Elon Musk",
+        "score": 83,
+        "reason": "Sundar Pichai and Elon Musk share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 6,
+        "name": "Ali Abdaal",
+        "score": 82,
+        "reason": "Sundar Pichai and Ali Abdaal share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 2,
+        "name": "Dr. Andrew Huberman",
+        "score": 81,
+        "reason": "Sundar Pichai and Dr. Andrew Huberman share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 3,
+        "name": "Lex Fridman",
+        "score": 81,
+        "reason": "Sundar Pichai and Lex Fridman share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 24,
+        "name": "Ratan Tata",
+        "score": 80,
+        "reason": "Sundar Pichai and Ratan Tata share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 21,
+        "name": "Priyanka Chopra Jonas",
+        "score": 79,
+        "reason": "Sundar Pichai and Priyanka Chopra Jonas share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 12,
+        "name": "Shaan Puri",
+        "score": 78,
+        "reason": "Sundar Pichai and Shaan Puri share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 15,
+        "name": "Lenny Rachitsky",
+        "score": 78,
+        "reason": "Sundar Pichai and Lenny Rachitsky share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 20,
+        "name": "Deepika Padukone",
+        "score": 77,
+        "reason": "Sundar Pichai and Deepika Padukone share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 11,
+        "name": "Ankur Warikoo",
+        "score": 76,
+        "reason": "Sundar Pichai and Ankur Warikoo share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 17,
+        "name": "Kunal Shah",
+        "score": 76,
+        "reason": "Sundar Pichai and Kunal Shah share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 7,
+        "name": "Marie Forleo",
+        "score": 73,
+        "reason": "Sundar Pichai and Marie Forleo share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 8,
+        "name": "Sahil Bloom",
+        "score": 72,
+        "reason": "Sundar Pichai and Sahil Bloom share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 19,
+        "name": "Varun Mayya",
+        "score": 71,
+        "reason": "Sundar Pichai and Varun Mayya share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 10,
+        "name": "Alexis Ohanian",
+        "score": 70,
+        "reason": "Sundar Pichai and Alexis Ohanian share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 16,
+        "name": "Rand Fishkin",
+        "score": 70,
+        "reason": "Sundar Pichai and Rand Fishkin share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 18,
+        "name": "Tanmay Bhat",
+        "score": 68,
+        "reason": "Sundar Pichai and Tanmay Bhat share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 1,
+        "name": "Pieter Levels",
+        "score": 65,
+        "reason": "Sundar Pichai and Pieter Levels share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      },
+      {
+        "id": 9,
+        "name": "Justin Kan",
+        "score": 63,
+        "reason": "Sundar Pichai and Justin Kan share an exceptional alignment around Democratizing technology for everyone and ambitious execution, while offering each other grounded emotional balance."
+      }
+    ]
+  }
+}

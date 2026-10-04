@@ -1,0 +1,18 @@
+{
+  "name": "agentic-dating-scripts",
+  "version": "1.0.0",
+  "description": "Scraping and analysis scripts for agentic dating site",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "scrape": "node scripts/scrape.js",
+    "analyze": "node scripts/analyze.js",
+    "date": "node scripts/date.js",
+    "all": "node scripts/scrape.js && node scripts/analyze.js && node scripts/date.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "apify-client": "^2.25.0",
+    "dotenv": "^16.6.1"
+  }
+}
