@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, ArrowUpRight, Play, Trophy, Sparkles } from 'lucide-react'
+import { ArrowLeft, Play, Trophy } from 'lucide-react'
 
 export default function RankingsPage() {
   const { id } = useParams()
@@ -46,7 +46,7 @@ export default function RankingsPage() {
           id: o.id,
           name: o.name,
           score: Math.floor(65 + Math.random() * 30),
-          reason: 'Exceptional resonance in life purpose and shared dedication to creative craft.',
+          reason: 'Strong resonance in lifestyle cadence and creative drive.',
           profile: o,
           match: null,
         })).sort((a, b) => b.score - a.score)
@@ -56,52 +56,52 @@ export default function RankingsPage() {
   }, [id])
 
   if (!person) return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh]">
-      <div className="w-8 h-8 rounded-full border-2 border-rose-500 border-t-transparent animate-spin mb-4" />
-      <div className="font-mono text-xs uppercase tracking-widest text-slate-500">Calculating Rankings...</div>
+    <div className="flex flex-col items-center justify-center min-h-[60vh]">
+      <div className="w-8 h-8 rounded-full border-2 border-rose-600 border-t-transparent animate-spin mb-3" />
+      <div className="text-sm font-medium text-slate-500">Loading rankings...</div>
     </div>
   )
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">
       {/* Return link */}
-      <Link to={`/profile/${id}`} className="inline-flex items-center gap-2 font-mono text-xs text-slate-400 hover:text-white transition-colors mb-6">
+      <Link to={`/profile/${id}`} className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors mb-6">
         <ArrowLeft size={14} />
-        <span>Return to {person.name}'s Profile</span>
+        <span>Back to {person.name}'s Profile</span>
       </Link>
 
-      {/* Header */}
-      <div className="aura-card p-8 mb-8 bg-[#101726] border border-white/[0.1]">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-6 border-b border-white/[0.08]">
+      {/* Header Card */}
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-6 border-b border-slate-100">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-rose-400 mb-1">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-600 mb-1">
               <Trophy size={14} />
-              <span>Compatibility Leaderboard</span>
+              <span>Compatibility Rankings</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Who fits {person.name} best?
             </h1>
-            <p className="text-xs text-slate-400 mt-1 max-w-lg">
-              Ranked from #1 to #{rankings.length} based on dual-source psychological vectors and simulated date conversations.
+            <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-lg">
+              Every person is ranked from highest to lowest compatibility based on simulated date conversations and psychological alignment.
             </p>
           </div>
 
-          <div className="flex items-center gap-3 bg-slate-900 p-3 rounded-xl border border-white/[0.06] shrink-0 font-mono text-xs">
+          <div className="flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200 shrink-0">
             <img
               src={person.photo}
               alt={person.name}
-              className="w-12 h-12 rounded-lg object-cover border border-rose-500/40"
+              className="w-12 h-12 rounded-full object-cover border border-slate-200"
               onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
             />
             <div>
-              <div className="text-white font-bold">{person.name}</div>
-              <div className="text-[10px] text-rose-400">Target Subject</div>
+              <div className="text-slate-900 font-bold text-sm">{person.name}</div>
+              <div className="text-xs text-rose-600 font-semibold">Target Person</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Rankings List */}
+      {/* List of ranked matches */}
       <div className="space-y-3">
         {rankings.map((match, idx) => {
           const rankNum = idx + 1
@@ -111,8 +111,10 @@ export default function RankingsPage() {
           return (
             <div
               key={match.id || idx}
-              className={`aura-card p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all ${
-                isTopThree ? 'border-rose-500/30 bg-[#121c30]' : 'bg-[#101726]'
+              className={`p-5 rounded-xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
+                isTopThree
+                  ? 'bg-white border-rose-200 shadow-sm'
+                  : 'bg-white border-slate-200 shadow-none hover:shadow-sm'
               }`}
             >
               {/* Rank and Person Details */}
@@ -121,7 +123,7 @@ export default function RankingsPage() {
                   {medal ? (
                     <span className="text-xl">{medal}</span>
                   ) : (
-                    <span className="font-mono text-xs font-bold text-slate-500">#{rankNum}</span>
+                    <span className="text-xs font-bold text-slate-400">#{rankNum}</span>
                   )}
                 </div>
 
@@ -130,12 +132,12 @@ export default function RankingsPage() {
                     <img
                       src={match.profile.photo}
                       alt={match.name}
-                      className="w-12 h-12 rounded-xl object-cover border border-white/[0.1]"
+                      className="w-12 h-12 rounded-full object-cover border border-slate-200"
                       onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
                     />
                   ) : null}
                   <div
-                    className="w-12 h-12 rounded-xl items-center justify-center font-bold text-xl text-rose-400 bg-slate-800"
+                    className="w-12 h-12 rounded-full items-center justify-center font-bold text-lg text-rose-600 bg-rose-50 border border-rose-200"
                     style={{ display: match.profile?.photo ? 'none' : 'flex' }}
                   >
                     {match.name.charAt(0)}
@@ -146,43 +148,43 @@ export default function RankingsPage() {
                   <div className="flex items-center gap-2">
                     <Link
                       to={`/profile/${match.id}`}
-                      className="font-bold text-base text-white hover:text-rose-400 transition-colors truncate block"
+                      className="font-bold text-base text-slate-900 hover:text-rose-600 transition-colors truncate block"
                     >
                       {match.name}
                     </Link>
                     {isTopThree && (
-                      <span className="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">
-                        Top Match
+                      <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
+                        Top Fit
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-slate-400 truncate mt-0.5">
-                    {match.profile?.headline || 'Independent Operator'}
+                  <p className="text-xs text-slate-500 truncate mt-0.5">
+                    {match.profile?.headline || 'Independent Builder'}
                   </p>
                   {match.reason && (
-                    <p className="text-xs text-slate-300 italic line-clamp-1 mt-1 font-light">
+                    <p className="text-xs text-slate-600 italic line-clamp-1 mt-1">
                       "{match.reason}"
                     </p>
                   )}
                 </div>
               </div>
 
-              {/* Score and Simulate Action */}
+              {/* Match Score & Date Button */}
               <div className="flex items-center gap-5 self-end sm:self-center shrink-0">
                 <div className="text-right">
-                  <div className="font-mono text-[10px] uppercase text-slate-500">Fit Score</div>
-                  <div className="text-2xl font-black text-rose-400 font-mono">
+                  <div className="text-[10px] font-bold uppercase text-slate-400">Match</div>
+                  <div className="text-2xl font-extrabold text-rose-600">
                     {match.score}
-                    <span className="text-xs text-slate-500 font-normal"> / 100</span>
+                    <span className="text-xs text-slate-400 font-normal"> / 100</span>
                   </div>
                 </div>
 
                 <Link
                   to={`/date/${id}/${match.id}`}
-                  className="font-mono text-xs font-bold uppercase tracking-wider px-3.5 py-2 rounded-lg bg-rose-500 hover:bg-rose-600 text-white flex items-center gap-1.5 transition-all shadow-sm shadow-rose-500/20"
+                  className="px-3.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-sm"
                 >
                   <Play size={11} fill="currentColor" />
-                  <span>Simulate Date</span>
+                  <span>Watch Date</span>
                 </Link>
               </div>
             </div>

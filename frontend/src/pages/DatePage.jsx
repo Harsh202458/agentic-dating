@@ -1,17 +1,15 @@
 import { useState, useEffect, useRef } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
-import { ArrowLeft, Play, RotateCcw, Sparkles, AlertTriangle, ArrowUpRight, MapPin, Heart } from 'lucide-react'
+import { useParams, Link } from 'react-router-dom'
+import { ArrowLeft, Play, RotateCcw, Heart, Sparkles, AlertTriangle, ArrowRight, MapPin } from 'lucide-react'
 
 const VENUES = [
-  { id: 'jazz', name: 'Private Jazz Mezzanine, Manhattan', vibe: 'Intimate, late night, low lighting' },
-  { id: 'coffee', name: 'Artisanal Roastery, Tokyo', vibe: 'Minimalist, morning sunlight, slow pace' },
-  { id: 'walk', name: 'Embarcadero Waterfront, San Francisco', vibe: 'Breezy, open air, spontaneous' },
-  { id: 'bistro', name: 'Historic Wine Cellar, Paris', vibe: 'Candlelit, rich conversation, deep debate' }
+  { id: 'coffee', name: 'Quiet Coffee Shop', vibe: 'Low pressure, natural conversation' },
+  { id: 'dinner', name: 'Casual Dinner & Drinks', vibe: 'Intimate evening, deep questions' },
+  { id: 'walk', name: 'Walk in the Park', vibe: 'Active, open air, spontaneous' },
 ]
 
 export default function DatePage() {
   const { id1, id2 } = useParams()
-  const navigate = useNavigate()
   const [people, setPeople] = useState([])
   const [matches, setMatches] = useState(null)
   const [personA, setPersonA] = useState(null)
@@ -22,7 +20,7 @@ export default function DatePage() {
   const [score, setScore] = useState(null)
   const [showScore, setShowScore] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [chemistryProgress, setChemistryProgress] = useState(25)
+  const [chemistryProgress, setChemistryProgress] = useState(15)
   const transcriptRef = useRef(null)
 
   useEffect(() => {
@@ -43,12 +41,12 @@ export default function DatePage() {
         setMatches(matchData[id1][id2])
       } else if (pA && pB) {
         setConversation([
-          { agent: 'A', name: pA.name, message: `I've been analyzing ${pB.name}'s lifestyle graph. Your dedication to ${pB.interests?.[0] || 'your craft'} caught my attention right away.` },
-          { agent: 'B', name: pB.name, message: `Thank you. From what I observe about ${pA.name}, there's an uncompromising pursuit of ${pA.values?.[0] || 'truth'}. That's rare to encounter.` },
-          { agent: 'A', name: pA.name, message: `For ${pA.name}, a core need is ${pA.needs?.[0] || 'unhurried freedom'}. How does ${pB.name} maintain personal presence while navigating high stakes?` },
-          { agent: 'B', name: pB.name, message: `Through strict boundaries around ${pB.hobbies?.[0] || 'daily rituals'}. When both partners respect that devotion, independence becomes magnetic.` },
-          { agent: 'A', name: pA.name, message: `That's an ideal alignment. If we shared an evening together, would it be an intense intellectual debate or an adventurous escape?` },
-          { agent: 'B', name: pB.name, message: `We begin with high-octane banter, then let the conversation drift until 2 AM. I believe our chemistry is undeniable.` },
+          { agent: 'A', name: pA.name, message: `Hi! I've been reviewing ${pB.name}'s background. Your focus on ${pB.interests?.[0] || 'your work'} really resonated with us.` },
+          { agent: 'B', name: pB.name, message: `Nice to meet you! From what we see about ${pA.name}, you value ${pA.values?.[0] || 'authenticity'} and doing things your own way.` },
+          { agent: 'A', name: pA.name, message: `Definitely. A non-negotiable for ${pA.name} is ${pA.needs?.[0] || 'independence'}. How does ${pB.name} handle balancing high ambition with relationship time?` },
+          { agent: 'B', name: pB.name, message: `By having dedicated rituals around ${pB.hobbies?.[0] || 'daily life'}. When both people respect each other's drive, it works naturally.` },
+          { agent: 'A', name: pA.name, message: `That makes a lot of sense. Sounds like our daily rhythms and core values line up remarkably well.` },
+          { agent: 'B', name: pB.name, message: `Agreed. I think our chemistry on paper and in conversation is very strong.` },
         ])
         setScore(78)
       }
@@ -60,12 +58,12 @@ export default function DatePage() {
     setIsPlaying(true)
     setDisplayedMsgs([])
     setShowScore(false)
-    setChemistryProgress(20)
+    setChemistryProgress(15)
 
     conversation.forEach((msg, i) => {
       setTimeout(() => {
         setDisplayedMsgs(prev => [...prev, msg])
-        const pct = Math.round(20 + ((i + 1) / conversation.length) * ((score || 78) - 20))
+        const pct = Math.round(15 + ((i + 1) / conversation.length) * ((score || 78) - 15))
         setChemistryProgress(pct)
 
         if (transcriptRef.current) {
@@ -77,42 +75,42 @@ export default function DatePage() {
             setShowScore(true)
             setIsPlaying(false)
             setChemistryProgress(score || 78)
-          }, 1000)
+          }, 800)
         }
-      }, i * 1600)
+      }, i * 1500)
     })
   }
 
   if (!personA || !personB) return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh]">
-      <div className="w-8 h-8 rounded-full border-2 border-rose-500 border-t-transparent animate-spin mb-4" />
-      <div className="font-mono text-xs uppercase tracking-widest text-slate-500">Preparing Date Arena...</div>
+    <div className="flex flex-col items-center justify-center min-h-[60vh]">
+      <div className="w-8 h-8 rounded-full border-2 border-rose-600 border-t-transparent animate-spin mb-3" />
+      <div className="text-sm font-medium text-slate-500">Setting up date simulation...</div>
     </div>
   )
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10">
+    <div className="max-w-3xl mx-auto px-6 py-10">
       {/* Return link */}
-      <Link to="/" className="inline-flex items-center gap-2 font-mono text-xs text-slate-400 hover:text-white transition-colors mb-6">
+      <Link to="/" className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors mb-6">
         <ArrowLeft size={14} />
-        <span>Return to All Subjects</span>
+        <span>Back to all people</span>
       </Link>
 
-      {/* Arena Stage Card */}
-      <div className="aura-card p-6 md:p-8 mb-8 bg-[#101726] border border-white/[0.1]">
-        {/* Top telemetry and venue selector */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08] mb-6">
-          <div className="flex items-center gap-2 font-mono text-xs text-rose-400 font-semibold">
-            <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-            <span>AUTONOMOUS COURTSHIP SIMULATION</span>
+      {/* Main Date Card Header */}
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100 mb-6">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-600">
+            <Heart size={14} fill="currentColor" />
+            <span>Agent Dating Simulation</span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <MapPin size={13} className="text-slate-400" />
+          <div className="flex items-center gap-2 text-xs text-slate-500">
+            <MapPin size={13} />
+            <span>Setting:</span>
             <select
               value={venue.id}
               onChange={e => setVenue(VENUES.find(v => v.id === e.target.value) || VENUES[0])}
-              className="bg-slate-900 border border-white/[0.1] rounded px-3 py-1 font-mono text-xs text-white outline-none cursor-pointer"
+              className="bg-slate-50 border border-slate-200 rounded px-2.5 py-1 text-xs font-semibold text-slate-900 outline-none"
             >
               {VENUES.map(v => (
                 <option key={v.id} value={v.id}>{v.name}</option>
@@ -121,112 +119,102 @@ export default function DatePage() {
           </div>
         </div>
 
-        {/* The Two Subjects Face-off Presentation */}
-        <div className="grid grid-cols-1 md:grid-cols-11 gap-4 items-center">
-          {/* Subject A */}
-          <div className="md:col-span-5 flex items-center gap-4 bg-slate-900/60 p-4 rounded-xl border border-white/[0.06]">
+        {/* Both people head-to-head */}
+        <div className="grid grid-cols-2 gap-4 items-center">
+          {/* Person A */}
+          <div className="flex items-center gap-3.5">
             <img
               src={personA.photo}
               alt={personA.name}
-              className="w-14 h-14 rounded-xl object-cover border-2 border-rose-500/50"
+              className="w-14 h-14 rounded-full object-cover border-2 border-rose-200 shadow-sm"
               onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
             />
-            <div className="w-14 h-14 rounded-xl items-center justify-center font-bold text-2xl text-rose-400 bg-slate-800" style={{ display: personA.photo ? 'none' : 'flex' }}>
+            <div className="w-14 h-14 rounded-full items-center justify-center font-bold text-xl text-rose-600 bg-rose-50 border-2 border-rose-200 shadow-sm" style={{ display: personA.photo ? 'none' : 'flex' }}>
               {personA.name.charAt(0)}
             </div>
-            <div className="min-w-0">
-              <div className="font-bold text-base text-white truncate">{personA.name}</div>
-              <div className="font-mono text-[11px] text-rose-400">Agent Proxy A</div>
-              <div className="text-[11px] text-slate-400 truncate max-w-[170px] mt-0.5">{personA.headline}</div>
+            <div>
+              <div className="font-bold text-sm text-slate-900">{personA.name}</div>
+              <div className="text-xs text-rose-600 font-semibold">{personA.name}'s Agent</div>
             </div>
           </div>
 
-          {/* Versus Icon */}
-          <div className="md:col-span-1 text-center font-mono font-bold text-slate-600 text-sm">
-            VS
-          </div>
-
-          {/* Subject B */}
-          <div className="md:col-span-5 flex items-center justify-end gap-4 bg-slate-900/60 p-4 rounded-xl border border-white/[0.06] text-right">
-            <div className="min-w-0">
-              <div className="font-bold text-base text-white truncate">{personB.name}</div>
-              <div className="font-mono text-[11px] text-sky-400">Agent Proxy B</div>
-              <div className="text-[11px] text-slate-400 truncate max-w-[170px] mt-0.5">{personB.headline}</div>
+          {/* Person B */}
+          <div className="flex items-center justify-end gap-3.5 text-right">
+            <div>
+              <div className="font-bold text-sm text-slate-900">{personB.name}</div>
+              <div className="text-xs text-sky-600 font-semibold">{personB.name}'s Agent</div>
             </div>
             <img
               src={personB.photo}
               alt={personB.name}
-              className="w-14 h-14 rounded-xl object-cover border-2 border-sky-500/50"
+              className="w-14 h-14 rounded-full object-cover border-2 border-sky-200 shadow-sm"
               onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
             />
-            <div className="w-14 h-14 rounded-xl items-center justify-center font-bold text-2xl text-sky-400 bg-slate-800" style={{ display: personB.photo ? 'none' : 'flex' }}>
+            <div className="w-14 h-14 rounded-full items-center justify-center font-bold text-xl text-sky-600 bg-sky-50 border-2 border-sky-200 shadow-sm" style={{ display: personB.photo ? 'none' : 'flex' }}>
               {personB.name.charAt(0)}
             </div>
           </div>
         </div>
 
         {/* Live Chemistry Progress Bar */}
-        <div className="mt-6 pt-6 border-t border-white/[0.08]">
-          <div className="flex justify-between items-center font-mono text-xs mb-2">
-            <span className="text-slate-400 flex items-center gap-1.5">
-              <Heart size={13} className="text-rose-400" />
-              <span>Real-Time Chemistry Gauge</span>
-            </span>
-            <span className="font-bold text-white">{chemistryProgress}%</span>
+        <div className="mt-6 pt-6 border-t border-slate-100">
+          <div className="flex justify-between items-center text-xs font-semibold mb-1.5">
+            <span className="text-slate-600">Simulated Chemistry Score</span>
+            <span className="text-rose-600 font-bold">{chemistryProgress}%</span>
           </div>
-          <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-rose-500 via-amber-400 to-rose-400 rounded-full transition-all duration-500"
+              className="h-full bg-rose-600 rounded-full transition-all duration-300"
               style={{ width: `${chemistryProgress}%` }}
             />
           </div>
         </div>
       </div>
 
-      {/* Start Button when not playing */}
+      {/* Start Button when idle */}
       {displayedMsgs.length === 0 && !isPlaying && (
-        <div className="text-center py-12 bg-slate-900/70 border border-dashed border-white/[0.1] rounded-2xl mb-8 p-6">
-          <div className="w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center mx-auto mb-4">
-            <Play size={22} fill="currentColor" className="ml-1" />
+        <div className="text-center py-10 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm mb-6">
+          <div className="w-12 h-12 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center mx-auto mb-3">
+            <Play size={20} fill="currentColor" className="ml-1" />
           </div>
-          <h2 className="text-2xl font-bold text-white mb-2">Watch Agents Date</h2>
-          <p className="text-sm text-slate-300 max-w-md mx-auto mb-6">
-            Both autonomous agents will begin an unscripted date at the <span className="text-white font-medium">{venue.name}</span>, probing mutual values and lifestyle harmony.
+          <h2 className="text-lg font-bold text-slate-900 mb-1">Watch the Date Happen</h2>
+          <p className="text-xs text-slate-500 max-w-md mx-auto mb-5 leading-relaxed">
+            The two agents will converse in character, discussing their lifestyle needs, career focus, and values.
           </p>
           <button
             onClick={playConversation}
-            className="font-mono text-xs font-bold uppercase tracking-wider px-8 py-3.5 rounded-lg bg-rose-500 hover:bg-rose-600 text-white transition-all shadow-lg shadow-rose-500/30 cursor-pointer"
+            className="px-6 py-3 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer"
           >
-            Start Live Date Simulation
+            Start Date Conversation
           </button>
         </div>
       )}
 
-      {/* Live Conversation Transcript Window */}
+      {/* Live Conversation Window */}
       {(displayedMsgs.length > 0 || isPlaying) && (
-        <div className="aura-card p-6 md:p-8 bg-[#101726] border border-white/[0.1] mb-8">
-          <div className="flex items-center justify-between pb-4 border-b border-white/[0.08] mb-6 font-mono text-xs">
-            <span className="text-slate-400 font-semibold uppercase">Date Dialogue Transcript</span>
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm mb-6">
+          <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-5 text-xs">
+            <span className="font-bold text-slate-700">Live Dialogue</span>
             {isPlaying && (
-              <span className="flex items-center gap-2 text-rose-400">
-                <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
-                <span>Simulating Turn-by-Turn</span>
+              <span className="text-rose-600 font-semibold flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-rose-600 animate-pulse" />
+                <span>Agents Talking...</span>
               </span>
             )}
           </div>
 
-          <div ref={transcriptRef} className="space-y-5 max-h-[500px] overflow-y-auto pr-3">
+          <div ref={transcriptRef} className="space-y-4 max-h-[460px] overflow-y-auto pr-2">
             {displayedMsgs.map((msg, idx) => {
               const isA = msg.agent === 'A'
               return (
-                <div key={idx} className={`p-4 ${isA ? 'dialogue-bubble-a' : 'dialogue-bubble-b'}`}>
-                  <div className="flex items-center justify-between mb-1.5 font-mono text-[11px]">
-                    <span className={isA ? 'text-rose-400 font-bold' : 'text-sky-400 font-bold'}>
+                <div key={idx} className={`p-4 ${isA ? 'chat-bubble-a' : 'chat-bubble-b'}`}>
+                  <div className="flex items-center justify-between mb-1 text-[11px] font-bold">
+                    <span className={isA ? 'text-rose-600' : 'text-sky-600'}>
                       {isA ? `${personA.name}'s Agent` : `${personB.name}'s Agent`}
                     </span>
-                    <span className="text-slate-500 font-normal">Turn {idx + 1}</span>
+                    <span className="text-slate-400 font-normal">Turn {idx + 1}</span>
                   </div>
-                  <p className="text-sm text-slate-100 leading-relaxed font-normal">
+                  <p className="text-xs text-slate-800 leading-relaxed">
                     {msg.message}
                   </p>
                 </div>
@@ -234,80 +222,77 @@ export default function DatePage() {
             })}
 
             {isPlaying && (
-              <div className="flex items-center gap-2 text-slate-500 font-mono text-xs py-2 pl-4">
-                <span className="animate-bounce">●</span>
-                <span className="animate-bounce" style={{ animationDelay: '0.2s' }}>●</span>
-                <span className="animate-bounce" style={{ animationDelay: '0.4s' }}>●</span>
-                <span className="ml-2">Synthesizing next response...</span>
+              <div className="text-xs text-slate-400 italic pl-3 py-1">
+                ... preparing response ...
               </div>
             )}
           </div>
         </div>
       )}
 
-      {/* Post-Date Assessment Card */}
+      {/* Post-Date Assessment */}
       {showScore && score !== null && (
-        <div className="aura-card p-8 bg-[#101726] border-2 border-rose-500/40 rounded-2xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08]">
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-100">
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-rose-400 font-bold mb-1">
-                Post-Date Debrief & Analysis
+              <div className="text-xs font-bold uppercase tracking-wider text-rose-600 mb-1">
+                Date Completed
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-white">
-                Compatibility Synthesis
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">
+                Compatibility Result
               </h2>
             </div>
 
-            <div className="text-right">
-              <div className="font-mono text-xs text-slate-400">Affinity Score</div>
-              <div className="text-5xl font-black text-rose-400 font-mono mt-0.5">
-                {score} <span className="text-lg text-slate-500 font-normal">/ 100</span>
+            <div className="text-left sm:text-right">
+              <div className="text-xs font-semibold text-slate-400">Match Score</div>
+              <div className="text-4xl font-extrabold text-rose-600 mt-0.5">
+                {score} <span className="text-base text-slate-400 font-normal">/ 100</span>
               </div>
             </div>
           </div>
 
-          {/* Synthesis Reason */}
-          <div className="space-y-1.5">
-            <div className="font-mono text-xs uppercase tracking-wider text-slate-400 font-bold">
-              Synergy Thesis
+          {/* Reason */}
+          <div>
+            <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+              Why They Fit
             </div>
-            <p className="text-sm text-slate-200 leading-relaxed">
-              {matches?.matchReason || `${personA.name} and ${personB.name} exhibit high complementarity in their creative stamina and mutual appetite for independent growth.`}
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              {matches?.matchReason || `${personA.name} and ${personB.name} have exceptional synergy in how they structure their lives and approach their long-term missions.`}
             </p>
           </div>
 
           {/* Sparks and Friction Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-white/[0.06]">
-            <div className="bg-slate-900/80 p-4 rounded-xl border border-white/[0.04]">
-              <div className="flex items-center gap-2 font-mono text-xs font-bold text-rose-400 mb-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-100">
+            <div className="p-4 rounded-xl bg-rose-50 border border-rose-100">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-rose-700 mb-2">
                 <Sparkles size={14} />
-                <span>Catalytic Sparks</span>
+                <span>Shared Sparks</span>
               </div>
-              <ul className="space-y-1.5 text-xs text-slate-300">
+              <ul className="space-y-1.5 text-xs text-slate-700">
                 {(matches?.sparks || [
-                  'Shared devotion to self-directed high agency',
-                  'Mutual appreciation for intellectual depth over superficiality',
+                  'Mutual appreciation for high-agency living',
+                  'Shared focus on deep, authentic communication',
                 ]).map((s, idx) => (
                   <li key={idx} className="flex items-start gap-1.5">
-                    <span className="text-rose-400 font-mono">✦</span>
+                    <span className="text-rose-600 font-bold">•</span>
                     <span>{s}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-slate-900/80 p-4 rounded-xl border border-white/[0.04]">
-              <div className="flex items-center gap-2 font-mono text-xs font-bold text-amber-400 mb-2">
+            <div className="p-4 rounded-xl bg-amber-50 border border-amber-100">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-amber-700 mb-2">
                 <AlertTriangle size={14} />
-                <span>Potential Friction Points</span>
+                <span>Things to Watch Out For</span>
               </div>
-              <ul className="space-y-1.5 text-xs text-slate-300">
+              <ul className="space-y-1.5 text-xs text-slate-700">
                 {(matches?.tensions || [
-                  'High work travel cadence may constrain spontaneous quality time',
-                  'Differing communication paces requiring proactive alignment',
+                  'Both have demanding travel and work commitments',
+                  'Need proactive scheduling to ensure regular quality time',
                 ]).map((t, idx) => (
                   <li key={idx} className="flex items-start gap-1.5">
-                    <span className="text-amber-400 font-mono">✕</span>
+                    <span className="text-amber-600 font-bold">•</span>
                     <span>{t}</span>
                   </li>
                 ))}
@@ -315,35 +300,26 @@ export default function DatePage() {
             </div>
           </div>
 
-          {/* Navigation Controls */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/[0.08]">
+          {/* Bottom Actions */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-5 border-t border-slate-100">
             <button
               onClick={() => {
                 setDisplayedMsgs([])
                 setShowScore(false)
-                setTimeout(playConversation, 200)
+                setTimeout(playConversation, 150)
               }}
-              className="font-mono text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white flex items-center gap-2 cursor-pointer"
+              className="text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1.5 cursor-pointer"
             >
               <RotateCcw size={13} />
               <span>Replay Date</span>
             </button>
 
-            <div className="flex items-center gap-4 font-mono text-xs">
-              <Link
-                to={`/rankings/${personA.id}`}
-                className="text-rose-400 hover:underline flex items-center gap-1 font-semibold"
-              >
-                <span>{personA.name}'s Full Rankings</span>
-                <ArrowUpRight size={13} />
+            <div className="flex items-center gap-4 text-xs font-semibold">
+              <Link to={`/rankings/${personA.id}`} className="text-rose-600 hover:underline">
+                See {personA.name}'s Rankings →
               </Link>
-              <span className="text-slate-600">|</span>
-              <Link
-                to={`/rankings/${personB.id}`}
-                className="text-sky-400 hover:underline flex items-center gap-1 font-semibold"
-              >
-                <span>{personB.name}'s Full Rankings</span>
-                <ArrowUpRight size={13} />
+              <Link to={`/rankings/${personB.id}`} className="text-sky-600 hover:underline">
+                See {personB.name}'s Rankings →
               </Link>
             </div>
           </div>

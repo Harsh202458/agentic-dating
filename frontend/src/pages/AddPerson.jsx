@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, Sparkles, Terminal, CheckCircle2, Loader2 } from 'lucide-react'
+import { ArrowLeft, Sparkles, Loader2, CheckCircle2 } from 'lucide-react'
 import { LinkedinIcon, InstagramIcon } from '../components/Icons'
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY
 
 async function analyzeWithGemini(name, linkedinData, instagramData) {
   const prompt = `
-You are a behavioral psychologist and agent architect. Analyze this person based on their LinkedIn and Instagram public data.
+You are a relationship psychologist and agent builder. Analyze this person based on their LinkedIn and Instagram public data.
 
 Person: ${name}
 LinkedIn: ${JSON.stringify(linkedinData)}
@@ -15,7 +15,7 @@ Instagram: ${JSON.stringify(instagramData)}
 
 Return ONLY valid JSON (no markdown):
 {
-  "needs": ["4-5 relationship imperatives"],
+  "needs": ["4-5 relationship needs"],
   "hobbies": ["4-5 active hobbies"],
   "interests": ["4-5 intellectual/cultural interests"],
   "personality": ["4-5 key personality traits"],
@@ -49,17 +49,14 @@ Return ONLY valid JSON (no markdown):
 export default function AddPerson() {
   const navigate = useNavigate()
   const [form, setForm] = useState({ name: '', linkedin: '', instagram: '' })
-  const [statusLogs, setStatusLogs] = useState([])
+  const [statusMessage, setStatusMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-
-  const log = (msg) => setStatusLogs(prev => [...prev, `[${new Date().toLocaleTimeString()}] ${msg}`])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
     setError('')
-    setStatusLogs([])
 
     if (!form.linkedin.includes('linkedin.com')) {
       setError('Please provide a valid LinkedIn URL containing linkedin.com')
@@ -73,16 +70,16 @@ export default function AddPerson() {
     }
 
     try {
-      log('Initializing Apify Client dual-actor pipeline...')
+      setStatusMessage('Connecting to Apify scrapers...')
       await new Promise(r => setTimeout(r, 700))
 
-      log('Scraping LinkedIn profile: headline, experience, skills, and certifications...')
+      setStatusMessage('Reading LinkedIn profile (headline, experience, skills)...')
       await new Promise(r => setTimeout(r, 1000))
 
-      log('Scraping Instagram profile: public bio, media captions, follower stats, and aesthetic tags...')
+      setStatusMessage('Reading Instagram profile (bio, media captions, follower stats)...')
       await new Promise(r => setTimeout(r, 1000))
 
-      log('Structuring JSON payloads and feeding to Gemini 1.5 Flash agent synthesizer...')
+      setStatusMessage('Feeding data into Gemini AI to analyze personality & needs...')
       await new Promise(r => setTimeout(r, 900))
 
       const igUsername = form.instagram.match(/instagram\.com\/([^\/\?#]+)/)?.[1]
@@ -112,7 +109,7 @@ export default function AddPerson() {
             }
           }
         } catch {
-          log('Notice: Utilizing client-side telemetry cache.')
+          console.log('Using client fallback cache')
         }
       }
 
@@ -128,7 +125,7 @@ export default function AddPerson() {
       if (!analysis) {
         analysis = {
           needs: ['High intellectual resonance', 'Shared location flexibility', 'Direct honest feedback', 'Low ego companionship'],
-          hobbies: ['Reading biographies', 'Exploring neighborhood cafes', 'Urban cycling', 'Hosting salons'],
+          hobbies: ['Reading biographies', 'Exploring neighborhood cafes', 'Urban cycling', 'Hosting dinners'],
           interests: ['Applied AI', 'Product architecture', 'Behavioral design', 'Philosophy'],
           personality: ['Curious', 'High-agency', 'Reflective', 'Calm under pressure'],
           values: ['Autonomy', 'Deep craft', 'Intellectual humility', 'Loyalty'],
@@ -140,9 +137,8 @@ export default function AddPerson() {
         }
       }
 
-      log('Autonomous agent persona synthesized successfully.')
-      log('Running pairwise calibration against 25 existing subjects...')
-      await new Promise(r => setTimeout(r, 700))
+      setStatusMessage('Creating autonomous dating agent...')
+      await new Promise(r => setTimeout(r, 600))
 
       const newPerson = {
         id: Date.now(),
@@ -161,8 +157,8 @@ export default function AddPerson() {
       existing.unshift(newPerson)
       localStorage.setItem('added_people', JSON.stringify(existing))
 
-      log('Complete! Publishing new subject dossier...')
-      setTimeout(() => navigate(`/profile/${newPerson.id}`), 800)
+      setStatusMessage('Complete! Opening profile...')
+      setTimeout(() => navigate(`/profile/${newPerson.id}`), 700)
     } catch (err) {
       setError(err.message)
       setLoading(false)
@@ -170,98 +166,91 @@ export default function AddPerson() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12">
+    <div className="max-w-xl mx-auto px-6 py-12">
       {/* Return link */}
       <button
         onClick={() => navigate('/')}
-        className="inline-flex items-center gap-2 font-mono text-xs text-slate-400 hover:text-white transition-colors mb-8 cursor-pointer"
+        className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors mb-6 cursor-pointer"
       >
         <ArrowLeft size={14} />
-        <span>Return to All Subjects</span>
+        <span>Back to all people</span>
       </button>
 
       {/* Header */}
-      <div className="border-b border-white/[0.08] pb-6 mb-8">
-        <div className="inline-flex items-center gap-2 font-mono text-xs text-rose-400 font-semibold px-2.5 py-1 rounded bg-rose-500/10 border border-rose-500/20 mb-3">
-          <Sparkles size={13} />
-          <span>Dual-Source Telemetry Ingestion</span>
+      <div className="text-center mb-8">
+        <div className="w-12 h-12 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center mx-auto mb-3 border border-rose-200">
+          <Sparkles size={20} />
         </div>
-        <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-          Ingest a Public Profile
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Add a Person to the Dating Pool
         </h1>
-        <p className="text-sm text-slate-400 mt-2 font-normal leading-relaxed">
-          Provide a real person's official <span className="text-white font-medium">LinkedIn URL</span> and public <span className="text-white font-medium">Instagram URL</span>. The agentic pipeline extracts their career pedigree and lifestyle signals to train an autonomous dating proxy.
+        <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-md mx-auto leading-relaxed">
+          Paste an official LinkedIn URL and public Instagram link. We'll scrape both, build an agent representing them, and simulate dates against the other 25 people.
         </p>
       </div>
 
-      {/* Form */}
-      <form onSubmit={handleSubmit} className="aura-card p-8 bg-[#101726] border border-white/[0.1] space-y-5">
+      {/* Form Card */}
+      <form onSubmit={handleSubmit} className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
         <div>
-          <label className="block font-mono text-xs font-semibold text-slate-300 mb-2">Subject Full Name</label>
+          <label className="block text-xs font-bold text-slate-700 mb-1.5">Full Name</label>
           <input
             required
             value={form.name}
             onChange={e => setForm({ ...form, name: e.target.value })}
             placeholder="e.g. Maya Lin"
-            className="w-full px-4 py-3 bg-slate-900 border border-white/[0.08] focus:border-rose-500/50 rounded-xl text-sm text-white placeholder-slate-600 outline-none font-sans"
+            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 placeholder-slate-400 outline-none focus:border-slate-400"
           />
         </div>
 
         <div>
-          <label className="block font-mono text-xs font-semibold text-slate-300 mb-2 flex items-center gap-2">
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 flex items-center gap-1.5">
             <LinkedinIcon size={14} className="text-[#0077b5]" />
-            <span>LinkedIn Public Profile (Professional Vector)</span>
+            <span>LinkedIn Profile URL</span>
           </label>
           <input
             required
             value={form.linkedin}
             onChange={e => setForm({ ...form, linkedin: e.target.value })}
             placeholder="https://www.linkedin.com/in/username/"
-            className="w-full px-4 py-3 bg-slate-900 border border-white/[0.08] focus:border-rose-500/50 rounded-xl text-xs text-white placeholder-slate-600 outline-none font-mono"
+            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-900 placeholder-slate-400 outline-none focus:border-slate-400"
           />
         </div>
 
         <div>
-          <label className="block font-mono text-xs font-semibold text-slate-300 mb-2 flex items-center gap-2">
-            <InstagramIcon size={14} className="text-rose-400" />
-            <span>Instagram Public Profile (Lifestyle & Aesthetic Vector)</span>
+          <label className="block text-xs font-bold text-slate-700 mb-1.5 flex items-center gap-1.5">
+            <InstagramIcon size={14} className="text-rose-600" />
+            <span>Instagram Profile URL (must be public)</span>
           </label>
           <input
             required
             value={form.instagram}
             onChange={e => setForm({ ...form, instagram: e.target.value })}
             placeholder="https://www.instagram.com/username/"
-            className="w-full px-4 py-3 bg-slate-900 border border-white/[0.08] focus:border-rose-500/50 rounded-xl text-xs text-white placeholder-slate-600 outline-none font-mono"
+            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-900 placeholder-slate-400 outline-none focus:border-slate-400"
           />
         </div>
 
         {error && (
-          <div className="font-mono text-xs text-rose-400 p-3.5 rounded-lg bg-rose-500/10 border border-rose-500/20">
+          <div className="text-xs text-rose-700 p-3 rounded-lg bg-rose-50 border border-rose-200">
             {error}
           </div>
         )}
 
-        {/* Live Terminal Log */}
+        {/* Loading status bar */}
         {loading && (
-          <div className="bg-[#090d16] border border-white/[0.08] rounded-xl p-4 font-mono text-xs text-slate-400 space-y-1.5">
-            <div className="flex items-center gap-2 text-rose-400 pb-2 border-b border-white/[0.06] mb-2 font-semibold">
-              <Loader2 size={13} className="animate-spin" />
-              <span>APIFY SCRAPER + GEMINI SYNTHESIZER RUNNING</span>
-            </div>
-            {statusLogs.map((logItem, i) => (
-              <div key={i} className="leading-relaxed">
-                {logItem}
-              </div>
-            ))}
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-center">
+            <Loader2 size={18} className="animate-spin text-rose-600 mx-auto mb-2" />
+            <div className="text-xs font-semibold text-slate-700">{statusMessage}</div>
+            <div className="text-[11px] text-slate-400 mt-1">Apify scraper running in background</div>
           </div>
         )}
 
         {!loading && (
           <button
             type="submit"
-            className="w-full font-mono text-xs font-bold uppercase tracking-wider py-3.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white transition-all shadow-lg shadow-rose-500/25 cursor-pointer"
+            className="w-full py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer"
           >
-            Synthesize Autonomous Dating Agent
+            Create AI Dating Agent
           </button>
         )}
       </form>
