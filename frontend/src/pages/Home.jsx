@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Search, Play, ArrowRight, Heart, Sparkles, Trophy, UserCheck, ShieldCheck } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { ArrowRight, Play, Sparkles, Plus, ExternalLink, ShieldCheck, Heart } from 'lucide-react'
+import UniverseCanvas from '../components/UniverseCanvas'
 import { LinkedinIcon, InstagramIcon } from '../components/Icons'
 
 export default function Home() {
+  const navigate = useNavigate()
   const [people, setPeople] = useState([])
-  const [search, setSearch] = useState('')
-  const [activeFilter, setActiveFilter] = useState('ALL')
-  const [p1, setP1] = useState('')
-  const [p2, setP2] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [p1, setP1] = useState('1')
+  const [p2, setP2] = useState('3')
 
   useEffect(() => {
     fetch('./data/profiles_analyzed.json')
@@ -18,293 +17,319 @@ export default function Home() {
         const added = JSON.parse(localStorage.getItem('added_people') || '[]')
         const all = [...added, ...data]
         setPeople(all)
-        if (all.length >= 2) {
-          setP1(String(all[0].id))
-          setP2(String(all[1].id))
-        }
-        setLoading(false)
       })
-      .catch(() => {
-        const added = JSON.parse(localStorage.getItem('added_people') || '[]')
-        setPeople(added)
-        setLoading(false)
-      })
+      .catch(console.error)
   }, [])
 
-  const filtered = people.filter(p => {
-    const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase()) ||
-      (p.headline && p.headline.toLowerCase().includes(search.toLowerCase())) ||
-      (p.hobbies && p.hobbies.some(h => h.toLowerCase().includes(search.toLowerCase())))
-
-    if (!matchesSearch) return false
-
-    if (activeFilter === 'TECH') {
-      return p.headline?.toLowerCase().includes('founder') ||
-             p.headline?.toLowerCase().includes('ceo') ||
-             p.headline?.toLowerCase().includes('meta') ||
-             p.headline?.toLowerCase().includes('google')
-    }
-    if (activeFilter === 'THINKERS') {
-      return p.headline?.toLowerCase().includes('professor') ||
-             p.headline?.toLowerCase().includes('author') ||
-             p.headline?.toLowerCase().includes('researcher') ||
-             p.headline?.toLowerCase().includes('podcast')
-    }
-    if (activeFilter === 'CREATORS') {
-      return p.headline?.toLowerCase().includes('creator') ||
-             p.headline?.toLowerCase().includes('actor') ||
-             p.headline?.toLowerCase().includes('comedian') ||
-             p.followers > 1000000
-    }
-    return true
-  })
-
-  if (loading) return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh]">
-      <div className="w-8 h-8 rounded-full border-2 border-rose-600 border-t-transparent animate-spin mb-3" />
-      <div className="text-sm font-medium text-slate-500">Loading 25 profiles...</div>
-    </div>
-  )
-
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12">
-      {/* Editorial Hero */}
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-rose-700 text-xs font-semibold mb-4 border border-rose-200">
-          <ShieldCheck size={13} className="text-rose-600" />
-          <span>Dual-Source Protocol · LinkedIn + Instagram Only · 25 Real People</span>
-        </div>
-
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
-          Each person is an agent. <br />
-          <span className="text-rose-600">The agents date each other.</span>
-        </h1>
-
-        <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-          Every person is represented by an AI agent trained exclusively on their official <strong className="text-slate-900">LinkedIn</strong> and public <strong className="text-slate-900">Instagram</strong>. The agents simulate multi-turn dates and compute explainable mutual compatibility rankings.
-        </p>
-
-        {/* Quick Date Simulator Box */}
-        <div className="mt-8 p-5 bg-white rounded-2xl border border-slate-200 shadow-sm max-w-2xl mx-auto text-left">
-          <div className="flex items-center justify-between mb-3 pb-3 border-b border-slate-100">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
-              <Play size={13} className="text-rose-600 fill-rose-600" />
-              <span>Interactive Dating Room: Pick Any Two Agents</span>
-            </span>
-            <span className="text-xs text-slate-400">3-Round Dialogue + Verdict</span>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-3">
-            <select
-              value={p1}
-              onChange={e => setP1(e.target.value)}
-              className="w-full sm:flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-semibold text-slate-900 outline-none"
-            >
-              {people.map(p => (
-                <option key={p.id} value={p.id}>{p.name}</option>
-              ))}
-            </select>
-
-            <span className="text-slate-400 font-bold text-sm">with</span>
-
-            <select
-              value={p2}
-              onChange={e => setP2(e.target.value)}
-              className="w-full sm:flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-semibold text-slate-900 outline-none"
-            >
-              {people.filter(p => String(p.id) !== String(p1)).map(p => (
-                <option key={p.id} value={p.id}>{p.name}</option>
-              ))}
-            </select>
-
-            {p1 && p2 && p1 !== p2 && (
-              <Link
-                to={`/date/${p1}/${p2}`}
-                className="w-full sm:w-auto px-5 py-2 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm whitespace-nowrap"
-              >
-                <span>Launch Date</span>
-                <ArrowRight size={13} />
-              </Link>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Filter and Search Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200">
-        {/* Category Tabs */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-2 sm:pb-0">
-          {[
-            { id: 'ALL', label: `All People (${people.length})` },
-            { id: 'TECH', label: 'Tech & Founders' },
-            { id: 'THINKERS', label: 'Thinkers & Scholars' },
-            { id: 'CREATORS', label: 'Creators & Media' },
-          ].map(tab => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveFilter(tab.id)}
-              className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer whitespace-nowrap ${
-                activeFilter === tab.id
-                  ? 'bg-slate-900 text-white shadow-sm'
-                  : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Search Input */}
-        <div className="relative w-full sm:w-72">
-          <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-          <input
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            placeholder="Search by name, career, or hobby..."
-            className="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-full text-xs text-slate-900 placeholder-slate-400 outline-none shadow-sm focus:border-slate-400"
+    <div className="relative min-h-screen bg-[#05050a] text-white overflow-hidden selection:bg-rose-500/30">
+      {/* ============================================================ */}
+      {/* 1. HERO: IMMERSIVE MATCHMAKING UNIVERSE */}
+      {/* ============================================================ */}
+      <section className="relative h-screen w-full flex items-center justify-center">
+        {/* Living interactive canvas behind everything */}
+        <div className="absolute inset-0 z-0">
+          <UniverseCanvas
+            people={people}
+            onSelectPerson={p => navigate(`/profile/${p.id}`)}
           />
         </div>
-      </div>
 
-      {/* Grid of 25 People Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map(person => (
-          <PersonCard key={person.id} person={person} allPeople={people} />
-        ))}
-      </div>
+        {/* Ambient Dark Vignette */}
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#05050a] via-transparent to-[#05050a]/40 z-10" />
 
-      {filtered.length === 0 && (
-        <div className="text-center py-16 bg-white border border-slate-200 rounded-xl shadow-sm">
-          <p className="text-slate-600 font-medium">No one found matching "{search}"</p>
-          <p className="text-xs text-slate-400 mt-1">Try another search or add a new person.</p>
-        </div>
-      )}
-    </div>
-  )
-}
-
-function PersonCard({ person, allPeople }) {
-  const potentialDates = allPeople.filter(p => p.id !== person.id)
-  const defaultPartner = potentialDates.length > 0 ? potentialDates[0] : null
-
-  return (
-    <div className="profile-card p-6 flex flex-col justify-between group">
-      <div>
-        {/* Top Header: Status Indicator + Social Links */}
-        <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
-          <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            <span>Agent Status: Ready & Ranked</span>
-          </span>
-
-          <div className="flex items-center gap-1.5 shrink-0">
-            <a
-              href={person.linkedin_url}
-              target="_blank"
-              rel="noreferrer"
-              className="p-1 rounded hover:bg-slate-100 text-slate-400 hover:text-[#0077b5] transition-colors"
-              title="Official LinkedIn"
-            >
-              <LinkedinIcon size={14} className="text-[#0077b5]" />
-            </a>
-            <a
-              href={person.instagram_url}
-              target="_blank"
-              rel="noreferrer"
-              className="p-1 rounded hover:bg-slate-100 text-slate-400 hover:text-rose-600 transition-colors"
-              title="Official Instagram"
-            >
-              <InstagramIcon size={14} className="text-rose-600" />
-            </a>
-          </div>
-        </div>
-
-        {/* Avatar + Identity */}
-        <div className="flex items-start gap-3.5 mb-3">
-          <img
-            src={person.photo}
-            alt={person.name}
-            className="w-14 h-14 rounded-full object-cover border border-slate-200 shadow-sm shrink-0"
-            onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
-          />
-          <div
-            className="w-14 h-14 rounded-full items-center justify-center font-bold text-xl text-rose-600 bg-rose-50 border border-rose-200 shadow-sm shrink-0"
-            style={{ display: person.photo ? 'none' : 'flex' }}
-          >
-            {person.name.charAt(0)}
+        {/* Hero Center Typography */}
+        <div className="relative z-20 text-center max-w-4xl px-6 pointer-events-none">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs font-mono text-slate-300 mb-6 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
+            <span>AUTONOMOUS AGENTIC COURTSHIP PROTOCOL</span>
           </div>
 
-          <div className="min-w-0">
+          <h1 className="text-6xl sm:text-8xl md:text-9xl font-black tracking-tighter leading-[0.88] text-white mb-6 select-none glow-text-white">
+            LET<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-pink-400 to-sky-400">
+              THE AGENTS
+            </span><br />
+            DATE.
+          </h1>
+
+          <p className="text-base sm:text-xl text-slate-300 font-light max-w-xl mx-auto leading-relaxed mb-8 drop-shadow-lg">
+            People choose their profiles. <br />
+            <span className="text-white font-medium">Their agents choose their connections.</span>
+          </p>
+
+          {/* Action Buttons (pointer-events-auto so they can be clicked) */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto">
             <Link
-              to={`/profile/${person.id}`}
-              className="font-bold text-base text-slate-900 group-hover:text-rose-600 transition-colors block truncate"
+              to="/date/1/3"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 hover:opacity-95 text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-rose-600/30 transition-transform hover:scale-105 cursor-pointer"
             >
-              {person.name}
+              <Play size={13} fill="currentColor" />
+              <span>ENTER THE MATCHMAKING ROOM</span>
             </Link>
-            <div className="text-[11px] text-slate-500 font-medium truncate">
-              {person.location || 'Global'}
+
+            <Link
+              to="/add"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full glass-panel hover:bg-white/[0.1] text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 border border-white/[0.15] transition-all cursor-pointer"
+            >
+              <Plus size={14} />
+              <span>CREATE YOUR AGENT</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Bottom subtle prompt */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1.5 opacity-60 text-[11px] font-mono tracking-widest uppercase">
+          <span>Explore The System</span>
+          <div className="w-4 h-7 border border-white/30 rounded-full flex justify-center pt-1">
+            <div className="w-1 h-2 bg-white rounded-full animate-bounce" />
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* 2. THE VISUAL STORYLINE: 6 STAGES OF AGENTIC DATING */}
+      {/* ============================================================ */}
+      <section className="relative z-20 max-w-5xl mx-auto px-6 py-24 space-y-32">
+        {/* Story Header */}
+        <div className="text-center max-w-2xl mx-auto">
+          <div className="font-mono text-xs text-rose-400 uppercase tracking-widest mb-2">
+            Autonomous Courtship Mechanics
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+            How agents date on your behalf
+          </h2>
+        </div>
+
+        {/* STAGE 1: PEOPLE */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="font-mono text-xs text-rose-400 uppercase tracking-widest font-semibold mb-2">
+              01 // INGESTION
             </div>
-            <p className="text-xs text-slate-600 font-normal line-clamp-2 leading-snug mt-1">
-              {person.headline || 'Independent Builder'}
+            <h3 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+              Every person starts with two public profiles.
+            </h3>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 font-light">
+              No endless surveys or fake bios. The system strictly ingests two verified links: your official <strong className="text-white">LinkedIn</strong> and your public <strong className="text-white">Instagram</strong>. Nothing else. Zero web hallucination.
+            </p>
+            <div className="flex items-center gap-4 text-xs font-mono text-slate-300">
+              <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] border border-white/[0.1]">
+                <LinkedinIcon size={14} className="text-[#0077b5]" />
+                <span>Professional Pedigree</span>
+              </span>
+              <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] border border-white/[0.1]">
+                <InstagramIcon size={14} className="text-rose-400" />
+                <span>Lifestyle & Hobbies</span>
+              </span>
+            </div>
+          </div>
+
+          <div className="relative glass-panel p-8 rounded-2xl border border-white/[0.1] text-center">
+            <div className="w-20 h-20 rounded-full mx-auto relative mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80"
+                alt="Person"
+                className="w-full h-full rounded-full object-cover border-2 border-rose-500/50"
+              />
+              <div className="absolute -top-2 -left-2 p-1.5 rounded-full bg-[#0077b5] text-white">
+                <LinkedinIcon size={12} />
+              </div>
+              <div className="absolute -bottom-2 -right-2 p-1.5 rounded-full bg-rose-600 text-white">
+                <InstagramIcon size={12} />
+              </div>
+            </div>
+            <div className="font-bold text-base text-white">Real Individual</div>
+            <div className="text-xs text-slate-400 mt-1">LinkedIn + Instagram Verified</div>
+          </div>
+        </div>
+
+        {/* STAGE 2: UNDERSTAND */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1 glass-panel p-6 rounded-2xl border border-white/[0.1] space-y-3 font-mono text-xs">
+            <div className="flex items-center justify-between pb-2 border-b border-white/[0.08] text-rose-400 font-bold">
+              <span>EXTRACTED SIGNALS</span>
+              <span>SYNTHESIZED</span>
+            </div>
+            <div className="p-2.5 rounded bg-white/[0.03] flex justify-between">
+              <span className="text-slate-400">CORE NEEDS</span>
+              <span className="text-white">Uncompromising Autonomy</span>
+            </div>
+            <div className="p-2.5 rounded bg-white/[0.03] flex justify-between">
+              <span className="text-slate-400">HOBBIES</span>
+              <span className="text-white">Indie Hacking · Kite Surfing</span>
+            </div>
+            <div className="p-2.5 rounded bg-white/[0.03] flex justify-between">
+              <span className="text-slate-400">VALUES</span>
+              <span className="text-white">Speed of Execution · Truth</span>
+            </div>
+            <div className="p-2.5 rounded bg-white/[0.03] flex justify-between">
+              <span className="text-slate-400">DEALBREAKER</span>
+              <span className="text-rose-400">Corporate Bureaucracy</span>
+            </div>
+          </div>
+
+          <div className="order-1 md:order-2">
+            <div className="font-mono text-xs text-sky-400 uppercase tracking-widest font-semibold mb-2">
+              02 // UNDERSTAND
+            </div>
+            <h3 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+              The agent reads the person.
+            </h3>
+            <p className="text-slate-400 text-sm leading-relaxed font-light">
+              The neural agent parses career chronologies and visual lifestyle rituals into a structured psychological matrix: needs, daily habits, values, and dealbreakers.
             </p>
           </div>
         </div>
 
-        {/* Agent Voice Quote */}
-        <div className="p-3 bg-slate-50 border-l-2 border-rose-500 rounded-r-lg mb-3">
-          <div className="text-[10px] font-bold uppercase tracking-wider text-rose-700 mb-0.5">
-            Agent Dating Persona
+        {/* STAGE 3: BECOME */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="font-mono text-xs text-pink-400 uppercase tracking-widest font-semibold mb-2">
+              03 // BECOME
+            </div>
+            <h3 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+              Your agent is born.
+            </h3>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 font-light">
+              The agent takes on the persona and boundaries of its person. It dates with a unique voice, dedicated mandate, and uncompromising loyalty to its human.
+            </p>
+            <div className="p-4 rounded-xl glass-panel border border-pink-500/20 italic text-xs text-slate-200">
+              "I build fast, travel light, and want a partner who can jump on a flight to Tokyo tomorrow without overthinking it."
+            </div>
           </div>
-          <p className="text-xs text-slate-700 italic line-clamp-2">
-            "{person.agentVoice || `I represent ${person.name} in dating simulations.`}"
+
+          <div className="glass-panel p-8 rounded-2xl border border-white/[0.1] text-center flex flex-col items-center justify-center">
+            <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-rose-500 via-pink-500 to-sky-400 p-1 animate-pulse-slow">
+              <div className="w-full h-full bg-[#05050a] rounded-full flex items-center justify-center">
+                <span className="font-mono text-xs text-rose-400 font-bold">AGENT CORE</span>
+              </div>
+            </div>
+            <div className="font-mono text-xs text-slate-400 mt-4">Autonomous Proxy Active</div>
+          </div>
+        </div>
+
+        {/* STAGE 4 & 5: DATE & DECIDE */}
+        <div className="glass-panel p-8 md:p-12 rounded-3xl border border-white/[0.12] text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-rose-500/10 via-transparent to-sky-500/10 pointer-events-none" />
+
+          <div className="font-mono text-xs text-rose-400 uppercase tracking-widest font-semibold mb-2">
+            04 & 05 // DATE & DECIDE
+          </div>
+          <h3 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">
+            Neither person has to swipe.
+          </h3>
+          <p className="text-slate-400 text-sm max-w-xl mx-auto leading-relaxed mb-8 font-light">
+            Agents meet in a full-screen dating chamber. They exchange 3 structured rounds: probing mutual craft, testing lifestyle schedules, and resolving dealbreakers.
+          </p>
+
+          <Link
+            to="/date/1/3"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-slate-900 font-mono text-xs font-bold uppercase tracking-wider hover:bg-slate-200 transition-all shadow-xl"
+          >
+            <span>WATCH TWO AGENTS DATE NOW</span>
+            <ArrowRight size={13} />
+          </Link>
+        </div>
+
+        {/* STAGE 6: MATCH */}
+        <div className="text-center py-12">
+          <div className="font-mono text-xs text-emerald-400 uppercase tracking-widest font-semibold mb-3">
+            06 // THE MATCH
+          </div>
+          <div className="text-7xl sm:text-9xl font-black font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-emerald-400">
+            94%
+          </div>
+          <div className="text-xl font-bold text-white tracking-widest uppercase mt-2">
+            Strong Connection
+          </div>
+          <p className="text-slate-400 text-sm max-w-md mx-auto mt-2 font-light">
+            Deterministic 7-factor compatibility: values, lifestyle, needs, intellect, and independent agent appraisals.
           </p>
         </div>
+      </section>
 
-        {/* Extracted Needs & Hobbies Tags */}
-        <div className="space-y-1 mb-4">
-          <div className="flex flex-wrap gap-1">
-            {(person.needs || []).slice(0, 2).map((need, i) => (
-              <span key={i} className="text-[10px] font-medium px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200">
-                Need: {need}
-              </span>
-            ))}
+      {/* ============================================================ */}
+      {/* 3. COHORT HORIZONTAL CAROUSEL / FLOATING EXPLORER */}
+      {/* ============================================================ */}
+      <section id="cohort" className="relative z-20 max-w-6xl mx-auto px-6 py-20 border-t border-white/[0.08]">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <div className="font-mono text-xs text-rose-400 uppercase tracking-widest font-semibold mb-1">
+              Live Network
+            </div>
+            <h2 className="text-3xl font-extrabold tracking-tight">
+              25 Real Individuals In The Universe
+            </h2>
           </div>
-          <div className="flex flex-wrap gap-1">
-            {(person.hobbies || []).slice(0, 2).map((h, i) => (
-              <span key={i} className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
-                {h}
-              </span>
-            ))}
+          <div className="text-xs font-mono text-slate-400">
+            Click any person to inspect their psychological architecture
           </div>
         </div>
-      </div>
 
-      {/* Card Actions (View Profile, Start Dating, View Matches) */}
-      <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-1.5 text-xs font-semibold">
-        <Link
-          to={`/profile/${person.id}`}
-          className="px-2.5 py-1.5 rounded-md hover:bg-slate-100 text-slate-700 hover:text-slate-900 transition-colors"
-        >
-          View Profile
-        </Link>
+        {/* Horizontal scroll container with floating panels */}
+        <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-thin">
+          {people.map((person, idx) => (
+            <div
+              key={person.id}
+              className="glass-panel p-6 rounded-2xl min-w-[280px] max-w-[300px] flex-shrink-0 flex flex-col justify-between hover:border-rose-500/40 transition-all hover:-translate-y-1 group"
+            >
+              <div>
+                <div className="flex items-center justify-between pb-3 border-b border-white/[0.08] mb-4 text-[10px] font-mono text-slate-400">
+                  <span>#0{idx + 1}</span>
+                  <div className="flex items-center gap-2">
+                    <a href={person.linkedin_url} target="_blank" rel="noreferrer" className="hover:text-white">
+                      <LinkedinIcon size={12} className="text-[#0077b5]" />
+                    </a>
+                    <a href={person.instagram_url} target="_blank" rel="noreferrer" className="hover:text-white">
+                      <InstagramIcon size={12} className="text-rose-400" />
+                    </a>
+                  </div>
+                </div>
 
-        {defaultPartner && (
-          <Link
-            to={`/date/${person.id}/${defaultPartner.id}`}
-            className="px-2.5 py-1.5 rounded-md hover:bg-rose-50 text-rose-600 hover:text-rose-700 transition-colors flex items-center gap-1"
-          >
-            <Play size={10} fill="currentColor" />
-            <span>Start Dating</span>
-          </Link>
-        )}
+                <div className="flex items-center gap-3.5 mb-3">
+                  <img
+                    src={person.photo}
+                    alt={person.name}
+                    className="w-12 h-12 rounded-full object-cover border border-rose-500/40"
+                    onError={e => { e.target.style.display = 'none' }}
+                  />
+                  <div>
+                    <Link to={`/profile/${person.id}`} className="font-bold text-sm text-white group-hover:text-rose-400 transition-colors block">
+                      {person.name}
+                    </Link>
+                    <div className="text-[11px] text-slate-400 truncate max-w-[170px]">{person.headline}</div>
+                  </div>
+                </div>
 
-        <Link
-          to={`/rankings/${person.id}`}
-          className="px-3 py-1.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-bold transition-colors"
-        >
-          View Matches
-        </Link>
-      </div>
+                <p className="text-xs text-slate-300 italic line-clamp-2 mb-4 font-light">
+                  "{person.agentVoice}"
+                </p>
+
+                <div className="flex flex-wrap gap-1 mb-4">
+                  {(person.hobbies || []).slice(0, 2).map((h, i) => (
+                    <span key={i} className="text-[9px] px-2 py-0.5 rounded bg-white/[0.04] text-slate-300 border border-white/[0.08]">
+                      {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between font-mono text-[11px]">
+                <Link to={`/profile/${person.id}`} className="text-slate-400 hover:text-white">
+                  Profile →
+                </Link>
+                <Link
+                  to={`/rankings/${person.id}`}
+                  className="text-rose-400 hover:text-rose-300 font-bold"
+                >
+                  Matches
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

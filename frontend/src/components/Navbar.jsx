@@ -1,54 +1,66 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Heart, Plus, Users } from 'lucide-react'
+import { Sparkles, Plus, Users, Play, Trophy } from 'lucide-react'
 
 export default function Navbar() {
   const location = useLocation()
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-200">
+      <div className="max-w-6xl mx-auto glass-panel px-5 py-2.5 rounded-full flex items-center justify-between border border-white/[0.08]">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-full bg-rose-50 text-rose-600 border border-rose-200 flex items-center justify-center">
-            <Heart size={16} fill="currentColor" />
+          <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-rose-600 via-pink-500 to-sky-400 p-[1.5px] shadow-lg shadow-rose-500/20 group-hover:scale-105 transition-transform">
+            <div className="w-full h-full bg-[#05050a] rounded-full flex items-center justify-center">
+              <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span className="font-extrabold text-base tracking-tight text-slate-900 leading-none">
-              Agentic Dating
-            </span>
-            <span className="text-[11px] text-slate-500 font-medium mt-0.5">
-              Agents date on your behalf
-            </span>
-          </div>
+          <span className="font-extrabold text-sm tracking-widest text-white uppercase">
+            MATCHROOM
+          </span>
         </Link>
 
-        {/* Center telemetry */}
-        <div className="hidden md:flex items-center gap-2.5 text-xs text-slate-600 bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
-          <span className="w-2 h-2 rounded-full bg-emerald-500" />
-          <span className="font-semibold text-slate-800">25 Real People</span>
-          <span className="text-slate-300">•</span>
-          <span>LinkedIn + Instagram</span>
-          <span className="text-slate-300">•</span>
-          <span className="text-rose-600 font-medium">Free to Try</span>
-        </div>
-
-        {/* Action Links */}
-        <div className="flex items-center gap-3">
+        {/* Center Links */}
+        <div className="hidden md:flex items-center gap-1 font-mono text-[11px] text-slate-300">
           <Link
             to="/"
-            className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors ${
-              location.pathname === '/' ? 'text-slate-900 bg-slate-100' : 'text-slate-600 hover:text-slate-900'
+            className={`px-3 py-1.5 rounded-full transition-colors ${
+              location.pathname === '/' ? 'text-white bg-white/[0.08] font-bold' : 'hover:text-white'
             }`}
           >
-            People
+            DISCOVER
           </Link>
+          <a
+            href="#cohort"
+            className="px-3 py-1.5 rounded-full hover:text-white transition-colors"
+          >
+            PEOPLE (25)
+          </a>
+          <Link
+            to="/date/1/3"
+            className={`px-3 py-1.5 rounded-full transition-colors ${
+              location.pathname.startsWith('/date') ? 'text-white bg-white/[0.08] font-bold' : 'hover:text-white'
+            }`}
+          >
+            DATES
+          </Link>
+          <Link
+            to="/rankings/1"
+            className={`px-3 py-1.5 rounded-full transition-colors ${
+              location.pathname.startsWith('/rankings') ? 'text-white bg-white/[0.08] font-bold' : 'hover:text-white'
+            }`}
+          >
+            MATCHES
+          </Link>
+        </div>
 
+        {/* Right Action */}
+        <div className="flex items-center gap-3">
           <Link
             to="/add"
-            className="flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition-all shadow-sm"
+            className="flex items-center gap-1.5 text-xs font-mono font-bold px-4 py-1.5 rounded-full bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white shadow-md shadow-rose-600/30 transition-all hover:scale-105"
           >
-            <Plus size={14} />
-            <span>Add Person</span>
+            <Plus size={13} />
+            <span>CREATE AGENT</span>
           </Link>
         </div>
       </div>
