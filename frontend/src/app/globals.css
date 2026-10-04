@@ -27,7 +27,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Film Grain Overlay */
+/* Subtle Film Grain / Star Accent Overlay - High performance CSS */
 .noise-overlay {
   position: fixed;
   top: 0;
@@ -35,18 +35,19 @@ html, body {
   width: 100vw;
   height: 100vh;
   content: "";
-  opacity: 0.035;
   pointer-events: none;
   z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.25;
 }
 
 /* Typography styles */
 .hero-headline {
   font-weight: 600;
-  letter-spacing: -0.04em;
-  font-size: clamp(56px, 11vw, 160px);
-  line-height: 0.9;
+  letter-spacing: -0.03em;
+  font-size: clamp(48px, 9.5vw, 128px);
+  line-height: 1.02;
   text-transform: uppercase;
 }
 

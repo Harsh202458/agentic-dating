@@ -36,7 +36,7 @@ export default function HomePage() {
       {/* ============================================================ */}
       {/* HERO SECTION: FIELD IS THE HERO */}
       {/* ============================================================ */}
-      <section className="relative h-screen w-full flex items-center justify-center pointer-events-none">
+      <section className="relative min-h-[90vh] sm:min-h-screen w-full flex items-center justify-center pointer-events-none pt-24 pb-16 sm:py-0">
         {/* Soft Radial Gradient Glow (only 1 per screen) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--violet)]/12 rounded-full blur-[140px] pointer-events-none" />
 
@@ -95,7 +95,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+        <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-40">
           <span className="meta-label text-[9px]">SCROLL TO EXPLORE STORY</span>
           <div className="w-3.5 h-6 rounded-full border border-white/30 flex justify-center pt-1">
             <div className="w-1 h-1.5 bg-white rounded-full animate-bounce" />

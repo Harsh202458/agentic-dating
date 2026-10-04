@@ -79,10 +79,10 @@ export default function RankingsClient({ id }: { id: string }) {
             >
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                 {/* Numeral + Info */}
-                <div className="flex items-start sm:items-center gap-8">
-                  {/* Giant Numeral (120px outlined text) */}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+                  {/* Giant Numeral (outlined text) */}
                   <div
-                    className="font-mono text-7xl sm:text-9xl font-black select-none tracking-tighter shrink-0 leading-none"
+                    className="font-mono text-6xl sm:text-8xl lg:text-9xl font-black select-none tracking-tighter shrink-0 leading-none"
                     style={{
                       WebkitTextStroke: '1px rgba(255, 255, 255, 0.15)',
                       color: 'transparent'

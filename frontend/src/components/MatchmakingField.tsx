@@ -28,9 +28,10 @@ interface MatchmakingFieldProps {
   people: PersonNode[];
   onSelectPerson?: (person: PersonNode) => void;
   selectedPersonId?: number | string | null;
+  ambientOnly?: boolean;
 }
 
-// Simplex-like 2D noise generator
+// Lightweight fast pseudo-noise
 function pseudoNoise(x: number, y: number, t: number): number {
   return Math.sin(x * 0.003 + t) * Math.cos(y * 0.003 + t * 0.8) +
          Math.sin((x + y) * 0.002 - t * 0.5) * 0.5;
@@ -39,16 +40,23 @@ function pseudoNoise(x: number, y: number, t: number): number {
 export default function MatchmakingField({
   people,
   onSelectPerson,
-  selectedPersonId
+  selectedPersonId,
+  ambientOnly = false
 }: MatchmakingFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [hoveredNode, setHoveredNode] = useState<PersonNode | null>(null);
   const [hoverPos, setHoverPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [activeToast, setActiveToast] = useState<{ pA: string; pB: string; score: number } | null>(null);
 
-  // Camera state for spring centering
+  // Synchronous refs for 60fps rendering without React re-render lag
+  const hoveredIdRef = useRef<number | string | null>(null);
+  const selectedPersonIdRef = useRef<number | string | null>(selectedPersonId || null);
   const cameraRef = useRef({ x: 0, y: 0, scale: 1, targetX: 0, targetY: 0, targetScale: 1 });
   const mouseRef = useRef({ x: -1000, y: -1000, targetX: -1000, targetY: -1000 });
+
+  useEffect(() => {
+    selectedPersonIdRef.current = selectedPersonId || null;
+  }, [selectedPersonId]);
 
   const handleNodeClick = useCallback((person: PersonNode) => {
     sounds.playClick();
@@ -60,21 +68,21 @@ export default function MatchmakingField({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
     let animId: number;
     let time = 0;
-    const isMobile = window.innerWidth < 768;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Handle DPR
+    // Handle DPR capped to 1.5 to guarantee 60fps without GPU throttling
     const updateSize = () => {
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       const w = window.innerWidth;
       const h = window.innerHeight;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
       canvas.style.width = `${w}px`;
       canvas.style.height = `${h}px`;
       ctx.resetTransform?.();
@@ -83,7 +91,49 @@ export default function MatchmakingField({
     updateSize();
     window.addEventListener('resize', updateSize);
 
-    // Image Cache
+    // Ambient particles: lightweight and subtle
+    const particleCount = ambientOnly ? 35 : (isMobile ? 40 : 70);
+    const particles = Array.from({ length: particleCount }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      radius: Math.random() * 1.0 + 0.5,
+      alpha: Math.random() * 0.12 + 0.04,
+      speedX: (Math.random() - 0.5) * 0.15,
+      speedY: (Math.random() - 0.5) * 0.15
+    }));
+
+    // If ambient-only, run ultra-light particle loop and return
+    if (ambientOnly) {
+      const renderAmbient = () => {
+        if (document.hidden) {
+          animId = requestAnimationFrame(renderAmbient);
+          return;
+        }
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        ctx.fillStyle = 'rgba(244, 244, 246, 0.1)';
+        particles.forEach(p => {
+          p.x += p.speedX;
+          p.y += p.speedY;
+          if (p.x < 0) p.x = window.innerWidth;
+          if (p.x > window.innerWidth) p.x = 0;
+          if (p.y < 0) p.y = window.innerHeight;
+          if (p.y > window.innerHeight) p.y = 0;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        animId = requestAnimationFrame(renderAmbient);
+      };
+      renderAmbient();
+
+      return () => {
+        cancelAnimationFrame(animId);
+        window.removeEventListener('resize', updateSize);
+      };
+    }
+
+    // Preload image cache once
     const imgCache = new Map<number | string, HTMLImageElement>();
     people.forEach(p => {
       if (p.photo) {
@@ -94,24 +144,17 @@ export default function MatchmakingField({
       }
     });
 
-    // 150-300 ambient particles
-    const particleCount = isMobile ? 80 : 200;
-    const particles = Array.from({ length: particleCount }, () => ({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      radius: Math.random() * 1.2 + 0.4,
-      alpha: Math.random() * 0.15 + 0.05,
-      speedX: (Math.random() - 0.5) * 0.15,
-      speedY: (Math.random() - 0.5) * 0.15
-    }));
+    // Initialize Nodes positioned initially around the perimeter (leaving center clear)
+    const displayPeople = isMobile ? people.slice(0, 12) : people;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const centerX = w / 2;
+    const centerY = h / 2;
 
-    // Nodes initialization
-    const displayPeople = isMobile ? people.slice(0, 14) : people;
     const nodes = displayPeople.map((person, i) => {
       const angle = (i / displayPeople.length) * Math.PI * 2;
-      const dist = Math.min(window.innerWidth, window.innerHeight) * 0.35 + (Math.random() - 0.5) * 120;
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
+      const baseDist = Math.min(w, h) * 0.38;
+      const dist = baseDist + ((i % 3) - 1) * 45;
 
       return {
         id: person.id,
@@ -121,9 +164,7 @@ export default function MatchmakingField({
         vx: 0,
         vy: 0,
         radius: isMobile ? 18 : 22,
-        pulse: Math.random() * Math.PI * 2,
-        targetX: 0,
-        targetY: 0
+        pulse: Math.random() * Math.PI * 2
       };
     });
 
@@ -132,12 +173,12 @@ export default function MatchmakingField({
       source: typeof nodes[0];
       target: typeof nodes[0];
       score: number;
-      drawProgress: number; // 0 to 1
+      drawProgress: number;
       life: number;
     }
     const activeLinks: ActiveLink[] = [];
 
-    // Periodic organic connection pairing
+    // Periodic organic connection pairing (every 10s)
     let pairInterval: NodeJS.Timeout;
     const triggerPair = () => {
       if (nodes.length < 2 || prefersReducedMotion) return;
@@ -162,40 +203,40 @@ export default function MatchmakingField({
         pB: nB.person.name,
         score
       });
-      setTimeout(() => setActiveToast(null), 3600);
+      setTimeout(() => setActiveToast(null), 3500);
     };
 
-    pairInterval = setInterval(triggerPair, 9000);
-    setTimeout(triggerPair, 2000);
+    pairInterval = setInterval(triggerPair, 10000);
+    const initialPairTimeout = setTimeout(triggerPair, 2500);
 
-    // Mouse and Pointer tracking
+    // Mouse Tracking (debounced React updates to eliminate render lag)
     const handlePointerMove = (e: PointerEvent) => {
       mouseRef.current.targetX = e.clientX;
       mouseRef.current.targetY = e.clientY;
 
-      // Check hover
       const mx = e.clientX;
       const my = e.clientY;
-      let hovered: typeof nodes[0] | null = null;
+      let found: typeof nodes[0] | null = null;
 
       for (const n of nodes) {
-        // adjust for camera
         const screenX = (n.x - cameraRef.current.x) * cameraRef.current.scale + (window.innerWidth / 2) * (1 - cameraRef.current.scale);
         const screenY = (n.y - cameraRef.current.y) * cameraRef.current.scale + (window.innerHeight / 2) * (1 - cameraRef.current.scale);
         const d = Math.hypot(screenX - mx, screenY - my);
         if (d < n.radius + 12) {
-          hovered = n;
+          found = n;
           break;
         }
       }
 
-      if (hovered) {
-        setHoveredNode(hovered.person);
+      const nextId = found ? found.id : null;
+      if (hoveredIdRef.current !== nextId) {
+        hoveredIdRef.current = nextId;
+        setHoveredNode(found ? found.person : null);
+        canvas.style.cursor = found ? 'pointer' : 'default';
+      }
+
+      if (found) {
         setHoverPos({ x: mx, y: my });
-        canvas.style.cursor = 'pointer';
-      } else {
-        setHoveredNode(null);
-        canvas.style.cursor = 'default';
       }
     };
 
@@ -207,91 +248,125 @@ export default function MatchmakingField({
         const screenY = (n.y - cameraRef.current.y) * cameraRef.current.scale + (window.innerHeight / 2) * (1 - cameraRef.current.scale);
         const d = Math.hypot(screenX - mx, screenY - my);
         if (d < n.radius + 16) {
-          // Camera target center
           cameraRef.current.targetX = n.x - window.innerWidth / 2;
           cameraRef.current.targetY = n.y - window.innerHeight / 2;
-          cameraRef.current.targetScale = 1.25;
+          cameraRef.current.targetScale = 1.15;
           handleNodeClick(n.person);
           break;
         }
       }
     };
 
-    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
     canvas.addEventListener('click', handleCanvasClick);
 
-    // Render loop (60fps, DPR-aware, visibility-aware)
+    // Optimized Render loop (60fps steady)
     const render = () => {
       if (document.hidden) {
         animId = requestAnimationFrame(render);
         return;
       }
 
-      time += prefersReducedMotion ? 0 : 0.008;
+      time += prefersReducedMotion ? 0 : 0.006;
 
-      // Soft mouse lerp
+      // Mouse lerp
       mouseRef.current.x += (mouseRef.current.targetX - mouseRef.current.x) * 0.08;
       mouseRef.current.y += (mouseRef.current.targetY - mouseRef.current.y) * 0.08;
 
-      // Camera spring lerp
+      // Camera lerp
       const cam = cameraRef.current;
-      cam.x += (cam.targetX - cam.x) * 0.06;
-      cam.y += (cam.targetY - cam.y) * 0.06;
-      cam.scale += (cam.targetScale - cam.scale) * 0.06;
+      cam.x += (cam.targetX - cam.x) * 0.05;
+      cam.y += (cam.targetY - cam.y) * 0.05;
+      cam.scale += (cam.targetScale - cam.scale) * 0.05;
 
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      const curW = window.innerWidth;
+      const curH = window.innerHeight;
+      const curCenterX = curW / 2;
+      const curCenterY = curH / 2;
+
+      ctx.clearRect(0, 0, curW, curH);
 
       // 1. Ambient Particles
+      ctx.fillStyle = 'rgba(244, 244, 246, 0.12)';
       particles.forEach(p => {
         p.x += p.speedX;
         p.y += p.speedY;
-        if (p.x < 0) p.x = window.innerWidth;
-        if (p.x > window.innerWidth) p.x = 0;
-        if (p.y < 0) p.y = window.innerHeight;
-        if (p.y > window.innerHeight) p.y = 0;
+        if (p.x < 0) p.x = curW;
+        if (p.x > curW) p.x = 0;
+        if (p.y < 0) p.y = curH;
+        if (p.y > curH) p.y = 0;
 
-        ctx.fillStyle = `rgba(244, 244, 246, ${p.alpha})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
       });
 
-      // 2. Physics & Node Positions
-      nodes.forEach(n => {
-        if (!prefersReducedMotion) {
-          // Simplex flow drift
-          const flowAngle = pseudoNoise(n.x, n.y, time) * Math.PI * 2;
-          n.vx += Math.cos(flowAngle) * 0.03;
-          n.vy += Math.sin(flowAngle) * 0.03;
+      // 2. Physics & Node Movement with Anti-Overlap Forces
+      const minCenterDist = isMobile ? 180 : 310; // Hero text exclusion zone
 
-          // Parallax with pointer
+      nodes.forEach((n, i) => {
+        if (!prefersReducedMotion) {
+          // Flow drift
+          const flowAngle = pseudoNoise(n.x, n.y, time) * Math.PI * 2;
+          n.vx += Math.cos(flowAngle) * 0.02;
+          n.vy += Math.sin(flowAngle) * 0.02;
+
+          // Repulsion from screen center (protects hero text from being obscured)
+          const cdx = n.x - curCenterX;
+          const cdy = n.y - curCenterY;
+          const cDist = Math.hypot(cdx, cdy);
+          if (cDist < minCenterDist && cDist > 0) {
+            const push = ((minCenterDist - cDist) / minCenterDist) * 0.12;
+            n.vx += (cdx / cDist) * push;
+            n.vy += (cdy / cDist) * push;
+          }
+
+          // Node-to-node collision repulsion (guarantees nodes NEVER overlap each other)
+          for (let j = i + 1; j < nodes.length; j++) {
+            const other = nodes[j];
+            const dx = n.x - other.x;
+            const dy = n.y - other.y;
+            const dist = Math.hypot(dx, dy);
+            const minDist = n.radius + other.radius + 38;
+            if (dist < minDist && dist > 0) {
+              const repelForce = ((minDist - dist) / minDist) * 0.08;
+              const rfx = (dx / dist) * repelForce;
+              const rfy = (dy / dist) * repelForce;
+              n.vx += rfx;
+              n.vy += rfy;
+              other.vx -= rfx;
+              other.vy -= rfy;
+            }
+          }
+
+          // Pointer parallax repulsion
           const mdx = n.x - mouseRef.current.x;
           const mdy = n.y - mouseRef.current.y;
           const mDist = Math.hypot(mdx, mdy);
-          if (mDist < 120 && mDist > 0) {
-            const push = (120 - mDist) / 120;
-            n.vx += (mdx / mDist) * push * 0.6;
-            n.vy += (mdy / mDist) * push * 0.6;
+          if (mDist < 110 && mDist > 0) {
+            const push = ((110 - mDist) / 110) * 0.4;
+            n.vx += (mdx / mDist) * push;
+            n.vy += (mdy / mDist) * push;
           }
 
-          // Damping
-          n.vx *= 0.94;
-          n.vy *= 0.94;
+          // Damping & Position update
+          n.vx *= 0.93;
+          n.vy *= 0.93;
           n.x += n.vx;
           n.y += n.vy;
 
-          // Soft soft screen bounds
-          const pad = 60;
-          if (n.x < pad) n.x = pad;
-          if (n.x > window.innerWidth - pad) n.x = window.innerWidth - pad;
-          if (n.y < pad) n.y = pad;
-          if (n.y > window.innerHeight - pad) n.y = window.innerHeight - pad;
+          // Boundary containment
+          const pad = 65;
+          if (n.x < pad) { n.x = pad; n.vx = Math.abs(n.vx) * 0.5; }
+          if (n.x > curW - pad) { n.x = curW - pad; n.vx = -Math.abs(n.vx) * 0.5; }
+          if (n.y < pad) { n.y = pad; n.vy = Math.abs(n.vy) * 0.5; }
+          if (n.y > curH - pad) { n.y = curH - pad; n.vy = -Math.abs(n.vy) * 0.5; }
         }
 
         n.pulse += 0.04;
       });
 
-      // 3. Draw Active Links with Curved Lines and Midpoint Badge
+      // 3. Draw Active Links
       for (let i = activeLinks.length - 1; i >= 0; i--) {
         const link = activeLinks[i];
         if (link.drawProgress < 1) {
@@ -310,62 +385,54 @@ export default function MatchmakingField({
         const x2 = link.target.x;
         const y2 = link.target.y;
         const midX = (x1 + x2) / 2;
-        const midY = (y1 + y2) / 2 - 25; // curved arch
+        const midY = (y1 + y2) / 2 - 20;
 
         ctx.save();
         ctx.beginPath();
         ctx.moveTo(x1, y1);
         ctx.quadraticCurveTo(midX, midY, x2, y2);
 
-        const alpha = Math.min(1, link.life) * (link.drawProgress);
+        const alpha = Math.min(1, link.life) * link.drawProgress;
         ctx.strokeStyle = `rgba(139, 92, 246, ${alpha * 0.7})`;
         ctx.lineWidth = 1.5;
-        ctx.shadowColor = '#8B5CF6';
-        ctx.shadowBlur = 12;
         ctx.stroke();
 
-        // Midpoint compatibility percentage badge
+        // Midpoint badge
         if (link.drawProgress > 0.7) {
-          ctx.font = '600 10px var(--font-geist-mono), monospace';
+          ctx.font = '600 10px monospace';
           ctx.fillStyle = `rgba(232, 121, 249, ${alpha})`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillText(`${link.score}%`, (x1 + x2) / 2, (y1 + y2) / 2 - 14);
+          ctx.fillText(`${link.score}%`, midX, midY + 6);
         }
         ctx.restore();
       }
 
       // 4. Render Nodes
-      const isAnyHovered = hoveredNode !== null;
+      const currentHoverId = hoveredIdRef.current;
+      const isAnyHovered = currentHoverId !== null;
 
       nodes.forEach(n => {
-        const isHovered = hoveredNode?.id === n.id;
-        const isSelected = selectedPersonId === n.id;
-        const scale = isHovered ? 1.18 : 1.0;
+        const isHovered = currentHoverId === n.id;
+        const scale = isHovered ? 1.15 : 1.0;
         const r = n.radius * scale;
-
-        // Dim other nodes to 25% if one is hovered
         const nodeAlpha = isAnyHovered ? (isHovered ? 1.0 : 0.25) : 1.0;
 
         ctx.save();
         ctx.globalAlpha = nodeAlpha;
 
-        // Avatar circle
+        // Background circle
         ctx.beginPath();
         ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
         ctx.fillStyle = '#0E0E13';
         ctx.fill();
 
-        // 1px hairline border
+        // Border
         ctx.strokeStyle = isHovered ? '#8B5CF6' : 'rgba(255, 255, 255, 0.12)';
         ctx.lineWidth = isHovered ? 2 : 1;
-        if (isHovered) {
-          ctx.shadowColor = '#8B5CF6';
-          ctx.shadowBlur = 18;
-        }
         ctx.stroke();
 
-        // Clip and draw image
+        // Avatar Clip
         ctx.save();
         ctx.beginPath();
         ctx.arc(n.x, n.y, r - 1, 0, Math.PI * 2);
@@ -377,39 +444,24 @@ export default function MatchmakingField({
         } else {
           ctx.fillStyle = '#14141B';
           ctx.fillRect(n.x - r, n.y - r, r * 2, r * 2);
-          ctx.font = '600 11px sans-serif';
           ctx.fillStyle = '#F4F4F6';
+          ctx.font = '600 11px sans-serif';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillText(n.person.name.charAt(0), n.x, n.y);
         }
         ctx.restore();
 
-        // Tiny breathing agent dot (top right)
-        const agentDotAngle = -Math.PI / 4;
+        // Agent Dot
+        const dotAngle = -Math.PI / 4;
         const dotDist = r + 2;
-        const dotX = n.x + Math.cos(agentDotAngle) * dotDist;
-        const dotY = n.y + Math.sin(agentDotAngle) * dotDist;
-        const dotPulse = 0.5 + Math.sin(n.pulse) * 0.5;
+        const dotX = n.x + Math.cos(dotAngle) * dotDist;
+        const dotY = n.y + Math.sin(dotAngle) * dotDist;
 
         ctx.beginPath();
-        ctx.arc(dotX, dotY, 3, 0, Math.PI * 2);
+        ctx.arc(dotX, dotY, 2.5, 0, Math.PI * 2);
         ctx.fillStyle = '#8B5CF6';
-        ctx.shadowColor = '#8B5CF6';
-        ctx.shadowBlur = 8 * dotPulse;
         ctx.fill();
-
-        // Name label on hover
-        if (isHovered) {
-          ctx.font = '600 12px sans-serif';
-          ctx.fillStyle = '#F4F4F6';
-          ctx.textAlign = 'center';
-          ctx.fillText(n.person.name, n.x, n.y + r + 16);
-
-          ctx.font = '10px var(--font-geist-mono), monospace';
-          ctx.fillStyle = '#8A8A97';
-          ctx.fillText(n.person.headline.slice(0, 24), n.x, n.y + r + 28);
-        }
 
         ctx.restore();
       });
@@ -422,23 +474,26 @@ export default function MatchmakingField({
     return () => {
       cancelAnimationFrame(animId);
       clearInterval(pairInterval);
+      clearTimeout(initialPairTimeout);
       window.removeEventListener('resize', updateSize);
       window.removeEventListener('pointermove', handlePointerMove);
       canvas.removeEventListener('click', handleCanvasClick);
     };
-  }, [people, hoveredNode, selectedPersonId, handleNodeClick]);
+  }, [people, ambientOnly, handleNodeClick]);
 
   return (
-    <div className="fixed inset-0 pointer-events-auto z-0 overflow-hidden">
+    <div className={`fixed inset-0 z-0 overflow-hidden ${ambientOnly ? 'pointer-events-none opacity-25' : 'pointer-events-auto'}`}>
       <canvas ref={canvasRef} className="block w-full h-full" />
 
-      {/* Floating Hover Profile Preview beside cursor */}
-      {hoveredNode && (
+      {/* Floating Hover Profile Preview (safely placed to never overlap navbar or go off-screen) */}
+      {!ambientOnly && hoveredNode && (
         <div
-          className="fixed z-40 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-6 transition-all duration-150"
+          className={`fixed z-40 pointer-events-none transform -translate-x-1/2 transition-all duration-100 ${
+            hoverPos.y < 220 ? 'translate-y-8' : '-translate-y-full mb-6'
+          }`}
           style={{ left: hoverPos.x, top: hoverPos.y }}
         >
-          <div className="card-panel p-4 min-w-[260px] max-w-[300px] border border-white/10 shadow-2xl backdrop-blur-xl">
+          <div className="card-panel p-4 min-w-[260px] max-w-[300px] border border-white/10 shadow-2xl backdrop-blur-xl bg-[var(--surface)]/95">
             <div className="flex items-center gap-3 pb-3 border-b border-white/[0.06]">
               <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-white/15">
                 <img src={hoveredNode.photo} alt={hoveredNode.name} className="w-full h-full object-cover" />
@@ -469,9 +524,9 @@ export default function MatchmakingField({
       )}
 
       {/* Connection Notification Toast */}
-      {activeToast && (
+      {!ambientOnly && activeToast && (
         <div className="fixed top-24 right-8 z-50 animate-fade-in pointer-events-none">
-          <div className="card-panel px-4 py-3 border border-[var(--violet)]/40 flex items-center gap-3 shadow-2xl backdrop-blur-2xl">
+          <div className="card-panel px-4 py-3 border border-[var(--violet)]/40 flex items-center gap-3 shadow-2xl backdrop-blur-2xl bg-[var(--surface)]/95">
             <span className="w-2 h-2 rounded-full bg-[var(--violet)] animate-ping" />
             <div>
               <div className="meta-label text-[9px] text-[var(--violet)] font-bold">

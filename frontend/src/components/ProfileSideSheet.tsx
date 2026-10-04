@@ -35,8 +35,14 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
   };
 
   return (
-    <div className="fixed inset-y-0 right-0 z-50 w-full max-w-2xl bg-[var(--surface)]/95 backdrop-blur-2xl border-l border-[var(--line)] shadow-2xl flex flex-col overflow-hidden animate-slide-left">
-      {/* Top Bar */}
+    <>
+      {/* Click-away backdrop */}
+      <div
+        className="fixed inset-0 z-40 bg-black/60 transition-opacity"
+        onClick={onClose}
+      />
+      <div className="fixed inset-y-0 right-0 z-50 w-full max-w-2xl bg-[var(--surface)] border-l border-[var(--line)] shadow-2xl flex flex-col overflow-hidden animate-slide-left">
+        {/* Top Bar */}
       <div className="p-6 border-b border-[var(--line)] flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[var(--violet)] animate-pulse" />
@@ -236,5 +242,6 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
         </Link>
       </div>
     </div>
-  );
+  </>
+);
 }

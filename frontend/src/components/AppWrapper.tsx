@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import MatchmakingField, { PersonNode } from './MatchmakingField';
 import ProfileSideSheet from './ProfileSideSheet';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 import { getDataUrl } from '../utils/paths';
 
@@ -12,6 +12,11 @@ export default function AppWrapper({ children }: { children: React.ReactNode }) 
   const [people, setPeople] = useState<PersonNode[]>([]);
   const [selectedPerson, setSelectedPerson] = useState<PersonNode | null>(null);
   const router = useRouter();
+  const pathname = usePathname();
+
+  const isDatePage = pathname?.includes('/date/');
+  const isHome = pathname === '/' || pathname === '' || pathname === '/agentic-dating/' || pathname === '/agentic-dating';
+  const isAmbient = !isHome;
 
   useEffect(() => {
     fetch(getDataUrl('data/profiles_analyzed.json'))
@@ -57,10 +62,11 @@ export default function AppWrapper({ children }: { children: React.ReactNode }) 
         people={people}
         onSelectPerson={p => setSelectedPerson(p)}
         selectedPersonId={selectedPerson?.id}
+        ambientOnly={isAmbient}
       />
 
-      {/* Floating Navbar */}
-      <Navbar onStartDemoTour={handleStartDemoTour} />
+      {/* Floating Navbar (hidden on full-screen Date Arena to eliminate header overlap) */}
+      {!isDatePage && <Navbar onStartDemoTour={handleStartDemoTour} />}
 
       {/* Page Content */}
       <div className="relative z-10 pointer-events-auto">
