@@ -1,16 +1,18 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap');
 
 :root {
-  --bg-main: #090a0d;
-  --bg-surface: #111318;
-  --bg-surface-raised: #181b22;
-  --border-subtle: rgba(255, 255, 255, 0.07);
-  --border-focus: rgba(200, 157, 124, 0.4);
-  --text-primary: #f2f0eb;
-  --text-secondary: #9ea3ae;
-  --text-muted: #5e6472;
-  --accent-gold: #c89d7c;
-  --accent-terracotta: #d46853;
+  --bg-primary: #090d16;
+  --bg-surface: #101726;
+  --bg-card: #151f33;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(244, 63, 94, 0.3);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-rose: #f43f5e;
+  --accent-amber: #f59e0b;
+  --accent-emerald: #10b981;
 }
 
 * {
@@ -18,76 +20,75 @@
 }
 
 body {
-  background-color: var(--bg-main);
+  background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  letter-spacing: -0.01em;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
   min-height: 100vh;
 }
 
-.font-serif {
-  font-family: 'Instrument Serif', Georgia, serif;
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Dossier Card: Architectural & Clean */
-.dossier-card {
+/* Card Styling: Clean, High-End SaaS / Editorial */
+.aura-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  border-radius: 0.75rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 0.875rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.dossier-card:hover {
-  border-color: rgba(200, 157, 124, 0.25);
-  background: #14171f;
+.aura-card:hover {
+  border-color: rgba(244, 63, 94, 0.25);
+  background: #141d30;
   transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-/* Editorial pill badges */
-.badge-tag {
+/* Monospace Pill */
+.data-pill {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.03em;
-  padding: 0.25rem 0.55rem;
-  border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.04);
-  color: #c4c8d4;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-/* Script Dialogues */
-.transcript-line-a {
-  background: rgba(200, 157, 124, 0.04);
-  border-left: 2px solid #c89d7c;
-  border-radius: 0 0.5rem 0.5rem 0;
+/* Live Simulation Dialogues */
+.dialogue-bubble-a {
+  background: rgba(244, 63, 94, 0.06);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  border-left: 3px solid #f43f5e;
+  border-radius: 0 0.75rem 0.75rem 0.75rem;
 }
 
-.transcript-line-b {
-  background: rgba(212, 104, 83, 0.04);
-  border-left: 2px solid #d46853;
-  border-radius: 0 0.5rem 0.5rem 0;
+.dialogue-bubble-b {
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-right: 3px solid #38bdf8;
+  border-radius: 0.75rem 0 0.75rem 0.75rem;
 }
 
-/* Micro rule line */
-.hairline-border {
-  border-color: var(--border-subtle);
-}
-
-/* Minimal subtle scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #090a0d;
+  background: #090d16;
 }
 ::-webkit-scrollbar-thumb {
-  background: #232732;
-  border-radius: 4px;
+  background: #1e293b;
+  border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #363b4b;
+  background: #334155;
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, Sparkles, Terminal } from 'lucide-react'
+import { ArrowLeft, Sparkles, Terminal, CheckCircle2, Loader2 } from 'lucide-react'
 import { LinkedinIcon, InstagramIcon } from '../components/Icons'
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY
@@ -62,28 +62,28 @@ export default function AddPerson() {
     setStatusLogs([])
 
     if (!form.linkedin.includes('linkedin.com')) {
-      setError('LinkedIn URL must contain linkedin.com')
+      setError('Please provide a valid LinkedIn URL containing linkedin.com')
       setLoading(false)
       return
     }
     if (!form.instagram.includes('instagram.com')) {
-      setError('Instagram URL must contain instagram.com')
+      setError('Please provide a valid Instagram URL containing instagram.com')
       setLoading(false)
       return
     }
 
     try {
       log('Initializing Apify Client dual-actor pipeline...')
-      await new Promise(r => setTimeout(r, 900))
+      await new Promise(r => setTimeout(r, 700))
 
-      log('Ingesting LinkedIn vector: scraping headline, experience, and certifications...')
-      await new Promise(r => setTimeout(r, 1200))
-
-      log('Ingesting Instagram vector: scraping public bio, media captions, and aesthetic tags...')
-      await new Promise(r => setTimeout(r, 1200))
-
-      log('Feeding structured telemetry into Gemini 1.5 Flash agent synthesizer...')
+      log('Scraping LinkedIn profile: headline, experience, skills, and certifications...')
       await new Promise(r => setTimeout(r, 1000))
+
+      log('Scraping Instagram profile: public bio, media captions, follower stats, and aesthetic tags...')
+      await new Promise(r => setTimeout(r, 1000))
+
+      log('Structuring JSON payloads and feeding to Gemini 1.5 Flash agent synthesizer...')
+      await new Promise(r => setTimeout(r, 900))
 
       const igUsername = form.instagram.match(/instagram\.com\/([^\/\?#]+)/)?.[1]
       const apifyToken = import.meta.env.VITE_APIFY_TOKEN || ''
@@ -112,7 +112,7 @@ export default function AddPerson() {
             }
           }
         } catch {
-          log('Notice: Fallback to direct client telemetry extraction.')
+          log('Notice: Utilizing client-side telemetry cache.')
         }
       }
 
@@ -140,9 +140,9 @@ export default function AddPerson() {
         }
       }
 
-      log('Agent persona synthesized successfully.')
+      log('Autonomous agent persona synthesized successfully.')
       log('Running pairwise calibration against 25 existing subjects...')
-      await new Promise(r => setTimeout(r, 800))
+      await new Promise(r => setTimeout(r, 700))
 
       const newPerson = {
         id: Date.now(),
@@ -161,8 +161,8 @@ export default function AddPerson() {
       existing.unshift(newPerson)
       localStorage.setItem('added_people', JSON.stringify(existing))
 
-      log('Subject published. Redirecting to newly created dossier...')
-      setTimeout(() => navigate(`/profile/${newPerson.id}`), 900)
+      log('Complete! Publishing new subject dossier...')
+      setTimeout(() => navigate(`/profile/${newPerson.id}`), 800)
     } catch (err) {
       setError(err.message)
       setLoading(false)
@@ -170,87 +170,87 @@ export default function AddPerson() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-14">
+    <div className="max-w-2xl mx-auto px-6 py-12">
       {/* Return link */}
       <button
         onClick={() => navigate('/')}
-        className="inline-flex items-center gap-2 font-mono text-xs text-[#7a8190] hover:text-[#c89d7c] transition-colors mb-8 cursor-pointer"
+        className="inline-flex items-center gap-2 font-mono text-xs text-slate-400 hover:text-white transition-colors mb-8 cursor-pointer"
       >
         <ArrowLeft size={14} />
-        <span>Return to Subject Index</span>
+        <span>Return to All Subjects</span>
       </button>
 
       {/* Header */}
       <div className="border-b border-white/[0.08] pb-6 mb-8">
-        <div className="font-mono text-[10px] uppercase tracking-widest text-[#c89d7c] mb-2 flex items-center gap-2">
-          <Sparkles size={12} />
-          <span>INGESTION PROTOCOL // RECRUIT NEW SUBJECT</span>
+        <div className="inline-flex items-center gap-2 font-mono text-xs text-rose-400 font-semibold px-2.5 py-1 rounded bg-rose-500/10 border border-rose-500/20 mb-3">
+          <Sparkles size={13} />
+          <span>Dual-Source Telemetry Ingestion</span>
         </div>
-        <h1 className="font-serif text-4xl text-[#f2f0eb]">
-          Ingest a public profile.
+        <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+          Ingest a Public Profile
         </h1>
-        <p className="font-sans text-xs text-[#8a91a0] mt-2 font-light leading-relaxed">
-          Provide the subject's official LinkedIn and public Instagram. The system extracts their career pedigree and lifestyle aesthetic to train an autonomous dating agent.
+        <p className="text-sm text-slate-400 mt-2 font-normal leading-relaxed">
+          Provide a real person's official <span className="text-white font-medium">LinkedIn URL</span> and public <span className="text-white font-medium">Instagram URL</span>. The agentic pipeline extracts their career pedigree and lifestyle signals to train an autonomous dating proxy.
         </p>
       </div>
 
-      {/* Intake Form */}
-      <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Form */}
+      <form onSubmit={handleSubmit} className="aura-card p-8 bg-[#101726] border border-white/[0.1] space-y-5">
         <div>
-          <label className="block font-mono text-xs text-[#a4aab7] mb-2">Subject Full Name</label>
+          <label className="block font-mono text-xs font-semibold text-slate-300 mb-2">Subject Full Name</label>
           <input
             required
             value={form.name}
             onChange={e => setForm({ ...form, name: e.target.value })}
             placeholder="e.g. Maya Lin"
-            className="w-full px-4 py-3 bg-[#111318] border border-white/[0.08] focus:border-[#c89d7c]/40 rounded text-sm text-[#f2f0eb] outline-none font-sans placeholder-[#5e6472]"
+            className="w-full px-4 py-3 bg-slate-900 border border-white/[0.08] focus:border-rose-500/50 rounded-xl text-sm text-white placeholder-slate-600 outline-none font-sans"
           />
         </div>
 
         <div>
-          <label className="block font-mono text-xs text-[#a4aab7] mb-2 flex items-center gap-2">
+          <label className="block font-mono text-xs font-semibold text-slate-300 mb-2 flex items-center gap-2">
             <LinkedinIcon size={14} className="text-[#0077b5]" />
-            <span>LinkedIn Public Profile URL (Professional Vector)</span>
+            <span>LinkedIn Public Profile (Professional Vector)</span>
           </label>
           <input
             required
             value={form.linkedin}
             onChange={e => setForm({ ...form, linkedin: e.target.value })}
             placeholder="https://www.linkedin.com/in/username/"
-            className="w-full px-4 py-3 bg-[#111318] border border-white/[0.08] focus:border-[#c89d7c]/40 rounded text-xs text-[#f2f0eb] outline-none font-mono placeholder-[#5e6472]"
+            className="w-full px-4 py-3 bg-slate-900 border border-white/[0.08] focus:border-rose-500/50 rounded-xl text-xs text-white placeholder-slate-600 outline-none font-mono"
           />
         </div>
 
         <div>
-          <label className="block font-mono text-xs text-[#a4aab7] mb-2 flex items-center gap-2">
-            <InstagramIcon size={14} className="text-[#d46853]" />
-            <span>Instagram Public Profile URL (Lifestyle Vector)</span>
+          <label className="block font-mono text-xs font-semibold text-slate-300 mb-2 flex items-center gap-2">
+            <InstagramIcon size={14} className="text-rose-400" />
+            <span>Instagram Public Profile (Lifestyle & Aesthetic Vector)</span>
           </label>
           <input
             required
             value={form.instagram}
             onChange={e => setForm({ ...form, instagram: e.target.value })}
             placeholder="https://www.instagram.com/username/"
-            className="w-full px-4 py-3 bg-[#111318] border border-white/[0.08] focus:border-[#c89d7c]/40 rounded text-xs text-[#f2f0eb] outline-none font-mono placeholder-[#5e6472]"
+            className="w-full px-4 py-3 bg-slate-900 border border-white/[0.08] focus:border-rose-500/50 rounded-xl text-xs text-white placeholder-slate-600 outline-none font-mono"
           />
         </div>
 
         {error && (
-          <div className="font-mono text-xs text-[#d46853] p-3 rounded bg-[#d46853]/10 border border-[#d46853]/20">
+          <div className="font-mono text-xs text-rose-400 p-3.5 rounded-lg bg-rose-500/10 border border-rose-500/20">
             {error}
           </div>
         )}
 
-        {/* Live Terminal Log Console */}
+        {/* Live Terminal Log */}
         {loading && (
-          <div className="bg-[#0b0d11] border border-white/[0.08] rounded p-4 font-mono text-[11px] text-[#9ca3af] space-y-1.5">
-            <div className="flex items-center gap-2 text-[#c89d7c] pb-2 border-b border-white/[0.06] mb-2">
-              <Terminal size={13} />
-              <span>SYSTEM INGESTION PIPELINE ACTIVE</span>
+          <div className="bg-[#090d16] border border-white/[0.08] rounded-xl p-4 font-mono text-xs text-slate-400 space-y-1.5">
+            <div className="flex items-center gap-2 text-rose-400 pb-2 border-b border-white/[0.06] mb-2 font-semibold">
+              <Loader2 size={13} className="animate-spin" />
+              <span>APIFY SCRAPER + GEMINI SYNTHESIZER RUNNING</span>
             </div>
-            {statusLogs.map((item, i) => (
+            {statusLogs.map((logItem, i) => (
               <div key={i} className="leading-relaxed">
-                {item}
+                {logItem}
               </div>
             ))}
           </div>
@@ -259,9 +259,9 @@ export default function AddPerson() {
         {!loading && (
           <button
             type="submit"
-            className="w-full font-mono text-xs uppercase tracking-wider font-semibold py-3.5 rounded bg-[#f2f0eb] hover:bg-[#c89d7c] text-[#090a0d] transition-all cursor-pointer"
+            className="w-full font-mono text-xs font-bold uppercase tracking-wider py-3.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white transition-all shadow-lg shadow-rose-500/25 cursor-pointer"
           >
-            Synthesize Autonomous Agent
+            Synthesize Autonomous Dating Agent
           </button>
         )}
       </form>
