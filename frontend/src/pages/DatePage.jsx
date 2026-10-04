@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { Heart, ChevronLeft, Zap } from 'lucide-react'
+import { ArrowLeft, Play, RotateCcw, Sparkles, AlertTriangle, ArrowUpRight } from 'lucide-react'
 
 export default function DatePage() {
   const { id1, id2 } = useParams()
@@ -13,12 +13,12 @@ export default function DatePage() {
   const [score, setScore] = useState(null)
   const [showScore, setShowScore] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
-  const chatRef = useRef(null)
+  const transcriptRef = useRef(null)
 
   useEffect(() => {
     Promise.all([
-      fetch('/data/profiles_analyzed.json').then(r => r.json()),
-      fetch('/data/matches.json').then(r => r.json()).catch(() => null),
+      fetch('./data/profiles_analyzed.json').then(r => r.json()),
+      fetch('./data/matches.json').then(r => r.json()).catch(() => null),
     ]).then(([analyzed, matchData]) => {
       setPeople(analyzed)
       const pA = analyzed.find(p => String(p.id) === String(id1))
@@ -31,19 +31,16 @@ export default function DatePage() {
         setConversation(m.conversation || [])
         setScore(m.compatibilityScore)
         setMatches(matchData[id1][id2])
-      } else {
-        // Generate fallback convo from profiles
-        if (pA && pB) {
-          setConversation([
-            { agent: 'A', name: pA.name, message: `Hi! I'm representing ${pA.name}. I see you're also passionate about ${pB.interests?.[0] || 'interesting things'}?` },
-            { agent: 'B', name: pB.name, message: `Yes! And from what I know about ${pA.name}, we might have more in common — especially around ${pA.hobbies?.[0] || 'building things'}.` },
-            { agent: 'A', name: pA.name, message: `Totally. ${pA.name} values ${pA.values?.[0] || 'authenticity'} above all. What about ${pB.name}?` },
-            { agent: 'B', name: pB.name, message: `${pB.name} cares deeply about ${pB.values?.[0] || 'impact'}. That actually aligns really well.` },
-            { agent: 'A', name: pA.name, message: `I like that. One thing — ${pA.name} is a ${pA.personality?.[0] || 'driven'} person. Can ${pB.name} keep up?` },
-            { agent: 'B', name: pB.name, message: `${pB.name} is ${pB.personality?.[0] || 'equally ambitious'}. Challenge accepted.` },
-          ])
-          setScore(Math.floor(55 + Math.random() * 35))
-        }
+      } else if (pA && pB) {
+        setConversation([
+          { agent: 'A', name: pA.name, message: `I've been analyzing ${pB.name}'s lifestyle graph. Your dedication to ${pB.interests?.[0] || 'your craft'} caught my attention right away.` },
+          { agent: 'B', name: pB.name, message: `Thank you. From what I observe about ${pA.name}, there's an uncompromising pursuit of ${pA.values?.[0] || 'truth'}. That's rare to encounter.` },
+          { agent: 'A', name: pA.name, message: `For ${pA.name}, a core need is ${pA.needs?.[0] || 'unhurried freedom'}. How does ${pB.name} maintain personal presence while navigating high stakes?` },
+          { agent: 'B', name: pB.name, message: `Through strict boundaries around ${pB.hobbies?.[0] || 'daily rituals'}. When both partners respect that devotion, independence becomes magnetic.` },
+          { agent: 'A', name: pA.name, message: `That's an ideal alignment. If we shared an evening together, would it be an intense intellectual debate or an adventurous escape?` },
+          { agent: 'B', name: pB.name, message: `We begin with high-octane banter, then let the conversation drift until 2 AM. I believe our chemistry is undeniable.` },
+        ])
+        setScore(78)
       }
     }).catch(console.error)
   }, [id1, id2])
@@ -57,177 +54,247 @@ export default function DatePage() {
     conversation.forEach((msg, i) => {
       setTimeout(() => {
         setDisplayedMsgs(prev => [...prev, msg])
-        if (chatRef.current) {
-          chatRef.current.scrollTop = chatRef.current.scrollHeight
+        if (transcriptRef.current) {
+          transcriptRef.current.scrollTop = transcriptRef.current.scrollHeight
         }
         if (i === conversation.length - 1) {
-          setTimeout(() => { setShowScore(true); setIsPlaying(false) }, 1000)
+          setTimeout(() => {
+            setShowScore(true)
+            setIsPlaying(false)
+          }, 1200)
         }
-      }, i * 1800)
+      }, i * 1600)
     })
   }
 
   if (!personA || !personB) return (
-    <div className="flex items-center justify-center min-h-[60vh]">
-      <Heart className="heartbeat" style={{ color: '#f43f5e' }} size={48} fill="#f43f5e" />
+    <div className="flex flex-col items-center justify-center min-h-[70vh]">
+      <div className="font-mono text-xs uppercase tracking-widest text-[#7a8190] mb-2">Simulating Pairing</div>
+      <div className="font-serif italic text-2xl text-[#f2f0eb]">Calibrating agent personas...</div>
     </div>
   )
 
-  const colorA = '#f43f5e'
-  const colorB = '#c026d3'
-  const initialsA = personA.name.split(' ').map(n => n[0]).join('').slice(0, 2)
-  const initialsB = personB.name.split(' ').map(n => n[0]).join('').slice(0, 2)
-
-  const getScoreLabel = (s) => {
-    if (s >= 85) return { label: '💘 Soulmate Material', color: '#f43f5e' }
-    if (s >= 70) return { label: '🔥 Strong Connection', color: '#c026d3' }
-    if (s >= 55) return { label: '✨ Good Match', color: '#7c3aed' }
-    if (s >= 40) return { label: '🤔 Could Work', color: '#2563eb' }
-    return { label: '🌱 Growing', color: '#059669' }
-  }
-
-  const scoreInfo = getScoreLabel(score || 0)
-
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10">
-      <Link to="/" className="text-sm text-gray-500 hover:text-rose-400 mb-6 inline-flex items-center gap-1">
-        <ChevronLeft size={14} /> Back
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      {/* Return link */}
+      <Link to="/" className="inline-flex items-center gap-2 font-mono text-xs text-[#7a8190] hover:text-[#c89d7c] transition-colors mb-8">
+        <ArrowLeft size={14} />
+        <span>Return to Subject Index</span>
       </Link>
 
-      {/* Header */}
-      <div className="glass-card p-6 mb-6 text-center">
-        <p className="text-gray-500 text-xs uppercase tracking-wider mb-4 flex items-center justify-center gap-1">
-          <Zap size={12} /> Agent Date Simulation
-        </p>
-        <div className="flex items-center justify-center gap-4 mb-4">
-          <PersonAvatar person={personA} color={colorA} initials={initialsA} size="md" />
-          <div className="text-center">
-            <Heart className="heartbeat mx-auto mb-1" fill={colorA} style={{ color: colorA }} size={28} />
-            <span className="text-xs text-gray-500">×</span>
+      {/* Screenplay Masthead */}
+      <header className="border border-white/[0.08] bg-[#111318] rounded-xl p-8 mb-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/[0.06]">
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-widest text-[#c89d7c] mb-1">
+              PROTOCOL // AUTONOMOUS INTER-AGENT COURTSHIP
+            </div>
+            <h1 className="font-serif text-3xl md:text-4xl text-[#f2f0eb]">
+              {personA.name} <span className="italic font-light text-[#c89d7c]">meets</span> {personB.name}
+            </h1>
           </div>
-          <PersonAvatar person={personB} color={colorB} initials={initialsB} size="md" />
-        </div>
-        <h1 className="text-xl font-bold text-white">
-          {personA.name} <span style={{ color: colorA }}>✦</span> {personB.name}
-        </h1>
-      </div>
 
-      {/* Select other people to date */}
-      <div className="glass-card p-4 mb-6">
-        <p className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Change Partner</p>
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <p className="text-xs text-gray-600 mb-2">Person A</p>
-            <Link to={`/rankings/${personB.id}`} className="text-xs text-rose-400 hover:underline block">→ See {personA.name}'s full rankings</Link>
-          </div>
-          <div>
-            <p className="text-xs text-gray-600 mb-2">Person B</p>
-            <Link to={`/rankings/${personB.id}`} className="text-xs text-rose-400 hover:underline block">→ See {personB.name}'s full rankings</Link>
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-[11px] text-[#7a8190] bg-[#161821] px-3 py-1 rounded border border-white/[0.05]">
+              VENUE: PRIVATE CURATED SALON
+            </span>
           </div>
         </div>
-      </div>
 
-      {/* Play button */}
+        {/* The Two Subjects Face-Off */}
+        <div className="grid grid-cols-2 gap-6 pt-6">
+          <div className="flex items-center gap-4">
+            <img
+              src={personA.photo}
+              alt={personA.name}
+              className="w-14 h-14 rounded-lg object-cover border border-[#c89d7c]/40"
+              onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
+            />
+            <div className="w-14 h-14 rounded-lg items-center justify-center font-serif italic text-2xl text-[#c89d7c] bg-[#161821]" style={{ display: personA.photo ? 'none' : 'flex' }}>
+              {personA.name.charAt(0)}
+            </div>
+            <div>
+              <div className="font-serif text-lg text-[#f2f0eb]">{personA.name}</div>
+              <div className="font-mono text-[11px] text-[#8a91a0]">Agent Proxy A</div>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-end gap-4 text-right">
+            <div>
+              <div className="font-serif text-lg text-[#f2f0eb]">{personB.name}</div>
+              <div className="font-mono text-[11px] text-[#8a91a0]">Agent Proxy B</div>
+            </div>
+            <img
+              src={personB.photo}
+              alt={personB.name}
+              className="w-14 h-14 rounded-lg object-cover border border-[#d46853]/40"
+              onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
+            />
+            <div className="w-14 h-14 rounded-lg items-center justify-center font-serif italic text-2xl text-[#d46853] bg-[#161821]" style={{ display: personB.photo ? 'none' : 'flex' }}>
+              {personB.name.charAt(0)}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Play Controller */}
       {displayedMsgs.length === 0 && !isPlaying && (
-        <div className="text-center mb-6">
+        <div className="text-center py-12 border border-dashed border-white/[0.08] rounded-xl bg-[#0e1015] mb-8">
+          <p className="font-serif italic text-2xl text-[#f2f0eb] mb-2">Ready to initiate the encounter</p>
+          <p className="font-mono text-xs text-[#7a8190] max-w-md mx-auto mb-6">
+            Both autonomous agents will converse, probe core values, and discover whether their synthesized lifestyles harmonize.
+          </p>
           <button
             onClick={playConversation}
-            className="px-8 py-3 rounded-full font-bold text-white text-lg transition-all hover:scale-105 active:scale-95"
-            style={{ background: 'linear-gradient(135deg, #f43f5e, #c026d3)' }}>
-            ▶ Watch Agents Date
+            className="font-mono text-xs uppercase tracking-wider font-semibold px-6 py-3.5 rounded bg-[#f2f0eb] text-[#090a0d] hover:bg-[#c89d7c] transition-all inline-flex items-center gap-2 cursor-pointer"
+          >
+            <Play size={14} fill="currentColor" />
+            <span>Execute Courtship Dialogue</span>
           </button>
-          <p className="text-gray-600 text-xs mt-2">Simulated by AI agents on behalf of real people</p>
         </div>
       )}
 
-      {/* Chat */}
+      {/* Screenplay Transcript Window */}
       {(displayedMsgs.length > 0 || isPlaying) && (
-        <div className="glass-card p-6 mb-6">
-          <div ref={chatRef} className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
-            {displayedMsgs.map((msg, i) => (
-              <div key={i} className={`flex gap-3 ${msg.agent === 'B' ? 'flex-row-reverse' : ''}`}>
-                <div className="flex-shrink-0">
-                  <PersonAvatar
-                    person={msg.agent === 'A' ? personA : personB}
-                    color={msg.agent === 'A' ? colorA : colorB}
-                    initials={msg.agent === 'A' ? initialsA : initialsB}
-                    size="sm"
-                  />
-                </div>
-                <div className={`max-w-[75%] ${msg.agent === 'A' ? 'bubble-a' : 'bubble-b'} p-3`}>
-                  <p className="text-xs font-bold mb-1" style={{ color: msg.agent === 'A' ? colorA : colorB }}>
-                    {msg.name}'s Agent
-                  </p>
-                  <p className="text-sm text-gray-200">{msg.message}</p>
-                </div>
-              </div>
-            ))}
+        <div className="bg-[#111318] border border-white/[0.08] rounded-xl p-8 mb-8">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-[#7a8190] pb-4 border-b border-white/[0.06] mb-6 flex items-center justify-between">
+            <span>TRANSCRIPT RECORD // LIVE ENCOUNTER FEED</span>
             {isPlaying && (
-              <div className="flex items-center gap-2 text-gray-500 text-sm">
-                <span className="animate-pulse">●</span>
-                <span className="animate-pulse" style={{ animationDelay: '0.2s' }}>●</span>
-                <span className="animate-pulse" style={{ animationDelay: '0.4s' }}>●</span>
-                <span className="text-xs ml-2">Agents are talking...</span>
+              <span className="flex items-center gap-2 text-emerald-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>AGENTS TRANSMITTING</span>
+              </span>
+            )}
+          </div>
+
+          <div ref={transcriptRef} className="space-y-6 max-h-[520px] overflow-y-auto pr-3">
+            {displayedMsgs.map((msg, i) => {
+              const isA = msg.agent === 'A'
+              return (
+                <div key={i} className={`p-4 ${isA ? 'transcript-line-a' : 'transcript-line-b'}`}>
+                  <div className="flex items-center justify-between mb-1.5 font-mono text-[11px]">
+                    <span className={isA ? 'text-[#c89d7c] font-medium' : 'text-[#d46853] font-medium'}>
+                      {isA ? `AGENT // ${personA.name}` : `AGENT // ${personB.name}`}
+                    </span>
+                    <span className="text-[#5e6472]">T+{String(i * 12 + 4).padStart(2, '0')}m</span>
+                  </div>
+                  <p className="font-sans text-sm text-[#e2e0d8] leading-relaxed font-light">
+                    {msg.message}
+                  </p>
+                </div>
+              )
+            })}
+
+            {isPlaying && (
+              <div className="font-mono text-xs text-[#7a8190] italic pl-4 py-2">
+                ... analyzing sentiment and preparing rebuttal ...
               </div>
             )}
           </div>
         </div>
       )}
 
-      {/* Score reveal */}
+      {/* Post-Encounter Evaluation Report */}
       {showScore && score !== null && (
-        <div className="glass-card p-8 text-center" style={{ border: `1px solid ${scoreInfo.color}40` }}>
-          <p className="text-gray-400 text-sm mb-2 uppercase tracking-wider">Compatibility Score</p>
-          <div className="text-7xl font-black mb-2" style={{ color: scoreInfo.color }}>
-            {score}<span className="text-3xl text-gray-500">/100</span>
-          </div>
-          <p className="text-xl font-bold mb-4" style={{ color: scoreInfo.color }}>{scoreInfo.label}</p>
-          <div className="h-3 rounded-full mb-4 mx-auto max-w-xs" style={{ background: 'rgba(255,255,255,0.05)' }}>
-            <div className="score-bar h-3" style={{ width: `${score}%` }} />
-          </div>
-          {matches?.matchReason && (
-            <p className="text-gray-400 text-sm mb-4">{matches.matchReason}</p>
-          )}
-          {matches?.sparks?.length > 0 && (
-            <div className="flex flex-wrap gap-2 justify-center mb-2">
-              {matches.sparks.map(s => (
-                <span key={s} className="text-xs px-3 py-1 rounded-full" style={{ background: '#f43f5e20', color: '#f43f5e', border: '1px solid #f43f5e30' }}>⚡ {s}</span>
-              ))}
+        <div className="bg-[#111318] border border-[#c89d7c]/30 rounded-xl p-8 text-left space-y-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.06]">
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-[#c89d7c] mb-1">
+                SYNTHESIZED EVALUATION
+              </div>
+              <h2 className="font-serif text-3xl text-[#f2f0eb]">
+                Compatibility Assessment
+              </h2>
             </div>
-          )}
-          {matches?.tensions?.length > 0 && (
-            <div className="flex flex-wrap gap-2 justify-center">
-              {matches.tensions.map(t => (
-                <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ background: '#dc262620', color: '#dc2626', border: '1px solid #dc262630' }}>⚠ {t}</span>
-              ))}
+            <div className="text-right">
+              <div className="font-mono text-xs text-[#7a8190]">INDEX SCORE</div>
+              <div className="font-serif italic text-5xl text-[#c89d7c]">
+                {score} <span className="font-mono text-sm not-italic text-[#7a8190]">/ 100</span>
+              </div>
             </div>
-          )}
-          <button onClick={() => { setDisplayedMsgs([]); setShowScore(false); setTimeout(playConversation, 300) }}
-            className="mt-6 px-6 py-2 rounded-full text-sm font-semibold text-gray-400 border border-gray-700 hover:border-rose-500 hover:text-rose-400 transition-all">
-            ↺ Replay
-          </button>
+          </div>
+
+          {/* Thesis */}
+          <div className="space-y-2">
+            <div className="font-mono text-xs uppercase tracking-wider text-[#a4aab7]">Synergy Synthesis</div>
+            <p className="font-sans text-sm text-[#c8cbd5] leading-relaxed font-light">
+              {matches?.matchReason || `${personA.name} and ${personB.name} exhibit high complementarity in their creative stamina and mutual appetite for independent growth.`}
+            </p>
+          </div>
+
+          {/* Sparks and Tensions Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-white/[0.06]">
+            <div className="bg-[#14171f] p-5 rounded-lg border border-white/[0.04]">
+              <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#c89d7c] mb-3">
+                <Sparkles size={14} />
+                <span>Catalytic Sparks</span>
+              </div>
+              <ul className="space-y-2 text-xs text-[#c5c9d4] font-light">
+                {(matches?.sparks || [
+                  'Shared devotion to self-directed high agency',
+                  'Mutual appreciation for intellectual depth over superficiality',
+                ]).map((s, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-[#c89d7c] font-mono">0{idx + 1}.</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-[#14171f] p-5 rounded-lg border border-white/[0.04]">
+              <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#d46853] mb-3">
+                <AlertTriangle size={14} />
+                <span>Frictional Vulnerabilities</span>
+              </div>
+              <ul className="space-y-2 text-xs text-[#c5c9d4] font-light">
+                {(matches?.tensions || [
+                  'High work travel cadence may constrain spontaneous quality time',
+                  'Differing sleep and recovery schedules requiring proactive alignment',
+                ]).map((t, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-[#d46853] font-mono">✕</span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Replay or Explore Leaderboards */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/[0.06]">
+            <button
+              onClick={() => {
+                setDisplayedMsgs([])
+                setShowScore(false)
+                setTimeout(playConversation, 300)
+              }}
+              className="font-mono text-xs uppercase tracking-wider text-[#8b919e] hover:text-[#f2f0eb] inline-flex items-center gap-2 cursor-pointer"
+            >
+              <RotateCcw size={13} />
+              <span>Replay Encounter</span>
+            </button>
+
+            <div className="flex items-center gap-4">
+              <Link
+                to={`/rankings/${personA.id}`}
+                className="font-mono text-xs text-[#c89d7c] hover:underline flex items-center gap-1"
+              >
+                <span>{personA.name}'s Ranked Fits</span>
+                <ArrowUpRight size={12} />
+              </Link>
+              <span className="text-white/[0.1]">•</span>
+              <Link
+                to={`/rankings/${personB.id}`}
+                className="font-mono text-xs text-[#c89d7c] hover:underline flex items-center gap-1"
+              >
+                <span>{personB.name}'s Ranked Fits</span>
+                <ArrowUpRight size={12} />
+              </Link>
+            </div>
+          </div>
         </div>
       )}
-    </div>
-  )
-}
-
-function PersonAvatar({ person, color, initials, size = 'md' }) {
-  const dim = size === 'sm' ? 'w-10 h-10 text-sm' : 'w-16 h-16 text-xl'
-  return (
-    <div className="text-center">
-      {person.photo ? (
-        <img src={person.photo} alt={person.name}
-          className={`${dim} rounded-full object-cover border-2 mx-auto`}
-          style={{ borderColor: color }}
-          onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex' }}
-        />
-      ) : null}
-      <div className={`${dim} rounded-full items-center justify-center font-bold text-white mx-auto`}
-        style={{ background: `${color}25`, border: `2px solid ${color}`, display: person.photo ? 'none' : 'flex' }}>
-        {initials}
-      </div>
-      {size !== 'sm' && <p className="text-xs text-gray-500 mt-1 max-w-[80px] truncate">{person.name}</p>}
     </div>
   )
 }
