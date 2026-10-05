@@ -23,6 +23,14 @@ const STAGES = [
   { id: '06', title: 'DECISION', desc: 'Mutual Verdict' }
 ];
 
+const CURATED_PAIRS = [
+  { id1: '1', id2: '14', label: 'Pieter (M) × Sara (F)' },
+  { id1: '2', id2: '15', label: 'Huberman (M) × Melanie (F)' },
+  { id1: '3', id2: '16', label: 'Lex (M) × Whitney (F)' },
+  { id1: '8', id2: '21', label: 'Alexis (M) × Priyanka (F)' },
+  { id1: '9', id2: '18', label: 'Naval (M) × Mira (F)' },
+];
+
 export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string }) {
   const [personA, setPersonA] = useState<any>(null);
   const [personB, setPersonB] = useState<any>(null);
@@ -49,13 +57,13 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         let pB = all.find((p: any) => String(p.id) === String(id2));
         // If pB is not provided or not eligible, fall back strictly to an eligible partner
         if (!pB || !isPairEligible(pA, pB)) {
-          pB = getSamplePartner(pA, all) || all.find((p: any) => String(p.id) !== String(pA.id)) || all[1];
+          pB = getSamplePartner(pA, all) || all.find((p: any) => p.gender !== pA.gender && String(p.id) !== String(pA.id)) || all[1];
         }
 
         setPersonA(pA);
         setPersonB(pB);
 
-        const match = matchData?.[id1]?.[id2] || matchData?.[id2]?.[id1];
+        const match = matchData?.[pA.id]?.[pB.id] || matchData?.[pB.id]?.[pA.id];
         setMatchDetails(match);
 
         const score = match?.compatibilityScore || 85;
@@ -224,6 +232,31 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         </div>
       </header>
 
+      {/* Curated Opposite-Gender Encounter Switcher */}
+      <div className="w-full bg-[var(--surface-2)]/90 border-b border-[var(--line)] py-2.5 px-4 flex items-center justify-center gap-2 overflow-x-auto scrollbar-thin z-20 shrink-0">
+        <span className="meta-label text-[9px] text-[var(--text-secondary)] font-bold shrink-0 hidden sm:inline">
+          SWITCH DATING ENCOUNTER:
+        </span>
+        {CURATED_PAIRS.map(cp => {
+          const isActive = (String(personA?.id) === String(cp.id1) && String(personB?.id) === String(cp.id2)) ||
+                           (String(personA?.id) === String(cp.id2) && String(personB?.id) === String(cp.id1));
+          return (
+            <Link
+              key={`${cp.id1}-${cp.id2}`}
+              href={`/date/${cp.id1}/${cp.id2}`}
+              onClick={() => sounds.playClick()}
+              className={`px-3 py-1 rounded-full text-xs font-mono shrink-0 transition-all ${
+                isActive
+                  ? 'bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-bold shadow-md'
+                  : 'bg-white/5 hover:bg-white/10 text-[var(--text-secondary)] hover:text-white border border-white/5'
+              }`}
+            >
+              {cp.label}
+            </Link>
+          );
+        })}
+      </div>
+
       {/* Center Stage */}
       <main className="flex-1 flex flex-col items-center justify-center p-6 max-w-5xl mx-auto w-full relative z-20 overflow-y-auto">
         {!finished ? (
@@ -242,7 +275,10 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   </div>
                 </div>
                 <div className="font-semibold text-sm text-[var(--text)] mt-4">{personA.name}</div>
-                <div className="meta-label text-[9px] text-[var(--muted)] truncate max-w-[140px]">{personA.headline}</div>
+                <div className="meta-label text-[9px] text-[var(--text-secondary)] truncate max-w-[140px]">{personA.headline}</div>
+                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-white mt-2 font-bold inline-block">
+                  {personA.gender === 'female' ? 'FEMALE (F)' : 'MALE (M)'}
+                </span>
               </div>
 
               {/* Energy Line */}
@@ -264,7 +300,10 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   </div>
                 </div>
                 <div className="font-semibold text-sm text-[var(--text)] mt-4">{personB.name}</div>
-                <div className="meta-label text-[9px] text-[var(--muted)] truncate max-w-[140px]">{personB.headline}</div>
+                <div className="meta-label text-[9px] text-[var(--text-secondary)] truncate max-w-[140px]">{personB.headline}</div>
+                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-white mt-2 font-bold inline-block">
+                  {personB.gender === 'female' ? 'FEMALE (F)' : 'MALE (M)'}
+                </span>
               </div>
             </div>
 
