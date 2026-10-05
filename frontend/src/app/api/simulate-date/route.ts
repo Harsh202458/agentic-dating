@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-3.8-flash' });
 
     const prompt = `
 You are simulating a 6-stage autonomous dating conversation between two AI agents representing real people.
@@ -99,16 +99,35 @@ SCHEMA:
 }
 `;
 
-    // Timeout protection: 25 seconds
-    const timeoutPromise = new Promise((_, reject) =>
-      setTimeout(() => reject(new Error('LLM date simulation timed out after 25s')), 25000)
-    );
+    const candidateModels = [
+      'gemini-3.5-flash-lite',
+      'gemini-3.1-pro-preview',
+      'gemini-3.8-flash'
+    ];
 
-    const generatePromise = model.generateContent(prompt).then(res => res.response.text());
+    let rawResponse = '';
+    let lastError: any = null;
 
-    const rawResponse = await Promise.race([generatePromise, timeoutPromise]) as string;
+    for (const modelName of candidateModels) {
+      try {
+        const model = genAI.getGenerativeModel({ model: modelName });
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error(`Timeout with model ${modelName}`)), 12000)
+        );
+        const generatePromise = model.generateContent(prompt).then(res => res.response.text());
+        rawResponse = (await Promise.race([generatePromise, timeoutPromise])) as string;
+        if (rawResponse) break;
+      } catch (err: any) {
+        lastError = err;
+        console.warn(`Model ${modelName} encountered: ${err?.message}, trying next candidate...`);
+      }
+    }
+
+    if (!rawResponse) {
+      throw lastError || new Error('All candidate LLM models failed to generate date conversation.');
+    }
+
     const cleanText = rawResponse.replace(/```json/g, '').replace(/```/g, '').trim();
-
     const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
       throw new Error('LLM response did not contain valid JSON.');
