@@ -7,6 +7,7 @@ import { PersonNode } from '../components/MatchmakingField';
 import { Play, Plus, ArrowRight, ShieldCheck, ExternalLink } from 'lucide-react';
 import { sounds } from '../utils/sound';
 import { getDataUrl } from '../utils/paths';
+import { getSamplePartner } from '../utils/matching';
 
 export default function HomePage() {
   const [people, setPeople] = useState<PersonNode[]>([]);
@@ -248,11 +249,11 @@ export default function HomePage() {
               </div>
 
               <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between meta-label text-[10px]">
-                <Link href={`/rankings/${person.id}`} onClick={() => sounds.playClick()} className="text-[var(--muted)] hover:text-white">
+                <Link href={`/rankings/${person.id}`} onClick={() => sounds.playClick()} className="text-[var(--text-secondary)] hover:text-white transition-colors">
                   RANKINGS →
                 </Link>
                 <Link
-                  href={`/date/${person.id}/${(person as any).gender === 'female' ? 1 : 14}`}
+                  href={`/date/${person.id}/${getSamplePartner(person, people)?.id ?? ((person as any).gender === 'female' ? 1 : 14)}`}
                   onClick={() => sounds.playClick()}
                   className="text-[var(--magenta)] hover:opacity-80 font-bold"
                 >

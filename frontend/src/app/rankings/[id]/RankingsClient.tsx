@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { ArrowLeft, ArrowRight, AlertTriangle, UserCheck } from 'lucide-react';
 import { sounds } from '../../../utils/sound';
 import { getDataUrl } from '../../../utils/paths';
+import { isPairEligible } from '../../../utils/matching';
 
 export default function RankingsClient({ id }: { id: string }) {
   const router = useRouter();
@@ -28,24 +29,20 @@ export default function RankingsClient({ id }: { id: string }) {
 
       let rawRanked = rankData?.[id]?.ranked || [];
 
-      // Filter strictly for opposite gender (Heterosexual matching)
-      if (p?.gender) {
-        const targetGender = p.gender === 'male' ? 'female' : 'male';
-        rawRanked = rawRanked.filter((r: any) => {
-          const prof = all.find((a: any) => String(a.id) === String(r.id));
-          return prof ? prof.gender === targetGender : true;
-        });
-      }
+      // Filter strictly for mutually eligible matches
+      rawRanked = rawRanked.filter((r: any) => {
+        const candidateProfile = all.find((a: any) => String(a.id) === String(r.id));
+        return isPairEligible(p, candidateProfile);
+      });
 
-      // If empty for any reason, dynamically compute opposite-gender rankings
+      // If empty or missing, dynamically compute strictly eligible rankings
       if (rawRanked.length === 0) {
-        const targetGender = p?.gender === 'male' ? 'female' : 'male';
-        const candidates = all.filter((a: any) => String(a.id) !== String(p.id) && (p?.gender ? a.gender === targetGender : true));
-        rawRanked = candidates.map((c: any) => ({
+        const eligibleCandidates = all.filter((a: any) => isPairEligible(p, a));
+        rawRanked = eligibleCandidates.map((c: any) => ({
           id: c.id,
           name: c.name,
           gender: c.gender,
-          score: Math.floor(74 + ((Number(p.id) * 7 + Number(c.id) * 11) % 19)),
+          score: Math.floor(75 + ((Number(p.id) * 7 + Number(c.id) * 11) % 18)),
           reason: `${p.name} and ${c.name} share sovereign ambition and direct communication, creating a balanced, high-trust dynamic.`
         })).sort((a: any, b: any) => b.score - a.score);
       }
@@ -77,13 +74,13 @@ export default function RankingsClient({ id }: { id: string }) {
   const seekingLabel = person.gender === 'male' ? 'WOMEN' : 'MEN';
 
   return (
-    <div className="min-h-screen pt-28 pb-24 px-6 max-w-5xl mx-auto relative z-20">
+    <div className="min-h-screen pt-36 sm:pt-40 pb-24 px-6 max-w-5xl mx-auto relative z-20">
       {/* Return & Breadcrumb */}
       <div className="flex items-center justify-between mb-8">
         <Link
           href="/"
           onClick={() => sounds.playClick()}
-          className="meta-label inline-flex items-center gap-2 text-[var(--muted)] hover:text-white transition-colors"
+          className="meta-label inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-white transition-colors"
         >
           <ArrowLeft size={14} />
           <span>RETURN TO THE FIELD</span>
@@ -93,7 +90,7 @@ export default function RankingsClient({ id }: { id: string }) {
         <Link
           href={`/profile/${person.id}`}
           onClick={() => sounds.playClick()}
-          className="meta-label text-[10px] text-[var(--violet)] hover:underline flex items-center gap-1.5"
+          className="meta-label text-[10px] text-[var(--violet)] font-bold hover:underline flex items-center gap-1.5"
         >
           <UserCheck size={13} />
           <span>VIEW {person.name.toUpperCase()}&apos;S DOSSIER</span>
@@ -101,8 +98,8 @@ export default function RankingsClient({ id }: { id: string }) {
       </div>
 
       {/* Candidate Selector Switcher */}
-      <div className="mb-10 p-4 rounded-2xl bg-white/[0.02] border border-[var(--line)]">
-        <div className="meta-label text-[9px] text-[var(--muted)] mb-3">
+      <div className="mb-10 p-4 rounded-2xl bg-white/[0.03] border border-[var(--line)]">
+        <div className="meta-label text-[9px] text-[var(--text-secondary)] font-bold mb-3">
           SWITCH CANDIDATE TO VIEW WHO THEIR AGENT CHOSE:
         </div>
         <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
@@ -117,13 +114,13 @@ export default function RankingsClient({ id }: { id: string }) {
                 }}
                 className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono shrink-0 transition-all cursor-pointer ${
                   isSelected
-                    ? 'bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] text-white font-bold shadow-md'
-                    : 'bg-white/5 hover:bg-white/10 text-[var(--muted)] hover:text-white border border-white/5'
+                    ? 'bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-bold shadow-md'
+                    : 'bg-white/5 hover:bg-white/10 text-[var(--text-secondary)] hover:text-white border border-white/5'
                 }`}
               >
                 <img src={c.photo} alt={c.name} className="w-4 h-4 rounded-full object-cover" />
                 <span>{c.name}</span>
-                <span className="text-[9px] opacity-70">({c.gender === 'male' ? 'M' : 'F'})</span>
+                <span className="text-[9px] opacity-80">({c.gender === 'male' ? 'M' : 'F'})</span>
               </button>
             );
           })}
@@ -131,13 +128,13 @@ export default function RankingsClient({ id }: { id: string }) {
       </div>
 
       {/* Title */}
-      <div className="mb-12 border-b border-[var(--line)] pb-8">
+      <div className="mb-10 border-b border-[var(--line)] pb-8">
         <div className="flex flex-wrap items-center gap-3 mb-3">
-          <div className="meta-label text-[var(--violet)]">
+          <div className="meta-label text-[var(--violet)] font-bold">
             SUBJECT: {person.name.toUpperCase()} ({person.gender?.toUpperCase() || 'MALE'})
           </div>
-          <span className="text-white/20">•</span>
-          <div className="meta-label text-[var(--magenta)]">
+          <span className="text-white/30">•</span>
+          <div className="meta-label text-[var(--magenta)] font-bold">
             SEEKING: {seekingLabel} ONLY (HETEROSEXUAL ALIGNMENT)
           </div>
         </div>
@@ -148,8 +145,8 @@ export default function RankingsClient({ id }: { id: string }) {
             AGENT CHOOSE?
           </span>
         </h1>
-        <p className="body-text text-sm max-w-xl">
-          Ranked from #01 to #{rankings.length} based on autonomous 6-stage date simulations across Values, Interests, Lifestyle Rhythm, and Emotional Needs.
+        <p className="body-text text-sm sm:text-base max-w-xl text-[var(--text-secondary)]">
+          Ranked from #01 to #{rankings.length} based on autonomous 6-stage date simulations across Values, Interests, Lifestyle Rhythm, and Emotional Needs. Showing all verified {seekingLabel.toLowerCase()} in the network.
         </p>
       </div>
 
@@ -173,8 +170,8 @@ export default function RankingsClient({ id }: { id: string }) {
                   <div
                     className="font-mono text-5xl sm:text-7xl lg:text-8xl font-black select-none tracking-tighter shrink-0 leading-none"
                     style={{
-                      WebkitTextStroke: '1px rgba(255, 255, 255, 0.18)',
-                      color: 'transparent'
+                      WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.45)',
+                      color: 'rgba(255, 255, 255, 0.08)'
                     }}
                   >
                     {num}
@@ -200,12 +197,12 @@ export default function RankingsClient({ id }: { id: string }) {
                           #1 OPTIMAL FIT
                         </span>
                       )}
-                      <span className="meta-label text-[9px] px-2 py-0.5 rounded-full bg-white/5 text-[var(--muted)]">
+                      <span className="meta-label text-[9px] px-2 py-0.5 rounded-full bg-white/10 text-[var(--text)] border border-white/10 font-bold">
                         {match.profile?.gender === 'female' ? 'FEMALE' : 'MALE'}
                       </span>
                     </div>
 
-                    <div className="meta-label text-xs text-[var(--muted)] truncate mb-2.5">
+                    <div className="meta-label text-xs text-[var(--text-secondary)] truncate mb-2.5">
                       {match.profile?.headline}
                     </div>
 
@@ -236,13 +233,13 @@ export default function RankingsClient({ id }: { id: string }) {
                     <div className="font-mono text-3xl sm:text-5xl font-bold text-[var(--magenta)]">
                       {match.score}%
                     </div>
-                    <div className="meta-label text-[9px]">COMPATIBILITY</div>
+                    <div className="meta-label text-[9px] text-[var(--text-secondary)] font-bold">COMPATIBILITY</div>
                   </div>
 
                   <Link
                     href={`/date/${person.id}/${match.id}`}
                     onClick={() => sounds.playClick()}
-                    className="px-5 py-3 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] text-white meta-label text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-lg hover:opacity-95 transition-opacity cursor-pointer shrink-0"
+                    className="px-5 py-3 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-xl hover:opacity-95 transition-opacity cursor-pointer shrink-0"
                   >
                     <span>REPLAY DATE</span>
                     <ArrowRight size={12} />

@@ -4,9 +4,14 @@
   --bg: #07070A;
   --surface: #0E0E13;
   --surface-2: #14141B;
-  --line: rgba(255, 255, 255, 0.08);
+  --line: rgba(255, 255, 255, 0.12);
   --text: #F4F4F6;
-  --muted: #8A8A97;
+  --text-secondary: #B4B4C0;
+  --text-muted: #A0A0AE;
+  --text-placeholder: #9A9AA8;
+  --text-disabled: #7C7C8A;
+  --muted: #B4B4C0;
+  --mono-label: #A0A0AE;
   --violet: #8B5CF6;
   --blue: #3B82F6;
   --magenta: #E879F9;
@@ -42,13 +47,14 @@ html, body {
   opacity: 0.25;
 }
 
-/* Typography styles */
+/* Typography styles with guaranteed WCAG AA 4.5:1+ contrast */
 .hero-headline {
   font-weight: 600;
   letter-spacing: -0.03em;
   font-size: clamp(48px, 9.5vw, 128px);
   line-height: 1.02;
   text-transform: uppercase;
+  color: var(--text);
 }
 
 .section-title {
@@ -56,12 +62,13 @@ html, body {
   letter-spacing: -0.03em;
   font-size: clamp(32px, 5vw, 48px);
   line-height: 1.05;
+  color: var(--text);
 }
 
 .body-text {
   font-size: 16px;
   line-height: 1.6;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
 .meta-label {
@@ -69,7 +76,18 @@ html, body {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--muted);
+  color: var(--mono-label);
+}
+
+/* Scrim & contrast helpers for text over animated field */
+.text-scrim {
+  text-shadow: 0 2px 14px rgba(7, 7, 10, 0.95), 0 0 24px rgba(7, 7, 10, 0.85);
+}
+
+.bg-scrim {
+  background: rgba(7, 7, 10, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 /* Glass elements */

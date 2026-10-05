@@ -3,7 +3,8 @@
     "id": 1,
     "name": "Pieter Levels",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 15,
@@ -359,7 +360,8 @@
     "id": 2,
     "name": "Dr. Andrew Huberman",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 19,
@@ -715,7 +717,8 @@
     "id": 3,
     "name": "Lex Fridman",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 18,
@@ -1071,7 +1074,8 @@
     "id": 4,
     "name": "Gary Vaynerchuk",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 24,
@@ -1427,7 +1431,8 @@
     "id": 5,
     "name": "Tim Ferriss",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 14,
@@ -1783,7 +1788,8 @@
     "id": 6,
     "name": "Ali Abdaal",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 17,
@@ -2139,7 +2145,8 @@
     "id": 7,
     "name": "Sahil Bloom",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 18,
@@ -2495,7 +2502,8 @@
     "id": 8,
     "name": "Alexis Ohanian",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 16,
@@ -2851,7 +2859,8 @@
     "id": 9,
     "name": "Naval Ravikant",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 18,
@@ -3207,7 +3216,8 @@
     "id": 10,
     "name": "Lenny Rachitsky",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 25,
@@ -3563,7 +3573,8 @@
     "id": 11,
     "name": "Kunal Shah",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 18,
@@ -3919,7 +3930,8 @@
     "id": 12,
     "name": "Shaan Puri",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 17,
@@ -4275,7 +4287,8 @@
     "id": 13,
     "name": "Mark Zuckerberg",
     "gender": "male",
-    "seeking": "female",
+    "looking_for": "women",
+    "seeking": "women",
     "ranked": [
       {
         "id": 15,
@@ -4631,7 +4644,8 @@
     "id": 14,
     "name": "Sara Blakely",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 3,
@@ -5016,7 +5030,8 @@
     "id": 15,
     "name": "Melanie Perkins",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 8,
@@ -5401,7 +5416,8 @@
     "id": 16,
     "name": "Whitney Wolfe Herd",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 8,
@@ -5786,7 +5802,8 @@
     "id": 17,
     "name": "Marie Forleo",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 3,
@@ -6171,7 +6188,8 @@
     "id": 18,
     "name": "Mira Murati",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 3,
@@ -6556,7 +6574,8 @@
     "id": 19,
     "name": "Dr. Fei-Fei Li",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 7,
@@ -6941,7 +6960,8 @@
     "id": 20,
     "name": "Deepika Padukone",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 7,
@@ -7326,7 +7346,8 @@
     "id": 21,
     "name": "Priyanka Chopra",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 12,
@@ -7711,7 +7732,8 @@
     "id": 22,
     "name": "Arianna Huffington",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 2,
@@ -8096,7 +8118,8 @@
     "id": 23,
     "name": "Reshma Saujani",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 4,
@@ -8481,7 +8504,8 @@
     "id": 24,
     "name": "Gwyneth Paltrow",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 3,
@@ -8866,7 +8890,8 @@
     "id": 25,
     "name": "Jessica Alba",
     "gender": "female",
-    "seeking": "male",
+    "looking_for": "men",
+    "seeking": "men",
     "ranked": [
       {
         "id": 2,

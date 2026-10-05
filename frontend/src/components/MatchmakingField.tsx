@@ -2,12 +2,16 @@
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { sounds } from '../utils/sound';
+import { isPairEligible } from '../utils/matching';
 
 export interface PersonNode {
   id: number | string;
   name: string;
   headline: string;
   photo: string;
+  gender?: 'male' | 'female' | 'other' | string;
+  looking_for?: 'men' | 'women' | 'everyone' | string;
+  seeking?: 'men' | 'women' | 'everyone' | string;
   location?: string;
   followers?: number;
   interests?: string[];
@@ -53,6 +57,8 @@ export default function MatchmakingField({
   const selectedPersonIdRef = useRef<number | string | null>(selectedPersonId || null);
   const cameraRef = useRef({ x: 0, y: 0, scale: 1, targetX: 0, targetY: 0, targetScale: 1 });
   const mouseRef = useRef({ x: -1000, y: -1000, targetX: -1000, targetY: -1000 });
+  const scrollYRef = useRef(0);
+  const scrollProgressRef = useRef(0);
 
   useEffect(() => {
     selectedPersonIdRef.current = selectedPersonId || null;
@@ -75,6 +81,16 @@ export default function MatchmakingField({
     let time = 0;
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
     const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Scroll listener for smooth parallax & camera depth
+    const handleScroll = () => {
+      const sy = window.scrollY || 0;
+      scrollYRef.current = sy;
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      scrollProgressRef.current = Math.min(1, Math.max(0, sy / maxScroll));
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
     // Handle DPR capped to 1.5 to guarantee 60fps without GPU throttling
     const updateSize = () => {
@@ -130,6 +146,7 @@ export default function MatchmakingField({
       return () => {
         cancelAnimationFrame(animId);
         window.removeEventListener('resize', updateSize);
+        window.removeEventListener('scroll', handleScroll);
       };
     }
 
@@ -163,6 +180,7 @@ export default function MatchmakingField({
         y: centerY + Math.sin(angle) * dist,
         vx: 0,
         vy: 0,
+        depth: 0.15 + (i % 3) * 0.08,
         radius: isMobile ? 18 : 22,
         pulse: Math.random() * Math.PI * 2
       };
@@ -178,14 +196,18 @@ export default function MatchmakingField({
     }
     const activeLinks: ActiveLink[] = [];
 
-    // Periodic organic connection pairing (every 10s)
+    // Periodic organic connection pairing (every 10s) - ONLY BETWEEN ELIGIBLE PAIRS
     let pairInterval: NodeJS.Timeout;
     const triggerPair = () => {
       if (nodes.length < 2 || prefersReducedMotion) return;
       const idxA = Math.floor(Math.random() * nodes.length);
-      const idxB = (idxA + Math.floor(Math.random() * (nodes.length - 1)) + 1) % nodes.length;
       const nA = nodes[idxA];
-      const nB = nodes[idxB];
+
+      // Strictly select an eligible opposite-gender partner
+      const eligible = nodes.filter(nB => nB.id !== nA.id && isPairEligible(nA.person, nB.person));
+      if (eligible.length === 0) return;
+
+      const nB = eligible[Math.floor(Math.random() * eligible.length)];
       const score = Math.floor(84 + Math.random() * 13);
 
       activeLinks.push({
@@ -220,9 +242,9 @@ export default function MatchmakingField({
 
       for (const n of nodes) {
         const screenX = (n.x - cameraRef.current.x) * cameraRef.current.scale + (window.innerWidth / 2) * (1 - cameraRef.current.scale);
-        const screenY = (n.y - cameraRef.current.y) * cameraRef.current.scale + (window.innerHeight / 2) * (1 - cameraRef.current.scale);
+        const screenY = (n.y - (scrollYRef.current * n.depth) - cameraRef.current.y) * cameraRef.current.scale + (window.innerHeight / 2) * (1 - cameraRef.current.scale);
         const d = Math.hypot(screenX - mx, screenY - my);
-        if (d < n.radius + 12) {
+        if (d < n.radius + 14) {
           found = n;
           break;
         }
@@ -245,11 +267,11 @@ export default function MatchmakingField({
       const my = e.clientY;
       for (const n of nodes) {
         const screenX = (n.x - cameraRef.current.x) * cameraRef.current.scale + (window.innerWidth / 2) * (1 - cameraRef.current.scale);
-        const screenY = (n.y - cameraRef.current.y) * cameraRef.current.scale + (window.innerHeight / 2) * (1 - cameraRef.current.scale);
+        const screenY = (n.y - (scrollYRef.current * n.depth) - cameraRef.current.y) * cameraRef.current.scale + (window.innerHeight / 2) * (1 - cameraRef.current.scale);
         const d = Math.hypot(screenX - mx, screenY - my);
-        if (d < n.radius + 16) {
+        if (d < n.radius + 18) {
           cameraRef.current.targetX = n.x - window.innerWidth / 2;
-          cameraRef.current.targetY = n.y - window.innerHeight / 2;
+          cameraRef.current.targetY = n.y - (scrollYRef.current * n.depth) - window.innerHeight / 2;
           cameraRef.current.targetScale = 1.15;
           handleNodeClick(n.person);
           break;
@@ -273,8 +295,12 @@ export default function MatchmakingField({
       mouseRef.current.x += (mouseRef.current.targetX - mouseRef.current.x) * 0.08;
       mouseRef.current.y += (mouseRef.current.targetY - mouseRef.current.y) * 0.08;
 
-      // Camera lerp
+      // Camera lerp tied to scroll & target
       const cam = cameraRef.current;
+      if (selectedPersonIdRef.current === null) {
+        cam.targetY = scrollYRef.current * 0.12;
+        cam.targetScale = Math.max(0.92, 1.0 - scrollProgressRef.current * 0.08);
+      }
       cam.x += (cam.targetX - cam.x) * 0.05;
       cam.y += (cam.targetY - cam.y) * 0.05;
       cam.scale += (cam.targetScale - cam.scale) * 0.05;
@@ -300,6 +326,13 @@ export default function MatchmakingField({
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
       });
+
+      // Subtle dark gradient overlay increasing as user scrolls down into content
+      const scrollOverlayAlpha = Math.min(0.72, scrollProgressRef.current * 0.85);
+      if (scrollOverlayAlpha > 0.02) {
+        ctx.fillStyle = `rgba(7, 7, 10, ${scrollOverlayAlpha})`;
+        ctx.fillRect(0, 0, curW, curH);
+      }
 
       // 2. Physics & Node Movement with Anti-Overlap Forces
       const minCenterDist = isMobile ? 180 : 310; // Hero text exclusion zone
@@ -380,10 +413,10 @@ export default function MatchmakingField({
           continue;
         }
 
-        const x1 = link.source.x;
-        const y1 = link.source.y;
-        const x2 = link.target.x;
-        const y2 = link.target.y;
+        const x1 = (link.source.x - cam.x) * cam.scale + curCenterX * (1 - cam.scale);
+        const y1 = (link.source.y - (scrollYRef.current * link.source.depth) - cam.y) * cam.scale + curCenterY * (1 - cam.scale);
+        const x2 = (link.target.x - cam.x) * cam.scale + curCenterX * (1 - cam.scale);
+        const y2 = (link.target.y - (scrollYRef.current * link.target.depth) - cam.y) * cam.scale + curCenterY * (1 - cam.scale);
         const midX = (x1 + x2) / 2;
         const midY = (y1 + y2) / 2 - 20;
 
@@ -393,13 +426,13 @@ export default function MatchmakingField({
         ctx.quadraticCurveTo(midX, midY, x2, y2);
 
         const alpha = Math.min(1, link.life) * link.drawProgress;
-        ctx.strokeStyle = `rgba(139, 92, 246, ${alpha * 0.7})`;
+        ctx.strokeStyle = `rgba(139, 92, 246, ${alpha * 0.75})`;
         ctx.lineWidth = 1.5;
         ctx.stroke();
 
         // Midpoint badge
         if (link.drawProgress > 0.7) {
-          ctx.font = '600 10px monospace';
+          ctx.font = '600 11px monospace';
           ctx.fillStyle = `rgba(232, 121, 249, ${alpha})`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
@@ -408,7 +441,7 @@ export default function MatchmakingField({
         ctx.restore();
       }
 
-      // 4. Render Nodes
+      // 4. Render Nodes with Depth Parallax
       const currentHoverId = hoveredIdRef.current;
       const isAnyHovered = currentHoverId !== null;
 
@@ -418,45 +451,48 @@ export default function MatchmakingField({
         const r = n.radius * scale;
         const nodeAlpha = isAnyHovered ? (isHovered ? 1.0 : 0.25) : 1.0;
 
+        const drawX = (n.x - cam.x) * cam.scale + curCenterX * (1 - cam.scale);
+        const drawY = (n.y - (scrollYRef.current * n.depth) - cam.y) * cam.scale + curCenterY * (1 - cam.scale);
+
         ctx.save();
         ctx.globalAlpha = nodeAlpha;
 
         // Background circle
         ctx.beginPath();
-        ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+        ctx.arc(drawX, drawY, r, 0, Math.PI * 2);
         ctx.fillStyle = '#0E0E13';
         ctx.fill();
 
         // Border
-        ctx.strokeStyle = isHovered ? '#8B5CF6' : 'rgba(255, 255, 255, 0.12)';
+        ctx.strokeStyle = isHovered ? '#8B5CF6' : 'rgba(255, 255, 255, 0.16)';
         ctx.lineWidth = isHovered ? 2 : 1;
         ctx.stroke();
 
         // Avatar Clip
         ctx.save();
         ctx.beginPath();
-        ctx.arc(n.x, n.y, r - 1, 0, Math.PI * 2);
+        ctx.arc(drawX, drawY, r - 1, 0, Math.PI * 2);
         ctx.clip();
 
         const img = imgCache.get(n.id);
         if (img && img.complete && img.naturalWidth > 0) {
-          ctx.drawImage(img, n.x - r, n.y - r, r * 2, r * 2);
+          ctx.drawImage(img, drawX - r, drawY - r, r * 2, r * 2);
         } else {
           ctx.fillStyle = '#14141B';
-          ctx.fillRect(n.x - r, n.y - r, r * 2, r * 2);
+          ctx.fillRect(drawX - r, drawY - r, r * 2, r * 2);
           ctx.fillStyle = '#F4F4F6';
           ctx.font = '600 11px sans-serif';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillText(n.person.name.charAt(0), n.x, n.y);
+          ctx.fillText(n.person.name.charAt(0), drawX, drawY);
         }
         ctx.restore();
 
         // Agent Dot
         const dotAngle = -Math.PI / 4;
         const dotDist = r + 2;
-        const dotX = n.x + Math.cos(dotAngle) * dotDist;
-        const dotY = n.y + Math.sin(dotAngle) * dotDist;
+        const dotX = drawX + Math.cos(dotAngle) * dotDist;
+        const dotY = drawY + Math.sin(dotAngle) * dotDist;
 
         ctx.beginPath();
         ctx.arc(dotX, dotY, 2.5, 0, Math.PI * 2);
@@ -493,30 +529,30 @@ export default function MatchmakingField({
           }`}
           style={{ left: hoverPos.x, top: hoverPos.y }}
         >
-          <div className="card-panel p-4 min-w-[260px] max-w-[300px] border border-white/10 shadow-2xl backdrop-blur-xl bg-[var(--surface)]/95">
-            <div className="flex items-center gap-3 pb-3 border-b border-white/[0.06]">
-              <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-white/15">
+          <div className="card-panel p-4 min-w-[260px] max-w-[300px] border border-white/15 shadow-2xl backdrop-blur-xl bg-[var(--surface)]/95">
+            <div className="flex items-center gap-3 pb-3 border-b border-white/[0.08]">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-white/20">
                 <img src={hoveredNode.photo} alt={hoveredNode.name} className="w-full h-full object-cover" />
               </div>
               <div className="min-w-0">
                 <div className="font-semibold text-sm text-[var(--text)] truncate">{hoveredNode.name}</div>
-                <div className="meta-label text-[10px] text-[var(--muted)] truncate">{hoveredNode.headline}</div>
+                <div className="meta-label text-[10px] text-[var(--text-secondary)] truncate">{hoveredNode.headline}</div>
               </div>
             </div>
 
             <div className="pt-2.5 space-y-1.5">
-              <div className="meta-label text-[9px] text-[var(--violet)]">AGENT SIGNALS</div>
+              <div className="meta-label text-[9px] text-[var(--violet)] font-bold">AGENT SIGNALS</div>
               <div className="flex flex-wrap gap-1">
                 {(hoveredNode.interests || []).slice(0, 3).map((item, i) => (
-                  <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[var(--text)]">
+                  <span key={i} className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 border border-white/15 text-[var(--text)]">
                     {item}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="mt-3 pt-2 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-mono">
-              <span className="text-[var(--muted)]">Click to open report</span>
+            <div className="mt-3 pt-2 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono">
+              <span className="text-[var(--text-secondary)]">Click to open report</span>
               <span className="text-[var(--magenta)] font-bold">EXAMINE →</span>
             </div>
           </div>
@@ -526,14 +562,14 @@ export default function MatchmakingField({
       {/* Connection Notification Toast */}
       {!ambientOnly && activeToast && (
         <div className="fixed top-24 right-8 z-50 animate-fade-in pointer-events-none">
-          <div className="card-panel px-4 py-3 border border-[var(--violet)]/40 flex items-center gap-3 shadow-2xl backdrop-blur-2xl bg-[var(--surface)]/95">
+          <div className="card-panel px-4 py-3 border border-[var(--violet)]/50 flex items-center gap-3 shadow-2xl backdrop-blur-2xl bg-[var(--surface)]/95">
             <span className="w-2 h-2 rounded-full bg-[var(--violet)] animate-ping" />
             <div>
-              <div className="meta-label text-[9px] text-[var(--violet)] font-bold">
+              <div className="meta-label text-[9px] text-[var(--violet)] font-bold tracking-wider">
                 AGENTS DISCOVERED A POTENTIAL MATCH
               </div>
-              <div className="text-xs text-white mt-0.5 font-medium">
-                {activeToast.pA} <span className="text-[var(--muted)]">×</span> {activeToast.pB}
+              <div className="text-xs text-[var(--text)] mt-0.5 font-medium">
+                {activeToast.pA} <span className="text-[var(--text-secondary)]">×</span> {activeToast.pB}
               </div>
             </div>
             <div className="meta-label text-base font-bold text-[var(--magenta)] ml-2">

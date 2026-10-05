@@ -6,6 +6,7 @@ import { ArrowLeft, ExternalLink, Play, ShieldCheck, Heart } from 'lucide-react'
 import { PersonNode } from '@/components/MatchmakingField';
 import { sounds } from '@/utils/sound';
 import { getDataUrl } from '@/utils/paths';
+import { getSamplePartner } from '@/utils/matching';
 
 export default function ProfileClient({ id }: { id: string }) {
   const [person, setPerson] = useState<PersonNode | null>(null);
@@ -25,6 +26,9 @@ export default function ProfileClient({ id }: { id: string }) {
         const mapped: PersonNode[] = list.map((p: any) => ({
           id: p.id,
           name: p.name,
+          gender: p.gender,
+          looking_for: p.looking_for,
+          seeking: p.seeking,
           headline: p.headline || p.role || 'Innovator',
           photo: p.photo || p.image || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400',
           interests: p.interests || p.hobbies || ['Technology', 'Philosophy', 'Art'],
@@ -46,7 +50,7 @@ export default function ProfileClient({ id }: { id: string }) {
 
   if (!person) {
     return (
-      <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center text-[var(--muted)] font-mono">
+      <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center text-[var(--text-secondary)] font-mono">
         <div className="flex items-center gap-3">
           <span className="w-2 h-2 rounded-full bg-[var(--violet)] animate-ping" />
           <span>INITIALIZING DOSSIER #{id}...</span>
@@ -55,10 +59,7 @@ export default function ProfileClient({ id }: { id: string }) {
     );
   }
 
-  const targetGender = (person as any).gender === 'male' ? 'female' : 'male';
-  const samplePartner = allPeople.find((p) => p.id !== person.id && (p as any).gender === targetGender)
-    || allPeople.find((p) => p.id !== person.id)
-    || allPeople[0];
+  const samplePartner = getSamplePartner(person, allPeople) || allPeople[0];
 
   const handleSignalClick = (name: string, type: string) => {
     sounds.playClick();
@@ -72,20 +73,20 @@ export default function ProfileClient({ id }: { id: string }) {
 
   return (
     <div className="min-h-screen text-[var(--text)] selection:bg-[var(--violet)]/30 relative">
-      <main className="relative z-10 pt-28 pb-20 px-6 max-w-4xl mx-auto">
+      <main className="relative z-10 pt-36 sm:pt-40 pb-20 px-6 max-w-4xl mx-auto">
         {/* Navigation Breadcrumb */}
         <div className="mb-8 flex items-center justify-between">
           <Link
             href="/"
             onClick={() => sounds.playClick()}
-            className="inline-flex items-center gap-2 text-xs font-mono text-[var(--muted)] hover:text-white transition-colors uppercase tracking-wider"
+            className="inline-flex items-center gap-2 text-xs font-mono text-[var(--text-secondary)] hover:text-white transition-colors uppercase tracking-wider"
           >
             <ArrowLeft size={14} /> Back to Field
           </Link>
 
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[var(--violet)] animate-pulse" />
-            <span className="meta-label text-[var(--violet)]">AGENT DOSSIER #{person.id}</span>
+            <span className="meta-label text-[var(--violet)] font-bold">AGENT DOSSIER #{person.id}</span>
           </div>
         </div>
 
@@ -107,7 +108,7 @@ export default function ProfileClient({ id }: { id: string }) {
               <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--text)]">
                 {person.name}
               </h1>
-              <p className="text-base text-[var(--muted)] mt-1.5 leading-snug">
+              <p className="text-base text-[var(--text-secondary)] mt-1.5 leading-snug">
                 {person.headline}
               </p>
 
@@ -122,10 +123,10 @@ export default function ProfileClient({ id }: { id: string }) {
                   >
                     <span className="text-[#0077b5]">LINKEDIN</span>
                     <span className="text-[var(--violet)]">✓ ANALYZED</span>
-                    <ExternalLink size={10} className="text-[var(--muted)]" />
+                    <ExternalLink size={10} className="text-[var(--text-muted)]" />
                   </a>
                 ) : (
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--muted)]">
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--text-muted)]">
                     LINKEDIN · NOT AVAILABLE
                   </span>
                 )}
@@ -139,10 +140,10 @@ export default function ProfileClient({ id }: { id: string }) {
                   >
                     <span className="text-[var(--pink)]">INSTAGRAM</span>
                     <span className="text-[var(--violet)]">✓ ANALYZED</span>
-                    <ExternalLink size={10} className="text-[var(--muted)]" />
+                    <ExternalLink size={10} className="text-[var(--text-muted)]" />
                   </a>
                 ) : (
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--muted)]">
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--text-muted)]">
                     INSTAGRAM · NOT AVAILABLE
                   </span>
                 )}
@@ -152,8 +153,8 @@ export default function ProfileClient({ id }: { id: string }) {
 
           {/* Person Summary */}
           <div>
-            <div className="meta-label mb-2 text-xs">THE PERSON</div>
-            <p className="body-text text-base text-[var(--muted)] leading-relaxed">
+            <div className="meta-label mb-2 text-xs text-[var(--text-muted)]">THE PERSON</div>
+            <p className="body-text text-base text-[var(--text-secondary)] leading-relaxed">
               {person.summary || `${person.name} is a high-agency individual operating with focused dedication. The agent represents their sovereign boundaries, testing intellectual curiosity and lifestyle resonance.`}
             </p>
           </div>
@@ -238,12 +239,12 @@ export default function ProfileClient({ id }: { id: string }) {
             {/* Agent Verification Status */}
             <div className="p-5 rounded-2xl bg-white/[0.02] border border-[var(--line)] flex flex-col justify-between">
               <div>
-                <div className="meta-label text-[10px] mb-2">VERIFICATION INTEGRITY</div>
-                <p className="text-xs text-[var(--muted)]">
+                <div className="meta-label text-[10px] mb-2 text-[var(--text-secondary)]">VERIFICATION INTEGRITY</div>
+                <p className="text-xs text-[var(--text-secondary)]">
                   Zero hallucinations. Signals strictly bound to LinkedIn & Instagram.
                 </p>
               </div>
-              <div className="flex items-center gap-2 mt-4 text-xs font-mono text-[var(--violet)]">
+              <div className="flex items-center gap-2 mt-4 text-xs font-mono text-[var(--violet)] font-bold">
                 <ShieldCheck size={16} />
                 <span>100% EVIDENCE BOUND</span>
               </div>
@@ -255,7 +256,7 @@ export default function ProfileClient({ id }: { id: string }) {
             <Link
               href={`/date/${person.id}/${samplePartner?.id || 1}`}
               onClick={() => sounds.playConnect()}
-              className="w-full sm:flex-1 py-3.5 px-6 rounded-full bg-[var(--text)] text-[var(--bg)] hover:bg-white font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-lg shadow-white/5"
+              className="w-full sm:flex-1 py-3.5 px-6 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white hover:opacity-95 font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-[var(--violet)]/25 cursor-pointer"
             >
               <Play size={16} fill="currentColor" />
               <span>WATCH AGENT IN SIMULATED DATE</span>
@@ -264,7 +265,7 @@ export default function ProfileClient({ id }: { id: string }) {
             <Link
               href={`/rankings/${person.id}`}
               onClick={() => sounds.playClick()}
-              className="w-full sm:w-auto py-3.5 px-6 rounded-full border border-[var(--line)] hover:border-white/30 text-[var(--text)] text-sm font-mono flex items-center justify-center gap-2 transition-colors"
+              className="w-full sm:w-auto py-3.5 px-6 rounded-full border border-[var(--line)] bg-white/5 hover:bg-white/10 text-[var(--text)] text-sm font-mono flex items-center justify-center gap-2 transition-colors cursor-pointer"
             >
               <span>VIEW AGENT RANKINGS</span>
             </Link>

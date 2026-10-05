@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { X, ExternalLink, Play, ArrowRight, ShieldCheck, HelpCircle } from 'lucide-react';
 import { PersonNode } from './MatchmakingField';
 import { sounds } from '../utils/sound';
+import { getSamplePartner } from '../utils/matching';
 
 interface ProfileSideSheetProps {
   person: PersonNode | null;
@@ -22,10 +23,7 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
 
   if (!person) return null;
 
-  const targetGender = (person as any).gender === 'male' ? 'female' : 'male';
-  const samplePartner = allPeople.find(p => p.id !== person.id && (p as any).gender === targetGender)
-    || allPeople.find(p => p.id !== person.id)
-    || allPeople[0];
+  const samplePartner = getSamplePartner(person, allPeople) || allPeople[0];
 
   const handleSignalClick = (name: string, type: string) => {
     sounds.playClick();
@@ -56,7 +54,7 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
             sounds.playClick();
             onClose();
           }}
-          className="p-2 rounded-full hover:bg-white/5 text-[var(--muted)] hover:text-white transition-colors cursor-pointer"
+          className="p-2 rounded-full hover:bg-white/5 text-[var(--text-secondary)] hover:text-white transition-colors cursor-pointer"
         >
           <X size={18} />
         </button>
@@ -80,7 +78,7 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[var(--text)]">
               {person.name}
             </h2>
-            <p className="text-sm text-[var(--muted)] mt-1 leading-snug">
+            <p className="text-sm text-[var(--text-secondary)] mt-1 leading-snug">
               {person.headline}
             </p>
 
@@ -91,14 +89,14 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
                   href={person.linkedin_url}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-mono text-[var(--text)] flex items-center gap-1.5 transition-colors"
+                  className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-[10px] font-mono text-[var(--text)] flex items-center gap-1.5 transition-colors"
                 >
-                  <span className="text-[#0077b5]">LINKEDIN</span>
-                  <span className="text-[var(--violet)]">✓ ANALYZED</span>
-                  <ExternalLink size={10} className="text-[var(--muted)]" />
+                  <span className="text-[#0077b5] font-semibold">LINKEDIN</span>
+                  <span className="text-[var(--violet)] font-semibold">✓ ANALYZED</span>
+                  <ExternalLink size={10} className="text-[var(--text-secondary)]" />
                 </a>
               ) : (
-                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--muted)]">
+                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--text-secondary)]">
                   LINKEDIN · NOT AVAILABLE
                 </span>
               )}
@@ -108,14 +106,14 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
                   href={person.instagram_url}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-mono text-[var(--text)] flex items-center gap-1.5 transition-colors"
+                  className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-[10px] font-mono text-[var(--text)] flex items-center gap-1.5 transition-colors"
                 >
-                  <span className="text-[var(--pink)]">INSTAGRAM</span>
-                  <span className="text-[var(--violet)]">✓ ANALYZED</span>
-                  <ExternalLink size={10} className="text-[var(--muted)]" />
+                  <span className="text-[var(--pink)] font-semibold">INSTAGRAM</span>
+                  <span className="text-[var(--violet)] font-semibold">✓ ANALYZED</span>
+                  <ExternalLink size={10} className="text-[var(--text-secondary)]" />
                 </a>
               ) : (
-                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--muted)]">
+                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--text-secondary)]">
                   INSTAGRAM · NOT AVAILABLE
                 </span>
               )}
@@ -125,8 +123,8 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
 
         {/* The Person Summary */}
         <div>
-          <div className="meta-label mb-2">THE PERSON</div>
-          <p className="body-text text-sm sm:text-base text-[var(--muted)] leading-relaxed">
+          <div className="meta-label mb-2 text-[var(--text-secondary)] font-bold">THE PERSON</div>
+          <p className="body-text text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
             {person.summary || `${person.name} is a high-agency individual operating with focused dedication. The agent represents their sovereign boundaries, testing intellectual curiosity and lifestyle resonance.`}
           </p>
         </div>
@@ -151,7 +149,7 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
             <div className="text-xs font-mono text-[var(--text)]">
               {activeSignalTrace.source} → {activeSignalTrace.signal}
             </div>
-            <div className="text-xs text-[var(--muted)]">
+            <div className="text-xs text-[var(--text-secondary)]">
               {activeSignalTrace.inference}
             </div>
           </div>
@@ -229,7 +227,7 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
         <Link
           href={`/date/${person.id}/${samplePartner?.id}`}
           onClick={() => sounds.playClick()}
-          className="flex-1 py-3.5 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:opacity-95 transition-opacity"
+          className="flex-1 py-3.5 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:opacity-95 transition-opacity cursor-pointer"
         >
           <Play size={13} fill="currentColor" />
           <span>START DATING ENCOUNTER</span>
@@ -238,7 +236,7 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
         <Link
           href={`/rankings/${person.id}`}
           onClick={() => sounds.playClick()}
-          className="px-6 py-3.5 rounded-full glass-pill text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-white/10 transition-colors"
+          className="px-6 py-3.5 rounded-full glass-pill !text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-white/10 transition-colors cursor-pointer"
         >
           <span>RANKINGS</span>
           <ArrowRight size={13} />

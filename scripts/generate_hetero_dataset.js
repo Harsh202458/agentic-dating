@@ -586,6 +586,12 @@ const people = [
   }
 ];
 
+// Ensure explicit looking_for and normalized seeking on all candidates
+people.forEach(p => {
+  p.looking_for = p.gender === 'male' ? 'women' : 'men';
+  p.seeking = p.gender === 'male' ? 'women' : 'men';
+});
+
 // Save profiles
 const dataDir = path.join(__dirname, '../data');
 const publicDataDir = path.join(__dirname, '../frontend/public/data');
@@ -598,6 +604,7 @@ const simplePeople = people.map(p => ({
   id: p.id,
   name: p.name,
   gender: p.gender,
+  looking_for: p.looking_for,
   seeking: p.seeking,
   linkedin: p.linkedin_url,
   instagram: p.instagram_url,
@@ -617,7 +624,7 @@ const rankings = {};
 
 for (const p of people) {
   matches[p.id] = {};
-  rankings[p.id] = { id: p.id, name: p.name, gender: p.gender, seeking: p.seeking, ranked: [] };
+  rankings[p.id] = { id: p.id, name: p.name, gender: p.gender, looking_for: p.looking_for, seeking: p.seeking, ranked: [] };
 }
 
 function calculateMatch(pA, pB) {
@@ -719,10 +726,10 @@ for (let i = 0; i < people.length; i++) {
     const pB = people[j];
 
     const match = calculateMatch(pA, pB);
-    matches[pA.id][pB.id] = match;
 
-    // Only add opposite-gender matches to the dating rankings
+    // Strictly save ONLY opposite-gender matches and rankings
     if (match.isOppositeGender) {
+      matches[pA.id][pB.id] = match;
       rankings[pA.id].ranked.push({
         id: pB.id,
         name: pB.name,

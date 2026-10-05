@@ -23,7 +23,13 @@ const STAGES: Stage[] = [
 
 export default function CreateAgentPage() {
   const router = useRouter();
-  const [form, setForm] = useState({ name: '', linkedin: '', instagram: '' });
+  const [form, setForm] = useState({
+    name: '',
+    gender: 'female',
+    looking_for: 'men',
+    linkedin: '',
+    instagram: ''
+  });
   const [currentStageIdx, setCurrentStageIdx] = useState(-1);
   const [isProcessing, setIsProcessing] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -88,9 +94,14 @@ export default function CreateAgentPage() {
       const newPerson = {
         id: newId,
         name: form.name,
+        gender: form.gender,
+        looking_for: form.looking_for,
+        seeking: form.looking_for,
         linkedin_url: form.linkedin,
         instagram_url: form.instagram,
-        photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+        photo: form.gender === 'male'
+          ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80'
+          : 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
         followers: 14200,
         headline: 'Creative Builder & Operator',
         location: 'Global',
@@ -118,27 +129,27 @@ export default function CreateAgentPage() {
   };
 
   return (
-    <div className="min-h-screen pt-28 pb-24 px-6 max-w-3xl mx-auto relative z-20">
+    <div className="min-h-screen pt-36 pb-24 px-6 max-w-3xl mx-auto relative z-20">
       {/* Return */}
       <Link
         href="/"
         onClick={() => sounds.playClick()}
-        className="meta-label inline-flex items-center gap-2 text-[var(--muted)] hover:text-white transition-colors mb-12"
+        className="meta-label inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-white transition-colors mb-10"
       >
         <ArrowLeft size={14} />
         <span>RETURN TO THE FIELD</span>
       </Link>
 
       {/* Header */}
-      <div className="mb-12">
-        <div className="meta-label text-[var(--violet)] mb-2">AGENT CREATION CHAMBER</div>
+      <div className="mb-10">
+        <div className="meta-label text-[var(--violet)] mb-2 font-bold">AGENT CREATION CHAMBER</div>
         <h1 className="hero-headline text-white mb-4">
           GIVE YOUR AGENT<br />
           <span className="bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] bg-clip-text text-transparent">
             TWO WINDOWS.
           </span>
         </h1>
-        <p className="body-text text-sm max-w-lg">
+        <p className="body-text text-sm sm:text-base max-w-lg text-[var(--text-secondary)]">
           An autonomous dating agent will be synthesized strictly from the two supplied public links and released into the matchmaking network.
         </p>
       </div>
@@ -147,39 +158,106 @@ export default function CreateAgentPage() {
         /* Focused Form */
         <form onSubmit={handleSubmit} className="card-panel p-8 sm:p-10 space-y-6">
           <div>
-            <label className="meta-label text-[10px] block mb-2">01 // CANDIDATE FULL NAME</label>
+            <label className="meta-label text-[10px] block mb-2 text-[var(--text-secondary)]">
+              01 // CANDIDATE FULL NAME
+            </label>
             <input
               required
               value={form.name}
               onChange={e => setForm({ ...form, name: e.target.value })}
               placeholder="e.g. Maya Lin"
-              className="w-full p-4 rounded-xl bg-white/[0.04] border border-[var(--line)] text-white placeholder-[var(--muted)] focus:border-[var(--violet)] outline-none font-sans text-sm transition-colors"
+              className="w-full p-4 rounded-xl bg-white/[0.04] border border-[var(--line)] text-white placeholder-[var(--text-placeholder)] focus:border-[var(--violet)] outline-none font-sans text-sm transition-colors"
             />
           </div>
 
+          {/* Gender & Looking For Selectors */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="meta-label text-[10px] block mb-2 text-[var(--violet)] font-bold">
+                02 // CANDIDATE GENDER
+              </label>
+              <div className="flex gap-2">
+                {[
+                  { value: 'female', label: 'Female' },
+                  { value: 'male', label: 'Male' },
+                  { value: 'other', label: 'Other' }
+                ].map(opt => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => {
+                      sounds.playClick();
+                      setForm({
+                        ...form,
+                        gender: opt.value,
+                        looking_for: opt.value === 'female' ? 'men' : opt.value === 'male' ? 'women' : 'everyone'
+                      });
+                    }}
+                    className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-mono transition-all cursor-pointer ${
+                      form.gender === opt.value
+                        ? 'bg-[var(--violet)] text-white font-bold shadow-md shadow-[var(--violet)]/30 border border-[var(--violet)]'
+                        : 'bg-white/[0.04] text-[var(--text-secondary)] hover:text-white border border-[var(--line)]'
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label className="meta-label text-[10px] block mb-2 text-[var(--magenta)] font-bold">
+                03 // DATING PREFERENCE (LOOKING FOR)
+              </label>
+              <div className="flex gap-2">
+                {[
+                  { value: 'men', label: 'Men' },
+                  { value: 'women', label: 'Women' },
+                  { value: 'everyone', label: 'Everyone' }
+                ].map(opt => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => {
+                      sounds.playClick();
+                      setForm({ ...form, looking_for: opt.value });
+                    }}
+                    className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-mono transition-all cursor-pointer ${
+                      form.looking_for === opt.value
+                        ? 'bg-[var(--magenta)] text-white font-bold shadow-md shadow-[var(--magenta)]/30 border border-[var(--magenta)]'
+                        : 'bg-white/[0.04] text-[var(--text-secondary)] hover:text-white border border-[var(--line)]'
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div>
-            <label className="meta-label text-[10px] block mb-2 text-[#0077b5]">
-              02 // OFFICIAL LINKEDIN URL (CAREER & INTELLECT)
+            <label className="meta-label text-[10px] block mb-2 text-[#0077b5] font-bold">
+              04 // OFFICIAL LINKEDIN URL (CAREER & INTELLECT)
             </label>
             <input
               required
               value={form.linkedin}
               onChange={e => setForm({ ...form, linkedin: e.target.value })}
               placeholder="https://www.linkedin.com/in/username/"
-              className="w-full p-4 rounded-xl bg-white/[0.04] border border-[var(--line)] text-white placeholder-[var(--muted)] focus:border-[var(--violet)] outline-none font-mono text-xs transition-colors"
+              className="w-full p-4 rounded-xl bg-white/[0.04] border border-[var(--line)] text-white placeholder-[var(--text-placeholder)] focus:border-[var(--violet)] outline-none font-mono text-xs transition-colors"
             />
           </div>
 
           <div>
-            <label className="meta-label text-[10px] block mb-2 text-[var(--pink)]">
-              03 // PUBLIC INSTAGRAM URL (LIFESTYLE & RITUALS)
+            <label className="meta-label text-[10px] block mb-2 text-[var(--pink)] font-bold">
+              05 // PUBLIC INSTAGRAM URL (LIFESTYLE & RITUALS)
             </label>
             <input
               required
               value={form.instagram}
               onChange={e => setForm({ ...form, instagram: e.target.value })}
               placeholder="https://www.instagram.com/username/"
-              className="w-full p-4 rounded-xl bg-white/[0.04] border border-[var(--line)] text-white placeholder-[var(--muted)] focus:border-[var(--violet)] outline-none font-mono text-xs transition-colors"
+              className="w-full p-4 rounded-xl bg-white/[0.04] border border-[var(--line)] text-white placeholder-[var(--text-placeholder)] focus:border-[var(--violet)] outline-none font-mono text-xs transition-colors"
             />
           </div>
 
@@ -192,7 +270,7 @@ export default function CreateAgentPage() {
 
           <button
             type="submit"
-            className="w-full py-4 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] text-white meta-label text-[10px] font-bold uppercase tracking-wider shadow-lg hover:opacity-95 transition-opacity cursor-pointer mt-4"
+            className="w-full py-4 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-mono text-xs font-bold uppercase tracking-wider shadow-xl hover:opacity-95 transition-opacity cursor-pointer mt-4"
           >
             INITIALIZE DUAL-SOURCE INGESTION →
           </button>
@@ -225,11 +303,11 @@ export default function CreateAgentPage() {
 
                   <div className="pt-0.5 min-w-0">
                     <div className={`meta-label text-[10px] ${
-                      isCurrent ? 'text-[var(--violet)] font-bold' : isPast ? 'text-white' : 'text-white/20'
+                      isCurrent ? 'text-[var(--violet)] font-bold' : isPast ? 'text-white' : 'text-[var(--text-disabled)]'
                     }`}>
                       {stg.label}
                     </div>
-                    <div className="body-text text-xs text-[var(--muted)] mt-0.5">
+                    <div className="body-text text-xs text-[var(--text-secondary)] mt-0.5">
                       {stg.detail}
                     </div>
                   </div>
@@ -240,7 +318,7 @@ export default function CreateAgentPage() {
 
           {/* Live Extracted Signals Stream */}
           <div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] space-y-2 font-mono text-xs">
-            <div className="meta-label text-[9px] text-[var(--muted)]">REAL-TIME EXTRACTED STREAM:</div>
+            <div className="meta-label text-[9px] text-[var(--text-secondary)]">REAL-TIME EXTRACTED STREAM:</div>
             {extractedItems.map((item, i) => (
               <div key={i} className="text-white text-[11px] animate-fade-in flex items-center gap-2">
                 <span>{item}</span>

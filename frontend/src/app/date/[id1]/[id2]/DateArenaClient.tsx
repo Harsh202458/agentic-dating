@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowLeft, Play, Pause, RotateCcw, Check, AlertTriangle, ShieldCheck } from 'lucide-react';
 import { sounds } from '../../../../utils/sound';
 import { getDataUrl } from '../../../../utils/paths';
+import { isPairEligible, getSamplePartner } from '../../../../utils/matching';
 
 interface Turn {
   speaker: 'A' | 'B';
@@ -44,7 +45,13 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         const added = JSON.parse(localStorage.getItem('added_people') || '[]');
         const all = [...added, ...data];
         const pA = all.find((p: any) => String(p.id) === String(id1)) || all[0];
-        const pB = all.find((p: any) => String(p.id) === String(id2)) || all[1];
+        
+        let pB = all.find((p: any) => String(p.id) === String(id2));
+        // If pB is not provided or not eligible, fall back strictly to an eligible partner
+        if (!pB || !isPairEligible(pA, pB)) {
+          pB = getSamplePartner(pA, all) || all.find((p: any) => String(p.id) !== String(pA.id)) || all[1];
+        }
+
         setPersonA(pA);
         setPersonB(pB);
 
@@ -180,7 +187,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         <Link
           href="/"
           onClick={() => sounds.playClick()}
-          className="meta-label flex items-center gap-2 text-[var(--muted)] hover:text-white transition-colors"
+          className="meta-label flex items-center gap-2 text-[var(--text-secondary)] hover:text-white transition-colors"
         >
           <ArrowLeft size={14} />
           <span>EXIT CHAMBER</span>
@@ -199,20 +206,20 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                     ? 'bg-[var(--violet)] scale-125 shadow-[0_0_10px_var(--violet)]'
                     : isCompleted
                     ? 'bg-[var(--magenta)]'
-                    : 'bg-white/10'
+                    : 'bg-white/15'
                 }`} />
                 <span className={`meta-label text-[9px] ${
-                  isCurrent ? 'text-[var(--violet)] font-bold' : isCompleted ? 'text-white' : 'text-white/20'
+                  isCurrent ? 'text-[var(--violet)] font-bold' : isCompleted ? 'text-white font-bold' : 'text-[var(--text-disabled)]'
                 }`}>
                   {s.id}
                 </span>
-                {idx < STAGES.length - 1 && <span className="w-3 h-px bg-white/10" />}
+                {idx < STAGES.length - 1 && <span className="w-3 h-px bg-white/15" />}
               </div>
             );
           })}
         </div>
 
-        <div className="meta-label text-[10px] text-[var(--magenta)]">
+        <div className="meta-label text-[10px] text-[var(--magenta)] font-bold">
           ROUND {currentStage?.id} // {currentStage?.title}
         </div>
       </header>
@@ -262,8 +269,8 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
             </div>
 
             {/* Typewriter Message Stream */}
-            <div className="w-full max-w-2xl text-center space-y-4">
-              <div className="meta-label text-[10px] text-[var(--muted)]">
+            <div className="w-full max-w-2xl text-center space-y-4 p-6 sm:p-8 rounded-2xl bg-[var(--surface)]/80 backdrop-blur-xl border border-[var(--line)] shadow-2xl">
+              <div className="font-mono text-xs uppercase tracking-wider text-[var(--text-secondary)] font-semibold">
                 {activeSpeaker === 'A' ? personA.name.toUpperCase() : personB.name.toUpperCase()}&apos;S AGENT SPEAKING
               </div>
 
@@ -274,7 +281,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
 
               {/* Thought Annotation */}
               {currentTurn && (
-                <div className="inline-block p-3 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs font-mono text-[var(--muted)] italic">
+                <div className="inline-block p-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-[var(--text-secondary)] italic">
                   Agent reasoning: &ldquo;{currentTurn.thought}&rdquo;
                 </div>
               )}
@@ -296,7 +303,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
           <div className="card-panel-elevated p-8 sm:p-10 border border-[var(--violet)]/40 max-w-2xl w-full text-center space-y-6 shadow-2xl animate-fade-in my-auto">
             <div className="flex items-center justify-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[var(--violet)] animate-pulse" />
-              <div className="meta-label text-[var(--violet)]">DATE SYNTHESIS COMPLETE // MUTUAL VERDICT</div>
+              <div className="font-mono text-xs text-[var(--violet)] font-bold tracking-wider">DATE SYNTHESIS COMPLETE // MUTUAL VERDICT</div>
             </div>
 
             {/* Candidate Avatars Shared Ring */}
@@ -316,7 +323,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               <h3 className="section-title text-xl text-white">
                 {scoreCounter >= 75 ? 'HIGH ROMANTIC RESONANCE' : 'MODERATE COMPATIBILITY'}
               </h3>
-              <p className="body-text text-sm italic mt-2 text-[var(--muted)]">
+              <p className="body-text text-sm italic mt-2 text-[var(--text-secondary)]">
                 &ldquo;{matchDetails?.matchReason || `${personA.name} and ${personB.name} share sovereign ambition and direct communication, creating a balanced, high-trust dynamic.`}&rdquo;
               </p>
             </div>
@@ -324,7 +331,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
             {/* 4-Factor Metric Breakdown Bars */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left font-mono text-xs pt-4 border-t border-[var(--line)]">
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="meta-label text-[9px] text-[var(--muted)]">VALUES</div>
+                <div className="meta-label text-[9px] text-[var(--text-secondary)]">VALUES</div>
                 <div className="text-base font-bold text-[var(--violet)] mt-1">
                   {matchDetails?.breakdown?.values?.score || 82}%
                 </div>
@@ -334,7 +341,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               </div>
 
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="meta-label text-[9px] text-[var(--muted)]">INTERESTS</div>
+                <div className="meta-label text-[9px] text-[var(--text-secondary)]">INTERESTS</div>
                 <div className="text-base font-bold text-[var(--blue)] mt-1">
                   {matchDetails?.breakdown?.interests?.score || 78}%
                 </div>
@@ -344,7 +351,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               </div>
 
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="meta-label text-[9px] text-[var(--muted)]">LIFESTYLE</div>
+                <div className="meta-label text-[9px] text-[var(--text-secondary)]">LIFESTYLE</div>
                 <div className="text-base font-bold text-[var(--magenta)] mt-1">
                   {matchDetails?.breakdown?.lifestyle?.score || 85}%
                 </div>
@@ -354,7 +361,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               </div>
 
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="meta-label text-[9px] text-[var(--muted)]">NEEDS</div>
+                <div className="meta-label text-[9px] text-[var(--text-secondary)]">NEEDS</div>
                 <div className="text-base font-bold text-[var(--pink)] mt-1">
                   {matchDetails?.breakdown?.needs?.score || 80}%
                 </div>
@@ -371,7 +378,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   <Check size={13} />
                   <span>WHY THEY CONNECTED</span>
                 </div>
-                <ul className="text-[11px] text-[var(--muted)] space-y-1">
+                <ul className="text-[11px] text-[var(--text-secondary)] space-y-1">
                   {(matchDetails?.sparks || [
                     `Resonance on ${personA.values?.[0] || 'freedom'} and ${personB.values?.[0] || 'growth'}`,
                     'Shared demand for creative agency and autonomy',
@@ -387,7 +394,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   <AlertTriangle size={13} />
                   <span>POTENTIAL FRICTION</span>
                 </div>
-                <ul className="text-[11px] text-[var(--muted)] space-y-1">
+                <ul className="text-[11px] text-[var(--text-secondary)] space-y-1">
                   {(matchDetails?.tensions || [
                     'Demanding schedules require proactive calendar boundaries',
                     'Both operate at intense focus cadences'
@@ -403,7 +410,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               <Link
                 href={`/rankings/${personA.id}`}
                 onClick={() => sounds.playClick()}
-                className="w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] text-white meta-label text-[10px] font-bold shadow-lg"
+                className="w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-mono text-xs font-bold shadow-lg hover:brightness-110 transition-all text-center"
               >
                 {personA.name.toUpperCase()}&apos;S RANKINGS →
               </Link>
@@ -411,7 +418,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               <Link
                 href={`/rankings/${personB.id}`}
                 onClick={() => sounds.playClick()}
-                className="w-full sm:w-auto px-6 py-3 rounded-full border border-white/20 text-white meta-label text-[10px] font-bold hover:bg-white/10 transition-colors"
+                className="w-full sm:w-auto px-6 py-3 rounded-full border border-white/30 !text-white font-mono text-xs font-bold hover:bg-white/10 transition-colors text-center"
               >
                 {personB.name.toUpperCase()}&apos;S RANKINGS →
               </Link>
@@ -430,7 +437,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   sounds.playClick();
                   setIsPlaying(!isPlaying);
                 }}
-                className="glass-pill px-4 py-2 rounded-full meta-label text-[10px] flex items-center gap-1.5 text-[var(--text)] hover:bg-white/10 transition-colors cursor-pointer"
+                className="glass-pill px-4 py-2 rounded-full font-mono text-xs flex items-center gap-1.5 text-[var(--text)] hover:bg-white/10 transition-colors cursor-pointer"
               >
                 {isPlaying ? <Pause size={12} /> : <Play size={12} fill="currentColor" />}
                 <span>{isPlaying ? 'PAUSE' : 'PLAY'}</span>
@@ -441,7 +448,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   sounds.playClick();
                   setSpeed(s => (s === 1 ? 2 : s === 2 ? 4 : 1));
                 }}
-                className="glass-pill px-3 py-2 rounded-full meta-label text-[10px] text-[var(--text)] hover:bg-white/10 transition-colors cursor-pointer"
+                className="glass-pill px-3 py-2 rounded-full font-mono text-xs text-[var(--text)] hover:bg-white/10 transition-colors cursor-pointer"
               >
                 SPEED {speed}X
               </button>
@@ -456,7 +463,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                 sounds.playMatch();
                 setFinished(true);
               }}
-              className="meta-label text-[10px] text-[var(--muted)] hover:text-white transition-colors cursor-pointer"
+              className="font-mono text-xs text-[var(--text-secondary)] hover:text-white transition-colors cursor-pointer"
             >
               SKIP TO RESULT →
             </button>
@@ -467,7 +474,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                 setFinished(false);
                 setCurrentTurnIdx(0);
               }}
-              className="glass-pill px-4 py-2 rounded-full meta-label text-[10px] flex items-center gap-1.5 text-white hover:bg-white/10 transition-colors cursor-pointer"
+              className="glass-pill px-4 py-2 rounded-full font-mono text-xs flex items-center gap-1.5 !text-white hover:bg-white/10 transition-colors cursor-pointer"
             >
               <RotateCcw size={12} />
               <span>REPLAY DATE</span>
