@@ -8,9 +8,10 @@ import { sounds } from '../utils/sound';
 
 interface NavbarProps {
   onStartDemoTour?: () => void;
+  onOpenPairPicker?: () => void;
 }
 
-export default function Navbar({ onStartDemoTour }: NavbarProps) {
+export default function Navbar({ onStartDemoTour, onOpenPairPicker }: NavbarProps) {
   const pathname = usePathname();
   const [soundOn, setSoundOn] = useState(false);
 
@@ -64,15 +65,19 @@ export default function Navbar({ onStartDemoTour }: NavbarProps) {
               >
                 PEOPLE
               </Link>
-              <Link
-                href="/date/1/14"
-                onClick={() => sounds.playClick()}
-                className={`px-3 py-1.5 rounded-full transition-colors ${
+              <button
+                onClick={() => {
+                  sounds.playClick();
+                  if (onOpenPairPicker) {
+                    onOpenPairPicker();
+                  }
+                }}
+                className={`px-3 py-1.5 rounded-full transition-colors cursor-pointer ${
                   pathname?.startsWith('/date') ? 'text-white bg-white/10 font-bold' : 'text-[var(--text-secondary)] hover:text-white'
                 }`}
               >
                 DATES
-              </Link>
+              </button>
               <Link
                 href="/rankings/1"
                 onClick={() => sounds.playClick()}

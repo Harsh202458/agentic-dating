@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { sounds } from '../utils/sound';
 import { isPairEligible } from '../utils/matching';
+import SocialBadges from './SocialBadges';
 
 export interface PersonNode {
   id: number | string;
@@ -548,6 +549,13 @@ export default function MatchmakingField({
                     {item}
                   </span>
                 ))}
+              </div>
+              <div className="pt-1 pointer-events-auto" onClick={e => e.stopPropagation()}>
+                <SocialBadges
+                  linkedinUrl={hoveredNode.linkedin_url}
+                  instagramUrl={hoveredNode.instagram_url}
+                  size="sm"
+                />
               </div>
             </div>
 

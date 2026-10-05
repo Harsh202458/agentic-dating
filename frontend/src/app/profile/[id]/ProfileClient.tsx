@@ -7,8 +7,11 @@ import { PersonNode } from '@/components/MatchmakingField';
 import { sounds } from '@/utils/sound';
 import { getDataUrl } from '@/utils/paths';
 import { getSamplePartner } from '@/utils/matching';
+import SocialBadges from '@/components/SocialBadges';
+import { usePairPicker } from '@/components/AppWrapper';
 
 export default function ProfileClient({ id }: { id: string }) {
+  const { openPairPicker } = usePairPicker();
   const [person, setPerson] = useState<PersonNode | null>(null);
   const [allPeople, setAllPeople] = useState<PersonNode[]>([]);
   const [activeSignalTrace, setActiveSignalTrace] = useState<{
@@ -113,40 +116,11 @@ export default function ProfileClient({ id }: { id: string }) {
               </p>
 
               {/* Source Badges */}
-              <div className="flex flex-wrap items-center gap-2 mt-4">
-                {person.linkedin_url ? (
-                  <a
-                    href={person.linkedin_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-mono text-[var(--text)] flex items-center gap-1.5 transition-colors"
-                  >
-                    <span className="text-[#0077b5]">LINKEDIN</span>
-                    <span className="text-[var(--violet)]">✓ ANALYZED</span>
-                    <ExternalLink size={10} className="text-[var(--text-muted)]" />
-                  </a>
-                ) : (
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--text-muted)]">
-                    LINKEDIN · NOT AVAILABLE
-                  </span>
-                )}
-
-                {person.instagram_url ? (
-                  <a
-                    href={person.instagram_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[10px] font-mono text-[var(--text)] flex items-center gap-1.5 transition-colors"
-                  >
-                    <span className="text-[var(--pink)]">INSTAGRAM</span>
-                    <span className="text-[var(--violet)]">✓ ANALYZED</span>
-                    <ExternalLink size={10} className="text-[var(--text-muted)]" />
-                  </a>
-                ) : (
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--text-muted)]">
-                    INSTAGRAM · NOT AVAILABLE
-                  </span>
-                )}
+              <div className="mt-4">
+                <SocialBadges
+                  linkedinUrl={person.linkedin_url}
+                  instagramUrl={person.instagram_url}
+                />
               </div>
             </div>
           </div>
@@ -252,22 +226,32 @@ export default function ProfileClient({ id }: { id: string }) {
           </div>
 
           {/* Action CTAs */}
-          <div className="pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row items-center gap-4">
+          <div className="pt-6 border-t border-[var(--line)] flex flex-col sm:flex-row items-center gap-3">
             <Link
               href={`/date/${person.id}/${samplePartner?.id || 1}`}
               onClick={() => sounds.playConnect()}
-              className="w-full sm:flex-1 py-3.5 px-6 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white hover:opacity-95 font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-[var(--violet)]/25 cursor-pointer"
+              className="w-full sm:flex-1 py-3.5 px-5 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white hover:opacity-95 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-[var(--violet)]/25 cursor-pointer"
             >
-              <Play size={16} fill="currentColor" />
-              <span>WATCH AGENT IN SIMULATED DATE</span>
+              <Play size={15} fill="currentColor" />
+              <span>WATCH SIMULATED DATE</span>
             </Link>
+
+            <button
+              onClick={() => {
+                sounds.playClick();
+                openPairPicker(person);
+              }}
+              className="w-full sm:w-auto py-3.5 px-5 rounded-full border border-[var(--violet)]/50 bg-[var(--violet)]/10 hover:bg-[var(--violet)]/20 !text-white text-xs sm:text-sm font-mono font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            >
+              <span>✦ DATE SOMEONE</span>
+            </button>
 
             <Link
               href={`/rankings/${person.id}`}
               onClick={() => sounds.playClick()}
-              className="w-full sm:w-auto py-3.5 px-6 rounded-full border border-[var(--line)] bg-white/5 hover:bg-white/10 text-[var(--text)] text-sm font-mono flex items-center justify-center gap-2 transition-colors cursor-pointer"
+              className="w-full sm:w-auto py-3.5 px-5 rounded-full border border-[var(--line)] bg-white/5 hover:bg-white/10 text-[var(--text)] text-xs sm:text-sm font-mono flex items-center justify-center gap-2 transition-colors cursor-pointer"
             >
-              <span>VIEW AGENT RANKINGS</span>
+              <span>AGENT RANKINGS</span>
             </Link>
           </div>
         </div>

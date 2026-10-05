@@ -57,20 +57,39 @@ export default function CreateAgentPage() {
       // Stage 1: CONNECTING
       setCurrentStageIdx(0);
       sounds.playClick();
+
+      // Launch real scrape API call asynchronously
+      const scrapePromise = fetch('/api/scrape', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ linkedinUrl: form.linkedin, instagramUrl: form.instagram })
+      }).then(r => r.json()).catch(() => null);
+
       await new Promise(r => setTimeout(r, 800));
 
       // Stage 2: READING_LINKEDIN
       setCurrentStageIdx(1);
       sounds.playClick();
-      await new Promise(r => setTimeout(r, 900));
-      setExtractedItems(prev => [...prev, `[LINKEDIN] Verified Professional Track: Founder & Operator`]);
-      setExtractedItems(prev => [...prev, `[LINKEDIN] Core Competencies: Applied AI, Architecture, Strategy`]);
+      const scrapeRes = await Promise.race([
+        scrapePromise,
+        new Promise(r => setTimeout(() => r(null), 1200))
+      ]);
+      const liData = scrapeRes?.data?.linkedin?.data;
+      const liHeadline = liData?.headline || 'Founder & Strategic Operator';
+      setExtractedItems(prev => [...prev, `[LINKEDIN] Verified Professional Track: ${liHeadline}`]);
+      if (liData?.skills && liData.skills.length > 0) {
+        setExtractedItems(prev => [...prev, `[LINKEDIN] Core Competencies: ${liData.skills.slice(0, 3).join(', ')}`]);
+      } else {
+        setExtractedItems(prev => [...prev, `[LINKEDIN] Core Competencies: Applied AI, Architecture, Strategy`]);
+      }
 
       // Stage 3: READING_INSTAGRAM
       setCurrentStageIdx(2);
       sounds.playClick();
       await new Promise(r => setTimeout(r, 900));
-      setExtractedItems(prev => [...prev, `[INSTAGRAM] Public Bio & Cadence Extracted (14.2k followers)`]);
+      const igData = scrapeRes?.data?.instagram?.data;
+      const followers = igData?.followersCount ? `${(igData.followersCount / 1000).toFixed(1)}k followers` : '14.2k followers';
+      setExtractedItems(prev => [...prev, `[INSTAGRAM] Public Bio Extracted (${followers})`]);
       setExtractedItems(prev => [...prev, `[INSTAGRAM] Verified Lifestyle Rituals: Urban Cycling, Reading, Cafes`]);
 
       // Stage 4: EXTRACTING_SIGNALS
@@ -102,15 +121,15 @@ export default function CreateAgentPage() {
         photo: form.gender === 'male'
           ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80'
           : 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
-        followers: 14200,
-        headline: 'Creative Builder & Operator',
+        followers: igData?.followersCount || 14200,
+        headline: liHeadline,
         location: 'Global',
         needs: ['High intellectual resonance', 'Shared location flexibility', 'Direct honest feedback', 'Low ego companionship'],
-        hobbies: ['Reading biographies', 'Exploring neighborhood cafes', 'Urban cycling', 'Hosting dinners'],
-        interests: ['Applied AI', 'Product architecture', 'Behavioral design', 'Philosophy'],
+        hobbies: igData?.interests || ['Reading biographies', 'Exploring neighborhood cafes', 'Urban cycling', 'Hosting dinners'],
+        interests: liData?.skills || ['Applied AI', 'Product architecture', 'Behavioral design', 'Philosophy'],
         values: ['Autonomy', 'Deep craft', 'Intellectual humility', 'Loyalty'],
         dealbreakers: ['Performative status games', 'Emotional volatility', 'Complaining without solutions'],
-        summary: `${form.name} is an intentional operator who blends high creative agency with a quiet, grounded perspective on relationships.`,
+        summary: liData?.summary || `${form.name} is an intentional operator who blends high creative agency with a quiet, grounded perspective on relationships.`,
         agentVoice: `I represent ${form.name}. We prioritize depth of thought, unpretentious warmth, and building a life of sovereign independence.`
       };
 

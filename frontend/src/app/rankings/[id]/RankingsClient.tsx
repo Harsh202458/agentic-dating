@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, AlertTriangle, UserCheck } from 'lucide-react';
 import { sounds } from '../../../utils/sound';
 import { getDataUrl } from '../../../utils/paths';
 import { isPairEligible } from '../../../utils/matching';
+import SocialBadges from '../../../components/SocialBadges';
 
 export default function RankingsClient({ id }: { id: string }) {
   const router = useRouter();
@@ -47,9 +48,43 @@ export default function RankingsClient({ id }: { id: string }) {
         })).sort((a: any, b: any) => b.score - a.score);
       }
 
+      // Ingest any newly generated custom dates from localStorage (if mutually eligible)
+      if (typeof window !== 'undefined') {
+        const customMatches = JSON.parse(localStorage.getItem('custom_matches') || '{}');
+        Object.entries(customMatches).forEach(([key, customMatch]: [string, any]) => {
+          const parts = key.split('_');
+          if (parts.length === 2) {
+            const [candA, candB] = parts;
+            const otherId = candA === String(p.id) ? candB : candB === String(p.id) ? candA : null;
+            if (otherId) {
+              const otherPerson = all.find((a: any) => String(a.id) === String(otherId));
+              if (otherPerson && isPairEligible(p, otherPerson)) {
+                const score = customMatch.compatibilityScore || customMatch.score || 82;
+                const reason = customMatch.matchReason || customMatch.reason || 'Simulated encounter compatibility verdict.';
+                const existingIdx = rawRanked.findIndex((r: any) => String(r.id) === String(otherId));
+                if (existingIdx >= 0) {
+                  rawRanked[existingIdx] = { ...rawRanked[existingIdx], score, reason };
+                } else {
+                  rawRanked.push({
+                    id: otherPerson.id,
+                    name: otherPerson.name,
+                    gender: otherPerson.gender,
+                    score,
+                    reason
+                  });
+                }
+              }
+            }
+          }
+        });
+      }
+      rawRanked.sort((a: any, b: any) => b.score - a.score);
+
+      const customMatches = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('custom_matches') || '{}') : {};
       const enriched = rawRanked.map((r: any) => {
         const profile = all.find((a: any) => String(a.id) === String(r.id));
-        const match = matchData?.[id]?.[r.id] || matchData?.[r.id]?.[id];
+        const pairKey = [String(id), String(r.id)].sort().join('_');
+        const match = customMatches[pairKey] || matchData?.[id]?.[r.id] || matchData?.[r.id]?.[id];
         return {
           ...r,
           profile,
@@ -148,6 +183,13 @@ export default function RankingsClient({ id }: { id: string }) {
         <p className="body-text text-sm sm:text-base max-w-xl text-[var(--text-secondary)]">
           Ranked from #01 to #{rankings.length} based on autonomous 6-stage date simulations across Values, Interests, Lifestyle Rhythm, and Emotional Needs. Showing all verified {seekingLabel.toLowerCase()} in the network.
         </p>
+
+        <div className="mt-4">
+          <SocialBadges
+            linkedinUrl={person.linkedin_url}
+            instagramUrl={person.instagram_url}
+          />
+        </div>
       </div>
 
       {/* Leaderboard rows with giant numerals */}
@@ -202,8 +244,16 @@ export default function RankingsClient({ id }: { id: string }) {
                       </span>
                     </div>
 
-                    <div className="meta-label text-xs text-[var(--text-secondary)] truncate mb-2.5">
+                    <div className="meta-label text-xs text-[var(--text-secondary)] truncate mb-2">
                       {match.profile?.headline}
+                    </div>
+
+                    <div className="mb-2.5">
+                      <SocialBadges
+                        linkedinUrl={match.profile?.linkedin_url}
+                        instagramUrl={match.profile?.instagram_url}
+                        size="sm"
+                      />
                     </div>
 
                     {/* One-line Why */}

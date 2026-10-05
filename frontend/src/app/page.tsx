@@ -8,6 +8,7 @@ import { Play, Plus, ArrowRight, ShieldCheck, ExternalLink } from 'lucide-react'
 import { sounds } from '../utils/sound';
 import { getDataUrl } from '../utils/paths';
 import { getSamplePartner } from '../utils/matching';
+import SocialBadges from '../components/SocialBadges';
 
 export default function HomePage() {
   const [people, setPeople] = useState<PersonNode[]>([]);
@@ -209,18 +210,12 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-white/[0.06] mb-4 meta-label text-[10px]">
                   <span>#{String(idx + 1).padStart(2, '0')}</span>
-                  <div className="flex items-center gap-2">
-                    {person.linkedin_url && (
-                      <a href={person.linkedin_url} target="_blank" rel="noreferrer" className="text-[#0077b5] hover:opacity-80">
-                        LINKEDIN
-                      </a>
-                    )}
-                    {person.instagram_url && (
-                      <a href={person.instagram_url} target="_blank" rel="noreferrer" className="text-[var(--pink)] hover:opacity-80">
-                        IG
-                      </a>
-                    )}
-                  </div>
+                  <SocialBadges
+                    linkedinUrl={person.linkedin_url}
+                    instagramUrl={person.instagram_url}
+                    size="sm"
+                    showHandles={false}
+                  />
                 </div>
 
                 <div className="flex items-center gap-3.5 mb-3">

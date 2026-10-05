@@ -1,11 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Play, Pause, RotateCcw, Check, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Play, Pause, RotateCcw, Check, AlertTriangle, ShieldCheck, Loader2, Sparkles } from 'lucide-react';
 import { sounds } from '../../../../utils/sound';
 import { getDataUrl } from '../../../../utils/paths';
-import { isPairEligible, getSamplePartner } from '../../../../utils/matching';
+import { isPairEligible } from '../../../../utils/matching';
+import SocialBadges from '../../../../components/SocialBadges';
+import { usePairPicker } from '../../../../components/AppWrapper';
 
 interface Turn {
   speaker: 'A' | 'B';
@@ -32,6 +34,7 @@ const CURATED_PAIRS = [
 ];
 
 export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string }) {
+  const { openPairPicker } = usePairPicker();
   const [personA, setPersonA] = useState<any>(null);
   const [personB, setPersonB] = useState<any>(null);
   const [matchDetails, setMatchDetails] = useState<any>(null);
@@ -44,6 +47,126 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
   const [scoreCounter, setScoreCounter] = useState<number>(0);
   const [targetScore, setTargetScore] = useState<number>(85);
 
+  const [isSimulating, setIsSimulating] = useState<boolean>(false);
+  const [simulationError, setSimulationError] = useState<string | null>(null);
+  const [recentPairs, setRecentPairs] = useState<{ id1: string; id2: string; label: string }[]>(CURATED_PAIRS);
+
+  const buildTurnsFromMatch = (match: any, pA: any, pB: any): Turn[] => {
+    if (match?.conversation && match.conversation.length >= 6) {
+      return match.conversation.map((c: any, idx: number) => ({
+        speaker: c.agent === 'A' ? 'A' : 'B',
+        message: c.message,
+        thought: c.thought || (idx % 2 === 0
+          ? `Evaluating ${pB.name}'s craft and sovereign boundaries.`
+          : `Probing ${pA.name}'s daily cadence and emotional honesty.`),
+        signals: idx === 0 ? ['Craft Devotion', 'Initial Chemistry']
+               : idx === 1 ? ['Creative Drive', 'Boundary Protection']
+               : idx === 2 ? ['Sovereign Autonomy', 'Zero Co-dependency']
+               : idx === 3 ? ['Authenticity', 'High Agency']
+               : idx === 4 ? ['Radical Candor', 'Zero Status Games']
+               : ['Mutual Synthesis', 'Positive Verdict']
+      }));
+    }
+
+    return [
+      {
+        speaker: 'A',
+        thought: `Evaluating ${pB.name}'s craft and creative pacing.`,
+        message: `Hello. I represent ${pA.name}. I noticed your dedication to ${pB.interests?.[0] || 'your craft'} and your regular time around ${pB.hobbies?.[0] || 'exploring'}. How does that shape your day-to-day rhythm?`,
+        signals: ['Craft Devotion', 'Daily Cadence']
+      },
+      {
+        speaker: 'B',
+        thought: `Responding with boundary honesty and probing work-life priorities.`,
+        message: `Thank you. For ${pB.name}, those rituals protect clarity. Looking at ${pA.name}'s trajectory in ${pA.interests?.[0] || 'innovation'}, there is intense creative momentum. How do you protect space for a partner amidst that?`,
+        signals: ['Creative Drive', 'Boundary Protection']
+      },
+      {
+        speaker: 'A',
+        thought: `Addressing sovereignty and independence in long-term relationships.`,
+        message: `Our core rule is sovereign autonomy. A relationship should never demand either person shrink their ambition. We thrive with someone self-directed, so when we are together, it is completely intentional.`,
+        signals: ['Sovereign Autonomy', 'Zero Co-dependency']
+      },
+      {
+        speaker: 'B',
+        thought: `Affirming alignment on values and testing tolerance for intense schedules.`,
+        message: `That aligns with ${pB.name}'s explicit requirement. We value ${pB.values?.[0] || 'authenticity'} over performative expectations. Being with someone who understands high-agency living eliminates resentment.`,
+        signals: ['Authenticity', 'High Agency']
+      },
+      {
+        speaker: 'A',
+        thought: `Testing non-negotiable dealbreakers: zero tolerance for superficial status games.`,
+        message: `A non-negotiable for my person: zero tolerance for passive-aggressive games or status pretense. When disagreements arise, we require radical candor over polite silence. How does your person handle conflict?`,
+        signals: ['Radical Candor', 'Zero Pretense']
+      },
+      {
+        speaker: 'B',
+        thought: `Confirming mutual resonance and delivering positive subjective verdict.`,
+        message: `Directly, face-to-face, with calm empathy. Life is too short for unaddressed tension. Our internal metrics confirm compatibility between ${pA.name} and ${pB.name}.`,
+        signals: ['Calm Empathy', 'Mutual Synthesis']
+      }
+    ];
+  };
+
+  const loadOrSimulateDate = useCallback(async (pA: any, pB: any, matchData: any) => {
+    // Unordered pair key (sorted IDs)
+    const pairKey = [String(pA.id), String(pB.id)].sort().join('_');
+    const customMatches = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('custom_matches') || '{}') : {};
+
+    // 1. Check Cache: custom matches or static demo matches
+    const cached = customMatches[pairKey] || matchData?.[pA.id]?.[pB.id] || matchData?.[pB.id]?.[pA.id];
+
+    if (cached) {
+      setMatchDetails(cached);
+      const score = cached.compatibilityScore || cached.score || 85;
+      setTargetScore(score);
+      const generated = buildTurnsFromMatch(cached, pA, pB);
+      setTurns(generated);
+      setCurrentTurnIdx(0);
+      setIsSimulating(false);
+      setSimulationError(null);
+      return;
+    }
+
+    // 2. Not in Cache: Generate with real LLM endpoint
+    setIsSimulating(true);
+    setSimulationError(null);
+    setTurns([]);
+    setCurrentTurnIdx(-1);
+
+    try {
+      const response = await fetch('/api/simulate-date', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ personA: pA, personB: pB })
+      });
+
+      const resJson = await response.json();
+      if (!response.ok || !resJson.success || !resJson.data) {
+        throw new Error(resJson.error || 'Failed to simulate agent conversation.');
+      }
+
+      const simMatch = resJson.data;
+
+      // Save to unordered pair cache in localStorage
+      customMatches[pairKey] = simMatch;
+      localStorage.setItem('custom_matches', JSON.stringify(customMatches));
+
+      setMatchDetails(simMatch);
+      const score = simMatch.compatibilityScore || 84;
+      setTargetScore(score);
+      const generated = buildTurnsFromMatch(simMatch, pA, pB);
+      setTurns(generated);
+      setCurrentTurnIdx(0);
+      setIsSimulating(false);
+      sounds.playMatch();
+    } catch (err: any) {
+      console.error('Simulation error:', err);
+      setSimulationError(err?.message || 'Date simulation encountered an error. Please retry.');
+      setIsSimulating(false);
+    }
+  }, []);
+
   useEffect(() => {
     Promise.all([
       fetch(getDataUrl('data/profiles_analyzed.json')).then(r => r.json()),
@@ -53,91 +176,55 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         const added = JSON.parse(localStorage.getItem('added_people') || '[]');
         const all = [...added, ...data];
         const pA = all.find((p: any) => String(p.id) === String(id1)) || all[0];
-        
+
         let pB = all.find((p: any) => String(p.id) === String(id2));
-        // If pB is not provided or not eligible, fall back strictly to an eligible partner
-        if (!pB || !isPairEligible(pA, pB)) {
-          pB = getSamplePartner(pA, all) || all.find((p: any) => p.gender !== pA.gender && String(p.id) !== String(pA.id)) || all[1];
+        // Only fall back if pB does not exist or user picked the exact same person
+        if (!pB || String(pB.id) === String(pA.id)) {
+          pB = all.find((p: any) => String(p.id) !== String(pA.id)) || all[1];
         }
 
         setPersonA(pA);
         setPersonB(pB);
 
-        const match = matchData?.[pA.id]?.[pB.id] || matchData?.[pB.id]?.[pA.id];
-        setMatchDetails(match);
-
-        const score = match?.compatibilityScore || 85;
-        setTargetScore(score);
-
-        // Build 6 structured turns
-        let generatedTurns: Turn[] = [];
-
-        if (match?.conversation && match.conversation.length >= 6) {
-          generatedTurns = match.conversation.map((c: any, idx: number) => ({
-            speaker: c.agent === 'A' ? 'A' : 'B',
-            message: c.message,
-            thought: idx % 2 === 0
-              ? `Evaluating ${pB.name}'s craft and sovereign boundaries.`
-              : `Probing ${pA.name}'s daily cadence and emotional honesty.`,
-            signals: idx === 0 ? ['Craft Devotion', 'Initial Chemistry']
-                   : idx === 1 ? ['Creative Drive', 'Boundary Protection']
-                   : idx === 2 ? ['Sovereign Autonomy', 'Zero Co-dependency']
-                   : idx === 3 ? ['Authenticity', 'High Agency']
-                   : idx === 4 ? ['Radical Candor', 'Zero Status Games']
-                   : ['Mutual Synthesis', 'Positive Verdict']
-          }));
-        } else {
-          generatedTurns = [
-            {
-              speaker: 'A',
-              thought: `Evaluating ${pB.name}'s craft and creative pacing.`,
-              message: `Hello. I represent ${pA.name}. I noticed your dedication to ${pB.interests?.[0] || 'your craft'} and your regular time around ${pB.hobbies?.[0] || 'exploring'}. How does that shape your day-to-day rhythm?`,
-              signals: ['Craft Devotion', 'Daily Cadence']
-            },
-            {
-              speaker: 'B',
-              thought: `Responding with boundary honesty and probing work-life priorities.`,
-              message: `Thank you. For ${pB.name}, those rituals protect clarity. Looking at ${pA.name}'s trajectory in ${pA.interests?.[0] || 'innovation'}, there is intense creative momentum. How do you protect space for a partner amidst that?`,
-              signals: ['Creative Drive', 'Boundary Protection']
-            },
-            {
-              speaker: 'A',
-              thought: `Addressing sovereignty and independence in long-term relationships.`,
-              message: `Our core rule is sovereign autonomy. A relationship should never demand either person shrink their ambition. We thrive with someone self-directed, so when we are together, it is completely intentional.`,
-              signals: ['Sovereign Autonomy', 'Zero Co-dependency']
-            },
-            {
-              speaker: 'B',
-              thought: `Affirming alignment on values and testing tolerance for intense schedules.`,
-              message: `That aligns with ${pB.name}'s explicit requirement. We value ${pB.values?.[0] || 'authenticity'} over performative expectations. Being with someone who understands high-agency living eliminates resentment.`,
-              signals: ['Authenticity', 'High Agency']
-            },
-            {
-              speaker: 'A',
-              thought: `Testing non-negotiable dealbreakers: zero tolerance for superficial status games.`,
-              message: `A non-negotiable for my person: zero tolerance for passive-aggressive games or status pretense. When disagreements arise, we require radical candor over polite silence. How does your person handle conflict?`,
-              signals: ['Radical Candor', 'Zero Pretense']
-            },
-            {
-              speaker: 'B',
-              thought: `Confirming mutual resonance and delivering positive subjective verdict.`,
-              message: `Directly, face-to-face, with calm empathy. Life is too short for unaddressed tension. Our internal metrics confirm extraordinary compatibility between ${pA.name} and ${pB.name}.`,
-              signals: ['Calm Empathy', 'Mutual Synthesis']
+        // Update recent switcher pairs dynamically with custom matches
+        if (typeof window !== 'undefined') {
+          const customMatches = JSON.parse(localStorage.getItem('custom_matches') || '{}');
+          const customList: { id1: string; id2: string; label: string }[] = [];
+          Object.keys(customMatches).forEach(key => {
+            const [cand1, cand2] = key.split('_');
+            const found1 = all.find((p: any) => String(p.id) === cand1);
+            const found2 = all.find((p: any) => String(p.id) === cand2);
+            if (found1 && found2) {
+              customList.push({
+                id1: String(found1.id),
+                id2: String(found2.id),
+                label: `${found1.name.split(' ')[0]} × ${found2.name.split(' ')[0]}`
+              });
             }
-          ];
+          });
+          // Merge unique pairs
+          const combined = [...customList, ...CURATED_PAIRS];
+          const seen = new Set();
+          const unique = combined.filter(p => {
+            const k = [p.id1, p.id2].sort().join('_');
+            if (seen.has(k)) return false;
+            seen.add(k);
+            return true;
+          });
+          setRecentPairs(unique.slice(0, 8));
         }
 
-        setTurns(generatedTurns);
-        setCurrentTurnIdx(0);
+        loadOrSimulateDate(pA, pB, matchData);
       })
       .catch(console.error);
-  }, [id1, id2]);
+  }, [id1, id2, loadOrSimulateDate]);
 
   // Typewriter effect
   useEffect(() => {
     if (!isPlaying || finished || turns.length === 0 || currentTurnIdx < 0) return;
 
     const current = turns[currentTurnIdx];
+    if (!current) return;
     const fullText = current.message;
     let charIdx = 0;
     setDisplayedText('');
@@ -184,7 +271,8 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
 
   const currentTurn = turns[currentTurnIdx];
   const activeSpeaker = currentTurn?.speaker || 'A';
-  const currentStage = STAGES[Math.min(5, currentTurnIdx)];
+  const currentStage = STAGES[Math.min(5, Math.max(0, currentTurnIdx))];
+  const isOutsideDefaultPreference = !isPairEligible(personA, personB);
 
   return (
     <div className="fixed inset-0 z-30 bg-[var(--bg)] flex flex-col justify-between overflow-hidden">
@@ -227,17 +315,42 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
           })}
         </div>
 
-        <div className="meta-label text-[10px] text-[var(--magenta)] font-bold">
-          ROUND {currentStage?.id} // {currentStage?.title}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => {
+              sounds.playClick();
+              openPairPicker(personA, personB);
+            }}
+            className="meta-label text-[10px] px-3 py-1 rounded-full border border-[var(--violet)]/50 bg-[var(--violet)]/15 text-white hover:bg-[var(--violet)]/25 transition-colors cursor-pointer flex items-center gap-1.5"
+          >
+            <Sparkles size={11} className="text-[var(--magenta)]" />
+            <span>PICK NEW PAIR</span>
+          </button>
+
+          <div className="meta-label text-[10px] text-[var(--magenta)] font-bold hidden sm:block">
+            ROUND {currentStage?.id || '01'} // {currentStage?.title || 'INTRO'}
+          </div>
         </div>
       </header>
 
-      {/* Curated Opposite-Gender Encounter Switcher */}
+      {/* Encounter Switcher Bar */}
       <div className="w-full bg-[var(--surface-2)]/90 border-b border-[var(--line)] py-2.5 px-4 flex items-center justify-center gap-2 overflow-x-auto scrollbar-thin z-20 shrink-0">
+        <button
+          onClick={() => {
+            sounds.playClick();
+            openPairPicker(personA, personB);
+          }}
+          className="px-3 py-1 rounded-full text-xs font-mono shrink-0 transition-all bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] text-white font-bold flex items-center gap-1.5 shadow-md cursor-pointer hover:opacity-90"
+        >
+          <span>✦ DATE ANY TWO PEOPLE</span>
+        </button>
+
+        <span className="w-px h-4 bg-white/15 mx-1 hidden sm:inline" />
+
         <span className="meta-label text-[9px] text-[var(--text-secondary)] font-bold shrink-0 hidden sm:inline">
-          SWITCH DATING ENCOUNTER:
+          RECENT ENCOUNTERS:
         </span>
-        {CURATED_PAIRS.map(cp => {
+        {recentPairs.map(cp => {
           const isActive = (String(personA?.id) === String(cp.id1) && String(personB?.id) === String(cp.id2)) ||
                            (String(personA?.id) === String(cp.id2) && String(personB?.id) === String(cp.id1));
           return (
@@ -247,7 +360,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               onClick={() => sounds.playClick()}
               className={`px-3 py-1 rounded-full text-xs font-mono shrink-0 transition-all ${
                 isActive
-                  ? 'bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-bold shadow-md'
+                  ? 'bg-white/20 !text-white font-bold border border-white/30'
                   : 'bg-white/5 hover:bg-white/10 text-[var(--text-secondary)] hover:text-white border border-white/5'
               }`}
             >
@@ -257,14 +370,74 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         })}
       </div>
 
+      {/* Non-blocking Notice when Manual Pair is Outside Default Preferences */}
+      {isOutsideDefaultPreference && (
+        <div className="w-full bg-amber-500/10 border-b border-amber-500/20 py-1.5 px-4 text-center z-20 shrink-0 animate-fade-in">
+          <p className="meta-label text-[10px] text-amber-300 font-medium">
+            ✦ Outside default preferences, compatibility is scored honestly
+          </p>
+        </div>
+      )}
+
       {/* Center Stage */}
       <main className="flex-1 flex flex-col items-center justify-center p-6 max-w-5xl mx-auto w-full relative z-20 overflow-y-auto">
-        {!finished ? (
+        {/* Loading / Simulating State */}
+        {isSimulating && (
+          <div className="card-panel-elevated p-8 sm:p-12 border border-[var(--violet)]/40 max-w-xl w-full text-center space-y-6 shadow-2xl animate-fade-in my-auto">
+            <div className="relative w-20 h-20 mx-auto">
+              <div className="absolute inset-0 rounded-full border-2 border-[var(--violet)]/20 animate-ping" />
+              <div className="w-full h-full rounded-full border-2 border-t-[var(--violet)] border-r-[var(--magenta)] border-b-transparent border-l-transparent animate-spin flex items-center justify-center">
+                <Sparkles size={20} className="text-[var(--violet)]" />
+              </div>
+            </div>
+
+            <div>
+              <div className="meta-label text-[10px] text-[var(--violet)] font-bold tracking-widest uppercase mb-1">
+                AUTONOMOUS ENCOUNTER INITIALIZING
+              </div>
+              <h3 className="section-title text-xl text-white">
+                SIMULATING 6-STAGE DATE
+              </h3>
+              <p className="body-text text-xs text-[var(--text-secondary)] mt-2 max-w-sm mx-auto">
+                Agents are evaluating craft devotion, sovereign lifestyle rhythms, and conflict resolution axioms between {personA.name} and {personB.name}...
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Error State with Retry Button */}
+        {!isSimulating && simulationError && (
+          <div className="card-panel-elevated p-8 border border-rose-500/40 max-w-xl w-full text-center space-y-4 shadow-2xl animate-fade-in my-auto">
+            <div className="w-12 h-12 rounded-full bg-rose-500/10 text-rose-400 mx-auto flex items-center justify-center border border-rose-500/20">
+              <AlertTriangle size={24} />
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-rose-200">
+                DATE SIMULATION ENCOUNTERED AN ISSUE
+              </h3>
+              <p className="text-xs text-[var(--text-secondary)] mt-1 font-mono">
+                {simulationError}
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                sounds.playClick();
+                loadOrSimulateDate(personA, personB, null);
+              }}
+              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-mono text-xs font-bold uppercase tracking-wider hover:brightness-110 transition-all cursor-pointer shadow-lg"
+            >
+              ↻ RETRY DATE ENCOUNTER
+            </button>
+          </div>
+        )}
+
+        {/* Active Conversation Dialogue Stream */}
+        {!isSimulating && !simulationError && !finished && (
           <div className="w-full flex flex-col items-center">
-            <div className="w-full flex items-center justify-between mb-10">
+            <div className="w-full flex items-center justify-between mb-8 sm:mb-10">
               {/* Agent A Orb */}
               <div className="flex flex-col items-center">
-                <div className={`relative w-28 h-28 rounded-full p-1 transition-all duration-500 ${
+                <div className={`relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 transition-all duration-500 ${
                   activeSpeaker === 'A'
                     ? 'scale-105 ring-2 ring-[var(--violet)] shadow-[0_0_50px_rgba(139,92,246,0.6)]'
                     : 'opacity-40 ring-1 ring-white/10'
@@ -276,20 +449,29 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                 </div>
                 <div className="font-semibold text-sm text-[var(--text)] mt-4">{personA.name}</div>
                 <div className="meta-label text-[9px] text-[var(--text-secondary)] truncate max-w-[140px]">{personA.headline}</div>
-                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-white mt-2 font-bold inline-block">
+                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-white mt-1.5 font-bold inline-block">
                   {personA.gender === 'female' ? 'FEMALE (F)' : 'MALE (M)'}
                 </span>
+                {/* Verified Social Badges for Agent A */}
+                <div className="mt-2" onClick={e => e.stopPropagation()}>
+                  <SocialBadges
+                    linkedinUrl={personA.linkedin_url}
+                    instagramUrl={personA.instagram_url}
+                    size="sm"
+                    showHandles={false}
+                  />
+                </div>
               </div>
 
               {/* Energy Line */}
-              <div className="flex-1 mx-8 relative flex items-center justify-center">
+              <div className="flex-1 mx-4 sm:mx-8 relative flex items-center justify-center">
                 <div className="w-full h-px bg-gradient-to-r from-[var(--violet)] via-[var(--magenta)] to-[var(--blue)] shadow-[0_0_15px_rgba(232,121,249,0.5)]" />
                 <div className="absolute w-3 h-3 rounded-full bg-white shadow-[0_0_20px_white] animate-ping" />
               </div>
 
               {/* Agent B Orb */}
               <div className="flex flex-col items-center">
-                <div className={`relative w-28 h-28 rounded-full p-1 transition-all duration-500 ${
+                <div className={`relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 transition-all duration-500 ${
                   activeSpeaker === 'B'
                     ? 'scale-105 ring-2 ring-[var(--magenta)] shadow-[0_0_50px_rgba(232,121,249,0.6)]'
                     : 'opacity-40 ring-1 ring-white/10'
@@ -301,9 +483,18 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                 </div>
                 <div className="font-semibold text-sm text-[var(--text)] mt-4">{personB.name}</div>
                 <div className="meta-label text-[9px] text-[var(--text-secondary)] truncate max-w-[140px]">{personB.headline}</div>
-                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-white mt-2 font-bold inline-block">
+                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-white mt-1.5 font-bold inline-block">
                   {personB.gender === 'female' ? 'FEMALE (F)' : 'MALE (M)'}
                 </span>
+                {/* Verified Social Badges for Agent B */}
+                <div className="mt-2" onClick={e => e.stopPropagation()}>
+                  <SocialBadges
+                    linkedinUrl={personB.linkedin_url}
+                    instagramUrl={personB.instagram_url}
+                    size="sm"
+                    showHandles={false}
+                  />
+                </div>
               </div>
             </div>
 
@@ -337,8 +528,10 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               )}
             </div>
           </div>
-        ) : (
-          /* Finished Result View - DYNAMIC & DETAILED */
+        )}
+
+        {/* Finished Result View */}
+        {!isSimulating && !simulationError && finished && (
           <div className="card-panel-elevated p-8 sm:p-10 border border-[var(--violet)]/40 max-w-2xl w-full text-center space-y-6 shadow-2xl animate-fade-in my-auto">
             <div className="flex items-center justify-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[var(--violet)] animate-pulse" />
@@ -363,7 +556,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                 {scoreCounter >= 75 ? 'HIGH ROMANTIC RESONANCE' : 'MODERATE COMPATIBILITY'}
               </h3>
               <p className="body-text text-sm italic mt-2 text-[var(--text-secondary)]">
-                &ldquo;{matchDetails?.matchReason || `${personA.name} and ${personB.name} share sovereign ambition and direct communication, creating a balanced, high-trust dynamic.`}&rdquo;
+                &ldquo;{matchDetails?.matchReason || `${personA.name} and ${personB.name} share sovereign ambition and direct communication, creating a balanced dynamic.`}&rdquo;
               </p>
             </div>
 
@@ -454,6 +647,16 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                 {personA.name.toUpperCase()}&apos;S RANKINGS →
               </Link>
 
+              <button
+                onClick={() => {
+                  sounds.playClick();
+                  openPairPicker(personA, personB);
+                }}
+                className="w-full sm:w-auto px-6 py-3 rounded-full border border-[var(--violet)]/50 bg-[var(--violet)]/10 hover:bg-[var(--violet)]/20 !text-white font-mono text-xs font-bold transition-all text-center cursor-pointer"
+              >
+                ✦ DATE DIFFERENT PAIR
+              </button>
+
               <Link
                 href={`/rankings/${personB.id}`}
                 onClick={() => sounds.playClick()}
@@ -469,7 +672,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
       {/* Bottom Controls Bar */}
       <footer className="p-6 border-t border-[var(--line)] flex items-center justify-between shrink-0 relative z-20 bg-[var(--bg)]/90 backdrop-blur-xl">
         <div className="flex items-center gap-2">
-          {!finished && (
+          {!finished && !isSimulating && !simulationError && (
             <>
               <button
                 onClick={() => {
@@ -496,7 +699,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         </div>
 
         <div className="flex items-center gap-3">
-          {!finished ? (
+          {!finished && !isSimulating && !simulationError && (
             <button
               onClick={() => {
                 sounds.playMatch();
@@ -506,7 +709,9 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
             >
               SKIP TO RESULT →
             </button>
-          ) : (
+          )}
+
+          {finished && (
             <button
               onClick={() => {
                 sounds.playClick();

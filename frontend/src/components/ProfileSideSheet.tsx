@@ -7,13 +7,16 @@ import { PersonNode } from './MatchmakingField';
 import { sounds } from '../utils/sound';
 import { getSamplePartner } from '../utils/matching';
 
+import SocialBadges from './SocialBadges';
+
 interface ProfileSideSheetProps {
   person: PersonNode | null;
   onClose: () => void;
   allPeople: PersonNode[];
+  onDateSomeone?: (person: PersonNode) => void;
 }
 
-export default function ProfileSideSheet({ person, onClose, allPeople }: ProfileSideSheetProps) {
+export default function ProfileSideSheet({ person, onClose, allPeople, onDateSomeone }: ProfileSideSheetProps) {
   const [activeSignalTrace, setActiveSignalTrace] = useState<{
     source: string;
     signal: string;
@@ -83,40 +86,11 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
             </p>
 
             {/* Source Badges */}
-            <div className="flex flex-wrap items-center gap-2 mt-4">
-              {person.linkedin_url ? (
-                <a
-                  href={person.linkedin_url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-[10px] font-mono text-[var(--text)] flex items-center gap-1.5 transition-colors"
-                >
-                  <span className="text-[#0077b5] font-semibold">LINKEDIN</span>
-                  <span className="text-[var(--violet)] font-semibold">✓ ANALYZED</span>
-                  <ExternalLink size={10} className="text-[var(--text-secondary)]" />
-                </a>
-              ) : (
-                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--text-secondary)]">
-                  LINKEDIN · NOT AVAILABLE
-                </span>
-              )}
-
-              {person.instagram_url ? (
-                <a
-                  href={person.instagram_url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-[10px] font-mono text-[var(--text)] flex items-center gap-1.5 transition-colors"
-                >
-                  <span className="text-[var(--pink)] font-semibold">INSTAGRAM</span>
-                  <span className="text-[var(--violet)] font-semibold">✓ ANALYZED</span>
-                  <ExternalLink size={10} className="text-[var(--text-secondary)]" />
-                </a>
-              ) : (
-                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[var(--text-secondary)]">
-                  INSTAGRAM · NOT AVAILABLE
-                </span>
-              )}
+            <div className="mt-4">
+              <SocialBadges
+                linkedinUrl={person.linkedin_url}
+                instagramUrl={person.instagram_url}
+              />
             </div>
           </div>
         </div>
@@ -223,20 +197,33 @@ export default function ProfileSideSheet({ person, onClose, allPeople }: Profile
       </div>
 
       {/* Footer Bottom Actions */}
-      <div className="p-6 border-t border-[var(--line)] bg-[var(--surface-2)] flex items-center justify-between gap-4 shrink-0">
+      <div className="p-6 border-t border-[var(--line)] bg-[var(--surface-2)] flex flex-wrap items-center justify-between gap-3 shrink-0">
         <Link
           href={`/date/${person.id}/${samplePartner?.id}`}
           onClick={() => sounds.playClick()}
-          className="flex-1 py-3.5 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:opacity-95 transition-opacity cursor-pointer"
+          className="flex-1 min-w-[160px] py-3.5 px-4 rounded-full bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] !text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:opacity-95 transition-opacity cursor-pointer"
         >
           <Play size={13} fill="currentColor" />
-          <span>START DATING ENCOUNTER</span>
+          <span>START ENCOUNTER</span>
         </Link>
+
+        <button
+          onClick={() => {
+            sounds.playClick();
+            if (onDateSomeone) {
+              onDateSomeone(person);
+            }
+          }}
+          className="py-3.5 px-5 rounded-full border border-[var(--violet)]/50 bg-[var(--violet)]/10 hover:bg-[var(--violet)]/20 !text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
+          title="Pick any person from the 25 to date this agent"
+        >
+          <span>✦ DATE SOMEONE</span>
+        </button>
 
         <Link
           href={`/rankings/${person.id}`}
           onClick={() => sounds.playClick()}
-          className="px-6 py-3.5 rounded-full glass-pill !text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-white/10 transition-colors cursor-pointer"
+          className="px-5 py-3.5 rounded-full glass-pill !text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-white/10 transition-colors cursor-pointer"
         >
           <span>RANKINGS</span>
           <ArrowRight size={13} />
