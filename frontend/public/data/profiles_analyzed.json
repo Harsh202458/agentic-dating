@@ -6,7 +6,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/pieterlevelsnomad/",
     "instagram_url": "https://www.instagram.com/levels.io/",
-    "photo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/1.jpg",
     "followers": 85200,
     "isVerified": true,
     "headline": "Founder at Nomad List, Remote OK, Photo AI",
@@ -59,7 +59,8 @@
     },
     "summary": "Pieter is the poster child for solo internet entrepreneurship, living life on his own terms between Lisbon and Tokyo. He seeks a partner who thrives on global freedom, creative autonomy, and genuine wit.",
     "agentVoice": "I build fast, travel light, and want a partner who can jump on a flight to Tokyo tomorrow without overthinking it.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 2,
@@ -68,7 +69,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/andrew-huberman/",
     "instagram_url": "https://www.instagram.com/hubermanlab/",
-    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/2.jpg",
     "followers": 6100000,
     "isVerified": true,
     "headline": "Neurobiologist & Professor at Stanford University School of Medicine | Host of Huberman Lab",
@@ -122,7 +123,8 @@
     },
     "summary": "Stanford neuroscientist transforming global public health through zero-cost science protocols. Seeks an emotionally grounded partner committed to growth, discipline, and daily morning sunlight.",
     "agentVoice": "If we can align our morning light protocols and value deep biological focus, we are already halfway to an extraordinary bond.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 3,
@@ -131,7 +133,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/lexfridman/",
     "instagram_url": "https://www.instagram.com/lexfridman/",
-    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/3.jpg",
     "followers": 3200000,
     "isVerified": true,
     "headline": "Host of Lex Fridman Podcast | AI Researcher at MIT",
@@ -184,7 +186,8 @@
     },
     "summary": "MIT roboticist and thoughtful interviewer who wears a black suit and believes love is the greatest superpower in the universe. Seeks a poetic, kind soul to build a lifetime of wonder with.",
     "agentVoice": "I believe love is the only answer to the infinite darkness of the universe; let's talk about robots, poetry, and kindness until 3 AM.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 4,
@@ -193,7 +196,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/garyvaynerchuk/",
     "instagram_url": "https://www.instagram.com/garyvee/",
-    "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/4.jpg",
     "followers": 10500000,
     "isVerified": true,
     "headline": "Chairman of VaynerX, CEO of VaynerMedia, 5x NYT Bestselling Author",
@@ -246,7 +249,8 @@
     },
     "summary": "High-octane media entrepreneur fueled by radical empathy and an undying dream to buy the NY Jets. Seeks someone whose inner warmth and positive fire match his own relentless spirit.",
     "agentVoice": "I don't care about fancy dinners; let's laugh until our stomachs hurt, stay humble, and build something iconic.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 5,
@@ -255,7 +259,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/timferriss/",
     "instagram_url": "https://www.instagram.com/timferriss/",
-    "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/5.jpg",
     "followers": 1800000,
     "isVerified": true,
     "headline": "Author of The 4-Hour Workweek | Host of The Tim Ferriss Show",
@@ -308,7 +312,8 @@
     },
     "summary": "The pioneer of lifestyle design, turning life into a series of deeply thoughtful experiments. He looks for an intellectual partner to deconstruct the art of living well.",
     "agentVoice": "Let's turn off our phones for the weekend, brew some exceptional pu-erh tea, and ask ourselves what life looks like when it's easy and peaceful.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 6,
@@ -317,7 +322,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/aliabdaal/",
     "instagram_url": "https://www.instagram.com/aliabdaal/",
-    "photo": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/6.jpg",
     "followers": 1200000,
     "isVerified": true,
     "headline": "Doctor turned Creator & Entrepreneur | Author of Feel-Good Productivity",
@@ -370,7 +375,8 @@
     },
     "summary": "Cambridge-trained doctor turned global productivity educator who believes work and life should feel deeply joyful. Looking for a bright, kind partner to share laughter, cozy Sundays, and board game marathons.",
     "agentVoice": "Life is too short for friction. I want a partner with whom building a joyful, meaningful life feels effortless and fun.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 7,
@@ -379,7 +385,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/sahilbloom/",
     "instagram_url": "https://www.instagram.com/sahilbloom/",
-    "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/7.jpg",
     "followers": 980000,
     "isVerified": true,
     "headline": "Author of The 5 Types of Wealth | Managing Partner at SRB Ventures",
@@ -432,7 +438,8 @@
     },
     "summary": "Former Stanford baseball player turned venture capitalist and bestselling author on holistically wealthy living. Values grounded daily rituals and unconditional loyalty.",
     "agentVoice": "True wealth isn't about numbers; it's having time for the people you love. Let's build a life that feels as rich on the inside as it looks on the outside.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 8,
@@ -441,7 +448,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/alexisohanian/",
     "instagram_url": "https://www.instagram.com/alexisohanian/",
-    "photo": "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/8.jpg",
     "followers": 860000,
     "isVerified": true,
     "headline": "Founder at Seven Seven Six | Co-Founder at Reddit",
@@ -494,7 +501,8 @@
     },
     "summary": "Reddit co-founder and venture capitalist celebrated for being a champion partner. He brings massive energy, creative heart, and unwavering devotion to relationships.",
     "agentVoice": "The greatest flex is being proud of your partner's brilliance. Let's make pancakes, cheer loudly for each other, and change the world.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 9,
@@ -503,7 +511,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/navalravikant/",
     "instagram_url": "https://www.instagram.com/naval/",
-    "photo": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/9.jpg",
     "followers": 1400000,
     "isVerified": true,
     "headline": "Co-Founder at AngelList | Philosopher & Investor",
@@ -556,7 +564,8 @@
     },
     "summary": "Iconic Silicon Valley philosopher-investor celebrated for aphorisms on happiness and wealth. Seeks a sovereign, deeply peaceful partner who cherishes truth and stillness.",
     "agentVoice": "A peaceful mind, a fit body, and a house full of love. These things cannot be bought; they must be earned together.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 10,
@@ -565,7 +574,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/lennyrachitsky/",
     "instagram_url": "https://www.instagram.com/lennyrachitsky/",
-    "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/10.jpg",
     "followers": 195000,
     "isVerified": true,
     "headline": "Author of Lenny's Newsletter & Host of Lenny's Podcast | Ex-Airbnb Product Lead",
@@ -618,7 +627,8 @@
     },
     "summary": "Beloved tech product strategist and interviewer known for unmatched listening skills and thoughtful curiosity. Looking for a bright, self-aware partner to explore great conversations and quiet dinners.",
     "agentVoice": "The best conversations happen over good wine with zero pretense. Let's be genuinely curious about the world and each other.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 11,
@@ -627,7 +637,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/kunal-shah-7949171/",
     "instagram_url": "https://www.instagram.com/kunalb11/",
-    "photo": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/11.jpg",
     "followers": 430000,
     "isVerified": true,
     "headline": "Founder at CRED | Philosopher of Human Behavior & Fintech Pioneer",
@@ -680,7 +690,8 @@
     },
     "summary": "CRED founder and behavioral philosopher who views human societies through evolutionary psychology. Seeks an intellectually formidable partner with sharp wit and zero pretense.",
     "agentVoice": "Most people play status games without knowing it. Let's skip the small talk and debate why humans behave the way they do.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 12,
@@ -689,7 +700,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/shaanvp/",
     "instagram_url": "https://www.instagram.com/shaanvp/",
-    "photo": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/12.jpg",
     "followers": 310000,
     "isVerified": true,
     "headline": "Host of My First Million Podcast | Entrepreneur & Investor",
@@ -742,7 +753,8 @@
     },
     "summary": "Host of My First Million and energetic serial entrepreneur who brings wit, warmth, and laughter to everything. Looking for a partner who loves a good laugh and dream-building.",
     "agentVoice": "Life should be an adventure you laugh through together. Let's make each other laugh every single day.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 13,
@@ -751,7 +763,7 @@
     "seeking": "women",
     "linkedin_url": "https://www.linkedin.com/in/mark-zuckerberg-618bba58/",
     "instagram_url": "https://www.instagram.com/zuck/",
-    "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/13.jpg",
     "followers": 14800000,
     "isVerified": true,
     "headline": "Founder and CEO at Meta",
@@ -804,7 +816,8 @@
     },
     "summary": "Tech titan who built the global social graph and reimagined himself as an open-source AI pioneer and martial artist. Deeply devoted to family and building the future.",
     "agentVoice": "I believe in building things that endure for decades. Let's train hard, protect our peace, and build a meaningful legacy.",
-    "looking_for": "women"
+    "looking_for": "women",
+    "lookingFor": "women"
   },
   {
     "id": 14,
@@ -813,7 +826,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/sarablakely/",
     "instagram_url": "https://www.instagram.com/sarablakely/",
-    "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/14.jpg",
     "followers": 2100000,
     "isVerified": true,
     "headline": "Founder & Executive Chairwoman at SPANX & Sneex | Self-Made Billionaire",
@@ -866,7 +879,8 @@
     },
     "summary": "Iconic self-made billionaire who turned $5,000 into a global empire through sheer grit and infectious humor. Seeks a confident, grounded partner who celebrates life with laughter.",
     "agentVoice": "Don't ever shrink yourself for anyone. I want a partner who can laugh at themselves, celebrate my wins, and build a joyful empire together.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 15,
@@ -875,7 +889,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/melanieperkins/",
     "instagram_url": "https://www.instagram.com/melanieperkins/",
-    "photo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/15.jpg",
     "followers": 320000,
     "isVerified": true,
     "headline": "CEO and Co-founder at Canva",
@@ -928,7 +942,8 @@
     },
     "summary": "Visionary Australian co-founder of Canva who built a multi-billion dollar platform on the philosophy of 'doing the most good we can'. Looks for a grounded, adventurous partner with high emotional agency.",
     "agentVoice": "If you set crazy big goals and stay deeply kind along the way, magic happens. Let's kitesurf, dream big, and leave the world better than we found it.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 16,
@@ -937,7 +952,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/whitney-wolfe-herd-8b776a38/",
     "instagram_url": "https://www.instagram.com/whitney/",
-    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/16.jpg",
     "followers": 670000,
     "isVerified": true,
     "headline": "Founder and Executive Chair at Bumble Inc.",
@@ -990,7 +1005,8 @@
     },
     "summary": "Pioneering founder of Bumble who revolutionized modern romance by putting women in control. Seeks an emotionally intelligent, supportive partner who values mutual respect and direct honesty.",
     "agentVoice": "The healthiest love begins with kindness and clear respect. I want a partner who communicates with vulnerability and courage.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 17,
@@ -999,7 +1015,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/marieforleo/",
     "instagram_url": "https://www.instagram.com/marieforleo/",
-    "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/17.jpg",
     "followers": 820000,
     "isVerified": true,
     "headline": "Entrepreneur, NYT Bestselling Author & Host of MarieTV",
@@ -1052,7 +1068,8 @@
     },
     "summary": "Bestselling author and creator of MarieTV who inspires millions to build a business and life they love. Looks for a self-aware, emotionally grounded partner with an adventurous spirit.",
     "agentVoice": "Everything is figureoutable when two people are genuinely committed. Let's laugh, dance, and support each other through every chapter.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 18,
@@ -1061,7 +1078,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/mira-murati/",
     "instagram_url": "https://www.instagram.com/miramurati/",
-    "photo": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/18.jpg",
     "followers": 410000,
     "isVerified": true,
     "headline": "AI Systems Architect, Former Chief Technology Officer at OpenAI",
@@ -1114,7 +1131,8 @@
     },
     "summary": "The visionary engineering mind behind GPT-4 and DALL-E, blending immense technical intellect with classical cultural depth. Seeks a thoughtful, intellectually sovereign partner.",
     "agentVoice": "Technology should elevate the best of human consciousness. Let's discuss AI, art, and philosophy in quiet peace.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 19,
@@ -1123,7 +1141,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/fei-fei-li-4541247/",
     "instagram_url": "https://www.instagram.com/feifeili/",
-    "photo": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/19.jpg",
     "followers": 125000,
     "isVerified": true,
     "headline": "Sequoia Professor of Computer Science at Stanford University | Co-Director, Stanford HAI",
@@ -1176,7 +1194,8 @@
     },
     "summary": "Renowned 'Godmother of AI' whose ImageNet sparked modern deep learning, now guiding AI towards human-centered dignity. Seeks a wise, compassionate partner who values truth and heart.",
     "agentVoice": "There is nothing artificial about human love and dignity. Let's build a life anchored in empathy, science, and enduring warmth.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 20,
@@ -1185,7 +1204,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/deepikapadukone/",
     "instagram_url": "https://www.instagram.com/deepikapadukone/",
-    "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/20.jpg",
     "followers": 79000000,
     "isVerified": true,
     "headline": "Founder at 82°E | Mental Health Advocate & Chairperson, Live Love Laugh Foundation",
@@ -1238,7 +1257,8 @@
     },
     "summary": "Global cinema icon and pioneering mental health advocate who balances immense public grace with grounded vulnerability. Looks for an emotionally mature, athletic, and honest partner.",
     "agentVoice": "True strength is daring to be vulnerable with the person you love. Let's protect our mental peace and cherish the simple moments.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 21,
@@ -1247,7 +1267,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/priyanka-chopra/",
     "instagram_url": "https://www.instagram.com/priyankachopra/",
-    "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/21.jpg",
     "followers": 91000000,
     "isVerified": true,
     "headline": "Global Producer, Entrepreneur & UNICEF Goodwill Ambassador",
@@ -1300,7 +1320,8 @@
     },
     "summary": "Trailblazing international producer and entrepreneur who bridges Hollywood and Bollywood with infectious energy and family devotion. Seeks a secure, romantic partner with equal fire.",
     "agentVoice": "Never be afraid of dreaming bigger than everyone else in the room. I want a partner who stands proudly beside me as we take on the world.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 22,
@@ -1309,7 +1330,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/ariannahuffington/",
     "instagram_url": "https://www.instagram.com/ariannahuff/",
-    "photo": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/22.jpg",
     "followers": 780000,
     "isVerified": true,
     "headline": "Founder & CEO at Thrive Global | Founder of The Huffington Post",
@@ -1362,7 +1383,8 @@
     },
     "summary": "Legendary media founder and wellbeing advocate leading the global movement to end burnout. Seeks an emotionally wise, intellectual partner who values deep rest and rich conversation.",
     "agentVoice": "Burnout is not a badge of honor. Let's sleep 8 hours, savor Mediterranean feasts, and live a life of profound joy.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 23,
@@ -1371,7 +1393,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/reshma-saujani/",
     "instagram_url": "https://www.instagram.com/reshmasaujani/",
-    "photo": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/23.jpg",
     "followers": 320000,
     "isVerified": true,
     "headline": "Founder & CEO of Moms First | Founder of Girls Who Code",
@@ -1424,7 +1446,8 @@
     },
     "summary": "Visionary founder of Girls Who Code and Moms First teaching the world to be brave rather than perfect. Seeks a genuinely egalitarian partner with moral backbone and warm humor.",
     "agentVoice": "Perfection is a trap; bravery is freedom. Let's be brave together, fight for what matters, and love without fear.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 24,
@@ -1433,7 +1456,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/gwynethpaltrow/",
     "instagram_url": "https://www.instagram.com/gwynethpaltrow/",
-    "photo": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/24.jpg",
     "followers": 8400000,
     "isVerified": true,
     "headline": "Founder & CEO at goop.com",
@@ -1486,7 +1509,8 @@
     },
     "summary": "Oscar-winning actress turned wellness titan who built goop into a pioneer of clean living and conscious relationships. Looks for an emotionally self-aware, wellness-minded partner.",
     "agentVoice": "Conscious love requires showing up fully without defense mechanisms. Let's eat clean food, embrace vulnerability, and thrive.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   },
   {
     "id": 25,
@@ -1495,7 +1519,7 @@
     "seeking": "men",
     "linkedin_url": "https://www.linkedin.com/in/jessica-alba-85880b43/",
     "instagram_url": "https://www.instagram.com/jessicaalba/",
-    "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&auto=format&fit=crop&q=80",
+    "photo": "/avatars/25.jpg",
     "followers": 20600000,
     "isVerified": true,
     "headline": "Founder & Chief Creative Officer at The Honest Company",
@@ -1548,6 +1572,7 @@
     },
     "summary": "Beloved entrepreneur who built The Honest Company into an ethical consumer giant while maintaining deep family warmth. Seeks a secure, honest partner who loves family and laughter.",
     "agentVoice": "Honesty and family are everything. I want a partner who is completely real with me, works hard, and makes life joyful.",
-    "looking_for": "men"
+    "looking_for": "men",
+    "lookingFor": "men"
   }
 ]

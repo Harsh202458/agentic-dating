@@ -1,12 +1,26 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Play, Pause, RotateCcw, Check, AlertTriangle, ShieldCheck, Loader2, Sparkles } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import {
+  ArrowLeft,
+  Play,
+  Pause,
+  RotateCcw,
+  Check,
+  AlertTriangle,
+  Sparkles,
+  ChevronLeft,
+  ChevronRight,
+  Search,
+  Users
+} from 'lucide-react';
 import { sounds } from '../../../../utils/sound';
 import { getDataUrl } from '../../../../utils/paths';
-import { isPairEligible } from '../../../../utils/matching';
+import { isEligiblePair } from '../../../../utils/matching';
 import SocialBadges from '../../../../components/SocialBadges';
+import ChooseDateModal from '../../../../components/ChooseDateModal';
 import { usePairPicker } from '../../../../components/AppWrapper';
 
 interface Turn {
@@ -25,18 +39,15 @@ const STAGES = [
   { id: '06', title: 'DECISION', desc: 'Mutual Verdict' }
 ];
 
-const CURATED_PAIRS = [
-  { id1: '1', id2: '14', label: 'Pieter (M) × Sara (F)' },
-  { id1: '2', id2: '15', label: 'Huberman (M) × Melanie (F)' },
-  { id1: '3', id2: '16', label: 'Lex (M) × Whitney (F)' },
-  { id1: '8', id2: '21', label: 'Alexis (M) × Priyanka (F)' },
-  { id1: '9', id2: '18', label: 'Naval (M) × Mira (F)' },
-];
-
 export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string }) {
+  const router = useRouter();
   const { openPairPicker } = usePairPicker();
+
   const [personA, setPersonA] = useState<any>(null);
   const [personB, setPersonB] = useState<any>(null);
+  const [allPeople, setAllPeople] = useState<any[]>([]);
+  const [matchesData, setMatchesData] = useState<any>(null);
+
   const [matchDetails, setMatchDetails] = useState<any>(null);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [currentTurnIdx, setCurrentTurnIdx] = useState<number>(-1);
@@ -49,60 +60,88 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
 
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
   const [simulationError, setSimulationError] = useState<string | null>(null);
-  const [recentPairs, setRecentPairs] = useState<{ id1: string; id2: string; label: string }[]>(CURATED_PAIRS);
 
+  // Searchable panel of all 25 people modal state
+  const [isChooseDateModalOpen, setIsChooseDateModalOpen] = useState<boolean>(false);
+
+  // Data-driven Recent / Top dates list
+  const [recentPairs, setRecentPairs] = useState<{ id1: string; id2: string; label: string; score?: number }[]>([]);
+
+  // Avatar error fallback states
+  const [avatarErrorA, setAvatarErrorA] = useState<boolean>(false);
+  const [avatarErrorB, setAvatarErrorB] = useState<boolean>(false);
+
+  // Message container ref for auto-scrolling
+  const messageCardRef = useRef<HTMLDivElement | null>(null);
+
+  // Sync URL to canonical /dates/<idA>-<idB> without reloading
+  useEffect(() => {
+    if (typeof window !== 'undefined' && id1 && id2) {
+      const canonicalPath = `/dates/${id1}-${id2}`;
+      if (window.location.pathname !== canonicalPath && !window.location.pathname.startsWith('/dates/')) {
+        window.history.replaceState(null, '', canonicalPath);
+      }
+    }
+  }, [id1, id2]);
+
+  // Clean fallback turns builder (zero template jargon, natural conversation)
   const buildTurnsFromMatch = (match: any, pA: any, pB: any): Turn[] => {
     if (match?.conversation && match.conversation.length >= 6) {
       return match.conversation.map((c: any, idx: number) => ({
         speaker: c.agent === 'A' ? 'A' : 'B',
         message: c.message,
         thought: c.thought || (idx % 2 === 0
-          ? `Evaluating ${pB.name}'s craft and sovereign boundaries.`
-          : `Probing ${pA.name}'s daily cadence and emotional honesty.`),
-        signals: idx === 0 ? ['Craft Devotion', 'Initial Chemistry']
-               : idx === 1 ? ['Creative Drive', 'Boundary Protection']
-               : idx === 2 ? ['Sovereign Autonomy', 'Zero Co-dependency']
-               : idx === 3 ? ['Authenticity', 'High Agency']
-               : idx === 4 ? ['Radical Candor', 'Zero Status Games']
-               : ['Mutual Synthesis', 'Positive Verdict']
+          ? `Evaluating ${pB.name}'s lifestyle, cadence, and shared values.`
+          : `Considering ${pA.name}'s focus, ambition, and emotional presence.`),
+        signals: idx === 0 ? ['Warmth', 'First Impressions']
+               : idx === 1 ? ['Curiosity', 'Active Listening']
+               : idx === 2 ? ['Shared Values', 'Trust']
+               : idx === 3 ? ['Daily Rhythm', 'Mutual Support']
+               : idx === 4 ? ['Clear Boundaries', 'Emotional Maturity']
+               : ['Mutual Resonance', 'Positive Verdict']
       }));
     }
+
+    const intA = pA.interests?.[0] || 'creative work';
+    const intB = pB.interests?.[0] || 'meaningful projects';
+    const valA = pA.values?.[0] || 'curiosity';
+    const valB = pB.values?.[0] || 'authenticity';
 
     return [
       {
         speaker: 'A',
-        thought: `Evaluating ${pB.name}'s craft and creative pacing.`,
-        message: `Hello. I represent ${pA.name}. I noticed your dedication to ${pB.interests?.[0] || 'your craft'} and your regular time around ${pB.hobbies?.[0] || 'exploring'}. How does that shape your day-to-day rhythm?`,
-        signals: ['Craft Devotion', 'Daily Cadence']
+        thought: `Introducing ${pA.name} and initiating an open, warm conversation.`,
+        message: `Hello! I am speaking on behalf of ${pA.name}. Most of their days revolve around ${intA}, but they care deeply about genuine connections and shared humor. What does a typical week look like for you, and what gives you the most joy lately?`,
+        signals: ['Warmth', 'Opening Chemistry']
       },
       {
         speaker: 'B',
-        thought: `Responding with boundary honesty and probing work-life priorities.`,
-        message: `Thank you. For ${pB.name}, those rituals protect clarity. Looking at ${pA.name}'s trajectory in ${pA.interests?.[0] || 'innovation'}, there is intense creative momentum. How do you protect space for a partner amidst that?`,
-        signals: ['Creative Drive', 'Boundary Protection']
+        thought: `Responding warmly on behalf of ${pB.name} and exploring common interests.`,
+        message: `Hi there! For ${pB.name}, life centers on ${intB} and continuous learning. They love building things with intention, but winding down with honest conversation and laughter is just as important. When you step away from work, what kind of experiences do you look forward to?`,
+        signals: ['Creative Drive', 'Balanced Living']
       },
       {
         speaker: 'A',
-        thought: `Addressing sovereignty and independence in long-term relationships.`,
-        message: `Our core rule is sovereign autonomy. A relationship should never demand either person shrink their ambition. We thrive with someone self-directed, so when we are together, it is completely intentional.`,
-        signals: ['Sovereign Autonomy', 'Zero Co-dependency']
+        thought: `Discussing foundational values like ${valA} and mutual independence.`,
+        message: `For ${pA.name}, a strong relationship is built on ${valA} and mutual independence—cheering each other on while having complete trust. In long-term connections, what values do you treat as non-negotiable?`,
+        signals: ['Independence', 'Trust']
       },
       {
         speaker: 'B',
-        thought: `Affirming alignment on values and testing tolerance for intense schedules.`,
-        message: `That aligns with ${pB.name}'s explicit requirement. We value ${pB.values?.[0] || 'authenticity'} over performative expectations. Being with someone who understands high-agency living eliminates resentment.`,
-        signals: ['Authenticity', 'High Agency']
+        thought: `Affirming alignment on ${valB} and daily habits.`,
+        message: `That aligns closely with ${pB.name}'s view. Their foundation is ${valB} and emotional maturity. Being with someone who understands high dedication without resentment makes all the difference. How do you protect quality time together?`,
+        signals: ['Emotional Maturity', 'Quality Time']
       },
       {
         speaker: 'A',
-        thought: `Testing non-negotiable dealbreakers: zero tolerance for superficial status games.`,
-        message: `A non-negotiable for my person: zero tolerance for passive-aggressive games or status pretense. When disagreements arise, we require radical candor over polite silence. How does your person handle conflict?`,
-        signals: ['Radical Candor', 'Zero Pretense']
+        thought: `Addressing direct communication and navigating conflict.`,
+        message: `If disagreements happen, ${pA.name} believes in calm, face-to-face communication over letting tension simmer. Life is too short for passive-aggressive games. How do you navigate tough conversations?`,
+        signals: ['Direct Honesty', 'Calm Communication']
       },
       {
         speaker: 'B',
-        thought: `Confirming mutual resonance and delivering positive subjective verdict.`,
-        message: `Directly, face-to-face, with calm empathy. Life is too short for unaddressed tension. Our internal metrics confirm compatibility between ${pA.name} and ${pB.name}.`,
+        thought: `Synthesizing mutual fit and delivering positive verdict.`,
+        message: `With complete openness and empathy. Based on everything we have shared, there is a natural rhythm and genuine mutual respect between ${pA.name} and ${pB.name} that would be exciting to explore in person.`,
         signals: ['Calm Empathy', 'Mutual Synthesis']
       }
     ];
@@ -141,44 +180,52 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         body: JSON.stringify({ personA: pA, personB: pB })
       });
 
-      const resJson = await response.json();
-      if (!response.ok || !resJson.success || !resJson.data) {
-        throw new Error(resJson.error || 'Failed to simulate agent conversation.');
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to simulate date encounter.');
       }
 
-      const simMatch = resJson.data;
+      const generatedMatch = result.data;
 
-      // Save to unordered pair cache in localStorage
-      customMatches[pairKey] = simMatch;
-      localStorage.setItem('custom_matches', JSON.stringify(customMatches));
+      // Persist in localStorage by sorted pair key
+      if (typeof window !== 'undefined') {
+        const existing = JSON.parse(localStorage.getItem('custom_matches') || '{}');
+        existing[pairKey] = generatedMatch;
+        localStorage.setItem('custom_matches', JSON.stringify(existing));
+      }
 
-      setMatchDetails(simMatch);
-      const score = simMatch.compatibilityScore || 84;
+      setMatchDetails(generatedMatch);
+      const score = generatedMatch.compatibilityScore || 85;
       setTargetScore(score);
-      const generated = buildTurnsFromMatch(simMatch, pA, pB);
-      setTurns(generated);
+      const generatedTurns = buildTurnsFromMatch(generatedMatch, pA, pB);
+      setTurns(generatedTurns);
       setCurrentTurnIdx(0);
       setIsSimulating(false);
-      sounds.playMatch();
+      sounds.playConnect();
     } catch (err: any) {
       console.error('Simulation error:', err);
-      setSimulationError(err?.message || 'Date simulation encountered an error. Please retry.');
       setIsSimulating(false);
+      setSimulationError(err.message || 'Error occurred while simulating date.');
     }
   }, []);
 
+  // Main data loader
   useEffect(() => {
+    setAvatarErrorA(false);
+    setAvatarErrorB(false);
+
     Promise.all([
       fetch(getDataUrl('data/profiles_analyzed.json')).then(r => r.json()),
       fetch(getDataUrl('data/matches.json')).then(r => r.json()).catch(() => null)
     ])
       .then(([data, matchData]) => {
-        const added = JSON.parse(localStorage.getItem('added_people') || '[]');
+        const added = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('added_people') || '[]') : [];
         const all = [...added, ...data];
-        const pA = all.find((p: any) => String(p.id) === String(id1)) || all[0];
+        setAllPeople(all);
+        setMatchesData(matchData);
 
+        const pA = all.find((p: any) => String(p.id) === String(id1)) || all[0];
         let pB = all.find((p: any) => String(p.id) === String(id2));
-        // Only fall back if pB does not exist or user picked the exact same person
         if (!pB || String(pB.id) === String(pA.id)) {
           pB = all.find((p: any) => String(p.id) !== String(pA.id)) || all[1];
         }
@@ -186,40 +233,81 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         setPersonA(pA);
         setPersonB(pB);
 
-        // Update recent switcher pairs dynamically with custom matches
+        // Dynamically compute Top / Recent dates from matchesData & customMatches
+        const pairList: { id1: string; id2: string; label: string; score: number }[] = [];
+        const seenKeys = new Set<string>();
+
+        // 1. Ingest custom matches first (recency)
         if (typeof window !== 'undefined') {
           const customMatches = JSON.parse(localStorage.getItem('custom_matches') || '{}');
-          const customList: { id1: string; id2: string; label: string }[] = [];
-          Object.keys(customMatches).forEach(key => {
+          Object.entries(customMatches).forEach(([key, cm]: [string, any]) => {
             const [cand1, cand2] = key.split('_');
             const found1 = all.find((p: any) => String(p.id) === cand1);
             const found2 = all.find((p: any) => String(p.id) === cand2);
-            if (found1 && found2) {
-              customList.push({
+            if (found1 && found2 && !seenKeys.has(key)) {
+              seenKeys.add(key);
+              pairList.push({
                 id1: String(found1.id),
                 id2: String(found2.id),
-                label: `${found1.name.split(' ')[0]} × ${found2.name.split(' ')[0]}`
+                label: `${found1.name.split(' ')[0]} × ${found2.name.split(' ')[0]}`,
+                score: cm.compatibilityScore || cm.score || 85
               });
             }
           });
-          // Merge unique pairs
-          const combined = [...customList, ...CURATED_PAIRS];
-          const seen = new Set();
-          const unique = combined.filter(p => {
-            const k = [p.id1, p.id2].sort().join('_');
-            if (seen.has(k)) return false;
-            seen.add(k);
-            return true;
-          });
-          setRecentPairs(unique.slice(0, 8));
         }
+
+        // 2. Ingest top static matches from matchesData
+        if (matchData) {
+          Object.entries(matchData).forEach(([candAId, targetMap]: [string, any]) => {
+            Object.entries(targetMap).forEach(([candBId, match]: [string, any]) => {
+              const pairKey = [candAId, candBId].sort().join('_');
+              if (!seenKeys.has(pairKey)) {
+                seenKeys.add(pairKey);
+                const found1 = all.find((p: any) => String(p.id) === candAId);
+                const found2 = all.find((p: any) => String(p.id) === candBId);
+                if (found1 && found2) {
+                  pairList.push({
+                    id1: String(found1.id),
+                    id2: String(found2.id),
+                    label: `${found1.name.split(' ')[0]} × ${found2.name.split(' ')[0]}`,
+                    score: match.compatibilityScore || 80
+                  });
+                }
+              }
+            });
+          });
+        }
+
+        // Sort descending by score, take top 12
+        pairList.sort((a, b) => b.score - a.score);
+        setRecentPairs(pairList.slice(0, 12));
 
         loadOrSimulateDate(pA, pB, matchData);
       })
       .catch(console.error);
   }, [id1, id2, loadOrSimulateDate]);
 
-  // Typewriter effect
+  // Previous / Next date navigation handlers
+  const navigateDate = (direction: 'prev' | 'next') => {
+    if (recentPairs.length === 0) return;
+    sounds.playClick();
+
+    const currentKey = [String(id1), String(id2)].sort().join('_');
+    let idx = recentPairs.findIndex(p => [p.id1, p.id2].sort().join('_') === currentKey);
+
+    if (idx === -1) idx = 0;
+
+    let targetIdx = direction === 'next' ? idx + 1 : idx - 1;
+    if (targetIdx < 0) targetIdx = recentPairs.length - 1;
+    if (targetIdx >= recentPairs.length) targetIdx = 0;
+
+    const nextPair = recentPairs[targetIdx];
+    if (nextPair) {
+      router.push(`/dates/${nextPair.id1}-${nextPair.id2}`);
+    }
+  };
+
+  // Typewriter effect with full-message completion guarantee
   useEffect(() => {
     if (!isPlaying || finished || turns.length === 0 || currentTurnIdx < 0) return;
 
@@ -229,6 +317,13 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
     let charIdx = 0;
     setDisplayedText('');
 
+    // Only auto-scroll down if past initial opening turn
+    if (currentTurnIdx > 0) {
+      setTimeout(() => {
+        messageCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+
     const baseDelay = 18 / speed;
     const interval = setInterval(() => {
       charIdx++;
@@ -237,6 +332,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
 
       if (charIdx >= fullText.length) {
         clearInterval(interval);
+        setDisplayedText(fullText); // Guarantee complete text rendering
         setTimeout(() => {
           if (currentTurnIdx < turns.length - 1) {
             setCurrentTurnIdx(prev => prev + 1);
@@ -272,25 +368,29 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
   const currentTurn = turns[currentTurnIdx];
   const activeSpeaker = currentTurn?.speaker || 'A';
   const currentStage = STAGES[Math.min(5, Math.max(0, currentTurnIdx))];
-  const isOutsideDefaultPreference = !isPairEligible(personA, personB);
+  const isOutsideDefaultPreference = !isEligiblePair(personA, personB);
+
+  // Warmth metric (score 0-100)
+  const warmth = targetScore || 85;
 
   return (
-    <div className="fixed inset-0 z-30 bg-[var(--bg)] flex flex-col justify-between overflow-hidden">
+    <div className="fixed inset-0 z-30 bg-[#07070A] text-[#F4F4F6] flex flex-col justify-between overflow-hidden">
+      {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[var(--violet)]/10 rounded-full blur-[150px] pointer-events-none" />
 
       {/* Top Header */}
-      <header className="p-6 border-b border-[var(--line)] flex items-center justify-between shrink-0 relative z-20">
+      <header className="p-4 sm:p-5 border-b border-[var(--line)] flex items-center justify-between shrink-0 relative z-20 bg-[#0E0E13]/90 backdrop-blur-md">
         <Link
           href="/"
           onClick={() => sounds.playClick()}
-          className="meta-label flex items-center gap-2 text-[var(--text-secondary)] hover:text-white transition-colors"
+          className="meta-label flex items-center gap-2 text-[#B4B4C0] hover:text-white transition-colors"
         >
           <ArrowLeft size={14} />
           <span>EXIT CHAMBER</span>
         </Link>
 
         {/* 6-Step Progress Track */}
-        <div className="hidden sm:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           {STAGES.map((s, idx) => {
             const isCompleted = idx < currentTurnIdx || finished;
             const isCurrent = idx === currentTurnIdx && !finished;
@@ -305,7 +405,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                     : 'bg-white/15'
                 }`} />
                 <span className={`meta-label text-[9px] ${
-                  isCurrent ? 'text-[var(--violet)] font-bold' : isCompleted ? 'text-white font-bold' : 'text-[var(--text-disabled)]'
+                  isCurrent ? 'text-[var(--violet)] font-bold' : isCompleted ? 'text-white font-bold' : 'text-[#7C7C8A]'
                 }`}>
                   {s.id}
                 </span>
@@ -315,72 +415,112 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
           })}
         </div>
 
-        <div className="flex items-center gap-3">
+        {/* Quick Action Buttons */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <button
+            onClick={() => {
+              sounds.playClick();
+              setIsChooseDateModalOpen(true);
+            }}
+            className="meta-label text-[10px] px-3 py-1.5 rounded-full border border-[var(--violet)]/50 bg-[var(--violet)]/20 text-white hover:bg-[var(--violet)]/35 transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
+            title="Browse all 25 people and their dates"
+          >
+            <Users size={12} className="text-[var(--magenta)]" />
+            <span>CHOOSE DATE</span>
+          </button>
+
           <button
             onClick={() => {
               sounds.playClick();
               openPairPicker(personA, personB);
             }}
-            className="meta-label text-[10px] px-3 py-1 rounded-full border border-[var(--violet)]/50 bg-[var(--violet)]/15 text-white hover:bg-[var(--violet)]/25 transition-colors cursor-pointer flex items-center gap-1.5"
+            className="meta-label text-[10px] px-3 py-1.5 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/15 transition-all cursor-pointer flex items-center gap-1.5"
+            title="Manual matchmaker: pick any two people"
           >
-            <Sparkles size={11} className="text-[var(--magenta)]" />
-            <span>PICK NEW PAIR</span>
+            <Sparkles size={11} className="text-amber-300" />
+            <span className="hidden sm:inline">PAIR PICKER</span>
           </button>
 
-          <div className="meta-label text-[10px] text-[var(--magenta)] font-bold hidden sm:block">
+          <div className="meta-label text-[10px] text-[var(--magenta)] font-bold hidden lg:block">
             ROUND {currentStage?.id || '01'} // {currentStage?.title || 'INTRO'}
           </div>
         </div>
       </header>
 
-      {/* Encounter Switcher Bar */}
-      <div className="w-full bg-[var(--surface-2)]/90 border-b border-[var(--line)] py-2.5 px-4 flex items-center justify-center gap-2 overflow-x-auto scrollbar-thin z-20 shrink-0">
+      {/* Encounter Switcher Bar (Data-Driven Navigation with Prev/Next Arrows) */}
+      <div className="w-full bg-[#14141B] border-b border-[var(--line)] py-2 px-3 sm:px-4 flex items-center justify-between sm:justify-center gap-2 overflow-x-auto scrollbar-thin z-20 shrink-0">
+        <div className="flex items-center gap-1.5 shrink-0">
+          <button
+            onClick={() => navigateDate('prev')}
+            className="p-1 rounded-full bg-white/5 hover:bg-white/15 text-[#B4B4C0] hover:text-white transition-colors cursor-pointer border border-white/10"
+            title="Previous encounter"
+          >
+            <ChevronLeft size={14} />
+          </button>
+          <button
+            onClick={() => navigateDate('next')}
+            className="p-1 rounded-full bg-white/5 hover:bg-white/15 text-[#B4B4C0] hover:text-white transition-colors cursor-pointer border border-white/10"
+            title="Next encounter"
+          >
+            <ChevronRight size={14} />
+          </button>
+        </div>
+
         <button
           onClick={() => {
             sounds.playClick();
-            openPairPicker(personA, personB);
+            setIsChooseDateModalOpen(true);
           }}
           className="px-3 py-1 rounded-full text-xs font-mono shrink-0 transition-all bg-gradient-to-r from-[var(--violet)] to-[var(--magenta)] text-white font-bold flex items-center gap-1.5 shadow-md cursor-pointer hover:opacity-90"
         >
-          <span>✦ DATE ANY TWO PEOPLE</span>
+          <span>✦ ALL 25 PROFILES</span>
         </button>
 
         <span className="w-px h-4 bg-white/15 mx-1 hidden sm:inline" />
 
-        <span className="meta-label text-[9px] text-[var(--text-secondary)] font-bold shrink-0 hidden sm:inline">
-          RECENT ENCOUNTERS:
+        <span className="meta-label text-[9px] text-[#A0A0AE] font-bold shrink-0 hidden md:inline">
+          TOP & RECENT DATES:
         </span>
-        {recentPairs.map(cp => {
-          const isActive = (String(personA?.id) === String(cp.id1) && String(personB?.id) === String(cp.id2)) ||
-                           (String(personA?.id) === String(cp.id2) && String(personB?.id) === String(cp.id1));
-          return (
-            <Link
-              key={`${cp.id1}-${cp.id2}`}
-              href={`/date/${cp.id1}/${cp.id2}`}
-              onClick={() => sounds.playClick()}
-              className={`px-3 py-1 rounded-full text-xs font-mono shrink-0 transition-all ${
-                isActive
-                  ? 'bg-white/20 !text-white font-bold border border-white/30'
-                  : 'bg-white/5 hover:bg-white/10 text-[var(--text-secondary)] hover:text-white border border-white/5'
-              }`}
-            >
-              {cp.label}
-            </Link>
-          );
-        })}
+
+        {/* Data-driven horizontal chip shortcuts */}
+        <div className="flex items-center gap-1.5 overflow-x-auto py-0.5">
+          {recentPairs.map(cp => {
+            const isActive = (String(personA?.id) === String(cp.id1) && String(personB?.id) === String(cp.id2)) ||
+                             (String(personA?.id) === String(cp.id2) && String(personB?.id) === String(cp.id1));
+            return (
+              <Link
+                key={`${cp.id1}-${cp.id2}`}
+                href={`/dates/${cp.id1}-${cp.id2}`}
+                onClick={() => sounds.playClick()}
+                className={`px-3 py-1 rounded-full text-xs font-mono shrink-0 transition-all flex items-center gap-1.5 ${
+                  isActive
+                    ? 'bg-white/20 !text-white font-bold border border-white/40 shadow-sm'
+                    : 'bg-white/5 hover:bg-white/10 text-[#B4B4C0] hover:text-white border border-white/5'
+                }`}
+              >
+                <span>{cp.label}</span>
+                {cp.score && (
+                  <span className={`text-[10px] ${isActive ? 'text-[var(--magenta)]' : 'text-[#A0A0AE]'}`}>
+                    · {cp.score}%
+                  </span>
+                )}
+              </Link>
+            );
+          })}
+        </div>
       </div>
 
       {/* Non-blocking Notice when Manual Pair is Outside Default Preferences */}
       {isOutsideDefaultPreference && (
-        <div className="w-full bg-amber-500/10 border-b border-amber-500/20 py-1.5 px-4 text-center z-20 shrink-0 animate-fade-in">
+        <div className="w-full bg-amber-500/10 border-b border-amber-500/20 py-1 px-4 text-center z-20 shrink-0 animate-fade-in">
           <p className="meta-label text-[10px] text-amber-300 font-medium">
-            ✦ Outside default preferences, compatibility is scored honestly
+            ✦ Outside default preferences, compatibility is scored honestly (Manual Date)
           </p>
         </div>
       )}
 
-      {/* Center Stage */}
-      <main className="flex-1 flex flex-col items-center justify-center p-6 max-w-5xl mx-auto w-full relative z-20 overflow-y-auto">
+      {/* Center Stage: generous padding, no justify-center clipping, fits comfortably on 610px height */}
+      <main className="flex-1 flex flex-col items-center justify-start pt-3 sm:pt-5 pb-20 sm:pb-28 px-4 sm:px-6 max-w-5xl mx-auto w-full relative z-20 overflow-y-auto overflow-x-hidden">
         {/* Loading / Simulating State */}
         {isSimulating && (
           <div className="card-panel-elevated p-8 sm:p-12 border border-[var(--violet)]/40 max-w-xl w-full text-center space-y-6 shadow-2xl animate-fade-in my-auto">
@@ -398,8 +538,8 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               <h3 className="section-title text-xl text-white">
                 SIMULATING 6-STAGE DATE
               </h3>
-              <p className="body-text text-xs text-[var(--text-secondary)] mt-2 max-w-sm mx-auto">
-                Agents are evaluating craft devotion, sovereign lifestyle rhythms, and conflict resolution axioms between {personA.name} and {personB.name}...
+              <p className="body-text text-xs text-[#B4B4C0] mt-2 max-w-sm mx-auto">
+                Agents are exploring shared values, daily rhythms, and authentic chemistry between {personA.name} and {personB.name}...
               </p>
             </div>
           </div>
@@ -415,7 +555,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               <h3 className="text-base font-semibold text-rose-200">
                 DATE SIMULATION ENCOUNTERED AN ISSUE
               </h3>
-              <p className="text-xs text-[var(--text-secondary)] mt-1 font-mono">
+              <p className="text-xs text-[#B4B4C0] mt-1 font-mono">
                 {simulationError}
               </p>
             </div>
@@ -434,24 +574,51 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         {/* Active Conversation Dialogue Stream */}
         {!isSimulating && !simulationError && !finished && (
           <div className="w-full flex flex-col items-center">
-            <div className="w-full flex items-center justify-between mb-8 sm:mb-10">
-              {/* Agent A Orb */}
-              <div className="flex flex-col items-center">
-                <div className={`relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 transition-all duration-500 ${
+            {/* Avatars and Animated Energy Link */}
+            <div className="w-full flex items-center justify-between mb-3 sm:mb-6 pt-1">
+              {/* Agent A Block */}
+              <div className="flex flex-col items-center w-36 sm:w-44 text-center">
+                {/* Local photo at 400x400 with object-position: center 20% and brighter ring */}
+                <div className={`relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full p-1 transition-all duration-500 bg-[#14141B] shrink-0 ${
                   activeSpeaker === 'A'
                     ? 'scale-105 ring-2 ring-[var(--violet)] shadow-[0_0_50px_rgba(139,92,246,0.6)]'
-                    : 'opacity-40 ring-1 ring-white/10'
+                    : 'opacity-50 ring-1 ring-white/20'
                 }`}>
-                  <img src={personA.photo} alt={personA.name} className="w-full h-full rounded-full object-cover" />
-                  <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-[var(--surface-2)] border border-[var(--line)] meta-label text-[8px] text-[var(--violet)]">
-                    AGENT A
-                  </div>
+                  {!avatarErrorA ? (
+                    <img
+                      src={`/avatars/${personA.id}.jpg`}
+                      alt={personA.name}
+                      onError={() => setAvatarErrorA(true)}
+                      className="w-full h-full rounded-full object-cover object-[center_20%]"
+                    />
+                  ) : (
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[var(--violet)] to-slate-800 flex items-center justify-center font-bold text-lg text-white font-mono">
+                      {personA.name.slice(0, 2).toUpperCase()}
+                    </div>
+                  )}
                 </div>
-                <div className="font-semibold text-sm text-[var(--text)] mt-4">{personA.name}</div>
-                <div className="meta-label text-[9px] text-[var(--text-secondary)] truncate max-w-[140px]">{personA.headline}</div>
-                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-white mt-1.5 font-bold inline-block">
+
+                {/* AGENT A badge placed BELOW avatar, whitespace-nowrap, #D4D4DC on #1C1C24 */}
+                <div className="mt-2.5 px-3 py-0.5 rounded-full bg-[#1C1C24] border border-white/15 meta-label text-[9px] text-[#D4D4DC] whitespace-nowrap shadow-sm">
+                  AGENT A
+                </div>
+
+                <div className="font-semibold text-sm text-[#F4F4F6] mt-1.5 truncate max-w-full">
+                  {personA.name}
+                </div>
+
+                {/* Headline: line-clamp-2 with title tooltip */}
+                <div
+                  className="meta-label text-[10px] text-[#A0A0AE] line-clamp-2 max-w-[160px] mt-0.5 cursor-help"
+                  title={personA.headline}
+                >
+                  {personA.headline}
+                </div>
+
+                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-[#F4F4F6] mt-1.5 font-bold inline-block">
                   {personA.gender === 'female' ? 'FEMALE (F)' : 'MALE (M)'}
                 </span>
+
                 {/* Verified Social Badges for Agent A */}
                 <div className="mt-2" onClick={e => e.stopPropagation()}>
                   <SocialBadges
@@ -463,29 +630,76 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                 </div>
               </div>
 
-              {/* Energy Line */}
-              <div className="flex-1 mx-4 sm:mx-8 relative flex items-center justify-center">
-                <div className="w-full h-px bg-gradient-to-r from-[var(--violet)] via-[var(--magenta)] to-[var(--blue)] shadow-[0_0_15px_rgba(232,121,249,0.5)]" />
-                <div className="absolute w-3 h-3 rounded-full bg-white shadow-[0_0_20px_white] animate-ping" />
+              {/* Animated Agent Link (Gradient line with moving pulse from speaking to listening agent) */}
+              <div className="flex-1 mx-2 sm:mx-6 relative flex items-center justify-center py-6">
+                {/* Base connection track */}
+                <div className={`w-full h-1 rounded-full transition-opacity duration-300 relative overflow-hidden ${
+                  currentTurn ? 'opacity-100' : 'opacity-35'
+                }`}
+                style={{
+                  background: 'linear-gradient(90deg, rgba(139,92,246,0.3) 0%, rgba(232,121,249,0.8) 50%, rgba(59,130,246,0.3) 100%)',
+                  boxShadow: warmth > 75 ? '0 0 20px rgba(232,121,249,0.5)' : 'none'
+                }}
+                >
+                  {/* Moving pulse bar */}
+                  <div
+                    className={`absolute top-0 bottom-0 w-1/3 rounded-full bg-gradient-to-r from-[var(--violet)] via-white to-[var(--magenta)] shadow-[0_0_15px_white] ${
+                      activeSpeaker === 'A' ? 'animate-pulse-ltr' : 'animate-pulse-rtl'
+                    }`}
+                  />
+                </div>
+
+                {/* Center energy indicator */}
+                <div className={`absolute w-3.5 h-3.5 rounded-full border-2 border-[#07070A] transition-all duration-300 ${
+                  activeSpeaker === 'A'
+                    ? 'bg-[var(--violet)] shadow-[0_0_15px_var(--violet)]'
+                    : 'bg-[var(--magenta)] shadow-[0_0_15px_var(--magenta)]'
+                }`} />
               </div>
 
-              {/* Agent B Orb */}
-              <div className="flex flex-col items-center">
-                <div className={`relative w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 transition-all duration-500 ${
+              {/* Agent B Block */}
+              <div className="flex flex-col items-center w-36 sm:w-44 text-center">
+                {/* Local photo at 400x400 with object-position: center 20% and brighter ring */}
+                <div className={`relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full p-1 transition-all duration-500 bg-[#14141B] shrink-0 ${
                   activeSpeaker === 'B'
                     ? 'scale-105 ring-2 ring-[var(--magenta)] shadow-[0_0_50px_rgba(232,121,249,0.6)]'
-                    : 'opacity-40 ring-1 ring-white/10'
+                    : 'opacity-50 ring-1 ring-white/20'
                 }`}>
-                  <img src={personB.photo} alt={personB.name} className="w-full h-full rounded-full object-cover" />
-                  <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-[var(--surface-2)] border border-[var(--line)] meta-label text-[8px] text-[var(--magenta)]">
-                    AGENT B
-                  </div>
+                  {!avatarErrorB ? (
+                    <img
+                      src={`/avatars/${personB.id}.jpg`}
+                      alt={personB.name}
+                      onError={() => setAvatarErrorB(true)}
+                      className="w-full h-full rounded-full object-cover object-[center_20%]"
+                    />
+                  ) : (
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[var(--magenta)] to-slate-800 flex items-center justify-center font-bold text-lg text-white font-mono">
+                      {personB.name.slice(0, 2).toUpperCase()}
+                    </div>
+                  )}
                 </div>
-                <div className="font-semibold text-sm text-[var(--text)] mt-4">{personB.name}</div>
-                <div className="meta-label text-[9px] text-[var(--text-secondary)] truncate max-w-[140px]">{personB.headline}</div>
-                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-white mt-1.5 font-bold inline-block">
+
+                {/* AGENT B badge placed BELOW avatar, whitespace-nowrap, #D4D4DC on #1C1C24 */}
+                <div className="mt-2.5 px-3 py-0.5 rounded-full bg-[#1C1C24] border border-white/15 meta-label text-[9px] text-[#D4D4DC] whitespace-nowrap shadow-sm">
+                  AGENT B
+                </div>
+
+                <div className="font-semibold text-sm text-[#F4F4F6] mt-1.5 truncate max-w-full">
+                  {personB.name}
+                </div>
+
+                {/* Headline: line-clamp-2 with title tooltip */}
+                <div
+                  className="meta-label text-[10px] text-[#A0A0AE] line-clamp-2 max-w-[160px] mt-0.5 cursor-help"
+                  title={personB.headline}
+                >
+                  {personB.headline}
+                </div>
+
+                <span className="meta-label text-[9px] px-2.5 py-0.5 rounded-full bg-white/10 text-[#F4F4F6] mt-1.5 font-bold inline-block">
                   {personB.gender === 'female' ? 'FEMALE (F)' : 'MALE (M)'}
                 </span>
+
                 {/* Verified Social Badges for Agent B */}
                 <div className="mt-2" onClick={e => e.stopPropagation()}>
                   <SocialBadges
@@ -498,27 +712,32 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               </div>
             </div>
 
-            {/* Typewriter Message Stream */}
-            <div className="w-full max-w-2xl text-center space-y-4 p-6 sm:p-8 rounded-2xl bg-[var(--surface)]/80 backdrop-blur-xl border border-[var(--line)] shadow-2xl">
-              <div className="font-mono text-xs uppercase tracking-wider text-[var(--text-secondary)] font-semibold">
-                {activeSpeaker === 'A' ? personA.name.toUpperCase() : personB.name.toUpperCase()}&apos;S AGENT SPEAKING
+            {/* Typewriter Message Stream Card (with ref for auto-scrolling) */}
+            <div
+              ref={messageCardRef}
+              className="w-full max-w-2xl text-center space-y-4 p-6 sm:p-8 rounded-2xl bg-[#0E0E13]/90 backdrop-blur-xl border border-[var(--line)] shadow-2xl relative"
+            >
+              <div className="font-mono text-xs uppercase tracking-wider text-[#B4B4C0] font-semibold flex items-center justify-center gap-2">
+                <span className={`w-2 h-2 rounded-full ${activeSpeaker === 'A' ? 'bg-[var(--violet)]' : 'bg-[var(--magenta)]'}`} />
+                <span>{activeSpeaker === 'A' ? personA.name.toUpperCase() : personB.name.toUpperCase()}&apos;S AGENT SPEAKING</span>
               </div>
 
-              <p className="body-text text-lg sm:text-xl text-[var(--text)] font-light leading-relaxed min-h-[90px] flex items-center justify-center">
+              {/* Full message render with typewriter completion guarantee */}
+              <p className="body-text text-base sm:text-lg text-[#F4F4F6] font-light leading-relaxed min-h-[90px] flex items-center justify-center px-2">
                 &ldquo;{displayedText}&rdquo;
                 <span className="w-1.5 h-5 bg-[var(--violet)] inline-block ml-1 animate-pulse" />
               </p>
 
               {/* Thought Annotation */}
               {currentTurn && (
-                <div className="inline-block p-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-[var(--text-secondary)] italic">
+                <div className="inline-block p-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-[#B4B4C0] italic max-w-xl">
                   Agent reasoning: &ldquo;{currentTurn.thought}&rdquo;
                 </div>
               )}
 
               {/* Signals */}
               {currentTurn?.signals && (
-                <div className="flex items-center justify-center gap-2 pt-2">
+                <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
                   {currentTurn.signals.map((sig, i) => (
                     <span key={i} className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[var(--magenta)]">
                       ✦ {sig}
@@ -535,16 +754,26 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
           <div className="card-panel-elevated p-8 sm:p-10 border border-[var(--violet)]/40 max-w-2xl w-full text-center space-y-6 shadow-2xl animate-fade-in my-auto">
             <div className="flex items-center justify-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[var(--violet)] animate-pulse" />
-              <div className="font-mono text-xs text-[var(--violet)] font-bold tracking-wider">DATE SYNTHESIS COMPLETE // MUTUAL VERDICT</div>
+              <div className="font-mono text-xs text-[var(--violet)] font-bold tracking-wider">
+                DATE SYNTHESIS COMPLETE // MUTUAL VERDICT
+              </div>
             </div>
 
             {/* Candidate Avatars Shared Ring */}
             <div className="flex items-center justify-center -space-x-4 py-1">
-              <img src={personA.photo} alt={personA.name} className="w-16 h-16 rounded-full border-2 border-[var(--violet)] object-cover shadow-lg" />
-              <div className="w-8 h-8 rounded-full bg-[var(--surface-2)] border border-[var(--line)] flex items-center justify-center text-xs font-mono font-bold text-[var(--magenta)] z-10">
+              <img
+                src={`/avatars/${personA.id}.jpg`}
+                alt={personA.name}
+                className="w-16 h-16 rounded-full border-2 border-[var(--violet)] object-cover object-[center_20%] shadow-lg"
+              />
+              <div className="w-8 h-8 rounded-full bg-[#14141B] border border-[var(--line)] flex items-center justify-center text-xs font-mono font-bold text-[var(--magenta)] z-10">
                 ✦
               </div>
-              <img src={personB.photo} alt={personB.name} className="w-16 h-16 rounded-full border-2 border-[var(--magenta)] object-cover shadow-lg" />
+              <img
+                src={`/avatars/${personB.id}.jpg`}
+                alt={personB.name}
+                className="w-16 h-16 rounded-full border-2 border-[var(--magenta)] object-cover object-[center_20%] shadow-lg"
+              />
             </div>
 
             <div className="text-6xl sm:text-8xl font-mono font-bold tracking-tighter bg-gradient-to-r from-[var(--violet)] via-[var(--magenta)] to-[var(--blue)] bg-clip-text text-transparent">
@@ -555,15 +784,15 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               <h3 className="section-title text-xl text-white">
                 {scoreCounter >= 75 ? 'HIGH ROMANTIC RESONANCE' : 'MODERATE COMPATIBILITY'}
               </h3>
-              <p className="body-text text-sm italic mt-2 text-[var(--text-secondary)]">
-                &ldquo;{matchDetails?.matchReason || `${personA.name} and ${personB.name} share sovereign ambition and direct communication, creating a balanced dynamic.`}&rdquo;
+              <p className="body-text text-sm italic mt-2 text-[#B4B4C0]">
+                &ldquo;{matchDetails?.matchReason || `${personA.name} and ${personB.name} share clear ambition and authentic curiosity, creating a balanced dynamic.`}&rdquo;
               </p>
             </div>
 
             {/* 4-Factor Metric Breakdown Bars */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left font-mono text-xs pt-4 border-t border-[var(--line)]">
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="meta-label text-[9px] text-[var(--text-secondary)]">VALUES</div>
+                <div className="meta-label text-[9px] text-[#A0A0AE]">VALUES</div>
                 <div className="text-base font-bold text-[var(--violet)] mt-1">
                   {matchDetails?.breakdown?.values?.score || 82}%
                 </div>
@@ -573,7 +802,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               </div>
 
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="meta-label text-[9px] text-[var(--text-secondary)]">INTERESTS</div>
+                <div className="meta-label text-[9px] text-[#A0A0AE]">INTERESTS</div>
                 <div className="text-base font-bold text-[var(--blue)] mt-1">
                   {matchDetails?.breakdown?.interests?.score || 78}%
                 </div>
@@ -583,7 +812,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               </div>
 
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="meta-label text-[9px] text-[var(--text-secondary)]">LIFESTYLE</div>
+                <div className="meta-label text-[9px] text-[#A0A0AE]">LIFESTYLE</div>
                 <div className="text-base font-bold text-[var(--magenta)] mt-1">
                   {matchDetails?.breakdown?.lifestyle?.score || 85}%
                 </div>
@@ -593,7 +822,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               </div>
 
               <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <div className="meta-label text-[9px] text-[var(--text-secondary)]">NEEDS</div>
+                <div className="meta-label text-[9px] text-[#A0A0AE]">NEEDS</div>
                 <div className="text-base font-bold text-[var(--pink)] mt-1">
                   {matchDetails?.breakdown?.needs?.score || 80}%
                 </div>
@@ -610,11 +839,11 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   <Check size={13} />
                   <span>WHY THEY CONNECTED</span>
                 </div>
-                <ul className="text-[11px] text-[var(--text-secondary)] space-y-1">
+                <ul className="text-[11px] text-[#B4B4C0] space-y-1">
                   {(matchDetails?.sparks || [
-                    `Resonance on ${personA.values?.[0] || 'freedom'} and ${personB.values?.[0] || 'growth'}`,
+                    `Resonance on ${personA.values?.[0] || 'freedom'} and personal ambition`,
                     'Shared demand for creative agency and autonomy',
-                    'Radical honesty over polite passive aggression'
+                    'Direct honesty over polite silence'
                   ]).map((s: string, idx: number) => (
                     <li key={idx}>• {s}</li>
                   ))}
@@ -626,7 +855,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   <AlertTriangle size={13} />
                   <span>POTENTIAL FRICTION</span>
                 </div>
-                <ul className="text-[11px] text-[var(--text-secondary)] space-y-1">
+                <ul className="text-[11px] text-[#B4B4C0] space-y-1">
                   {(matchDetails?.tensions || [
                     'Demanding schedules require proactive calendar boundaries',
                     'Both operate at intense focus cadences'
@@ -650,11 +879,11 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
               <button
                 onClick={() => {
                   sounds.playClick();
-                  openPairPicker(personA, personB);
+                  setIsChooseDateModalOpen(true);
                 }}
                 className="w-full sm:w-auto px-6 py-3 rounded-full border border-[var(--violet)]/50 bg-[var(--violet)]/10 hover:bg-[var(--violet)]/20 !text-white font-mono text-xs font-bold transition-all text-center cursor-pointer"
               >
-                ✦ DATE DIFFERENT PAIR
+                ✦ CHOOSE ANOTHER DATE
               </button>
 
               <Link
@@ -669,8 +898,8 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
         )}
       </main>
 
-      {/* Bottom Controls Bar */}
-      <footer className="p-6 border-t border-[var(--line)] flex items-center justify-between shrink-0 relative z-20 bg-[var(--bg)]/90 backdrop-blur-xl">
+      {/* Bottom Controls Bar (Fixed height shrink-0 with generous top padding from main) */}
+      <footer className="p-4 sm:p-5 border-t border-[var(--line)] flex items-center justify-between shrink-0 relative z-20 bg-[#0E0E13]/95 backdrop-blur-xl">
         <div className="flex items-center gap-2">
           {!finished && !isSimulating && !simulationError && (
             <>
@@ -679,7 +908,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   sounds.playClick();
                   setIsPlaying(!isPlaying);
                 }}
-                className="glass-pill px-4 py-2 rounded-full font-mono text-xs flex items-center gap-1.5 text-[var(--text)] hover:bg-white/10 transition-colors cursor-pointer"
+                className="glass-pill px-4 py-2 rounded-full font-mono text-xs flex items-center gap-1.5 text-white hover:bg-white/10 transition-colors cursor-pointer"
               >
                 {isPlaying ? <Pause size={12} /> : <Play size={12} fill="currentColor" />}
                 <span>{isPlaying ? 'PAUSE' : 'PLAY'}</span>
@@ -690,7 +919,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                   sounds.playClick();
                   setSpeed(s => (s === 1 ? 2 : s === 2 ? 4 : 1));
                 }}
-                className="glass-pill px-3 py-2 rounded-full font-mono text-xs text-[var(--text)] hover:bg-white/10 transition-colors cursor-pointer"
+                className="glass-pill px-3 py-2 rounded-full font-mono text-xs text-white hover:bg-white/10 transition-colors cursor-pointer"
               >
                 SPEED {speed}X
               </button>
@@ -705,7 +934,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
                 sounds.playMatch();
                 setFinished(true);
               }}
-              className="font-mono text-xs text-[var(--text-secondary)] hover:text-white transition-colors cursor-pointer"
+              className="font-mono text-xs text-[#B4B4C0] hover:text-white transition-colors cursor-pointer"
             >
               SKIP TO RESULT →
             </button>
@@ -726,6 +955,62 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
           )}
         </div>
       </footer>
+
+      {/* Choose Date Modal (Searchable panel of all 25 people with their complete dates) */}
+      <ChooseDateModal
+        isOpen={isChooseDateModalOpen}
+        onClose={() => setIsChooseDateModalOpen(false)}
+        allPeople={allPeople}
+        matchesData={matchesData}
+        onOpenPairPicker={(cand) => {
+          setIsChooseDateModalOpen(false);
+          openPairPicker(cand || personA, personB);
+        }}
+      />
+
+      {/* Embedded CSS Keyframes for Agent Link Traveling Pulse & Reduced Motion */}
+      <style jsx>{`
+        @keyframes pulse-ltr {
+          0% {
+            transform: translateX(-100%);
+            opacity: 0.2;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(200%);
+            opacity: 0.2;
+          }
+        }
+        @keyframes pulse-rtl {
+          0% {
+            transform: translateX(200%);
+            opacity: 0.2;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(-100%);
+            opacity: 0.2;
+          }
+        }
+        .animate-pulse-ltr {
+          animation: pulse-ltr 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        .animate-pulse-rtl {
+          animation: pulse-rtl 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-pulse-ltr,
+          .animate-pulse-rtl {
+            animation: none;
+            transform: none;
+            opacity: 0.8;
+          }
+        }
+      `}</style>
     </div>
   );
 }

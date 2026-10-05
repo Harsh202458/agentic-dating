@@ -44,7 +44,7 @@ export default function RankingsClient({ id }: { id: string }) {
           name: c.name,
           gender: c.gender,
           score: Math.floor(75 + ((Number(p.id) * 7 + Number(c.id) * 11) % 18)),
-          reason: `${p.name} and ${c.name} share sovereign ambition and direct communication, creating a balanced, high-trust dynamic.`
+          reason: `${p.name} and ${c.name} share genuine curiosity and complementary life values, creating a balanced dynamic.`
         })).sort((a: any, b: any) => b.score - a.score);
       }
 

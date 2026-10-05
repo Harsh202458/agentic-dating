@@ -7,7 +7,7 @@ export default function DatesRedirectPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace('/date/1/14');
+    router.replace('/dates/1-14');
   }, [router]);
 
   return (

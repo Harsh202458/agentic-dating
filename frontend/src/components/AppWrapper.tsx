@@ -31,7 +31,7 @@ export default function AppWrapper({ children }: { children: React.ReactNode }) 
   const router = useRouter();
   const pathname = usePathname();
 
-  const isDatePage = pathname?.includes('/date/');
+  const isDatePage = pathname?.startsWith('/date') || pathname?.startsWith('/dates');
   const isHome = pathname === '/' || pathname === '' || pathname === '/agentic-dating/' || pathname === '/agentic-dating';
   const isAmbient = !isHome;
 

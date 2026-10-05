@@ -30,28 +30,42 @@ export function normalizePreference(pref?: string, gender?: string): 'men' | 'wo
  * Returns true ONLY if both candidates mutually satisfy each other's gender & preference requirements.
  * Default for heterosexual cohorts: Men date Women, Women date Men.
  */
-export function isPairEligible(personA?: Candidate | null, personB?: Candidate | null): boolean {
+/**
+ * Canonical isEligiblePair function.
+ * Missing data strictly means 'not eligible'.
+ * Returns true ONLY if both candidates exist, have non-missing gender & looking_for data,
+ * and mutually satisfy each other's gender & preference requirements.
+ */
+export function isEligiblePair(personA?: Candidate | null, personB?: Candidate | null): boolean {
   if (!personA || !personB) return false;
   if (String(personA.id) === String(personB.id)) return false;
+  if (!personA.gender || !personB.gender) return false;
 
-  const genderA = (personA.gender || 'male').toLowerCase();
-  const genderB = (personB.gender || 'female').toLowerCase();
+  const prefA = personA.looking_for || personA.lookingFor || personA.seeking;
+  const prefB = personB.looking_for || personB.lookingFor || personB.seeking;
+  if (!prefA || !prefB) return false;
 
-  const prefA = normalizePreference(personA.looking_for || personA.seeking, genderA);
-  const prefB = normalizePreference(personB.looking_for || personB.seeking, genderB);
+  const genderA = personA.gender.toLowerCase().trim();
+  const genderB = personB.gender.toLowerCase().trim();
+
+  const normPrefA = normalizePreference(prefA, genderA);
+  const normPrefB = normalizePreference(prefB, genderB);
 
   // A accepts B
-  const aAcceptsB = prefA === 'everyone' ||
-    (prefA === 'women' && genderB === 'female') ||
-    (prefA === 'men' && genderB === 'male');
+  const aAcceptsB = normPrefA === 'everyone' ||
+    (normPrefA === 'women' && genderB === 'female') ||
+    (normPrefA === 'men' && genderB === 'male');
 
   // B accepts A
-  const bAcceptsA = prefB === 'everyone' ||
-    (prefB === 'women' && genderA === 'female') ||
-    (prefB === 'men' && genderA === 'male');
+  const bAcceptsA = normPrefB === 'everyone' ||
+    (normPrefB === 'women' && genderA === 'female') ||
+    (normPrefB === 'men' && genderA === 'male');
 
   return aAcceptsB && bAcceptsA;
 }
+
+// Retain alias for backward compatibility
+export const isPairEligible = isEligiblePair;
 
 /**
  * Returns all candidates in `pool` that are eligible matches for `person`.
