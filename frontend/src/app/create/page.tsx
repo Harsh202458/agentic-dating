@@ -59,7 +59,7 @@ export default function CreateAgentPage() {
       sounds.playClick();
 
       // Launch real scrape API call asynchronously
-      const scrapePromise = fetch('/api/scrape', {
+      const scrapePromise = fetch('/api/scrape/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ linkedinUrl: form.linkedin, instagramUrl: form.instagram })

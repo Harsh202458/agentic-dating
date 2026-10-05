@@ -174,7 +174,7 @@ export default function DateArenaClient({ id1, id2 }: { id1: string; id2: string
     setCurrentTurnIdx(-1);
 
     try {
-      const response = await fetch('/api/simulate-date', {
+      const response = await fetch('/api/simulate-date/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ personA: pA, personB: pB })
