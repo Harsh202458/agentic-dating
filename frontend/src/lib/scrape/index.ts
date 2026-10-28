@@ -74,7 +74,9 @@ export async function scrapeLinkedIn(inputUrl: string): Promise<any> {
     });
 
     const { items } = await client.dataset(run.defaultDatasetId).listItems();
-    const resultData = items[0] || {
+    // Skip rows the actor returns for profiles it could not fetch
+    const profile: any = items.find((item: any) => !item.error_message);
+    const resultData = profile ? { ...profile, summary: profile.summary || profile.about } : {
       headline: 'Technology Leader & Operator',
       summary: `Verified profile for ${slug}.`,
       skills: ['Leadership', 'Technology']

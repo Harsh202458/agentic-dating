@@ -19,11 +19,11 @@ async function scrapeInstagram(usernames) {
 // --- LINKEDIN SCRAPER ---
 async function scrapeLinkedIn(linkedinUrls) {
   console.log(`\n🔍 Scraping LinkedIn for ${linkedinUrls.length} profiles`);
-  const run = await client.actor('bebity/linkedin-profile-scraper').call({
+  const run = await client.actor('johnvc/linkedin-profile-api').call({
     profileUrls: linkedinUrls,
   });
   const { items } = await client.dataset(run.defaultDatasetId).listItems();
-  return items;
+  return items.filter(item => !item.error_message);
 }
 
 function extractInstagramUsername(url) {
@@ -55,7 +55,8 @@ async function main() {
   for (const person of people) {
     const igUsername = extractInstagramUsername(person.instagram);
     const igProfile = igItems.find(i => i.username?.toLowerCase() === igUsername?.toLowerCase()) || {};
-    const liProfile = liItems.find(l => l.url?.includes(person.linkedin) || person.linkedin.includes(l.publicIdentifier || '')) || {};
+    const liSlug = l => (l.publicUrl || '').match(/linkedin\.com\/in\/([^\/\?#]+)/)?.[1];
+    const liProfile = liItems.find(l => liSlug(l) && person.linkedin.includes(`/in/${liSlug(l)}/`)) || {};
 
     results.push({
       id: person.id,
